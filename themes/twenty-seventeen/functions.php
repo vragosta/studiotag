@@ -1,0 +1,33 @@
+<?php
+/**
+ * Studio Tag - Twenty Seventeen functions and definitions
+ *
+ * When using a child theme (see http://codex.wordpress.org/Theme_Development and
+ * http://codex.wordpress.org/Child_Themes), you can override certain functions
+ * (those wrapped in a function_exists() call) by defining them first in your child theme's
+ * functions.php file. The child theme's functions.php file is included before the parent
+ * theme's file, so the child theme functions would be used.
+ *
+ * @package Studio Tag - Twenty Sixteen
+ * @since   0.1.0
+ */
+
+// Useful global constants.
+define( 'STUDIO_TAG_COM_VERSION', '0.1.0' );
+define( 'STUDIO_TAG_COM_TEMPLATE_URL', get_template_directory_uri() );
+define( 'STUDIO_TAG_COM_PATH', get_template_directory() . '/' );
+define( 'STUDIO_TAG_COM_INC', STUDIO_TAG_COM_PATH . 'includes/' );
+define( 'STUDIO_TAG_SITE_ADMIN', 1 );
+define( 'STUDIO_TAG_COM_IMAGE_SIZE', 'full' );
+
+// Include compartmentalized functions.
+require_once STUDIO_TAG_COM_INC . 'functions/core.php';
+
+// Include company metabox.
+require_once STUDIO_TAG_COM_INC . 'metaboxes/metabox-company.php';
+
+// Run the setup functions.
+studio_tag_com\Twenty_Seventeen\Core\setup();
+
+// Run the essential functions.
+// vincentragosta_com\Twenty_Sixteen\Essentials\setup();
