@@ -1,0 +1,99 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for the front page
+ * Location: partials/content-header-navigation-front-page
+ */
+
+#main-nav {
+	background-color: white;
+	border-bottom: 0px;
+}
+
+#main-nav .navbar-brand {
+	padding-left: 150px;
+}
+
+#main-nav .navbar-brand img {
+	width: 200px;
+}
+
+#main-nav .navbar-nav {
+	padding-top: 10px;
+	padding-right: 150px;
+}
+
+#main-nav .dropdown-toggle {
+	font-family: HelveticaNeueLT Std;
+	color: #221E1F;
+}
+
+#main-nav .dropdown-menu {
+	font-family: HelveticaNeueLT Std;
+	color: #221E1F;
+}
+
+#main-nav .mobile-show {
+	display: none;
+}
+
+/*--- Media Query for tablet ---*/
+@media only screen and ( max-width: 768px ) {
+	#main-nav .large-show {
+		display: none;
+	}
+
+	#main-nav .mobile-show {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		border-bottom: 1px solid gray;
+	}
+
+	#main-nav .mobile-menu-catagories {
+		font-size: 2.5vw;
+		display: flex;
+		justify-content: center;
+		font-family: HelveticaNeueLT Std;
+		color: #221E1F;
+	}
+
+	#main-nav .mobile-header {
+		font-size: 5.0vw;
+		display: flex;
+		justify-content: center;
+	}
+
+	#main-nav .mobile-menu-expand {
+		height: 0%;
+		display: none;
+	}
+
+	#main-nav .mobile-menu-expand-content {
+		font-size: 1.7vw;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		font-family: HelveticaNeueLT Std;
+		color: #221E1F;
+	}
+
+	/*--- TODO This is too generic. ---*/
+	figure a {
+		background-image: url( '../images/tagwall-black.png' );
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	/*--- TODO This is too generic. ---*/
+	figure {
+		padding-bottom: 3.5%;
+		margin-bottom: 15px;
+		position: relative;
+	}
+}

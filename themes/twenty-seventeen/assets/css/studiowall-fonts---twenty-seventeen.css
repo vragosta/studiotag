@@ -1,0 +1,19 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Fonts
+ */
+
+@font-face {
+	font-family: HelveticaNeueLT Std;
+	src: url( '../fonts/HelveticaNeueLTStd-Md.otf' );
+}
+
+@font-face{
+	font-family: Bodoni;
+	src: url( '../fonts/Linotype - BodoniLTPro.otf' );
+}
+
+@font-face{
+	font-family: HelveticaNeueLT Std;
+	src: url( '../fonts/HelveticaNeueLTStd-Md.otf' );
+}

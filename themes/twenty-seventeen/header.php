@@ -2,8 +2,10 @@
 /**
  * The template for displaying the header.
  *
- * @package Studio Tag - Twenty Seventeen
- * @since 0.1.0
+ * @package    Studio Tag - Twenty Seventeen
+ * @subpackage Studio Wall - Twenty Seventeen
+ * @since      0.1.0
+ * @uses       language_attributes(), wp_head(), body_class(), is_front_page(), get_template_part()
  */
 ?>
 
@@ -16,7 +18,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 	<?php if ( is_front_page() ) : ?>
-		<?php get_template_part( 'partials/content', 'header-front-page' ); ?>
+		<?php get_template_part( 'partials/content', 'header-navigation-front-page' ); ?>
 	<?php else : ?>
 		<?php get_template_part( 'partials/content', 'header-navigation' ); ?>
 	<?php endif; ?>

@@ -2,10 +2,13 @@
 /**
  * This file contains the necessary theme configuration functions.
  *
- * @package Studio Tag - Twenty Seventeen
- * @since   0.1.0
+ * @package    Studio Tag - Twenty Seventeen
+ * @subpackage Studio Wall - Twenty Seventeen
+ * @since      0.1.0
  */
-namespace studio_tag_com\Twenty_Seventeen\Core;
+
+// Declare core file namespace.
+namespace studio_tag_com\Studio_Wall\Twenty_Seventeen\Core;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -19,19 +22,20 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',     $n( 'studiotag_setup' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'scripts' ) );
-	add_action( 'wp_enqueue_scripts',    $n( 'styles' ) );
+	add_action( 'after_setup_theme',  $n( 'studiowall_setup' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 }
 
 /**
  * Declare theme support.
  *
  * @since  0.1.0
- * @uses   add_theme_support(), set_post_thumbnail_size(), add_image_size(), and add_post_type_support(), show_admin_bar()
+ * @uses   add_theme_support(), set_post_thumbnail_size(), add_post_type_support(), show_admin_bar()
  * @return void
  */
-function studiotag_setup() {
+function studiowall_setup() {
+
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -46,7 +50,7 @@ function studiotag_setup() {
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 
-	// TODO is this necessary?
+	// Create thumbnail default size.
 	set_post_thumbnail_size( 672, 372, true );
 
 	/**
@@ -72,27 +76,27 @@ function studiotag_setup() {
  * Enqueue scripts for front-end.
  *
  * @since  0.1.0
- * @uses   wp_register_script(), p_enqueue_script(), wp_localize_script()
+ * @uses   wp_register_script(), wp_enqueue_script(), wp_localize_script()
  * @return void
  */
 function scripts() {
 	wp_register_script(
 		'bootstrap',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
 		array( 'jquery' ),
-		STUDIO_TAG_COM_VERSION,
+		STUDIO_WALL_VERSION,
 		true
 	);
 
 	wp_enqueue_script(
-		'studio_tag_com',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/js/studiotag---twenty-seventeen.js",
+		'studio_wall',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/js/studiowall---twenty-seventeen.js",
 		array( 'jquery', 'bootstrap' ),
-		STUDIO_TAG_COM_VERSION,
+		STUDIO_WALL_VERSION,
 		true
 	);
 
-	// wp_localize_script( 'vincentragosta_com', 'themeUrl', STUDIO_TAG_COM_TEMPLATE_URL );
+	// wp_localize_script( 'vincentragosta_com', 'themeUrl', STUDIO_WALL_TEMPLATE_URL );
 }
 
 /**
@@ -105,43 +109,67 @@ function scripts() {
 function styles() {
 	wp_register_style(
 		'fontawesome',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
 		array(),
-		STUDIO_TAG_COM_VERSION
+		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'ionicons',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
 		array(),
-		STUDIO_TAG_COM_VERSION
+		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'bootstrap',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
 		array( 'fontawesome' ),
-		STUDIO_TAG_COM_VERSION
+		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'sanitize',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
 		array(),
-		STUDIO_TAG_COM_VERSION
+		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'hamburger',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/lib/hamburger/hamburger.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/hamburger/hamburger.css",
 		array(),
-		STUDIO_TAG_COM_VERSION
+		STUDIO_WALL_VERSION
 	);
 
+	wp_register_style(
+		'fonts',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-fonts---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
+		'studio_wall_header',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	// Only load this CSS if on the front page.
+	if ( is_front_page() ) :
+		wp_enqueue_style(
+			'studio_wall_header_front_page',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
 	wp_enqueue_style(
-		'studio_tag_com',
-		STUDIO_TAG_COM_TEMPLATE_URL . "/assets/css/studiotag---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger' ),
-		STUDIO_TAG_COM_VERSION
+		'studio_wall',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'studio_wall_header' ),
+		STUDIO_WALL_VERSION
 	);
 }

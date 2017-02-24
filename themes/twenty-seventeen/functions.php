@@ -1,6 +1,6 @@
 <?php
 /**
- * Studio Tag - Twenty Seventeen functions and definitions
+ * Functions and definitions
  *
  * When using a child theme (see http://codex.wordpress.org/Theme_Development and
  * http://codex.wordpress.org/Child_Themes), you can override certain functions
@@ -8,26 +8,23 @@
  * functions.php file. The child theme's functions.php file is included before the parent
  * theme's file, so the child theme functions would be used.
  *
- * @package Studio Tag - Twenty Sixteen
- * @since   0.1.0
+ * @package    Studio Tag - Twenty Seventeen
+ * @subpackage Studio Wall - Twenty Seventeen
+ * @since      0.1.0
  */
 
 // Useful global constants.
-define( 'STUDIO_TAG_COM_VERSION', '0.1.0' );
-define( 'STUDIO_TAG_COM_TEMPLATE_URL', get_template_directory_uri() );
-define( 'STUDIO_TAG_COM_PATH', get_template_directory() . '/' );
-define( 'STUDIO_TAG_COM_INC', STUDIO_TAG_COM_PATH . 'includes/' );
-define( 'STUDIO_TAG_SITE_ADMIN', 1 );
-define( 'STUDIO_TAG_COM_IMAGE_SIZE', 'full' );
+define( 'STUDIO_WALL_VERSION', '0.1.0' );
+define( 'STUDIO_WALL_TEMPLATE_URL', get_template_directory_uri() );
+define( 'STUDIO_WALL_PATH', get_template_directory() . '/' );
+define( 'STUDIO_WALL_INC', STUDIO_WALL_PATH . 'includes/' );
+define( 'STUDIO_WALL_SITE_ADMIN', 1 );
 
 // Include compartmentalized functions.
-require_once STUDIO_TAG_COM_INC . 'functions/core.php';
+require_once STUDIO_WALL_INC . 'functions/core.php';
 
 // Include company metabox.
-require_once STUDIO_TAG_COM_INC . 'metaboxes/metabox-company.php';
+require_once STUDIO_WALL_INC . 'metaboxes/metabox-company.php';
 
 // Run the setup functions.
-studio_tag_com\Twenty_Seventeen\Core\setup();
-
-// Run the essential functions.
-// vincentragosta_com\Twenty_Sixteen\Essentials\setup();
+studio_tag_com\Studio_Wall\Twenty_Seventeen\Core\setup();

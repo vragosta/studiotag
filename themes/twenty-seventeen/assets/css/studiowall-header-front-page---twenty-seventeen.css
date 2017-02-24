@@ -1,0 +1,121 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for the front page
+ * Location: partials/content-header-navigation-front-page
+ */
+
+#hamburger-nav {
+	/*--- have to set font for header ---*/
+	width: 100%;
+	background-color: white;
+	border-bottom: 0px;
+}
+
+#hamburger-nav .navbar-brand img {
+	width: 200px;
+}
+
+#hamburger-nav .navbar-brand {
+	padding-left: 120px;
+}
+
+#hamburger-nav .container-fluid {
+	/*--- Blank for now ---*/
+	display: block;
+}
+
+#hamburger-nav .navbar-text {
+	padding-right: 70px;
+}
+
+#hamburger-nav .navbar-header {
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.overlay {
+	margin-top: 70px;
+	height: 0%;
+	width: 100%;
+	position: fixed; /*--- Stay in place ---*/
+	z-index: 1;  /*--- Sit on top ---*/
+	left: 0;
+	top: 0;
+	overflow-x: hidden;
+	transition: 0.5s;
+}
+
+.overlay .overlay-catagories {
+	font-family: HelveticaNeueLT Std;
+	font-size: 3.5vw;
+	font-weight: bold;
+	color: #A3A5A8
+}
+
+.hamburger-hover-list div {
+	font-family: HelveticaNeueLT Std;
+	font-size: 2.0vw;
+	color: #A3A5A8
+}
+
+.overlay .overlay-catagories:hover {
+	color: gray;
+}
+
+.overlay-content {
+	position: relative;
+	top: 10%; /*--- 25% from the top ---*/
+	width: 100%; /*--- 100% width ---*/
+}
+
+.overlay .catagory-container {
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid gray;
+}
+
+.hamburger-hover-list {
+	display:none;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#hamburger-nav .navbar-text {
+		padding-right: 0px;
+	}
+
+	#hamburger-nav .container-fluid {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	#hamburger-nav .navbar-text {
+		padding-right: 0px;
+		padding-left: 100px;
+	}
+
+	#hamburger-nav .navbar-brand {
+		padding-left: 0px;
+		padding-right: 200px;
+	}
+
+	.overlay .overlay-catagories {
+		padding-left: 50px;
+	}
+}
+
+@media only screen and ( max-width: 480px ) {
+	#hamburger-nav .navbar-text {
+		padding-right: 0px;
+		padding-left: 50px;
+	}
+
+	#hamburger-nav .navbar-brand {
+		padding-left: 0px;
+		padding-right: 100px;
+	}
+
+	#hamburger-nav .navbar-brand img {
+		width: 100px;
+	}
+}
