@@ -150,6 +150,13 @@ function styles() {
 	);
 
 	wp_register_style(
+		'core-components',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-core-components---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
 		'studio_wall_header',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
 		array(),
@@ -169,7 +176,7 @@ function styles() {
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'studio_wall_header' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio_wall_header' ),
 		STUDIO_WALL_VERSION
 	);
 }

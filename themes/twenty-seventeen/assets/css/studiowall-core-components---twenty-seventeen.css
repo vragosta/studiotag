@@ -1,0 +1,18 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Core Components
+ */
+
+body {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+a {
+	color: #221E1F;
+	font-family: HelveticaNeueLT Std;
+}
+
+a:hover {
+	color: #221E1F;
+}

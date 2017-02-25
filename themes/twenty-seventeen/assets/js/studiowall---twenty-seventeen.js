@@ -28,42 +28,5 @@
 
 		});
 
-		/***
-		 * Event handler for overlay-catagories class. Gets id
-		 * of specific catagory hovered and display corresponding sub-list
-		 */
-		$( '.overlay-catagories' ).hover(function() {
-
-			// initially set everything to display:none; to hide other menu items
-			$( '.hamburger-hover-list' )
-				.css( 'display', 'none' );
-
-			// console.log($(this).attr("id") + " class hover function");
-			$listToShowID = "#list-" + $( this ).attr( 'id' );
-
-			$( $listToShowID )
-				.css({
-					'display'        : 'flex',
-					'flex-direction' : 'column'
-				});
-
-		});
-
-		// TODO Add comment
-		$( '.mobile-menu-catagories' ).hover( function() {
-
-			// Hide everything first
-			$( '.mobile-menu-expand' )
-				.css( 'display', 'none' );
-
-			$idToShow = "#" + $( this ).attr( 'id' ) + "-expand";
-
-			$( $idToShow )
-				.css({
-					'display'        : 'flex',
-					'flex-direction' : 'column'
-				});
-		});
-
 	});
 } )( jQuery );

@@ -1,99 +1,112 @@
 /**
  * Studio Wall - Twenty Seventeen
- * Styles for the front page
- * Location: partials/content-header-navigation-front-page
+ * Styles for header across site
+ *
+ * Location: partials/content-header-navigation-vr
  */
 
-#main-nav {
-	background-color: white;
-	border-bottom: 0px;
+/*--- Header navigation container element ---*/
+.header-navigation {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
+	flex-direction: row;
 }
 
-#main-nav .navbar-brand {
-	padding-left: 150px;
+/*--- Media Query for header navigation container element ---*/
+@media only screen and ( max-width: 768px ) {
+	/*--- Change flex layout ---*/
+	.header-navigation {
+		flex-direction: column;
+	}
 }
 
-#main-nav .navbar-brand img {
-	width: 200px;
+/*--- Since we are not using the image trick, lets temporarily control the width here ---*/
+#logo img {
+	width: 250px;
 }
 
-#main-nav .navbar-nav {
-	padding-top: 10px;
-	padding-right: 150px;
+/*--- Default menu styles, using flex instead of bootstrap ---*/
+#menu {
+	display: inline-flex;
+	margin: 0;
+	padding: 0;
 }
 
-#main-nav .dropdown-toggle {
-	font-family: HelveticaNeueLT Std;
-	color: #221E1F;
+/*--- Media Query for menu ---*/
+@media only screen and ( max-width: 768px ) {
+	/*--- Change display to block to prevent inline look ---*/
+	#menu {
+		display: block;
+		margin: 1rem 0 0 0;
+	}
 }
 
-#main-nav .dropdown-menu {
-	font-family: HelveticaNeueLT Std;
-	color: #221E1F;
+/*--- Only target the first level li elements ---*/
+#menu > li {
+	list-style: none;
+	margin: 0 1rem;
 }
 
-#main-nav .mobile-show {
+/*--- Media Query for menu list items ---*/
+@media only screen and ( max-width: 768px ) {
+	/*--- Only target the first level li elements ---*/
+	#menu > li {
+		text-align: center;
+	}
+}
+
+/*--- Hide the mobile button ---*/
+#menu .mobile {
 	display: none;
 }
 
-/*--- Media Query for tablet ---*/
+/*--- Media Query for mobile button ---*/
 @media only screen and ( max-width: 768px ) {
-	#main-nav .large-show {
-		display: none;
-	}
-
-	#main-nav .mobile-show {
+	#menu .mobile {
 		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
-		justify-content: center;
-		border-bottom: 1px solid gray;
 	}
+}
 
-	#main-nav .mobile-menu-catagories {
-		font-size: 2.5vw;
+/*--- Styles to the expanded menu ( when hovering over the mobile button ) ---*/
+#menu .expand {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+/*--- Media Query for expanded menu ---*/
+@media only screen and ( max-width: 768px ) {
+	#menu .mobile:hover .expand {
 		display: flex;
-		justify-content: center;
-		font-family: HelveticaNeueLT Std;
-		color: #221E1F;
 	}
+}
 
-	#main-nav .mobile-header {
-		font-size: 5.0vw;
-		display: flex;
-		justify-content: center;
+/*--- Control font size of expanded menu link items ---*/
+#menu .expand li a {
+	font-size: 1.4rem;
+}
+
+#menu > li a {
+	text-decoration: none;
+}
+
+/*--- Media Query for menu links ---*/
+@media only screen and ( max-width: 768px ) {
+	#menu > li a {
+		font-size: 1.8rem;
 	}
+}
 
-	#main-nav .mobile-menu-expand {
-		height: 0%;
+/*--- Media Queries for CSS that isnt being maintained ---*/
+@media only screen and ( max-width: 768px ) {
+	#menu .dropdown {
 		display: none;
-	}
-
-	#main-nav .mobile-menu-expand-content {
-		font-size: 1.7vw;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		font-family: HelveticaNeueLT Std;
-		color: #221E1F;
-	}
-
-	/*--- TODO This is too generic. ---*/
-	figure a {
-		background-image: url( '../images/tagwall-black.png' );
-		background-position: center;
-		background-size: contain;
-		background-repeat: no-repeat;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		right: 0;
-	}
-
-	/*--- TODO This is too generic. ---*/
-	figure {
-		padding-bottom: 3.5%;
-		margin-bottom: 15px;
-		position: relative;
 	}
 }
