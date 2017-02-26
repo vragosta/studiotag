@@ -8,71 +8,31 @@
  */
 ?>
 
-<nav id="hamburger-nav" class="navbar navbar-default navbar-fixed-top">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="<?php echo home_url(); ?>">
-				<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/tagwall.png'; ?>">
-			</a>
-		</div>
+<nav class="header-navigation-front-page">
+	<section id="logo">
+		<a href="<?php echo home_url(); ?>">
+			<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/tagwall.png'; ?>" />
+		</a>
+	</section>
 
-			<div class="navbar-text navbar-right">
-				<button class="hamburger hamburger--squeeze" type="button">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-				</button>
-			</div>
-	</div>
+	<button class="hamburger hamburger--squeeze" type="button">
+		<span class="hamburger-box">
+			<span class="hamburger-inner"></span>
+		</span>
+	</button>
 </nav>
 
-<section class="overlay">
-	<div class="overlay-content">
-		<div class="container">
-			<div class="catagory-container col-md-6 col-sm-6 col-xs-6">
-				<!-- Use data-id for js easy access -->
-				<h1 class="overlay-catagories" data-id="company">Company</h1>
-				<h1 class="overlay-catagories" data-id="wall-details">Wall Details</h1>
-				<h1 class="overlay-catagories" data-id="projects">Projects</h1>
-				<h1 class="overlay-catagories" data-id="news">News</h1>
-				<h1 class="overlay-catagories" data-id="contact">Contact</h1>
-			</div>
-
-			<!-- Use data-id for js easy access -->
-			<div id="list-company" class="hamburger-hover-list col-md-6 col-sm-6 col-xs-6">
-				<span data-id="history">History</span>
-				<span data-id="focus">Focus</span>
-				<span data-id="solutions">Solutions</span>
-				<span data-id="team">Team</span>
-			</div>
-
-			<div id="list-wall-details" class="hamburger-hover-list col-md-6 col-sm-6 col-xs-6">
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA</span>
-			</div>
-
-			<div id="list-projects" class="hamburger-hover-list col-md-6 col-sm-6 col-xs-6">
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA2</span>
-			</div>
-
-			<div id="list-news" class="hamburger-hover-list col-md-6 col-sm-6 col-xs-6">
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA5</span>
-			</div>
-
-			<div id="list-contact" class="hamburger-hover-list col-md-6 col-sm-6 col-xs-6">
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA</span>
-				<span>TBA6</span>
-			</div>
-		</div>
-	</div>
+<section class="menu-container">
+	<ul>
+		<li><a href="#">Company</a></li>
+		<li><a href="#">Wall Details</a></li>
+		<li><a href="#">Projects</a></li>
+		<li><a href="#">News</a></li>
+	</ul>
+	<ul>
+		<li><a href="#">History</a></li>
+		<li><a href="#">Focus</a></li>
+		<li><a href="#">Solutions</a></li>
+		<li><a href="#">Team</a></li>
+	</ul>
 </section>

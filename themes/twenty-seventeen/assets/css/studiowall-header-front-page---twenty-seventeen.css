@@ -1,122 +1,100 @@
 /**
  * Studio Wall - Twenty Seventeen
- * Styles for the haeder on the front page
+ * Styles for header on the front page
  *
  * Location: partials/content-header-navigation-front-page
  */
 
-#hamburger-nav {
-	/*--- have to set font for header ---*/
-	width: 100%;
-	background-color: white;
-	border-bottom: 0px;
-}
-
-#hamburger-nav .navbar-brand img {
-	width: 200px;
-}
-
-#hamburger-nav .navbar-brand {
-	padding-left: 120px;
-}
-
-#hamburger-nav .container-fluid {
-	/*--- Blank for now ---*/
-	display: block;
-}
-
-#hamburger-nav .navbar-text {
-	padding-right: 70px;
-}
-
-#hamburger-nav .navbar-header {
-	padding-top: 20px;
-	padding-left: 20px;
-}
-
-.overlay {
-	margin-top: 70px;
-	height: 0%;
-	width: 100%;
-	position: fixed; /*--- Stay in place ---*/
-	z-index: 1;  /*--- Sit on top ---*/
-	left: 0;
-	top: 0;
-	overflow-x: hidden;
-	transition: 0.5s;
-}
-
-.overlay .overlay-catagories {
-	font-family: HelveticaNeueLT Std;
-	font-size: 3.5vw;
-	font-weight: bold;
-	color: #A3A5A8
-}
-
-.hamburger-hover-list div {
-	font-family: HelveticaNeueLT Std;
-	font-size: 2.0vw;
-	color: #A3A5A8
-}
-
-.overlay .overlay-catagories:hover {
-	color: gray;
-}
-
-.overlay-content {
-	position: relative;
-	top: 10%; /*--- 25% from the top ---*/
-	width: 100%; /*--- 100% width ---*/
-}
-
-.overlay .catagory-container {
+/*--- Header navigation front page container element ---*/
+.header-navigation-front-page {
 	display: flex;
-	flex-direction: column;
-	border-right: 1px solid gray;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem;
 }
 
-.hamburger-hover-list {
-	display:none;
+/*--- Only target first level button elements ---*/
+.header-navigation-front-page > button {
+	display: flex;
+	align-items: center;
 }
 
+/*--- Hover for first level button elements ---*/
+.header-navigation-front-page > button:hover {
+	opacity: 1;
+}
+
+/*--- Menu container ---*/
+.menu-container {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/*--- Visible class for use in js ---*/
+.menu-container.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+/*--- Not visible class for use in js ---*/
+.menu-container.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- Styles for list elements within menu container ---*/
+.menu-container ul {
+	padding: 0;
+	width: 100%; /*--- Control the width of the second <ul> here ---*/
+	padding: 0 1.5rem;
+	margin: 0;
+}
+
+/*--- Styles for first list element within menu container ---*/
+.menu-container ul:first-child {
+	border-right: 0.1rem solid #A2A4A7;
+	width: 55%; /*--- Control width of first <ul> here ---*/
+}
+
+/*--- Media Query for first list element ---*/
 @media only screen and ( max-width: 768px ) {
-	#hamburger-nav .navbar-text {
-		padding-right: 0px;
-	}
-
-	#hamburger-nav .container-fluid {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	#hamburger-nav .navbar-text {
-		padding-right: 0px;
-		padding-left: 100px;
-	}
-
-	#hamburger-nav .navbar-brand {
-		padding-left: 0px;
-		padding-right: 200px;
-	}
-
-	.overlay .overlay-catagories {
-		padding-left: 50px;
+	.menu-container ul:first-child {
+		width: 100%; /*--- Control width of first <ul> here ---*/
 	}
 }
 
-@media only screen and ( max-width: 480px ) {
-	#hamburger-nav .navbar-text {
-		padding-right: 0px;
-		padding-left: 50px;
-	}
+/*--- Styles for all links in menu container ---*/
+.menu-container ul li a {
+	font-size: 2rem; /*--- Control the font size of the second <ul> links here ---*/
+	text-decoration: none;
+	color: #A2A4A7;
+	transition: color 0.3s ease-in-out;
+}
 
-	#hamburger-nav .navbar-brand {
-		padding-left: 0px;
-		padding-right: 100px;
+/*--- Media Query for all links in menu container ---*/
+@media only screen and ( max-width: 768px ) {
+	.menu-container ul li a {
+		font-size: 1.5rem; /*--- Control the font size of the second <ul> links here ---*/
 	}
+}
 
-	#hamburger-nav .navbar-brand img {
-		width: 100px;
+/*--- Change font size for links in first list within menu container ---*/
+.menu-container ul:first-child li a {
+	font-size: 4.2rem;
+}
+
+/*--- Media Query for links in first list within menu container ---*/
+@media only screen and ( max-width: 768px ) {
+	.menu-container ul:first-child li a {
+		font-size: 3rem;
 	}
+}
+
+/*--- Hover effect for all links in menu container ---*/
+.menu-container li a:hover {
+	color: #221E1F;
 }

@@ -16,3 +16,13 @@ a {
 a:hover {
 	color: #221E1F;
 }
+
+button:active,
+button:focus,
+button:active:focus {
+	outline: none;
+}
+
+li {
+	list-style: none;
+}
