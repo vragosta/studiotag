@@ -28,6 +28,8 @@
 .menu-container {
 	display: flex;
 	position: absolute;
+	height: 0;
+	overflow: hidden;
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
@@ -38,12 +40,21 @@
 .menu-container.visible {
 	opacity: 1;
 	visibility: visible;
+	height: 24rem;
+}
+
+/*--- Media Query for visible class in js ---*/
+@media only screen and ( max-width: 768px ) {
+	.menu-container.visible {
+		height: 16.8rem; /*--- Consider finding a better approach ---*/
+	}
 }
 
 /*--- Not visible class for use in js ---*/
 .menu-container.not-visible {
 	opacity: 0;
 	visibility: hidden;
+	height: 0;
 }
 
 /*--- Styles for list elements within menu container ---*/
