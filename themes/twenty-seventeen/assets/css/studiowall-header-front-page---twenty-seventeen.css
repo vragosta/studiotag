@@ -78,6 +78,19 @@
 	}
 }
 
+/*--- Styles for the last ( second ) list element within menu container ---*/
+.menu-container ul:last-child {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+/*--- TODO ---*/
+.menu-container ul:last-child.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
 /*--- Styles for all links in menu container ---*/
 .menu-container ul li a {
 	font-size: 2rem; /*--- Control the font size of the second <ul> links here ---*/

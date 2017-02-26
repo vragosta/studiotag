@@ -13,7 +13,7 @@
 		 * When the hamburger button is clicked, toggle display of the menu.
 		 *
 		 * @since 0.1.0
-		 * @uses  toggleClass(), hasClass()
+		 * @uses  toggleClass(), hasClass(), removeClass(), addClass()
 		 */
 		$( '.header-navigation-front-page .hamburger' ).on( 'click', function() {
 
@@ -33,6 +33,34 @@
 				$( '.menu-container' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+			}
+
+			// Make sure the second list element within menu container is not displayed by default.
+			$( '.menu-container ul:last-child' )
+				.removeClass( 'visible' );
+		});
+
+		/**
+		 * On hover display menu, display the other menu.
+		 *
+		 * @since 0.1.0
+		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
+		 */
+		$( '.menu-container ul:first-child li a' ).on( 'hover', function() {
+
+			// Define local variables.
+			var id = $( this ).data( 'id' );
+
+			if ( id == 'company' ) {
+
+				// Add class 'visible' to the menu
+				$( '.menu-container ul:last-child' )
+					.addClass( 'visible' );
+			} else {
+
+				// Remove calss 'visible' from the menu.
+				$( '.menu-container ul:last-child' )
+					.removeClass( 'visible' );
 			}
 		});
 
