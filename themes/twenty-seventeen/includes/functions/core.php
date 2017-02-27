@@ -157,7 +157,7 @@ function styles() {
 	);
 
 	wp_register_style(
-		'studio_wall_header',
+		'studio-wall-header',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
@@ -166,17 +166,24 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'studio_wall_header_front_page',
+			'studio-wall-header-front-page',
 			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
 	endif;
 
+	wp_register_style(
+		'studio-wall-footer',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio_wall_header' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
 }

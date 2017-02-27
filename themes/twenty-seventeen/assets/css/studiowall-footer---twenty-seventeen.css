@@ -1,0 +1,128 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for footer
+ *
+ * Location: footer.php
+ */
+
+#footer{
+	margin: 25px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid gray;
+	border-left: 1px solid black;
+	border-right: 1px solid gray;
+}
+
+.social-icons img{
+	width: 2%;
+	margin: 0 auto;
+}
+
+.social-icons{
+	text-align: center;
+}
+
+a{
+	color: #221E1F;
+}
+
+#footer-img{
+	width: 120px;
+}
+
+#contact-and-logo {
+	color: #221E1F;
+	font-family: HelveticaNeueLT Std;
+	padding-bottom: 80px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-right: 1px solid black;
+}
+
+#contact-and-logo div{
+	font-size: 1vw;
+}
+
+.social-icons{
+	padding-top: 25px;
+}
+
+#directory {
+	font-family: HelveticaNeueLT Std;
+}
+
+#directory .dir-content{
+	display: flex;
+	padding: 15px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.dir-content h3{
+	font-size: 1.3vw;
+}
+
+.dir-content div{
+	font-size: 1vw;
+}
+
+#visible-titles{
+	font-weight: 600;
+}
+
+
+.hidden-titles{
+	display: none;
+}
+
+#directory hr{
+	border-width: 0.5px;
+	border-style:solid;
+	border-color: gray;
+}
+
+/*Media Query*/
+@media only screen and ( max-width: 768px ) {
+
+	#directory .dir-content-lists{
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.hidden-titles{
+		font-weight: 600;
+		padding-bottom: 0px;
+	}
+
+	#directory-row{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 991px){
+
+	.hidden-titles{
+		padding-bottom: 10px;
+		display: block;
+	}
+
+	#contact-and-logo{
+		padding-bottom: 0px;
+	}
+
+	.visible-titles{
+		display: none;
+	}
+
+	.dir-content div{
+		font-size: 1.5vw;
+	}
+
+	#directory-row{
+		display: none;
+	}
+}
