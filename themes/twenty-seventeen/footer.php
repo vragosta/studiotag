@@ -11,22 +11,31 @@
 
 		<footer id="footer">
 			<section>
+
+				<!-- Logo -->
 				<a href="<?php echo home_url(); ?>">
 					<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
 				</a>
 
-				<ul>
-					<li>321 West 44th Street</li>
-					<li>Suite 200</li>
-					<li>New York, NY 10036</li>
-				</ul>
+				<div>
 
-				<ul>
-					<li><a href:"tel:+1 212.354.9255">+1 212.354.9255</a></li>
-					<li><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></li>
-				</ul>
+					<!-- Make this dynamic -->
+					<ul>
+						<li>321 West 44th Street</li>
+						<li>Suite 200</li>
+						<li>New York, NY 10036</li>
+					</ul>
 
-				<?php get_template_part( 'partials/content', 'social' ); ?>
+					<!-- Make this dynamic -->
+					<ul>
+						<li><a href:"tel:+1 212.354.9255">+1 212.354.9255</a></li>
+						<li><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></li>
+					</ul>
+
+					<!-- TODO -->
+					<?php get_template_part( 'partials/content', 'social' ); ?>
+
+				</div>
 
 			</section>
 
