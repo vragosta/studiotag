@@ -20,7 +20,11 @@
 
 /*--- TODO REMOVE ---*/
 #footer > section {
-	height: 350px;
+	height: 35rem;
+}
+
+#footer > section a {
+	text-decoration: none;
 }
 
 /*--- TODO ---*/
@@ -43,7 +47,7 @@
 
 /*--- TODO ---*/
 #footer img {
-	width: 150px;
+	width: 15rem;
 }
 
 /*--- TODO ---*/
@@ -56,6 +60,14 @@
 #footer > section:first-child ul li {
 	display: flex;
 	justify-content: center;
+}
+
+#footer .social a {
+	margin: 0 .5rem;
+}
+
+#footer .social img {
+	width: 2.5rem;
 }
 
 /*--- TODO ---*/
@@ -85,6 +97,13 @@
 	border-bottom: 0.1rem solid #221E1F;
 }
 
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column div:first-child {
+		border-bottom: none;
+		border-top: 0.1rem solid #221E1F;
+	}
+}
+
 /*--- TODO ---*/
 #footer > section:last-child .column div:first-child span {
 	text-transform: uppercase;
@@ -98,4 +117,15 @@
 	justify-content: center;
 	align-items: center;
 	height: 70%;
+	padding: 1rem;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column div:last-child {
+		justify-content: flex-start;
+	}
+}
+
+#footer > section:last-child .column div:last-child span {
+	text-align: center;
 }
