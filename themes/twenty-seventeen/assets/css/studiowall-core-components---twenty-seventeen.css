@@ -6,6 +6,7 @@
 body {
 	margin: 0 auto;
 	max-width: 1200px;
+	padding-bottom: 1.5rem; /*--- TODO ---*/
 }
 
 a {

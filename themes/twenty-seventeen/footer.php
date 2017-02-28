@@ -9,70 +9,86 @@
  */
 ?>
 
-		<footer id="footer" class="container-fluid">
-			<div class="row">
-				<div id="contact-and-logo" class="col-md-4">
-					<img id="footer-img" src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/tagwall.png'; ?>">
-					<div>321 West 44th Street</div>
-					<div>Suite 200</div>
-					<div>New York, NY 10036</div>
-					<p>
-					<div><a href:"tel:+1 212.354.9255">+1 212.354.9255</a></div>
-					<div><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></div>
-					<p>
-					<div class="social-icons">
-						<a href="#"><img src="img/Social_Media_Icons/studiotag_twitter_icon.png"></a>
-						<a href="https://www.facebook.com/studiotagnyc/"><img src="img/Social_Media_Icons/studiotag_facebook_icon.png"></a>
-						<a href="#"><img src="img/Social_Media_Icons/sotudiotag_pinterest_icon.png"></a>
-						<a href="https://www.instagram.com/studio_tag/"><img src="img/Social_Media_Icons/studiotag_instagram_icon.png"></a>
-						<a href="https://www.linkedin.com/company/studio-tag-llc"><img src="img/Social_Media_Icons/studiotag_linkedin_icon.png"></a>
+		<footer id="footer">
+			<section>
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
+				</a>
+
+				<ul>
+					<li>321 West 44th Street</li>
+					<li>Suite 200</li>
+					<li>New York, NY 10036</li>
+				</ul>
+
+				<ul>
+					<li><a href:"tel:+1 212.354.9255">+1 212.354.9255</a></li>
+					<li><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></li>
+				</ul>
+
+				<?php get_template_part( 'partials/content', 'social' ); ?>
+
+			</section>
+
+			<section>
+
+				<!-- TODO -->
+				<div class="column one">
+
+					<!-- TODO -->
+					<div>
+						<span>Studio</span>
+					</div>
+
+					<!-- TODO -->
+					<div>
+						<span><a href="">Seating</a></span>
+						<span><a href="#">Architectural & Interiors</a></span>
+						<span><a href="#">Tables</a></span>
+						<span><a href="#">Desks & Storage</a></span>
+						<span><a href="#">Workspaces</a></span>
+						<span><a href="#">Accessories</a></span>
 					</div>
 				</div>
-				<div id="directory" class="col-md-8">
-					<div id="directory-row" class="row">
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>STUDIO</strong></h3>
-						</div>
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>WALL</strong></h3>
-						</div>
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>WREN</strong></h3>
-						</div>
+
+				<!-- TODO -->
+				<div class="column two">
+
+					<!-- TODO -->
+					<div>
+						<span>Wall</span>
 					</div>
-					<div id="border-row" class="row">
-						<hr>
-					</div>
-					<!-- 3 columns for each list of content -->
-					<div class="col-md-4 col-sm-4 col-xs-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>STUDIO</strong></h3>
-						<a href="#">Seating</a>
-						<a href="#">Architectural & Interiors</a>
-						<a href="#">Tables</a>
-						<a href="#">Desks & Storage</a>
-						<a href="#">Workspaces</a>
-						<a href="#">Accessories</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>WALL</strong></h3>
-						<a href="#">Encore</a>
-						<a href="#">Slimline</a>
-						<a href="#">Ion</a>
-						<a href="#">Industrial Sash</a>
-						<a href="#">Greenwall</a>
-						<a href="#">Prebuilt</a>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>WREN</strong></h3>
-						<a href="#">TBA</a>
-						<a href="#">TBA</a>
-						<a href="#">TBA</a>
-						<a href="#">TBA</a>
-						<a href="#">TBA</a>
-						<a href="#">TBA</a>
+
+					<!-- TODO -->
+					<div>
+						<span><a href="#">Encore</a></span>
+						<span><a href="#">Slimline</a></span>
+						<span><a href="#">Ion</a></span>
+						<span><a href="#">Industrial Sash</a></span>
+						<span><a href="#">Greenwall</a></span>
+						<span><a href="#">Prebuilt</a></span>
 					</div>
 				</div>
-			</div>
+
+				<!-- TODO -->
+				<div class="column three">
+
+					<!-- TODO -->
+					<div>
+						<span>Wren</span>
+					</div>
+
+					<!-- TODO -->
+					<div>
+						<span><a href="#">TBA</a></span>
+						<span><a href="#">TBA</a></span>
+						<span><a href="#">TBA</a></span>
+						<span><a href="#">TBA</a></span>
+						<span><a href="#">TBA</a></span>
+						<span><a href="#">TBA</a></span>
+					</div>
+				</div>
+			</section>
 		</footer>
 	</body>
 </html>
