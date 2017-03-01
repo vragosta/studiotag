@@ -7,6 +7,9 @@
  * @since      0.1.0
  * @uses       wp_footer()
  */
+	$user  = get_user_by( 'id', STUDIO_WALL_SITE_ADMIN );
+	$phone = get_user_meta( $user->ID, 'phone', true );
+
 ?>
 
 		<footer id="footer">
@@ -19,17 +22,16 @@
 
 				<div>
 
-					<!-- Make this dynamic -->
+					<!-- TODO Make this dynamic -->
 					<ul>
 						<li>321 West 44th Street</li>
 						<li>Suite 200</li>
 						<li>New York, NY 10036</li>
 					</ul>
 
-					<!-- Make this dynamic -->
 					<ul>
-						<li><a href:"tel:+1 212.354.9255">+1 212.354.9255</a></li>
-						<li><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></li>
+						<li><a href:"tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li>
+						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>"><?php echo esc_html( $user->user_email ); ?></a></li>
 					</ul>
 
 					<!-- Social Icons -->

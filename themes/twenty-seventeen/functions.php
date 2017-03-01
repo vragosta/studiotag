@@ -25,6 +25,7 @@ require_once STUDIO_WALL_INC . 'functions/core.php';
 
 // Include company metabox.
 require_once STUDIO_WALL_INC . 'metaboxes/metabox-company.php';
+require_once STUDIO_WALL_INC . 'metaboxes/metabox-user.php';
 
 // Run the setup functions.
 studio_tag_com\Studio_Wall\Twenty_Seventeen\Core\setup();
