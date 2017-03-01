@@ -6,7 +6,7 @@
 body {
 	margin: 0 auto;
 	max-width: 1200px;
-	padding-bottom: 1.5rem; /*--- TODO ---*/
+	padding: 1.5rem 0 2rem 0; /*--- Bottom is slightly larger to accomodate for flex positioning of image in header ---*/
 }
 
 a {

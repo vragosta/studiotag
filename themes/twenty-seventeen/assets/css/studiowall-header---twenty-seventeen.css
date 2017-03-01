@@ -10,8 +10,9 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.5rem;
+	padding: 0 1.5rem 1.5rem 1.5rem;
 	flex-direction: row;
+	height: 7rem;
 }
 
 /*--- Media Query for header navigation container element ---*/
@@ -19,6 +20,7 @@
 	/*--- Change flex layout ---*/
 	.header-navigation {
 		flex-direction: column;
+		height: auto; /*--- Removes hard coded height ---*/
 	}
 }
 
@@ -99,8 +101,9 @@
 
 /*--- Media Query for menu links ---*/
 @media only screen and ( max-width: 768px ) {
-	#menu > li a {
-		font-size: 1.8rem;
+	#menu > li > a {
+		font-size: 2rem;
+		line-height: 2;
 	}
 }
 

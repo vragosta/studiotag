@@ -10,7 +10,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 1.5rem;
+	padding: 0 1.5rem 1.5rem 1.5rem;
+	height: 7rem;
 }
 
 /*--- Only target first level button elements ---*/

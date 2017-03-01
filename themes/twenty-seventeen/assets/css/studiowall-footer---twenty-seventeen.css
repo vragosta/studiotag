@@ -9,6 +9,7 @@
 #footer {
 	display: flex;
 	border: 0.1rem solid #221E1F;
+	margin: 0 1rem;
 }
 
 /*--- Media Query for footer container element ---*/
@@ -68,6 +69,7 @@
 #footer > section:first-child ul li {
 	display: flex;
 	justify-content: center;
+	color: #221E1F;
 }
 
 /*--- Styles for links in the social segment ---*/
@@ -121,6 +123,17 @@
 	font-size: 3.3rem;
 }
 
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column div:first-child span {
+		font-size: 2.8rem;
+	}
+}
+
+/*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
+#footer > section:last-child .column a {
+	font-size: 1.5rem;
+}
+
 /*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:last-child {
 	display: flex;
@@ -141,4 +154,5 @@
 /*--- Center align the span elements in the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:last-child span {
 	text-align: center;
+	line-height: 1.6;
 }
