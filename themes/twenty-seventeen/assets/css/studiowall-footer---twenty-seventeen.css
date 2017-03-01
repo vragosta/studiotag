@@ -5,29 +5,31 @@
  * Location: footer.php
  */
 
-/*--- TODO ---*/
+/*--- Footer container element ---*/
 #footer {
 	display: flex;
 	border: 0.1rem solid #221E1F;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for footer container element ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer {
 		flex-direction: column;
 	}
 }
 
-/*--- TODO REMOVE ---*/
+/*--- Control the height of the two section elements ---*/
+/*--- NOTE: This can be optimized by using padding on the inner elements ---*/
 #footer > section {
 	height: 35rem;
 }
 
+/*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
 }
 
-/*--- TODO ---*/
+/*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
 	width: 35%;
 	border-right: 0.1rem solid #221E1F;
@@ -37,7 +39,7 @@
 	flex-direction: column;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for first section element in footer ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:first-child {
 		width: 100%;
@@ -45,54 +47,58 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Control the dimensions of the logo in the footer ---*/
+/*--- NOTE: This can be optimized using the image trick. ---*/
 #footer img {
 	width: 15rem;
 }
 
+/*--- Styles for all first level <div> elements in the first section element in the footer ---*/
 #footer > section:first-child > div {
 	padding: 2.5rem;
 }
 
-/*--- TODO ---*/
+/*--- Styles for <ul> elements in first section in footer ---*/
 #footer > section:first-child ul {
 	margin: 0 0 2rem 0;
 	padding: 0;
 }
 
-/*--- TODO ---*/
+/*--- Styles for <li> elements in first section in footer ---*/
 #footer > section:first-child ul li {
 	display: flex;
 	justify-content: center;
 }
 
+/*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
 }
 
+/*--- Control the dimensions of the social images in the footer ---*/
 #footer .social img {
 	width: 2.5rem;
 }
 
-/*--- TODO ---*/
+/*--- Styles for last ( second ) section element in footer ---*/
 #footer > section:last-child {
 	width: 65%;
 	display: flex;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for last ( second ) section element ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:last-child {
 		width: 100%;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles for all first level <div> elements in the last ( second ) section in footer ---*/
 #footer > section:last-child > div {
 	width: 100%;
 }
 
-/*--- TODO ---*/
+/*--- Styles for the first <div> element in the columns of the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:first-child {
 	display: flex;
 	justify-content: center;
@@ -101,6 +107,7 @@
 	border-bottom: 0.1rem solid #221E1F;
 }
 
+/*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:last-child .column div:first-child {
 		border-bottom: none;
@@ -108,13 +115,13 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles for the <span> elements in the columns of the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:first-child span {
 	text-transform: uppercase;
 	font-size: 3.3rem;
 }
 
-/*--- TODO ---*/
+/*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:last-child {
 	display: flex;
 	flex-direction: column;
@@ -124,12 +131,14 @@
 	padding: 1rem;
 }
 
+/*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:last-child .column div:last-child {
 		justify-content: flex-start;
 	}
 }
 
+/*--- Center align the span elements in the last ( second ) section in the footer ---*/
 #footer > section:last-child .column div:last-child span {
 	text-align: center;
 }

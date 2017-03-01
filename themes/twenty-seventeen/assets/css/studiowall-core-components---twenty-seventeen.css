@@ -27,3 +27,7 @@ button:active:focus {
 li {
 	list-style: none;
 }
+
+span {
+	font-family: HelveticaNeueLT Std;
+}

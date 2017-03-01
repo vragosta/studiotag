@@ -32,7 +32,7 @@
 						<li><a href="mailto:info@studio-tag.com">info@studio-tag.com</a></li>
 					</ul>
 
-					<!-- TODO -->
+					<!-- Social Icons -->
 					<?php get_template_part( 'partials/content', 'social' ); ?>
 
 				</div>
@@ -41,15 +41,15 @@
 
 			<section>
 
-				<!-- TODO -->
+				<!-- Column One -->
 				<div class="column one">
 
-					<!-- TODO -->
+					<!-- Column One Header -->
 					<div>
 						<span>Studio</span>
 					</div>
 
-					<!-- TODO -->
+					<!-- Column One List -->
 					<div>
 						<span><a href="">Seating</a></span>
 						<span><a href="#">Architectural & Interiors</a></span>
@@ -60,15 +60,15 @@
 					</div>
 				</div>
 
-				<!-- TODO -->
+				<!-- Column Two -->
 				<div class="column two">
 
-					<!-- TODO -->
+					<!-- Column Two Header -->
 					<div>
 						<span>Wall</span>
 					</div>
 
-					<!-- TODO -->
+					<!-- Column Two List -->
 					<div>
 						<span><a href="#">Encore</a></span>
 						<span><a href="#">Slimline</a></span>
@@ -79,15 +79,15 @@
 					</div>
 				</div>
 
-				<!-- TODO -->
+				<!-- Column Three -->
 				<div class="column three">
 
-					<!-- TODO -->
+					<!-- Column Three Header -->
 					<div>
 						<span>Wren</span>
 					</div>
 
-					<!-- TODO -->
+					<!-- Column Three List -->
 					<div>
 						<span><a href="#">TBA</a></span>
 						<span><a href="#">TBA</a></span>
