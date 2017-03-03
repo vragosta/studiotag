@@ -7,7 +7,11 @@
  * @since      0.1.0
  * @uses       wp_footer()
  */
+
+	// Get the user by 'id'.
 	$user  = get_user_by( 'id', STUDIO_WALL_SITE_ADMIN );
+
+	// Get the phone number of the user.
 	$phone = get_user_meta( $user->ID, 'phone', true );
 
 ?>
@@ -45,59 +49,17 @@
 
 				<!-- Column One -->
 				<div class="column one">
-
-					<!-- Column One Header -->
-					<div>
-						<span>Studio</span>
-					</div>
-
-					<!-- Column One List -->
-					<div>
-						<span><a href="">Seating</a></span>
-						<span><a href="#">Architectural & Interiors</a></span>
-						<span><a href="#">Tables</a></span>
-						<span><a href="#">Desks & Storage</a></span>
-						<span><a href="#">Workspaces</a></span>
-						<span><a href="#">Accessories</a></span>
-					</div>
+					<?php dynamic_sidebar( 'Footer Column One' ); ?>
 				</div>
 
 				<!-- Column Two -->
 				<div class="column two">
-
-					<!-- Column Two Header -->
-					<div>
-						<span>Wall</span>
-					</div>
-
-					<!-- Column Two List -->
-					<div>
-						<span><a href="#">Encore</a></span>
-						<span><a href="#">Slimline</a></span>
-						<span><a href="#">Ion</a></span>
-						<span><a href="#">Industrial Sash</a></span>
-						<span><a href="#">Greenwall</a></span>
-						<span><a href="#">Prebuilt</a></span>
-					</div>
+					<?php dynamic_sidebar( 'Footer Column Two' ); ?>
 				</div>
 
 				<!-- Column Three -->
 				<div class="column three">
-
-					<!-- Column Three Header -->
-					<div>
-						<span>Wren</span>
-					</div>
-
-					<!-- Column Three List -->
-					<div>
-						<span><a href="#">TBA</a></span>
-						<span><a href="#">TBA</a></span>
-						<span><a href="#">TBA</a></span>
-						<span><a href="#">TBA</a></span>
-						<span><a href="#">TBA</a></span>
-						<span><a href="#">TBA</a></span>
-					</div>
+					<?php dynamic_sidebar( 'Footer Column Three' ); ?>
 				</div>
 			</section>
 		</footer>

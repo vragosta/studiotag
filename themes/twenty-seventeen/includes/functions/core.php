@@ -25,6 +25,7 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'studiowall_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'widgets_init',       $n( 'sidebars' ) );
 }
 
 /**
@@ -46,6 +47,8 @@ function studiowall_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'menus' );
+	add_theme_support( 'widgets' );
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
@@ -95,8 +98,6 @@ function scripts() {
 		STUDIO_WALL_VERSION,
 		true
 	);
-
-	// wp_localize_script( 'vincentragosta_com', 'themeUrl', STUDIO_WALL_TEMPLATE_URL );
 }
 
 /**
@@ -186,4 +187,50 @@ function styles() {
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
+}
+
+/**
+ * Register sidebars for back-end.
+ *
+ * @since  0.1.0
+ * @uses   __(), register_sidebar()
+ * @return void
+ */
+function sidebars() {
+	$footer_column_one = array(
+		'name'          => __( 'Footer Column One', 'theme_text_domain' ),
+		'id'            => 'footer-column-one',
+		'description'   => 'Column one contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_column_two = array(
+		'name'          => __( 'Footer Column Two', 'theme_text_domain' ),
+		'id'            => 'footer-column-two',
+		'description'   => 'Column two contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_column_three = array(
+		'name'          => __( 'Footer Column Three', 'theme_text_domain' ),
+		'id'            => 'footer-column-three',
+		'description'   => 'Column three contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	register_sidebar( $footer_column_one );
+	register_sidebar( $footer_column_two );
+	register_sidebar( $footer_column_three );
 }

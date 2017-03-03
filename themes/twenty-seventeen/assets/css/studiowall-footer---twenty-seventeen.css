@@ -25,6 +25,13 @@
 	height: 35rem;
 }
 
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child {
+		height: 30rem;
+	}
+}
+
 /*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
@@ -101,32 +108,29 @@
 }
 
 /*--- Styles for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column div:first-child {
+#footer > section:last-child .column h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 30%;
 	border-bottom: 0.1rem solid #221E1F;
-}
-
-/*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 768px ) {
-	#footer > section:last-child .column div:first-child {
-		border-bottom: none;
-		border-top: 0.1rem solid #221E1F;
-	}
-}
-
-/*--- Styles for the <span> elements in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column div:first-child span {
+	margin: 0;
 	text-transform: uppercase;
 	font-size: 3.3rem;
 }
 
+/*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
 @media only screen and ( max-width: 768px ) {
-	#footer > section:last-child .column div:first-child span {
+	#footer > section:last-child .column h2 {
+		border-bottom: none;
+		border-top: 0.1rem solid #221E1F;
 		font-size: 2.8rem;
 	}
+}
+
+/*--- TODO ---*/
+#footer > section:last-child .column > div {
+	height: 70%;
 }
 
 /*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
@@ -135,13 +139,15 @@
 }
 
 /*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column div:last-child {
+#footer > section:last-child .column ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 70%;
+	height: 100%;
 	padding: 1rem;
+	margin: 0;
 }
 
 /*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
@@ -151,8 +157,8 @@
 	}
 }
 
-/*--- Center align the span elements in the last ( second ) section in the footer ---*/
-#footer > section:last-child .column div:last-child span {
+/*--- Center align the <li> elements in columns ---*/
+#footer > section:last-child .column ul li {
 	text-align: center;
 	line-height: 1.6;
 }
