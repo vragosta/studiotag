@@ -1,0 +1,187 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for footer
+ *
+ * Location: footer.php
+ */
+
+/*--- Footer container element ---*/
+#footer {
+	display: flex;
+	border: 0.1rem solid #221E1F;
+	margin: 0 1rem;
+}
+
+/*--- Media Query for footer container element ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer {
+		flex-direction: column;
+	}
+}
+
+/*--- Control the height of the two section elements ---*/
+/*--- NOTE: This can be optimized by using padding on the inner elements ---*/
+#footer > section {
+	height: 35rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child {
+		height: 30rem;
+	}
+}
+
+/*--- Remove all underlines on hover for links ---*/
+#footer > section a {
+	text-decoration: none;
+}
+
+/*--- Styles for first section element in footer ---*/
+#footer > section:first-child {
+	width: 35%;
+	border-right: 0.1rem solid #221E1F;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	padding: 2.5rem;
+}
+
+/*--- Media Query for first section element in footer ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:first-child {
+		width: 100%;
+		border: none;
+	}
+}
+
+/*--- Control the dimensions of the logo in the footer ---*/
+/*--- NOTE: This can be optimized using the image trick. ---*/
+#footer img {
+	width: 15rem;
+}
+
+/*--- Styles for <ul> elements in first section in footer ---*/
+#footer > section:first-child ul {
+	margin: 0 0 2rem 0;
+	padding: 0;
+}
+
+/*--- Styles for <li> elements in first section in footer ---*/
+#footer > section:first-child ul li {
+	display: flex;
+	justify-content: center;
+	color: #221E1F;
+}
+
+/*--- Styles for links in the social segment ---*/
+#footer .social a {
+	margin: 0 .5rem;
+}
+
+/*--- Control the dimensions of the social images in the footer ---*/
+#footer .social img {
+	width: 2.5rem;
+}
+
+/*--- Styles for last ( second ) section element in footer ---*/
+#footer > section:last-child {
+	width: 65%;
+	display: flex;
+}
+
+/*--- Media Query for last ( second ) section element ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child {
+		width: 100%;
+	}
+}
+
+@media only screen and ( max-width: 575px ) {
+	#footer > section:last-child {
+		height:100%;
+		flex-direction: column;
+	}
+}
+
+/*--- Styles for all first level <div> elements in the last ( second ) section in footer ---*/
+#footer > section:last-child .column {
+	width: 100%;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column {
+		border-top: 0.1rem solid #221E1f;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		min-height: 23rem;
+	}
+}
+
+/*--- Styles for the first <div> element in the columns of the last ( second ) section in the footer ---*/
+#footer > section:last-child .column h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 30%;
+	border-bottom: 0.1rem solid #221E1F;
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 3.3rem;
+	padding: 2rem;
+}
+
+/*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column h2 {
+		border-bottom: none;
+		font-size: 2.8rem;
+		padding: 0;
+	}
+}
+
+/*--- Control height and padding of generated menu elements ---*/
+#footer > section:last-child .column > div {
+	height: 70%;
+	padding: 2rem;
+}
+
+/*--- Media Query for generated menu elements ---*/
+@media only screen and ( max-width: 575px ) {
+	#footer > section:last-child .column > div {
+		margin: 1rem 0 0 0;
+		padding: 0;
+	}
+}
+
+/*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
+#footer > section:last-child .column a {
+	font-size: 1.5rem;
+}
+
+/*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
+#footer > section:last-child .column ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 70%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+/*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column div:last-child {
+		justify-content: flex-start;
+	}
+}
+
+/*--- Center align the <li> elements in columns ---*/
+#footer > section:last-child .column ul li {
+	text-align: center;
+	line-height: 1.6;
+}
