@@ -25,6 +25,7 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'studiowall_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
+	add_action( 'widgets_init',       $n( 'sidebars' ) );
 }
 
 /**
@@ -46,6 +47,8 @@ function studiowall_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+	add_theme_support( 'menus' );
+	add_theme_support( 'widgets' );
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
@@ -95,8 +98,6 @@ function scripts() {
 		STUDIO_WALL_VERSION,
 		true
 	);
-
-	// wp_localize_script( 'vincentragosta_com', 'themeUrl', STUDIO_WALL_TEMPLATE_URL );
 }
 
 /**
@@ -157,7 +158,7 @@ function styles() {
 	);
 
 	wp_register_style(
-		'studio_wall_header',
+		'studio-wall-header',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
@@ -166,17 +167,70 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'studio_wall_header_front_page',
+			'studio-wall-header-front-page',
 			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
 	endif;
 
+	wp_register_style(
+		'studio-wall-footer',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio_wall_header' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
+}
+
+/**
+ * Register sidebars for back-end.
+ *
+ * @since  0.1.0
+ * @uses   __(), register_sidebar()
+ * @return void
+ */
+function sidebars() {
+	$footer_column_one = array(
+		'name'          => __( 'Footer Column One', 'theme_text_domain' ),
+		'id'            => 'footer-column-one',
+		'description'   => 'Column one contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_column_two = array(
+		'name'          => __( 'Footer Column Two', 'theme_text_domain' ),
+		'id'            => 'footer-column-two',
+		'description'   => 'Column two contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_column_three = array(
+		'name'          => __( 'Footer Column Three', 'theme_text_domain' ),
+		'id'            => 'footer-column-three',
+		'description'   => 'Column three contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	register_sidebar( $footer_column_one );
+	register_sidebar( $footer_column_two );
+	register_sidebar( $footer_column_three );
 }

@@ -46,7 +46,7 @@
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.menu-container ul:first-child li a' ).on( 'hover', function() {
+		$( '.menu-container ul:first-child li a' ).on( 'mouseenter', function() {
 
 			// Define local variables.
 			var id = $( this ).data( 'id' );

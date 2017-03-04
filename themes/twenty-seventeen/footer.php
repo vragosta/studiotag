@@ -5,73 +5,63 @@
  * @package    Studio Tag - Twenty Seventeen
  * @subpackage Studio Wall - Twenty Seventeen
  * @since      0.1.0
- * @uses       get_template_part()
+ * @uses       wp_footer()
  */
+
+	// Get the user by 'id'.
+	$user  = get_user_by( 'id', STUDIO_WALL_SITE_ADMIN );
+
+	// Get the phone number of the user.
+	$phone = get_user_meta( $user->ID, 'phone', true );
+
 ?>
 
-		<footer id="footer" class="container-fluid">
-			<div class="row">
-				<div id="contact-and-logo" class="col-md-4">
-					<h2>Image goes here</h2>
-					<span>321 West 44th Street</span>
-					<span>Suite 200</span>
-					<span>New York, NY 10036</span>
-					<p>
-					<span>+1 212.354.9255</span>
-					<span>info@studio-tag.com</span>
-					<p>
-					<div class="social-icons">Social icons go here</div>
+		<footer id="footer">
+			<section>
+
+				<!-- Logo -->
+				<a href="<?php echo home_url(); ?>">
+					<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
+				</a>
+
+				<div>
+
+					<!-- TODO Make this dynamic -->
+					<ul>
+						<li>321 West 44th Street</li>
+						<li>Suite 200</li>
+						<li>New York, NY 10036</li>
+					</ul>
+
+					<ul>
+						<li><a href:"tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li>
+						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>"><?php echo esc_html( $user->user_email ); ?></a></li>
+					</ul>
+
+					<!-- Social Icons -->
+					<?php get_template_part( 'partials/content', 'social' ); ?>
+
 				</div>
 
-				<div id="directory" class="col-md-8">
-					<div id="directory-row" class="row">
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>STUDIO</strong></h3>
-						</div>
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>WALL</strong></h3>
-						</div>
-						<div class="col-md-4 dir-content">
-							<h3 class="visible-titles"><strong>WREN</strong></h3>
-						</div>
-					</div>
+			</section>
 
-					<div id="border-row" class="row">
-						<hr>
-					</div>
+			<section>
 
-					<!-- 3 columns for each list of content -->
-					<div class="col-md-4 col-sm-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>STUDIO</strong></h3>
-						<span>Seating</span>
-						<span>Architectural & Interiors</span>
-						<span>Tables</span>
-						<span>Desks & Storage</span>
-						<span>Workspaces</span>
-						<span>Accessories</span>
-					</div>
-
-					<div class="col-md-4 col-sm-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>WALL</strong></h3>
-						<span>Encore</span>
-						<span>Slimline</span>
-						<span>Ion</span>
-						<span>Industrial Sash</span>
-						<span>Greenwall</span>
-						<span>Prebuilt</span>
-					</div>
-
-					<div class="col-md-4 col-sm-4 dir-content dir-content-lists">
-						<h3 class="hidden-titles"><strong>WREN</strong></h3>
-						<span>TBA</span>
-						<span>TBA</span>
-						<span>TBA</span>
-						<span>TBA</span>
-						<span>TBA</span>
-						<span>TBA</span>
-					</div>
+				<!-- Column One -->
+				<div class="column one">
+					<?php dynamic_sidebar( 'Footer Column One' ); ?>
 				</div>
-			</div>
+
+				<!-- Column Two -->
+				<div class="column two">
+					<?php dynamic_sidebar( 'Footer Column Two' ); ?>
+				</div>
+
+				<!-- Column Three -->
+				<div class="column three">
+					<?php dynamic_sidebar( 'Footer Column Three' ); ?>
+				</div>
+			</section>
 		</footer>
 	</body>
 </html>
