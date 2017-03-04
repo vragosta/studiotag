@@ -34,6 +34,8 @@
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
+	z-index: 1;
+	background: #fff;
 	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
@@ -41,14 +43,7 @@
 .menu-container.visible {
 	opacity: 1;
 	visibility: visible;
-	height: 24rem;
-}
-
-/*--- Media Query for visible class in js ---*/
-@media only screen and ( max-width: 768px ) {
-	.menu-container.visible {
-		height: 16.8rem; /*--- Consider finding a better approach ---*/
-	}
+	height: 100%;
 }
 
 /*--- Not visible class for use in js ---*/
