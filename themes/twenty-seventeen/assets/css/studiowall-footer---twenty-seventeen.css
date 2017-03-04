@@ -45,6 +45,7 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
+	padding: 2.5rem;
 }
 
 /*--- Media Query for first section element in footer ---*/
@@ -59,11 +60,6 @@
 /*--- NOTE: This can be optimized using the image trick. ---*/
 #footer img {
 	width: 15rem;
-}
-
-/*--- Styles for all first level <div> elements in the first section element in the footer ---*/
-#footer > section:first-child > div {
-	padding: 2.5rem;
 }
 
 /*--- Styles for <ul> elements in first section in footer ---*/
@@ -102,9 +98,26 @@
 	}
 }
 
+@media only screen and ( max-width: 575px ) {
+	#footer > section:last-child {
+		height:100%;
+		flex-direction: column;
+	}
+}
+
 /*--- Styles for all first level <div> elements in the last ( second ) section in footer ---*/
-#footer > section:last-child > div {
+#footer > section:last-child .column {
 	width: 100%;
+}
+
+@media only screen and ( max-width: 768px ) {
+	#footer > section:last-child .column {
+		border-top: 0.1rem solid #221E1f;
+		padding: 2rem;
+		display: flex;
+		flex-direction: column;
+		min-height: 23rem;
+	}
 }
 
 /*--- Styles for the first <div> element in the columns of the last ( second ) section in the footer ---*/
@@ -117,20 +130,30 @@
 	margin: 0;
 	text-transform: uppercase;
 	font-size: 3.3rem;
+	padding: 2rem;
 }
 
 /*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:last-child .column h2 {
 		border-bottom: none;
-		border-top: 0.1rem solid #221E1F;
 		font-size: 2.8rem;
+		padding: 0;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Control height and padding of generated menu elements ---*/
 #footer > section:last-child .column > div {
 	height: 70%;
+	padding: 2rem;
+}
+
+/*--- Media Query for generated menu elements ---*/
+@media only screen and ( max-width: 575px ) {
+	#footer > section:last-child .column > div {
+		margin: 1rem 0 0 0;
+		padding: 0;
+	}
 }
 
 /*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
@@ -146,7 +169,7 @@
 	align-items: center;
 	height: 70%;
 	height: 100%;
-	padding: 1rem;
+	padding: 0;
 	margin: 0;
 }
 
