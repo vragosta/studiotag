@@ -10,6 +10,7 @@
 	display: flex;
 	border: 0.1rem solid #221E1F;
 	margin: 0 1rem;
+	font-family: HelveticaNeueLT Std;
 }
 
 /*--- Media Query for footer container element ---*/
