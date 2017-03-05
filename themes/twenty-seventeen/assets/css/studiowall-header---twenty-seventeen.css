@@ -10,7 +10,7 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 1.5rem 1.5rem 1.5rem;
+	padding: 0 1.5rem 1.5rem;
 	flex-direction: row;
 	height: 7rem;
 }
@@ -59,6 +59,18 @@
 	}
 }
 
+/*--- Default styles for the links within the menu ---*/
+#menu > li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: color 0.3s ease-in-out; 
+}
+
+/*--- Hover behavior for the links within the menu ---*/
+#menu > li a:hover {
+	color: #A2A4A7;
+}
+
 /*--- Hide the mobile button ---*/
 #menu .mobile {
 	display: none;
@@ -81,10 +93,10 @@
 	justify-content: center;
 	align-items: center;
 	padding: 0;
+	height: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, height 0.5s ease-in-out, padding 0.3s ease-in-out;
-	height: 0;
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, height 0.5s ease-in-out, padding 0.3s ease-in-out; /*--- Control the transition out ---*/
 }
 
 /*--- Media Query for expanded menu ---*/
@@ -95,17 +107,13 @@
 		padding: 0 0 .5rem 0;
 		visibility: visible;
 		height: 8.2rem;
+		transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out, height 0.5s ease-in-out, padding 0.3s ease-in-out; /*--- Control the transition in ---*/
 	}
 }
 
 /*--- Control font size of expanded menu link items ---*/
 #menu .expand li a {
 	font-size: 1.4rem;
-}
-
-#menu > li a {
-	text-decoration: none;
-	text-transform: uppercase;
 }
 
 /*--- Media Query for menu links ---*/

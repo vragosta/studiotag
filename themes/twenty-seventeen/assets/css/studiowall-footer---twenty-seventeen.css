@@ -21,12 +21,11 @@
 }
 
 /*--- Control the height of the two section elements ---*/
-/*--- NOTE: This can be optimized by using padding on the inner elements ---*/
 #footer > section {
 	height: 35rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
 @media only screen and ( max-width: 768px ) {
 	#footer > section:last-child {
 		height: 30rem;
@@ -36,6 +35,12 @@
 /*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+/*--- Hover behavior for the all links in the footer ---*/
+#footer > section a:hover {
+	color: #A2A4A7;
 }
 
 /*--- Styles for first section element in footer ---*/
@@ -79,11 +84,27 @@
 /*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
+	transition: color 0.3s ease-in-out;
 }
 
-/*--- Control the dimensions of the social images in the footer ---*/
-#footer .social img {
-	width: 2.5rem;
+#footer .social a.twitter:hover {
+	color: #4099ff;
+}
+
+#footer .social a.facebook:hover {
+	color: #3b5998;
+}
+
+#footer .social a.pinterest:hover {
+	color: #cb2027;
+}
+
+#footer .social a.instagram:hover {
+	color: #125688;
+}
+
+#footer .social a.linkedin:hover {
+	color: #007bb5;
 }
 
 /*--- Styles for last ( second ) section element in footer ---*/
