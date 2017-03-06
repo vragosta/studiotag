@@ -22,7 +22,7 @@
 
 /*--- Control the height of the two section elements ---*/
 #footer > section {
-	height: 35rem;
+	height: 40rem;
 }
 
 /*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
@@ -138,6 +138,7 @@
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		min-height: 23rem;
 	}
 }
