@@ -1,120 +1,13 @@
 <?php get_header(); ?>
 
-<!-- <section style="height: 1000px; display: flex; justify-content: center; align-items: center;">Placeholder</section> -->
-<!-- This will be a carousel -->
-<!-- main image in a tag-->
-<section id="banner-image">
-			<figure>
-					<a></a>
-			</figure>
+	<section style="height: 500px; display: flex; justify-content: center; align-items: center; border: 0.1rem solid #333; margin: 2rem 1rem;">
+		Slider Placeholder
 	</section>
 
-	<!-- Wall Systems image -->
-	<main id="content">
-		<section>
-			<figure>
-				<a></a>
-			</figure>
-		</section>
-
-		<!-- list of images with  -->
-		<ul class="img-grid">
-			<li>
-				<!-- left blank intentionally -->
-			</li>
-			<li>
-				<img src="img/Categories_Images/01_encore.jpg">
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<img src="img/Categories_Images/02_slimline.jpg">
-			</li>
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Encore</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Slimline</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-			<li>
-				<img src="img/Categories_Images/03_ion.jpg">
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<img src="img/Categories_Images/04_industrial-sash.jpg">
-			</li>
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Ion</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Industrial Sash</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-			<li>
-				<img src="img/Categories_Images/05_greenwall.png">
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<img src="img/Categories_Images/06_prebuilt.jpg">
-			</li>
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Greenwall</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-		</ul>
-
-		<ul class="img-grid">
-			<li>
-				<span>Tagwall</span>
-				<a href="#">Prebuilt</a>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-									in tellus id lectus imperdiet hendrerit. Curabitur molestie faucibus
-									orci, bibendum elementum ex sagittis non.
-							</p>
-			</li>
-		</ul>
-
-	</main>
-
+	<section style="margin: 2rem 1rem;">
+		<figure style="padding-bottom: 56.25%; position: relative; width: 65%;">
+			<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' ); background-size: contain; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+		</figure>
+	</section>
 
 <?php get_footer(); ?>
