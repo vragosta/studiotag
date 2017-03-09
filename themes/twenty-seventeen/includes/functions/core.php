@@ -180,6 +180,13 @@ function styles() {
 	);
 
 	wp_register_style(
+		'helpers',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-helpers---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
 		'studio-wall-header',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
 		array(),
@@ -196,6 +203,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page( 'systems' ) ) :
+		wp_enqueue_style(
+			'studio-wall-systems',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
 	wp_register_style(
 		'studio-wall-footer',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
@@ -206,7 +222,7 @@ function styles() {
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
 }

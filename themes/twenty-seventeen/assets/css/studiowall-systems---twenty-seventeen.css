@@ -1,0 +1,89 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for systems page
+ *
+ * Location: page-systems.php
+ */
+/*--- TODO ---*/
+.systems-logo {
+	margin: 2rem 1rem -8rem;
+}
+
+/*--- TODO ---*/
+.systems-logo .featured-image {
+	padding-bottom: 40%;
+	position: relative;
+	width: 85%;
+}
+
+/*--- TODO ---*/
+.systems-logo .featured-image div {
+	background-size: contain;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- TODO ---*/
+.systems {
+	margin: 0 0 40rem 0;
+}
+
+/*--- TODO ---*/
+.systems .featured-image {
+	padding-bottom: 70%;
+	position: relative;
+}
+
+/*--- TODO ---*/
+.systems .featured-image div {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- TODO ---*/
+.systems .featured-image.right div {
+	right: 10rem;
+}
+
+/*--- TODO ---*/
+.systems .featured-image.left div {
+	left: 10rem;
+}
+
+/*--- TODO ---*/
+.systems .info.right {
+	padding: 1rem 10rem 1rem 4rem;
+}
+
+/*--- TODO ---*/
+.systems .info.left {
+	padding: 1rem 4rem 1rem 14rem;
+}
+
+/*--- TODO ---*/
+.systems .info h3 {
+	font-size: 3.5rem;
+	font-weight: 600;
+	margin-bottom: 3rem;
+	font-family: HelveticaNeueLT Std;
+}
+
+/*--- TODO ---*/
+.systems .info h3 span {
+	color: #A3A5A8;
+}
+
+/*--- TODO ---*/
+.systems .info p {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2.4rem;
+	line-height: 1.3;
+}
