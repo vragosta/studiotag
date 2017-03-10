@@ -40,13 +40,16 @@
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>
 
 					<!-- TODO -->
-					<?php $excerpt = wp_trim_words( $temp_post->post_excerpt, 40, '...' ); ?>
+					<?php $excerpt = wp_trim_words( $temp_post->post_excerpt, 35, '...' ); ?>
+
+					<!-- TODO -->
+					<?php $mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 25, '...' ); ?>
 
 					<!-- TODO -->
 					<?php if ( $count == 0 ) : ?>
 
 						<div class="row">
-							<div class="no-padding col-xs-12 col-sm-offset-6 col-sm-6">
+							<div class="no-padding col-xs-offset-6 col-xs-12 col-sm-offset-6 col-sm-6">
 								<figure class="featured-image right">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>
@@ -65,6 +68,7 @@
 							<div class="info right col-xs-12 col-sm-6">
 								<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								<p><?php echo esc_html( $excerpt ); ?></p>
+								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 							</div>
 						</div>
 
@@ -75,6 +79,7 @@
 							<div class="info left col-xs-12 col-sm-6">
 								<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								<p><?php echo esc_html( $excerpt ); ?></p>
+								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 							</div>
 							<div class="no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image right">
@@ -97,6 +102,7 @@
 				<div class="info left col-xs-12 col-sm-6">
 					<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					<p><?php echo esc_html( $excerpt ); ?></p>
+					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 				</div>
 				<div class="no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image right not-visible">
