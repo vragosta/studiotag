@@ -98,6 +98,11 @@
 					<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					<p><?php echo esc_html( $excerpt ); ?></p>
 				</div>
+				<div class="no-padding col-xs-12 col-sm-6">
+					<figure class="featured-image right not-visible">
+						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+					</figure>
+				</div>
 			</div>
 
 		</section>
