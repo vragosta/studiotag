@@ -20,8 +20,8 @@
 	<main>
 
 		<!-- NOTE: will replace with slider, not going to remove inline styles or image for now -->
-		<figure style="padding-bottom: 68%; position: relative;">
-			<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' ); background-size: contain; position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+		<figure class="systems-carousel">
+			<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
 		</figure>
 		<!-- END -->
 
@@ -49,7 +49,7 @@
 					<?php if ( $count == 0 ) : ?>
 
 						<div class="row">
-							<div class="no-padding col-xs-offset-6 col-xs-12 col-sm-offset-6 col-sm-6">
+							<div class="no-padding col-xs-12 col-sm-offset-6 col-sm-6">
 								<figure class="featured-image right">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>

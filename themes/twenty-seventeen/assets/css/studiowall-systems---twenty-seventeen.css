@@ -5,13 +5,43 @@
  * Location: page-systems.php
  */
 /*--- TODO ---*/
+.systems-carousel {
+	padding-bottom: 68%;
+	position: relative;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.systems-carousel {
+		padding-bottom: 65%;
+	}
+}
+
+/*--- TODO ---*/
+.systems-carousel div {
+	background-size: contain;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- TODO ---*/
 .systems-logo {
 	margin: 2rem 1rem -20rem;
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 992px ) {
 	.systems-logo {
 		margin: 2rem 1rem -10rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems-logo {
+		margin: 6rem 3rem;
 	}
 }
 
@@ -20,6 +50,13 @@
 	padding-bottom: 40%;
 	position: relative;
 	width: 85%;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems-logo .featured-image {
+		width: 100%;
+	}
 }
 
 /*--- TODO ---*/
@@ -33,8 +70,23 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems-logo .featured-image div {
+		background-size: cover;
+	}
+}
+
+/*--- TODO ---*/
 .systems {
 	margin: 0 0 20rem 0;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems {
+		padding: 0 4rem;
+		margin: 0;
+	}
 }
 
 /*--- TODO ---*/
@@ -43,11 +95,24 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems .row {
+		flex-direction: column;
+	}
+
+	/*--- TODO ---*/
+	.systems .row:last-child .no-padding {
+		display: none;
+	}
+}
+
+/*--- TODO ---*/
 .systems .featured-image {
-	padding-bottom: 70%;
+	padding-bottom: 56.25%;
 	position: relative;
 }
 
+/*--- TODO ---*/
 .systems .featured-image.not-visible {
 	opacity: 0;
 	visibility: hidden;
@@ -69,8 +134,22 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems .featured-image.right div {
+		right: 0;
+	}
+}
+
+/*--- TODO ---*/
 .systems .featured-image.left div {
 	left: 10rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems .featured-image.left div {
+		left: 0;
+	}
 }
 
 /*--- TODO ---*/
@@ -81,36 +160,33 @@
 }
 
 /*--- TODO ---*/
-.systems .info.right {
-	padding: 1rem 14rem 1rem 4rem;
-}
-
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	.systems .info.right {
-		padding: 1rem 13rem 1rem 3rem;
-	}
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.systems .info.right {
-		padding: 1rem 12rem 1rem 3rem;
+@media only screen and ( max-width: 768px ) {
+	.systems .no-padding {
+		order: 1;
 	}
 }
 
 /*--- TODO ---*/
 .systems .info.left {
-	padding: 1rem 4rem 1rem 14rem;
+	padding: 0 3rem 0 12rem;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
 	.systems .info.left {
-		padding: 1rem 3rem 1rem 13rem;
+		padding: 8rem 4rem;
 	}
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.systems .info.left {
-		padding: 1rem 3rem 1rem 12rem;
+/*--- TODO ---*/
+.systems .info.right {
+	padding: 0 10rem 0 3rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 768px ) {
+	.systems .info.right {
+		padding: 8rem 4rem;
 	}
 }
 
@@ -132,6 +208,7 @@
 	}
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.systems .info h3 {
 		margin-top: 2.5rem;
@@ -145,9 +222,12 @@
 	}
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info h3 {
-		font-size: 2rem;
+		font-size: 3rem;
+		position: relative;
+		margin: 1rem 0 2rem;
 	}
 }
 
@@ -160,7 +240,7 @@
 .systems .info p {
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
-	font-size: 2.1rem;
+	font-size: 2.5rem;
 	line-height: 1.3;
 }
 
@@ -178,16 +258,19 @@
 	}
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info p {
 		font-size: 1.3rem;
 	}
 }
 
+/*--- TODO ---*/
 .systems .info p.mobile {
 	display: none;
 }
 
+/*--- TODO ---*/
 @media only screen and ( max-width: 991px ) {
 	.systems .info p.mobile {
 		display: block;
