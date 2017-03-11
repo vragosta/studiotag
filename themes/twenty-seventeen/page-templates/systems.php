@@ -51,8 +51,8 @@
 					if ( $count == 0 ) : ?>
 
 						<div class="row">
-							<div class="no-padding col-xs-12 col-sm-offset-6 col-sm-6">
-								<figure class="featured-image right">
+							<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
+								<figure class="featured-image">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>
 							</div>
@@ -62,8 +62,8 @@
 					elseif ( $count % 2 == 1 ) : ?>
 
 						<div class="row">
-							<div class="no-padding col-xs-12 col-sm-6">
-								<figure class="featured-image left">
+							<div class="left no-padding col-xs-12 col-sm-6">
+								<figure class="featured-image">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>
 							</div>
@@ -83,8 +83,8 @@
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 							</div>
-							<div class="no-padding col-xs-12 col-sm-6">
-								<figure class="featured-image right">
+							<div class="right no-padding col-xs-12 col-sm-6">
+								<figure class="featured-image">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>
 							</div>
@@ -111,8 +111,8 @@
 					<p><?php echo esc_html( $excerpt ); ?></p>
 					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 				</div>
-				<div class="no-padding col-xs-12 col-sm-6">
-					<figure class="featured-image right not-visible">
+				<div class="right no-padding col-xs-12 col-sm-6">
+					<figure class="featured-image not-visible">
 						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 					</figure>
 				</div>

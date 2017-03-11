@@ -131,25 +131,25 @@
 }
 
 /*--- Give margin 10rem to images that display on the right ---*/
-.systems .featured-image.right div {
+.systems .right .featured-image div {
 	right: 10rem;
 }
 
 /*--- Media Query for right images, reduce margin to 0 ---*/
 @media only screen and ( max-width: 768px ) {
-	.systems .featured-image.right div {
+	.systems .right .featured-image div {
 		right: 0;
 	}
 }
 
 /*--- Give margin 10rem to images that display on the left ---*/
-.systems .featured-image.left div {
+.systems .left .featured-image div {
 	left: 10rem;
 }
 
 /*--- Media Query for left images, reduce margin to 0 ---*/
 @media only screen and ( max-width: 768px ) {
-	.systems .featured-image.left div {
+	.systems .left .featured-image div {
 		left: 0;
 	}
 }
