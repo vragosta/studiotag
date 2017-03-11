@@ -91,10 +91,18 @@ function scripts() {
 		true
 	);
 
+	wp_register_script(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
+		array( 'jquery' ),
+		STORYCORPS_ORG_VERSION,
+		true
+	);
+
 	wp_enqueue_script(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/js/studiowall---twenty-seventeen.js",
-		array( 'jquery', 'bootstrap' ),
+		array( 'jquery', 'bootstrap', 'slick' ),
 		STUDIO_WALL_VERSION,
 		true
 	);
@@ -144,6 +152,20 @@ function styles() {
 	);
 
 	wp_register_style(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+		array(),
+		STORYCORPS_ORG_VERSION
+	);
+
+	wp_register_style(
+		'slick-theme',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+		array( 'slick' ),
+		STORYCORPS_ORG_VERSION
+	);
+
+	wp_register_style(
 		'fonts',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-fonts---twenty-seventeen.css",
 		array(),
@@ -153,6 +175,13 @@ function styles() {
 	wp_register_style(
 		'core-components',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-core-components---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
+		'helpers',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-helpers---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
@@ -174,6 +203,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page( 'systems' ) ) :
+		wp_enqueue_style(
+			'studio-wall-systems',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
 	wp_register_style(
 		'studio-wall-footer',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
@@ -184,7 +222,7 @@ function styles() {
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
 }
