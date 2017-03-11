@@ -31,6 +31,7 @@
 		<li><a href="#">Wall Details</a></li>
 		<li><a href="#">Projects</a></li>
 		<li><a href="#">News</a></li>
+		<li><a href="#">Contact</a></li>
 	</ul>
 	<ul>
 		<li><a href="#">History</a></li>
