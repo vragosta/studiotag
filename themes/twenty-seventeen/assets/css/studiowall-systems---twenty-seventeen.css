@@ -4,19 +4,21 @@
  *
  * Location: page-systems.php
  */
-/*--- TODO ---*/
+
+/*--- Temporary carousel placeholder ---*/
 .systems-carousel {
 	padding-bottom: 68%;
 	position: relative;
 }
 
+/*--- Media Query for temporary carousel placeholder ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems-carousel {
 		padding-bottom: 65%;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Source container for image ---*/
 .systems-carousel div {
 	background-size: contain;
 	position: absolute;
@@ -26,40 +28,40 @@
 	right: 0;
 }
 
-/*--- TODO ---*/
+/*--- Wall systems logo, use negative margins to have preceeding container overlap the image ---*/
 .systems-logo {
 	margin: 2rem 1rem -20rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for wall systems logo, reduce negative margin ---*/
 @media only screen and ( max-width: 992px ) {
 	.systems-logo {
 		margin: 2rem 1rem -10rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query for wall systems logo, readjust margin ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems-logo {
 		margin: 6rem 3rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Only display wall systems logo featured image for 85% of container---*/
 .systems-logo .featured-image {
 	padding-bottom: 40%;
 	position: relative;
 	width: 85%;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for wall systems featured image to increase width to 100% ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems-logo .featured-image {
 		width: 100%;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Source container for systems logo featured image ---*/
 .systems-logo .featured-image div {
 	background-size: contain;
 	position: absolute;
@@ -69,19 +71,19 @@
 	right: 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for source container for systems logo, change background-size ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems-logo .featured-image div {
 		background-size: cover;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Systems container ---*/
 .systems {
 	margin: 0 0 20rem 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for systems container, reduce margins and increase padding ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems {
 		padding: 0 4rem;
@@ -89,36 +91,36 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Provide flex on bootstrap rows ---*/
 .systems .row {
 	display: flex;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for bootstrap rows, add flex direction column ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .row {
 		flex-direction: column;
 	}
 
-	/*--- TODO ---*/
+	/*--- Do not display image placeholder ---*/
 	.systems .row:last-child .no-padding {
 		display: none;
 	}
 }
 
-/*--- TODO ---*/
+/*--- System images will conform to 19:9 aspect ratio ---*/
 .systems .featured-image {
 	padding-bottom: 56.25%;
 	position: relative;
 }
 
-/*--- TODO ---*/
+/*--- If any system image has the 'not-visible' class on it, do not display the image ---*/
 .systems .featured-image.not-visible {
 	opacity: 0;
 	visibility: hidden;
 }
 
-/*--- TODO ---*/
+/*--- Source for system images ---*/
 .systems .featured-image div {
 	background-size: cover;
 	position: absolute;
@@ -128,69 +130,69 @@
 	right: 0;
 }
 
-/*--- TODO ---*/
+/*--- Give margin 10rem to images that display on the right ---*/
 .systems .featured-image.right div {
 	right: 10rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for right images, reduce margin to 0 ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .featured-image.right div {
 		right: 0;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Give margin 10rem to images that display on the left ---*/
 .systems .featured-image.left div {
 	left: 10rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for left images, reduce margin to 0 ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .featured-image.left div {
 		left: 0;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Content block for system images ---*/
 .systems .info {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-/*--- TODO ---*/
+/*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .no-padding {
 		order: 1;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Control the spacing of the left 'info' containers ---*/
 .systems .info.left {
 	padding: 0 3rem 0 12rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the spacing of the left 'info' containers ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info.left {
 		padding: 8rem 4rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Control the spacing of the right 'info' containers ---*/
 .systems .info.right {
 	padding: 0 10rem 0 3rem;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the spacing of the right 'info' containers ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info.right {
 		padding: 8rem 4rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles to h3 elements within 'info' container ---*/
 .systems .info h3 {
 	font-size: 3.5rem;
 	font-weight: 600;
@@ -200,7 +202,7 @@
 	top: 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to h3 elements within 'info' container ---*/
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.systems .info h3 {
 		margin-top: 3.2rem;
@@ -208,21 +210,16 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to h3 elements within 'info' container ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.systems .info h3 {
 		margin-top: 2.5rem;
-	}
-}
-
-/*--- TODO ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.systems .info h3 {
 		font-size: 2.2rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to h3 elements within 'info' container ---*/
+/*--- TODO Address discrepancy of min-width: 768 and max-width: 768, technically, it should be max-width: 767px ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info h3 {
 		font-size: 3rem;
@@ -231,12 +228,12 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles to make 'Tagwall' appear differently in the h3 element ---*/
 .systems .info h3 span {
 	color: #A3A5A8;
 }
 
-/*--- TODO ---*/
+/*--- Styles to paragraph elements within the 'info' container ---*/
 .systems .info p {
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
@@ -244,33 +241,33 @@
 	line-height: 1.3;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.systems .info p {
 		font-size: 1.8rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to hide the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) {
 	.systems .info p {
 		display: none;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 768px ) {
 	.systems .info p {
 		font-size: 1.3rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles for the mobile specific paragraph element within the 'info' container ---*/
 .systems .info p.mobile {
 	display: none;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to display the mobile specific paragraph element within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) {
 	.systems .info p.mobile {
 		display: block;
