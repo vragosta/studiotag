@@ -1,0 +1,78 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for systems single
+ *
+ * Location: single-system.php
+ */
+
+/*--- TODO ---*/
+.systems-single {
+	margin: 0 0 8rem 0;
+}
+
+/*--- TODO ---*/
+.systems-single .featured-image {
+	position: relative;
+	padding-bottom: 35%;
+}
+
+/*--- TODO ---*/
+.systems-single .featured-image div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- TODO ---*/
+.systems-single section {
+	padding: 0 4rem;
+}
+
+/*--- TODO ---*/
+.systems-single .row h1 {
+	font-size: 8rem;
+	margin: 12rem 0 4rem;
+}
+
+/*-- TODO ---*/
+.systems-single .row h1 span {
+	color: #A3A5A8;
+}
+
+/*-- TODO ---*/
+.systems-single .content-container {
+	padding-left: 2rem
+}
+
+/*-- TODO ---*/
+.systems-single ul {
+	border-left: 0.1rem solid #221E1F;
+}
+
+/*-- TODO ---*/
+.systems-single ul li {
+	line-height: 1;
+}
+
+/*-- TODO ---*/
+.systems-single ul li a {
+	color: #A3A5A8;
+	text-decoration: none;
+	font-size: 3rem;
+	transition: color 0.3s ease-in-out;
+}
+
+/*-- TODO ---*/
+.systems-single ul li a:hover {
+	color: #221E1F;
+}
+
+/*-- TODO ---*/
+.systems-single p {
+	font-size: 2rem;
+	line-height: 1.3;
+}

@@ -1,9 +1,10 @@
 <?php
 /**
-* Template Name: Systems
+* Template Name: Tile Grid
 *
-* @package StoryCorps.org 2016
-* @since 0.1.0
+* @package    Studio Tag - Twenty Seventeen
+* @subpackage Studio Wall - Twenty Seventeen
+* @since      0.1.0
 */
 
 	get_header();
@@ -30,7 +31,7 @@
 
 		<section class="systems-logo">
 			<figure class="featured-image">
-				<div style="background-image: url( '<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>' );"></div>
+				<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' );"></div>
 			</figure>
 		</section>
 
