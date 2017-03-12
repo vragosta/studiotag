@@ -16,17 +16,26 @@
 
 			<?php
 				// TODO
-				$custom_one_title   = json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) );
-				$custom_one_content = json_decode( get_post_meta( $post->ID, 'custom_one_content', true ) );
-				// $custom_two   = json_decode( get_post_meta( $post->ID, 'custom_two', true ) );
-				// $custom_three = json_decode( get_post_meta( $post->ID, 'custom_three', true ) );
-				// $custom_four  = json_decode( get_post_meta( $post->ID, 'custom_four', true ) );
-				// $custom_five  = json_decode( get_post_meta( $post->ID, 'custom_five', true ) );
-				// $custom_six   = json_decode( get_post_meta( $post->ID, 'custom_six', true ) );
-				// $custom_seven = json_decode( get_post_meta( $post->ID, 'custom_seven', true ) );
-				// $custom_eight = json_decode( get_post_meta( $post->ID, 'custom_eight', true ) );
-				// $custom_nine  = json_decode( get_post_meta( $post->ID, 'custom_nine', true ) );
-				// $custom_ten   = json_decode( get_post_meta( $post->ID, 'custom_ten', true ) );
+				$custom_one_title      = json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) );
+				$custom_one_content    = json_decode( get_post_meta( $post->ID, 'custom_one_content', true ) );
+				$custom_two_title      = json_decode( get_post_meta( $post->ID, 'custom_two_title', true ) );
+				$custom_two_content    = json_decode( get_post_meta( $post->ID, 'custom_two_content', true ) );
+				$custom_three_title    = json_decode( get_post_meta( $post->ID, 'custom_three_title', true ) );
+				$custom_three_content  = json_decode( get_post_meta( $post->ID, 'custom_three_content', true ) );
+				$custom_four_title     = json_decode( get_post_meta( $post->ID, 'custom_four_title', true ) );
+				$custom_four_content   = json_decode( get_post_meta( $post->ID, 'custom_four_content', true ) );
+				$custom_five_title     = json_decode( get_post_meta( $post->ID, 'custom_five_title', true ) );
+				$custom_five_content   = json_decode( get_post_meta( $post->ID, 'custom_five_content', true ) );
+				$custom_six_title      = json_decode( get_post_meta( $post->ID, 'custom_six_title', true ) );
+				$custom_six_content    = json_decode( get_post_meta( $post->ID, 'custom_six_content', true ) );
+				$custom_seven_title    = json_decode( get_post_meta( $post->ID, 'custom_seven_title', true ) );
+				$custom_seven_content  = json_decode( get_post_meta( $post->ID, 'custom_seven_content', true ) );
+				$custom_eight_title    = json_decode( get_post_meta( $post->ID, 'custom_eight_title', true ) );
+				$custom_eight_content  = json_decode( get_post_meta( $post->ID, 'custom_eight_content', true ) );
+				$custom_nine_title     = json_decode( get_post_meta( $post->ID, 'custom_nine_title', true ) );
+				$custom_nine_content   = json_decode( get_post_meta( $post->ID, 'custom_nine_content', true ) );
+				$custom_ten_title      = json_decode( get_post_meta( $post->ID, 'custom_ten_title', true ) );
+				$custom_ten_content    = json_decode( get_post_meta( $post->ID, 'custom_ten_content', true ) );
 			?>
 
 			<figure class="featured-image">
@@ -48,9 +57,11 @@
 							<li><a href="#">View LookBook</a></li>
 						</ul>
 					</div>
+
 					<div class="col-xs-12 col-sm-4">
 						<?php the_content(); ?>
 					</div>
+
 					<div class="col-xs-12 col-sm-5">
 
 						<?php if ( $custom_one_title ) : ?>
@@ -59,6 +70,105 @@
 
 								<?php if ( $custom_one_content ) : ?>
 									<p><?php echo $custom_one_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_two_title ) : ?>
+							<div class="custom two">
+								<h2><?php echo $custom_two_title; ?></h2>
+
+								<?php if ( $custom_two_content ) : ?>
+									<p><?php echo $custom_two_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_three_title ) : ?>
+							<div class="custom three">
+								<h2><?php echo $custom_three_title; ?></h2>
+
+								<?php if ( $custom_three_content ) : ?>
+									<p><?php echo $custom_three_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_four_title ) : ?>
+							<div class="custom four">
+								<h2><?php echo $custom_four_title; ?></h2>
+
+								<?php if ( $custom_four_content ) : ?>
+									<p><?php echo $custom_four_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_five_title ) : ?>
+							<div class="custom five">
+								<h2><?php echo $custom_five_title; ?></h2>
+
+								<?php if ( $custom_five_content ) : ?>
+									<p><?php echo $custom_five_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_six_title ) : ?>
+							<div class="custom six">
+								<h2><?php echo $custom_six_title; ?></h2>
+
+								<?php if ( $custom_six_content ) : ?>
+									<p><?php echo $custom_six_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_seven_title ) : ?>
+							<div class="custom seven">
+								<h2><?php echo $custom_seven_title; ?></h2>
+
+								<?php if ( $custom_seven_content ) : ?>
+									<p><?php echo $custom_seven_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_eight_title ) : ?>
+							<div class="custom eight">
+								<h2><?php echo $custom_eight_title; ?></h2>
+
+								<?php if ( $custom_eight_content ) : ?>
+									<p><?php echo $custom_eight_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_nine_title ) : ?>
+							<div class="custom nine">
+								<h2><?php echo $custom_nine_title; ?></h2>
+
+								<?php if ( $custom_nine_content ) : ?>
+									<p><?php echo $custom_nine_content; ?></p>
+								<?php endif; ?>
+
+							</div>
+						<?php endif; ?>
+
+						<?php if ( $custom_ten_title ) : ?>
+							<div class="custom ten">
+								<h2><?php echo $custom_ten_title; ?></h2>
+
+								<?php if ( $custom_ten_content ) : ?>
+									<p><?php echo $custom_ten_content; ?></p>
 								<?php endif; ?>
 
 							</div>

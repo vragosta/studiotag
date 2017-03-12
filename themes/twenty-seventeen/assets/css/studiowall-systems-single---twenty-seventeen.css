@@ -11,6 +11,14 @@
 }
 
 /*--- TODO ---*/
+.systems-single h1,
+.systems-single h2,
+.systems-single p,
+.systems-single a {
+	font-family: HelveticaNeueLT Std;
+}
+
+/*--- TODO ---*/
 .systems-single .featured-image {
 	position: relative;
 	padding-bottom: 35%;
@@ -55,7 +63,7 @@
 
 /*-- TODO ---*/
 .systems-single ul li {
-	line-height: 1;
+	line-height: 1.2;
 }
 
 /*-- TODO ---*/
@@ -75,4 +83,29 @@
 .systems-single p {
 	font-size: 2rem;
 	line-height: 1.3;
+}
+
+/*--- TODO ---*/
+.systems-single .custom  {
+	padding: 2rem 0;
+	border-bottom: 0.1rem solid #221E1F;
+}
+
+/*--- TODO ---*/
+.systems-single .custom:first-child {
+	padding: 0 0 2rem 0;
+}
+
+.systems-single .custom:last-child {
+	border-bottom: none;
+}
+
+/*--- TODO ---*/
+.systems-single .custom h2 {
+	margin: 0;
+}
+
+.systems-single .custom p {
+	margin: 2rem 0 0;
+	color: #A3A5A8;
 }
