@@ -54,7 +54,9 @@
 						<div class="row">
 							<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
 								<figure class="featured-image">
-									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									<a href="<?php the_permalink(); ?>">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</a>
 								</figure>
 							</div>
 						</div><?php
@@ -65,11 +67,15 @@
 						<div class="row">
 							<div class="left no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image">
-									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									<a href="<?php the_permalink(); ?>">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</a>
 								</figure>
 							</div>
 							<div class="info right col-xs-12 col-sm-6">
-								<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 							</div>
@@ -80,13 +86,17 @@
 
 						<div class="row">
 							<div class="info left col-xs-12 col-sm-6">
-								<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image">
-									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									<a href="<?php the_permalink(); ?>">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</a>
 								</figure>
 							</div>
 						</div><?php
@@ -105,16 +115,20 @@
 				wp_reset_postdata();
 			endif;
 
-			// Accomodate for the last temporary post data. ?>
+			// Accomodate for the last temporary post's data. ?>
 			<div class="row">
 				<div class="info left col-xs-12 col-sm-6">
-					<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
 					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image not-visible">
-						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+						<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+						</a>
 					</figure>
 				</div>
 			</div>
