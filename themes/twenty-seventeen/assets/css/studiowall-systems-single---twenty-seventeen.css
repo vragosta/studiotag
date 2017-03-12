@@ -11,7 +11,7 @@
 }
 
 /*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-single {
 		margin: 0;
 	}
@@ -91,14 +91,14 @@
 }
 
 /*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-single .specs-container {
 		padding: 0 1.5rem;
 	}
 }
 
 /*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-single .specs-container > div {
 		padding: 0;
 		margin: 0 0 2rem 0;
@@ -140,7 +140,7 @@
 }
 
 /*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-single ul li a {
 		font-size: 2.2rem;
 	}
