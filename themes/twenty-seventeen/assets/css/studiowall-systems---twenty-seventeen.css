@@ -12,7 +12,7 @@
 }
 
 /*--- Media Query for temporary carousel placeholder ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-carousel {
 		padding-bottom: 65%;
 	}
@@ -41,7 +41,7 @@
 }
 
 /*--- Media Query for wall systems logo, readjust margin ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-logo {
 		margin: 6rem 3rem;
 	}
@@ -55,7 +55,7 @@
 }
 
 /*--- Media Query for wall systems featured image to increase width to 100% ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-logo .featured-image {
 		width: 100%;
 	}
@@ -72,7 +72,7 @@
 }
 
 /*--- Media Query for source container for systems logo, change background-size ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-logo .featured-image div {
 		background-size: cover;
 	}
@@ -84,7 +84,7 @@
 }
 
 /*--- Media Query for systems container, reduce margins and increase padding ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems {
 		padding: 0 4rem;
 		margin: 0;
@@ -97,7 +97,7 @@
 }
 
 /*--- Media Query for bootstrap rows, add flex direction column ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .row {
 		flex-direction: column;
 	}
@@ -136,7 +136,7 @@
 }
 
 /*--- Media Query for right images, reduce margin to 0 ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .right .featured-image div {
 		right: 0;
 	}
@@ -148,7 +148,7 @@
 }
 
 /*--- Media Query for left images, reduce margin to 0 ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .left .featured-image div {
 		left: 0;
 	}
@@ -162,7 +162,7 @@
 }
 
 /*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .no-padding {
 		order: 1;
 	}
@@ -174,7 +174,7 @@
 }
 
 /*--- Media Query to control the spacing of the left 'info' containers ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .info.left {
 		padding: 8rem 4rem;
 	}
@@ -186,7 +186,7 @@
 }
 
 /*--- Media Query to control the spacing of the right 'info' containers ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .info.right {
 		padding: 8rem 4rem;
 	}
@@ -220,7 +220,7 @@
 
 /*--- Media Query to h3 elements within 'info' container ---*/
 /*--- TODO Address discrepancy of min-width: 768 and max-width: 768, technically, it should be max-width: 767px ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .info h3 {
 		font-size: 3rem;
 		position: relative;
@@ -256,7 +256,7 @@
 }
 
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems .info p {
 		font-size: 1.3rem;
 	}
