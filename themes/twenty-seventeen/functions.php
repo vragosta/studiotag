@@ -23,9 +23,12 @@ define( 'STUDIO_WALL_SITE_ADMIN', 1 );
 // Include compartmentalized functions.
 require_once STUDIO_WALL_INC . 'functions/core.php';
 
+// Include helper functions.
+require_once STUDIO_WALL_INC . 'functions/helpers.php';
+
 // Include various metabox files.
 require_once STUDIO_WALL_INC . 'metaboxes/metabox-system.php';
 require_once STUDIO_WALL_INC . 'metaboxes/metabox-user.php';
 
 // Run the setup functions.
-studio_tag_com\Studio_Wall\Twenty_Seventeen\Core\setup();
+studio_tag\Studio_Wall\Twenty_Seventeen\Core\setup();
