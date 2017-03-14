@@ -11,10 +11,25 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.two-column-textblock {
+		margin: 0 0 4rem;
+	}
+}
+
+/*--- TODO ---*/
 .two-column-textblock .hero-image {
 	margin: 0 0 8rem 0;
 }
 
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .hero-image {
+		margin: 0;
+	}
+}
+
+/*--- TODO ---*/
 .two-column-textblock .hero-image .settings {
 	min-height: 30rem;
 }
@@ -30,16 +45,11 @@
 	margin: 0 30% -10% 1%;
 }
 
-/*@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
-	.two-column-textblock .featured-image {
-		margin: 2rem 7rem -12rem;
-	}
-}*/
-
 /*--- TODO ---*/
-.two-column-textblock .featured-image .settings {
-	/*width: 65%;*/
-	/*width: 85%;*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .featured-image {
+		margin: 6rem 3rem 5rem;
+	}
 }
 
 /*--- Source for featured image ---*/
@@ -53,6 +63,7 @@
 	right: 0;
 }
 
+/*--- TODO ---*/
 .two-column-textblock .content-container {
 	margin: 0;
 }
@@ -65,19 +76,18 @@
 	min-height: 900px;
 }
 
-/*.two-column-textblock .content-container .content.col-sm-offset-3 {
-	margin-left: 24.5%;
-}*/
-
+/*--- TODO ---*/
 @media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
 	.two-column-textblock .content-container .content {
 		min-height: 800px;
 	}
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*--- TODO ---*/
+@media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content {
 		column-count: 1;
+		padding: 0 1rem;
 	}
 }
 
@@ -97,7 +107,7 @@
 }
 
 /*--- TODO ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content p {
 		font-size: 1.6rem;
 	}

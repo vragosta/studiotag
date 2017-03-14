@@ -210,7 +210,6 @@
 }
 
 /*--- Media Query to h3 elements within 'info' container ---*/
-/*--- TODO Address discrepancy of min-width: 768 and max-width: 768, technically, it should be max-width: 767px ---*/
 @media only screen and ( max-width: 767px ) {
 	.archive-systems .systems-grid .info h3 {
 		font-size: 3rem;
