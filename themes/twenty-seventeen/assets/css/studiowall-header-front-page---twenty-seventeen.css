@@ -76,7 +76,7 @@
 
 /*--- Media Query to control the width of the first unordered list element within the menu container ---*/
 /*--- NOTE: There is definitely a more efficient way to handle this, this is a good quick solution for the moment however ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul:first-child {
 		width: 150%;
 	}
@@ -94,7 +94,7 @@
 	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul:last-child {
 		padding-left: 0;
 	}
@@ -121,7 +121,7 @@
 }
 
 /*--- Media Query for all links in menu container ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul li a {
 		font-size: 1.5rem; /*--- Control the font size of the second <ul> links here ---*/
 	}
@@ -140,7 +140,7 @@
 }
 
 /*--- Media Query for links in first list within menu container ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul:first-child li a {
 		font-size: 3rem;
 	}

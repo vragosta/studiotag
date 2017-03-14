@@ -16,7 +16,7 @@
 }
 
 /*--- Media Query for header navigation container element ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	/*--- Change flex layout ---*/
 	.header-navigation {
 		flex-direction: column;
@@ -37,7 +37,7 @@
 }
 
 /*--- Media Query for menu ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	/*--- Change display to block to prevent inline look ---*/
 	#menu {
 		display: block;
@@ -52,7 +52,7 @@
 }
 
 /*--- Media Query for menu list items ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	/*--- Only target the first level li elements ---*/
 	#menu > li {
 		text-align: center;
@@ -77,7 +77,7 @@
 }
 
 /*--- Media Query for mobile button ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#menu .mobile {
 		display: flex;
 		justify-content: center;
@@ -100,7 +100,7 @@
 }
 
 /*--- Media Query for expanded menu ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#menu .mobile:hover .expand {
 		display: flex;
 		opacity: 1;
@@ -117,7 +117,7 @@
 }
 
 /*--- Media Query for menu links ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#menu > li > a {
 		font-size: 2rem;
 		line-height: 2;
@@ -125,7 +125,7 @@
 }
 
 /*--- Media Queries for CSS that isnt being maintained ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#menu .dropdown {
 		display: none;
 	}

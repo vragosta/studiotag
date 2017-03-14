@@ -203,10 +203,19 @@ function styles() {
 		);
 	endif;
 
-	if ( is_page( 'systems' ) ) :
+	if ( is_post_type_archive( 'system' ) ) :
 		wp_enqueue_style(
 			'studio-wall-systems',
 			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
+	if ( is_singular( 'system' ) ) :
+		wp_enqueue_style(
+			'studio-wall-systems',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems-single---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);

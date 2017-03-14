@@ -14,7 +14,7 @@
 }
 
 /*--- Media Query for footer container element ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer {
 		flex-direction: column;
 	}
@@ -26,7 +26,7 @@
 }
 
 /*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child {
 		height: 30rem;
 	}
@@ -55,7 +55,7 @@
 }
 
 /*--- Media Query for first section element in footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:first-child {
 		width: 100%;
 		border: none;
@@ -114,7 +114,7 @@
 }
 
 /*--- Media Query for last ( second ) section element ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child {
 		width: 100%;
 	}
@@ -132,7 +132,7 @@
 	width: 100%;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column {
 		border-top: 0.1rem solid #221E1f;
 		padding: 2rem;
@@ -157,7 +157,7 @@
 }
 
 /*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column h2 {
 		border-bottom: none;
 		padding: 0;
@@ -196,7 +196,7 @@
 }
 
 /*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column div:last-child {
 		justify-content: flex-start;
 	}

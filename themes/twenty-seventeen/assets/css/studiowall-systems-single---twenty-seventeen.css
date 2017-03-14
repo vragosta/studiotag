@@ -1,0 +1,211 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for systems single
+ *
+ * Location: single-system.php
+ */
+
+/*--- Single systems container ---*/
+.systems-single {
+	margin: 0 0 8rem 0;
+}
+
+/*--- Media Query for single systems container ---*/
+@media only screen and ( max-width: 767px ) {
+	.systems-single {
+		margin: 0;
+	}
+}
+
+/*--- Single systems elements that require same font family ---*/
+.systems-single h1,
+.systems-single h2,
+.systems-single p,
+.systems-single a {
+	font-family: HelveticaNeueLT Std;
+}
+
+/*--- Featured image styles ---*/
+.systems-single .featured-image {
+	position: relative;
+	padding-bottom: 35%;
+	min-height: 30rem;
+}
+
+/*--- Source for featured image ---*/
+.systems-single .featured-image div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- Control section padding ---*/
+.systems-single section {
+	padding: 0 4rem;
+}
+
+/*--- Media Query to control section padding ---*/
+@media only screen and ( max-width: 992px ) {
+	.systems-single section {
+		padding: 0 2rem;
+	}
+}
+
+/*--- Control styles of 'h1' in title container ---*/
+.systems-single .title-container h1 {
+	font-size: 8rem;
+	margin: 12rem 0 4rem;
+}
+
+/*--- Media Query to control styles of 'h1' in title container ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.systems-single .title-container h1 {
+		font-size: 6rem;
+		margin: 8rem 0 3rem;
+	}
+}
+
+/*--- Media Query to control styles of 'h1' in title container ---*/
+@media only screen and ( max-width: 767px ) and ( min-width: 576px) {
+	.systems-single .title-container h1 {
+		margin: 4rem 0 2rem;
+		font-size: 7rem;
+	}
+}
+
+/*--- Media Query to control styles of 'h1' in title container ---*/
+@media only screen and ( max-width: 575px ) {
+	.systems-single .title-container h1 {
+		margin: 4rem 0 2rem;
+		font-size: 5rem;
+	}
+}
+
+/*-- Change color of 'span' in 'h1' in title container ---*/
+.systems-single .title-container h1 span {
+	color: #A3A5A8;
+}
+
+/*--- Media Query to control padding of specs container ---*/
+@media only screen and ( max-width: 767px ) {
+	.systems-single .specs-container {
+		padding: 0 1.5rem;
+	}
+}
+
+/*--- Media Query to control padding and margins of all first level 'div' in specs container ---*/
+@media only screen and ( max-width: 767px ) {
+	.systems-single .specs-container > div {
+		padding: 0;
+		margin: 0 0 2rem 0;
+	}
+}
+
+/*-- Styles for all unordered lists ---*/
+.systems-single ul {
+	border-left: 0.1rem solid #221E1F;
+	margin: 0;
+	padding: 0 0 0 3rem;
+}
+
+/*--- Media Query to control padding for al unordered lists ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.systems-single ul {
+		padding: 0 0 0 2rem;
+	}
+}
+
+/*-- Control line-height of list elements ---*/
+.systems-single ul li {
+	line-height: 1.2;
+}
+
+/*-- Styles for links in lists ---*/
+.systems-single ul li a {
+	color: #A3A5A8;
+	text-decoration: none;
+	font-size: 2.6rem;
+	transition: color 0.3s ease-in-out;
+}
+
+/*--- Media Query to control font size for links in lists ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.systems-single ul li a {
+		font-size: 2.2rem;
+	}
+}
+
+/*--- Media Query to control font size for links in lists ---*/
+@media only screen and ( max-width: 767px ) {
+	.systems-single ul li a {
+		font-size: 2.2rem;
+	}
+}
+
+/*-- Change color on hover for links in lists ---*/
+.systems-single ul li a:hover {
+	color: #221E1F;
+}
+
+/*--- Control padding for content container ---*/
+.systems-single .content-container {
+	padding: 0 1.5rem 0 0;
+}
+
+/*-- Styles to all paragraph tags on single template ---*/
+.systems-single p {
+	font-size: 2rem;
+	line-height: 1.3;
+}
+
+/*--- Media Query for all paragraph tags on single template ---*/
+@media only screen and ( max-width: 1199px ) {
+	.systems-single p {
+		font-size: 1.8rem;
+	}
+}
+
+/*--- Media Query to control margins for custom meta container ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.systems-single .custom-meta-container {
+		margin: 4rem 0 0;
+	}
+}
+
+/*--- Styles for 'custom' elements ---*/
+.systems-single .custom  {
+	padding: 2rem 0;
+	border-bottom: 0.1rem solid #221E1F;
+}
+
+/*--- Adjust styles for first custom element ---*/
+.systems-single .custom:first-child {
+	padding: 0 0 2rem 0;
+}
+
+/*--- Adjust styles for last custom element ---*/
+.systems-single .custom:last-child {
+	border-bottom: none;
+}
+
+/*--- Control margin for 'h2' elements in the custom element ---*/
+.systems-single .custom h2 {
+	margin: 0;
+}
+
+/*--- Media Query to control font size for 'h2' elements ---*/
+@media only screen and ( max-width: 1199px) and ( min-width: 992px ) {
+	.systems-single .custom h2 {
+		font-size: 2.5rem;
+	}
+}
+
+/*--- Styles for paragrap tags in the custom element ---*/
+.systems-single .custom p {
+	margin: 2rem 0 0;
+	color: #A3A5A8;
+}
