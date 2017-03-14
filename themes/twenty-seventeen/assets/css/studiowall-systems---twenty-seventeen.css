@@ -5,12 +5,12 @@
  * Location: archive-system.php
  */
 
-/*--- TODO ---*/
+/*--- Control margin of temporary carousel ---*/
 .archive-systems .carousel {
 	margin: 0 0 6rem 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control margin of temporary carousel ---*/
 @media only screen and ( max-width: 767px ) {
 	.archive-systems .carousel {
 		margin: 0;

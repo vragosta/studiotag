@@ -5,31 +5,31 @@
  * Location: page-templates/two-column-textblock.php
  */
 
-/*--- TODO ---*/
+/*--- Control margins of textblock container ---*/
 .two-column-textblock {
 	margin: 0 0 8rem 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the margins fo textblock container ---*/
 @media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
 	.two-column-textblock {
 		margin: 0 0 4rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Control margins for hero image ---*/
 .two-column-textblock .hero-image {
 	margin: 0 0 8rem 0;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control margins for hero image ---*/
 @media only screen and ( max-width: 767px ) {
 	.two-column-textblock .hero-image {
 		margin: 0;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Add min-height to hero image settings ---*/
 .two-column-textblock .hero-image .settings {
 	min-height: 30rem;
 }
@@ -40,12 +40,12 @@
 	padding-bottom: 35%;
 }
 
-/*--- TODO ---*/
+/*--- Control margins of the featured image ---*/
 .two-column-textblock .featured-image {
 	margin: 0 30% -10% 1%;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control margins of the featured image ---*/
 @media only screen and ( max-width: 767px ) {
 	.two-column-textblock .featured-image {
 		margin: 6rem 3rem 5rem;
@@ -63,12 +63,12 @@
 	right: 0;
 }
 
-/*--- TODO ---*/
+/*--- Remove the margins of the content container ---*/
 .two-column-textblock .content-container {
 	margin: 0;
 }
 
-/*--- TODO ---*/
+/*--- Control columns of the content ---*/
 .two-column-textblock .content-container .content {
 	column-count: 2;
 	column-gap: 2rem;
@@ -76,14 +76,14 @@
 	min-height: 900px;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the min-height of the columns ---*/
 @media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
 	.two-column-textblock .content-container .content {
 		min-height: 800px;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to adjust column count and padding of the columns ---*/
 @media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content {
 		column-count: 1;
@@ -91,7 +91,7 @@
 	}
 }
 
-/*--- TODO ---*/
+/*--- Styles to the paragraph tags ---*/
 .two-column-textblock .content-container .content  p {
 	font-size: 2rem;
 	font-family: HelveticaNeueLT Std;
@@ -99,14 +99,14 @@
 	hyphens: auto;
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the font sie of the paragraph tags ---*/
 @media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
 	.two-column-textblock .content-container .content p {
 		font-size: 1.8rem;
 	}
 }
 
-/*--- TODO ---*/
+/*--- Media Query to control the font size of the paragraph tags ---*/
 @media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content p {
 		font-size: 1.6rem;
