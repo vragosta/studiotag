@@ -23,24 +23,28 @@
 
 ?>
 
-	<main><?php
-		// NOTE: will replace with slider, not going to remove inline styles or image for now ?>
-		<figure class="systems-carousel">
-			<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-		</figure>
+	<main class="archive-systems">
 
-		<section class="systems-logo">
-			<figure class="featured-image">
+		<!-- TODO Replace this with carousel -->
+		<section class="carousel">
+			<figure class="settings">
+				<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
+			</figure>
+		</section>
+		<!-- TODO Replace this with carousel -->
+
+		<section class="featured-image">
+			<figure class="settings">
 				<div style="background-image: url( '<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' );"></div>
 			</figure>
 		</section>
 
-		<section class="systems"><?php
+		<section class="systems-grid"><?php
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) : $query->the_post();
 
-					// Get the image.
-					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
+					// Get the featured image.
+					$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 
 					// Get the excerpt.
 					$excerpt = wp_trim_words( $temp_post->post_excerpt, 35, '...' );

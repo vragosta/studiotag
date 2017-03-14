@@ -15,6 +15,9 @@
 		<?php while( have_posts() ) : the_post(); ?>
 
 			<?php
+				// Get the featured image from the post.
+				$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+
 				// Get all 'system' specific meta.
 				$custom_one_title     = json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) );
 				$custom_one_content   = json_decode( get_post_meta( $post->ID, 'custom_one_content', true ) );
@@ -39,7 +42,7 @@
 			?>
 
 			<figure class="featured-image">
-				<div style="background-image: url( '<?php echo wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0]; ?>' );"></div>
+				<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 			</figure>
 
 			<section>

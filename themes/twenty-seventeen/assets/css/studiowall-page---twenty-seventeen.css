@@ -1,0 +1,104 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for the various page templates
+ *
+ * Location: page-templates/two-column-textblock.php
+ */
+
+/*--- TODO ---*/
+.two-column-textblock {
+	margin: 0 0 8rem 0;
+}
+
+/*--- TODO ---*/
+.two-column-textblock .hero-image {
+	margin: 0 0 8rem 0;
+}
+
+.two-column-textblock .hero-image .settings {
+	min-height: 30rem;
+}
+
+/*--- Featured image styles ---*/
+.two-column-textblock .settings {
+	position: relative;
+	padding-bottom: 35%;
+}
+
+/*--- TODO ---*/
+.two-column-textblock .featured-image {
+	margin: 0 30% -10% 1%;
+}
+
+/*@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+	.two-column-textblock .featured-image {
+		margin: 2rem 7rem -12rem;
+	}
+}*/
+
+/*--- TODO ---*/
+.two-column-textblock .featured-image .settings {
+	/*width: 65%;*/
+	/*width: 85%;*/
+}
+
+/*--- Source for featured image ---*/
+.two-column-textblock .settings div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.two-column-textblock .content-container {
+	margin: 0;
+}
+
+/*--- TODO ---*/
+.two-column-textblock .content-container .content {
+	column-count: 2;
+	column-gap: 2rem;
+	column-fill: auto;
+	min-height: 900px;
+}
+
+/*.two-column-textblock .content-container .content.col-sm-offset-3 {
+	margin-left: 24.5%;
+}*/
+
+@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content {
+		min-height: 800px;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock .content-container .content {
+		column-count: 1;
+	}
+}
+
+/*--- TODO ---*/
+.two-column-textblock .content-container .content  p {
+	font-size: 2rem;
+	font-family: HelveticaNeueLT Std;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.8rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.6rem;
+	}
+}
