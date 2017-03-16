@@ -48,7 +48,7 @@
 			<section>
 				<div class="title-container row">
 					<div class="col-xs-12">
-						<h1><span>Tagwall</span> Encore</h1>
+						<h1><span>Tagwall</span> <?php the_title(); ?></h1>
 					</div>
 				</div>
 
