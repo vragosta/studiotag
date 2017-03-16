@@ -27,10 +27,10 @@
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
 				<ul class="dropdown-menu">
-					<li><a href="#">History</a></li>
-					<li><a href="#">Focus</a></li>
-					<li><a href="#">Solutions</a></li>
-					<li><a href="#">Team</a></li>
+					<li><a href="<?php echo home_url( '/history'); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/focus'); ?>">Focus</a></li>
+					<li><a href="<?php echo home_url( '/solutions'); ?>">Solutions</a></li>
+					<li><a href="<?php echo home_url( '/team'); ?>">Team</a></li>
 				</ul>
 			</li>
 
@@ -38,17 +38,17 @@
 			<li class="mobile">
 				<a href="#">Company</a>
 				<ul class="expand">
-					<li><a href="#">History</a></li>
-					<li><a href="#">Focus</a></li>
-					<li><a href="#">Solutions</a></li>
-					<li><a href="#">Team</a></li>
+					<li><a href="<?php echo home_url( '/history'); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/focus'); ?>">Focus</a></li>
+					<li><a href="<?php echo home_url( '/soluions'); ?>">Solutions</a></li>
+					<li><a href="<?php echo home_url( '/team'); ?>">Team</a></li>
 				</ul>
 			</li>
 
-			<li><a href="#">Wall Details</a></li>
-			<li><a href="#">Projects</a></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Contact</a></li>
+			<li><a href="<?php echo home_url( '/details'); ?>">Wall Details</a></li>
+			<li><a href="<?php echo home_url( '/projects'); ?>">Projects</a></li>
+			<li><a href="<?php echo home_url( '/news'); ?>">News</a></li>
+			<li><a href="<?php echo home_url( '/team'); ?>">Contact</a></li>
 		</ul>
 	</section>
 
