@@ -8,7 +8,13 @@
  */
 
 // Declare core file namespace.
-namespace studio_tag_com\Studio_Wall\Twenty_Seventeen\Core;
+namespace studio_tag\Studio_Wall\Twenty_Seventeen\Core;
+
+/**
+ * Allows use of multiple post thumbnails plugin in this file
+ * NOTE: needed when dealing with namespaces.
+ */
+use \MultiPostThumbnails;
 
 /**
  * Set up theme defaults and register supported WordPress features.
@@ -73,6 +79,24 @@ function studiowall_setup() {
 
 	// If set to 'false', the admin bar will not display on front end.
 	show_admin_bar( false );
+
+	/**
+	 * Generate new image meta boxes.
+	 * Add 'hero-image' to the page post type.
+	 */
+	if ( class_exists( 'MultiPostThumbnails' ) ) {
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Hero Image', 'studio_tag' ),
+			'id'        => 'hero-image',
+			'post_type' => 'system'
+		) );
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Hero Image', 'studio_tag' ),
+			'id'        => 'hero-image',
+			'post_type' => 'page'
+		) );
+	}
 }
 
 /**
@@ -91,10 +115,18 @@ function scripts() {
 		true
 	);
 
+	wp_register_script(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js',
+		array( 'jquery' ),
+		STORYCORPS_ORG_VERSION,
+		true
+	);
+
 	wp_enqueue_script(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/js/studiowall---twenty-seventeen.js",
-		array( 'jquery', 'bootstrap' ),
+		array( 'jquery', 'bootstrap', 'slick' ),
 		STUDIO_WALL_VERSION,
 		true
 	);
@@ -144,6 +176,20 @@ function styles() {
 	);
 
 	wp_register_style(
+		'slick',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css',
+		array(),
+		STORYCORPS_ORG_VERSION
+	);
+
+	wp_register_style(
+		'slick-theme',
+		'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css',
+		array( 'slick' ),
+		STORYCORPS_ORG_VERSION
+	);
+
+	wp_register_style(
 		'fonts',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-fonts---twenty-seventeen.css",
 		array(),
@@ -158,8 +204,22 @@ function styles() {
 	);
 
 	wp_register_style(
+		'helpers',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-helpers---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
 		'studio-wall-header',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
+		array(),
+		STUDIO_WALL_VERSION
+	);
+
+	wp_register_style(
+		'studio-wall-footer',
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
@@ -174,17 +234,37 @@ function styles() {
 		);
 	endif;
 
-	wp_register_style(
-		'studio-wall-footer',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
-		array(),
-		STUDIO_WALL_VERSION
-	);
+	if ( is_post_type_archive( 'system' ) ) :
+		wp_enqueue_style(
+			'studio-wall-systems',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
+	if ( is_singular( 'system' ) ) :
+		wp_enqueue_style(
+			'studio-wall-systems',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems-single---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
+
+	if ( is_page() ) :
+		wp_enqueue_style(
+			'studio-wall-page',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-page---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+	endif;
 
 	wp_enqueue_style(
 		'studio_wall',
 		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'fonts', 'core-components', 'studio-wall-header', 'studio-wall-footer' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
 }

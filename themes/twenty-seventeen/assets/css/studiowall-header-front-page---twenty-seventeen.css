@@ -31,6 +31,7 @@
 	position: absolute;
 	height: 0;
 	overflow: hidden;
+	padding: 10rem 0 0 0;
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
@@ -61,17 +62,29 @@
 	margin: 0;
 }
 
-/*--- Styles for first list element within menu container ---*/
+/*--- Styles for first unordered list element within menu container ---*/
 .menu-container ul:first-child {
-	border-right: 0.1rem solid #A2A4A7;
-	width: 55%; /*--- Control width of first <ul> here ---*/
+	width: 65%; /*--- Control width of first <ul> here ---*/
 }
 
-/*--- Media Query for first list element ---*/
-@media only screen and ( max-width: 768px ) {
+/*--- Media Query to control the width of the first unordered list element within the menu container ---*/
+@media only screen and ( max-width: 1200px ) {
 	.menu-container ul:first-child {
-		width: 100%; /*--- Control width of first <ul> here ---*/
+		width: 100%;
 	}
+}
+
+/*--- Media Query to control the width of the first unordered list element within the menu container ---*/
+/*--- NOTE: There is definitely a more efficient way to handle this, this is a good quick solution for the moment however ---*/
+@media only screen and ( max-width: 767px ) {
+	.menu-container ul:first-child {
+		width: 150%;
+	}
+}
+
+/*--- Add the border-right to the list elements in the first unordered list element ---*/
+.menu-container ul:first-child li {
+	border-right: 0.1rem solid #A2A4A7;
 }
 
 /*--- Styles for the last ( second ) list element within menu container ---*/
@@ -81,7 +94,13 @@
 	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.menu-container ul:last-child {
+		padding-left: 0;
+	}
+}
+
+/*--- Toggle visibility class on second unordered list element ---*/
 .menu-container ul:last-child.visible {
 	opacity: 1;
 	visibility: visible;
@@ -89,14 +108,20 @@
 
 /*--- Styles for all links in menu container ---*/
 .menu-container ul li a {
-	font-size: 2rem; /*--- Control the font size of the second <ul> links here ---*/
+	font-size: 3rem; /*--- Control the font size of the second <ul> links here ---*/
 	text-decoration: none;
 	color: #A2A4A7;
 	transition: color 0.3s ease-in-out;
 }
 
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.menu-container ul li a {
+		font-size: 2.5rem;
+	}
+}
+
 /*--- Media Query for all links in menu container ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul li a {
 		font-size: 1.5rem; /*--- Control the font size of the second <ul> links here ---*/
 	}
@@ -104,11 +129,18 @@
 
 /*--- Change font size for links in first list within menu container ---*/
 .menu-container ul:first-child li a {
-	font-size: 4.2rem;
+	font-size: 7.5rem;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.menu-container ul:first-child li a {
+		font-size: 6rem;
+	}
 }
 
 /*--- Media Query for links in first list within menu container ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	.menu-container ul:first-child li a {
 		font-size: 3rem;
 	}

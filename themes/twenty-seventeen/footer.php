@@ -8,11 +8,18 @@
  * @uses       wp_footer()
  */
 
-	// Get the user by 'id'.
+	// Get the admin user by 'id'.
 	$user  = get_user_by( 'id', STUDIO_WALL_SITE_ADMIN );
 
-	// Get the phone number of the user.
+	// Get the phone number of the admin user.
 	$phone = get_user_meta( $user->ID, 'phone', true );
+
+	// Get social meta from admin user.
+	$twitter   = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'twitter', true );
+	$facebook  = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'facebook', true );
+	$pinterest = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'pinterest', true );
+	$instagram = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'instagram', true );
+	$linkedin  = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'linkedin', true );
 
 ?>
 
@@ -26,7 +33,7 @@
 
 				<div>
 
-					<!-- TODO Make this dynamic -->
+					<!-- TODO Devise a way to make this dynamic -->
 					<ul>
 						<li>321 West 44th Street</li>
 						<li>Suite 200</li>
@@ -34,12 +41,18 @@
 					</ul>
 
 					<ul>
-						<li><a href:"tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li>
+						<li><a href="tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li>
 						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>"><?php echo esc_html( $user->user_email ); ?></a></li>
 					</ul>
 
 					<!-- Social Icons -->
-					<?php get_template_part( 'partials/content', 'social' ); ?>
+					<div class="social">
+						<a href="<?php echo esc_attr( $twitter ); ?>" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+						<a href="<?php echo esc_attr( $facebook ); ?>" class="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
+						<a href="<?php echo esc_attr( $pinterest ); ?>" class="pinterest"><i class="fa fa-pinterest fa-2x"></i></a>
+						<a href="<?php echo esc_attr( $instagram ); ?>" class="instagram"><i class="fa fa-instagram fa-2x"></i></a>
+						<a href="<?php echo esc_attr( $linkedin ); ?>" class="linkedin"><i class="fa fa-linkedin-square fa-2x"></i></a>
+					</div>
 
 				</div>
 

@@ -1,0 +1,114 @@
+/**
+ * Studio Wall - Twenty Seventeen
+ * Styles for the various page templates
+ *
+ * Location: page-templates/two-column-textblock.php
+ */
+
+/*--- Control margins of textblock container ---*/
+.two-column-textblock {
+	margin: 0 0 8rem 0;
+}
+
+/*--- Media Query to control the margins fo textblock container ---*/
+@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+	.two-column-textblock {
+		margin: 0 0 4rem;
+	}
+}
+
+/*--- Control margins for hero image ---*/
+.two-column-textblock .hero-image {
+	margin: 0 0 8rem 0;
+}
+
+/*--- Media Query to control margins for hero image ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .hero-image {
+		margin: 0;
+	}
+}
+
+/*--- Add min-height to hero image settings ---*/
+.two-column-textblock .hero-image .settings {
+	min-height: 30rem;
+}
+
+/*--- Featured image styles ---*/
+.two-column-textblock .settings {
+	position: relative;
+	padding-bottom: 35%;
+}
+
+/*--- Control margins of the featured image ---*/
+.two-column-textblock .featured-image {
+	margin: 0 30% -10% 1%;
+}
+
+/*--- Media Query to control margins of the featured image ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .featured-image {
+		margin: 6rem 3rem 5rem;
+	}
+}
+
+/*--- Source for featured image ---*/
+.two-column-textblock .settings div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+/*--- Remove the margins of the content container ---*/
+.two-column-textblock .content-container {
+	margin: 0;
+}
+
+/*--- Control columns of the content ---*/
+.two-column-textblock .content-container .content {
+	column-count: 2;
+	column-gap: 2rem;
+	column-fill: auto;
+	min-height: 900px;
+}
+
+/*--- Media Query to control the min-height of the columns ---*/
+@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content {
+		min-height: 800px;
+	}
+}
+
+/*--- Media Query to adjust column count and padding of the columns ---*/
+@media only screen and ( max-width: 991px ) {
+	.two-column-textblock .content-container .content {
+		column-count: 1;
+		padding: 0 1rem;
+	}
+}
+
+/*--- Styles to the paragraph tags ---*/
+.two-column-textblock .content-container .content  p {
+	font-size: 2rem;
+	font-family: HelveticaNeueLT Std;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+/*--- Media Query to control the font sie of the paragraph tags ---*/
+@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.8rem;
+	}
+}
+
+/*--- Media Query to control the font size of the paragraph tags ---*/
+@media only screen and ( max-width: 991px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.6rem;
+	}
+}

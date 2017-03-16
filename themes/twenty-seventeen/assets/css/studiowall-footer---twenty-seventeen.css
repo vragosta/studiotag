@@ -14,20 +14,19 @@
 }
 
 /*--- Media Query for footer container element ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer {
 		flex-direction: column;
 	}
 }
 
 /*--- Control the height of the two section elements ---*/
-/*--- NOTE: This can be optimized by using padding on the inner elements ---*/
 #footer > section {
-	height: 35rem;
+	height: 40rem;
 }
 
-/*--- TODO ---*/
-@media only screen and ( max-width: 768px ) {
+/*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child {
 		height: 30rem;
 	}
@@ -36,6 +35,12 @@
 /*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+/*--- Hover behavior for the all links in the footer ---*/
+#footer > section a:hover {
+	color: #A2A4A7;
 }
 
 /*--- Styles for first section element in footer ---*/
@@ -50,7 +55,7 @@
 }
 
 /*--- Media Query for first section element in footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:first-child {
 		width: 100%;
 		border: none;
@@ -79,11 +84,27 @@
 /*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
+	transition: color 0.3s ease-in-out;
 }
 
-/*--- Control the dimensions of the social images in the footer ---*/
-#footer .social img {
-	width: 2.5rem;
+#footer .social a.twitter:hover {
+	color: #4099ff;
+}
+
+#footer .social a.facebook:hover {
+	color: #3b5998;
+}
+
+#footer .social a.pinterest:hover {
+	color: #cb2027;
+}
+
+#footer .social a.instagram:hover {
+	color: #125688;
+}
+
+#footer .social a.linkedin:hover {
+	color: #007bb5;
 }
 
 /*--- Styles for last ( second ) section element in footer ---*/
@@ -93,7 +114,7 @@
 }
 
 /*--- Media Query for last ( second ) section element ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child {
 		width: 100%;
 	}
@@ -111,12 +132,13 @@
 	width: 100%;
 }
 
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column {
 		border-top: 0.1rem solid #221E1f;
 		padding: 2rem;
 		display: flex;
 		flex-direction: column;
+		justify-content: center;
 		min-height: 23rem;
 	}
 }
@@ -130,15 +152,14 @@
 	border-bottom: 0.1rem solid #221E1F;
 	margin: 0;
 	text-transform: uppercase;
-	font-size: 3.3rem;
+	font-size: 2rem;
 	padding: 2rem;
 }
 
 /*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column h2 {
 		border-bottom: none;
-		font-size: 2.8rem;
 		padding: 0;
 	}
 }
@@ -175,7 +196,7 @@
 }
 
 /*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 768px ) {
+@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child .column div:last-child {
 		justify-content: flex-start;
 	}
