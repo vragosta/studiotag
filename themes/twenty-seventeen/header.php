@@ -18,5 +18,14 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-	<!-- Display header navigation -->
-	<?php get_template_part( 'partials/content', 'header-navigation' ); ?>
+	<?php if ( is_front_page() : ) ?>
+
+		<!-- Display the front page header navigation -->
+ 		<?php get_template_part( 'partials/content', 'header-navigation-front-page' ); ?>
+
+ 	<?php else : ?>
+
+ 		<!-- Display header navigation -->
+		<?php get_template_part( 'partials/content', 'header-navigation' ); ?>
+
+	<?php endif; ?>
