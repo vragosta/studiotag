@@ -22,17 +22,13 @@
 				$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 			?>
 
-			<section class="hero-image">
-				<figure class="settings">
-					<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
-				</figure>
-			</section>
+			<figure class="hero-image settings">
+				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
+			</figure>
 
-			<section class="featured-image">
-				<figure class="settings">
-					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-				</figure>
-			</section>
+			<figure class="featured-image settings">
+				<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+			</figure>
 
 			<section class="content-container row">
 				<div class="content col-xs-12 col-sm-offset-4 col-sm-8">
