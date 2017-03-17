@@ -227,15 +227,6 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'studio-wall-header-front-page',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
-			array(),
-			STUDIO_WALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'system' ) ) :
-		wp_enqueue_style(
 			'studio-wall-systems',
 			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
 			array(),
