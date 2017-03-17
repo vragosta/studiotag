@@ -18,7 +18,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 
-	<?php if ( is_front_page() : ) ?>
+	<?php if ( is_front_page() ) : ?>
 
 		<!-- Display the front page header navigation -->
  		<?php get_template_part( 'partials/content', 'header-navigation-front-page' ); ?>
