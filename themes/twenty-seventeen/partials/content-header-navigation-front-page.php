@@ -29,7 +29,7 @@
 	<ul>
 		<li><a href="#" data-id="company">Company</a></li>
 		<li><a href="<?php echo home_url( '/details'); ?>">Wall Details</a></li>
-		<li><a href="<?php echo home_url( '/projects'); ?>">Projects</a></li>
+		<li><a href="#">Projects</a></li>
 		<li><a href="<?php echo home_url( '/news'); ?>">News</a></li>
 		<li><a href="<?php echo home_url( '/team'); ?>">Contact</a></li>
 	</ul>
