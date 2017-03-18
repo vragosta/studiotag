@@ -232,6 +232,13 @@ function styles() {
 			array(),
 			STUDIO_WALL_VERSION
 		);
+		wp_enqueue_style(
+			'studio-wall-header-front-page',
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
+			array(),
+			STUDIO_WALL_VERSION
+		);
+
 	endif;
 
 	if ( is_singular( 'system' ) ) :
