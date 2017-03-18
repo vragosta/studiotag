@@ -44,7 +44,7 @@
 .menu-container.visible {
 	opacity: 1;
 	visibility: visible;
-	height: 100%;
+	height: 5000px; /*--- Control whitespace ---*/
 }
 
 /*--- Not visible class for use in js ---*/
