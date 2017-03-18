@@ -1,11 +1,11 @@
 <?php
 /**
-* Template Name: Single - Three Column
-*
-* @package    Studio Tag - Twenty Seventeen
-* @subpackage Studio Wall - Twenty Seventeen
-* @since      0.1.0
-*/
+ * Template Name: Single - Three Column
+ *
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    get_header(), studiowall_get_featured_image(), json_decode(), get_post_meta(), esc_attr(), the _title(), the_content()
+ */
 ?>
 
 <?php get_header(); ?>
@@ -16,7 +16,7 @@
 
 			<?php
 				// Get the featured image from the post.
-				$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+				$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 
 				// Get all 'system' specific meta.
 				$custom_one_title     = json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) );

@@ -1,11 +1,12 @@
 <?php
 /**
-* Template Name: Team Grid
-*
-* @package    Studio Tag - Twenty Seventeen
-* @subpackage Studio Wall - Twenty Seventeen
-* @since      0.1.0
-*/
+ * Template Name: Team Grid
+ *
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    get_header(), get_users(), studiowall_get_hero_image(), studiowall_get_featued_image(),
+ *          esc_attr(), esc_html(), get_avatar_url(), get_user_meta()
+ */
 ?>
 
 <?php
@@ -17,15 +18,12 @@
 
 	// TODO
 	$users = get_users( array( 'order' => 'DESC' ) );
-	// echo '<pre>';
-	// var_dump( $users );
-	// echo '</pre>';
 
 	// Get the 'hero-image' from the post.
-	$hero_image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_hero_image( $post );
+	$hero_image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_hero_image( $post );
 
 	// Get the 'featured' image from the post.
-	$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+	$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 ?>
 
 	<main class="archive-users">

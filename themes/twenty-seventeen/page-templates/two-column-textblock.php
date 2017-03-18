@@ -1,11 +1,11 @@
 <?php
 /**
-* Template Name: Two Column Textblock
-*
-* @package    Studio Tag - Twenty Seventeen
-* @subpackage Studio Wall - Twenty Seventeen
-* @since      0.1.0
-*/
+ * Template Name: Two Column Textblock
+ *
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    studiowall_get_hero_image(), studiowall_get_featued_image(), esc_Attr(), the_content(), wp_reset_postdata(), get_footer()
+ */
 ?>
 
 <?php get_header(); ?>
@@ -16,10 +16,10 @@
 
 			<?php
 				// Get the 'hero-image' from the post.
-				$hero_image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_hero_image( $post );
+				$hero_image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_hero_image( $post );
 
 				// Get the 'featured' image from the post.
-				$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+				$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 			?>
 
 			<figure class="hero-image settings">

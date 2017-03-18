@@ -2,10 +2,10 @@
 /**
  * Template for displaying the front page.
  *
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- * @since      0.1.0
- * @uses       get_header(), get_template_part(), get_footer()
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    get_header(), get_template_part(), studiowall_get_featued_image(), wp_trim_words(), the_permalink(),
+ *          get_the_permalink(), esc_html(), wp_reset_postdata(), get_footer()
  */
 ?>
 
@@ -48,7 +48,7 @@
 				while ( $query->have_posts() ) : $query->the_post();
 
 					// Get the featured image.
-					$image = studio_tag\Studio_Wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+					$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
 
 					// Get the excerpt.
 					$excerpt = wp_trim_words( $temp_post->post_excerpt, 35, '...' );

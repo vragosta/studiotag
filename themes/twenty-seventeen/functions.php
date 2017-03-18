@@ -8,9 +8,9 @@
  * functions.php file. The child theme's functions.php file is included before the parent
  * theme's file, so the child theme functions would be used.
  *
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- * @since      0.1.0
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    define(), get_template_directory_uri(), get_template_directory(), require_once(), setup()
  */
 
 // Useful global constants.
@@ -31,4 +31,4 @@ require_once STUDIO_WALL_INC . 'metaboxes/metabox-system.php';
 require_once STUDIO_WALL_INC . 'metaboxes/metabox-user.php';
 
 // Run the setup functions.
-studio_tag\Studio_Wall\Twenty_Seventeen\Core\setup();
+Tag_wall\Twenty_Seventeen\Core\setup();

@@ -1,13 +1,13 @@
 <?php
 /**
- * StoryCorps - Twenty Sixteen helper functions
+ * Helper functions.
  *
- * @package StoryCorps - Twenty Sixteen
- * @since 0.1.0
+ * @package Tag Wall - Twenty Seveteen
+ * @since   0.1.0
  */
 
 // Declare helpers file namespace.
-namespace studio_tag\Studio_Wall\Twenty_Seventeen\Helpers;
+namespace Tag_wall\Twenty_Seventeen\Helpers;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file

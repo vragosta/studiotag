@@ -1,5 +1,5 @@
 /**
- * Studio Wall - Twenty Seventeen
+ * Tag Wall - Twenty Seventeen
  * Core
  *
  * Copyright (c) 2017

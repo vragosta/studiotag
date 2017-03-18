@@ -1,12 +1,11 @@
 <?php
 /**
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- *
  * Configuration file for creating the 'system' metaboxes.
  * Additionally provides save and retrieve algorithms.
+ *
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
  */
-
 
 /**
  * Create 'Custom Meta' metaboxes for the 'system' custom post type.

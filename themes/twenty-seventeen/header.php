@@ -2,10 +2,9 @@
 /**
  * The template for displaying the header.
  *
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- * @since      0.1.0
- * @uses       language_attributes(), wp_head(), body_class(), is_front_page(), get_template_part()
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    language_attributes(), wp_head(), body_class(), is_front_page(), get_template_part()
  */
 ?>
 

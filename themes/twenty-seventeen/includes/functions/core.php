@@ -2,13 +2,12 @@
 /**
  * This file contains the necessary theme configuration functions.
  *
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- * @since      0.1.0
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
  */
 
 // Declare core file namespace.
-namespace studio_tag\Studio_Wall\Twenty_Seventeen\Core;
+namespace Tag_wall\Twenty_Seventeen\Core;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file
@@ -20,7 +19,7 @@ use \MultiPostThumbnails;
  * Set up theme defaults and register supported WordPress features.
  *
  * @since  0.1.0
- * @uses   add_action()
+ * @uses   add_action(), $n()
  * @return void
  */
 function setup() {
@@ -125,7 +124,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'studio_wall',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/js/studiowall---twenty-seventeen.js",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/js/tagwall---twenty-seventeen.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
 		STUDIO_WALL_VERSION,
 		true
@@ -191,35 +190,35 @@ function styles() {
 
 	wp_register_style(
 		'fonts',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-fonts---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-fonts---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'core-components',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-core-components---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-core-components---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'helpers',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-helpers---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-helpers---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'studio-wall-header',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-header---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
 
 	wp_register_style(
 		'studio-wall-footer',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-footer---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-footer---twenty-seventeen.css",
 		array(),
 		STUDIO_WALL_VERSION
 	);
@@ -228,13 +227,13 @@ function styles() {
 	if ( is_front_page() ) :
 		wp_enqueue_style(
 			'studio-wall-systems',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems---twenty-seventeen.css",
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-systems---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
 		wp_enqueue_style(
 			'studio-wall-header-front-page',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-header-front-page---twenty-seventeen.css",
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-header-front-page---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
@@ -244,7 +243,7 @@ function styles() {
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'studio-wall-systems',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-systems-single---twenty-seventeen.css",
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-systems-single---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
@@ -253,7 +252,7 @@ function styles() {
 	if ( is_page() ) :
 		wp_enqueue_style(
 			'studio-wall-page',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall-page---twenty-seventeen.css",
+			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-page---twenty-seventeen.css",
 			array(),
 			STUDIO_WALL_VERSION
 		);
@@ -261,7 +260,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'studio_wall',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/studiowall---twenty-seventeen.css",
+		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",
 		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'studio-wall-header', 'studio-wall-footer' ),
 		STUDIO_WALL_VERSION
 	);
