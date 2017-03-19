@@ -6,31 +6,38 @@
  */
 
 /*--- Control margin of temporary carousel ---*/
-.archive-systems .carousel {
+.carousel {
 	margin: 0 0 6rem 0;
 }
 
 /*--- Media Query to control margin of temporary carousel ---*/
 @media only screen and ( max-width: 767px ) {
-	.archive-systems .carousel {
+	.carousel {
 		margin: 0;
 	}
 }
 
 /*--- Temporary carousel placeholder ---*/
-.archive-systems .carousel .settings {
+.carousel .settings {
 	padding-bottom: 68%;
 	position: relative;
 }
 
 /*--- Source container for image ---*/
-.archive-systems .carousel .settings div {
+.carousel .settings div {
 	background-size: contain;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+
+/*--- TODO ---*/
+.archive-systems {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
 
 /*--- Wall systems featured image, use negative margins to have preceeding container overlap the image ---*/

@@ -5,17 +5,22 @@
 
 body {
 	margin: 0 auto;
-	max-width: 1500px;
+	max-width: 1800px;
 	padding: 1.5rem 0 2rem 0; /*--- Bottom is slightly larger to accomodate for flex positioning of image in header ---*/
 }
 
 a {
 	color: #221E1F;
 	font-family: HelveticaNeueLT Std;
+	text-decoration: none;
 }
 
-a:hover {
+a:hover,
+a:active,
+a:focus,
+a:active:focus {
 	color: #221E1F;
+	text-decoration: none;
 }
 
 button:active,

@@ -27,15 +27,15 @@
 
 ?>
 
-	<main class="archive-systems">
+	<!-- TODO Replace this with carousel -->
+	<section class="carousel">
+		<figure class="settings">
+			<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
+		</figure>
+	</section>
+	<!-- TODO Replace this with carousel -->
 
-		<!-- TODO Replace this with carousel -->
-		<section class="carousel">
-			<figure class="settings">
-				<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-			</figure>
-		</section>
-		<!-- TODO Replace this with carousel -->
+	<main class="archive-systems">
 
 		<section class="featured-image">
 			<figure class="settings">

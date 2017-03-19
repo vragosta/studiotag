@@ -11,7 +11,7 @@
 }
 
 /*--- Media Query to control the margins fo textblock container ---*/
-@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.two-column-textblock {
 		margin: 0 0 4rem;
 	}
@@ -83,7 +83,7 @@
 }
 
 /*--- Media Query to control the min-height of the columns ---*/
-@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.two-column-textblock .content-container .content {
 		height: 800px;
 	}
@@ -107,7 +107,7 @@
 }
 
 /*--- Media Query to control the font sie of the paragraph tags ---*/
-@media only screen and ( max-width: 1200px ) and ( min-width: 992px ) {
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.two-column-textblock .content-container .content p {
 		font-size: 1.8rem;
 	}
