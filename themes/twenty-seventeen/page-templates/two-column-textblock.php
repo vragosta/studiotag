@@ -8,37 +8,36 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php
+	get_header();
 
-<main class="two-column-textblock">
-	<?php if ( have_posts() ) : ?>
-		<?php while( have_posts() ) : the_post(); ?>
+	if ( have_posts() ) :
+		while( have_posts() ) : the_post();
+			// Get the 'hero-image' from the post.
+			$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
 
-			<?php
-				// Get the 'hero-image' from the post.
-				$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
-
-				// Get the 'featured' image from the post.
-				$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
-			?>
+			// Get the 'featured' image from the post.
+			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 
 			<figure class="hero-image settings">
 				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
 			</figure>
 
-			<figure class="featured-image settings">
-				<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-			</figure>
+			<main class="two-column-textblock">
 
-			<section class="content-container row">
-				<div class="content col-xs-12 col-sm-offset-4 col-sm-8">
-					<?php the_content(); ?>
-				</div>
-			</section>
+				<figure class="featured-image settings">
+					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+				</figure>
 
+				<section class="content-container row">
+					<div class="content col-xs-12 col-sm-offset-4 col-sm-8">
+						<?php the_content(); ?>
+					</div>
+				</section>
+
+			</main>
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
 	<?php endif; ?>
-</main>
 
 <?php get_footer(); ?>

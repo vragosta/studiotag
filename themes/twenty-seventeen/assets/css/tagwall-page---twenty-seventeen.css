@@ -7,7 +7,8 @@
 
 /*--- Control margins of textblock container ---*/
 .two-column-textblock {
-	margin: 0 0 8rem 0;
+	margin: 0 auto 8rem;
+	max-width: 1500px;
 }
 
 /*--- Media Query to control the margins fo textblock container ---*/
@@ -20,6 +21,7 @@
 /*--- Control margins for hero image ---*/
 .hero-image {
 	margin: 0 0 8rem 0;
+	min-height: 30rem;
 }
 
 /*--- Media Query to control margins for hero image ---*/
@@ -94,6 +96,7 @@
 	.two-column-textblock .content-container .content {
 		column-count: 1;
 		padding: 0 1rem;
+		height: auto;
 	}
 }
 
@@ -123,6 +126,19 @@
 /*=========================================================*/
 
 /*--- Systems grid container ---*/
+.archive-users {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.archive-users {
+		padding: 0;
+	}
+}
+
 .archive-users .team-grid {
 	margin: 0 0 20rem 0;
 }
@@ -240,6 +256,13 @@
 /*--- TODO ---*/
 .archive-users .team-grid .info.left > div {
 	padding: 0 0 0 2rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.archive-users .team-grid .info.left > div {
+		padding: 0;
+	}
 }
 
 /*--- TODO ---*/

@@ -40,6 +40,13 @@
 	padding: 0 2rem;
 }
 
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.archive-systems {
+		padding: 0;
+	}
+}
+
 /*--- Wall systems featured image, use negative margins to have preceeding container overlap the image ---*/
 .archive-systems > .featured-image {
 	margin: 0 1% -15%;

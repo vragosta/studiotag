@@ -23,14 +23,13 @@
 	$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
 
 	// Get the 'featured' image from the post.
-	$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
-?>
+	$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+
+	<figure class="hero-image settings">
+		<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
+	</figure>
 
 	<main class="archive-users">
-
-		<figure class="hero-image settings">
-			<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
-		</figure>
 
 		<figure class="featured-image settings">
 			<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
