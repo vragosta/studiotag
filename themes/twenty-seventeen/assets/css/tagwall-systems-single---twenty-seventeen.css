@@ -1,5 +1,5 @@
 /**
- * Studio Wall - Twenty Seventeen
+ * Tag Wall - Twenty Seventeen
  * Styles for systems single
  *
  * Location: single-system.php
@@ -7,7 +7,10 @@
 
 /*--- Single systems container ---*/
 .systems-single {
-	margin: 0 0 8rem 0;
+	/*margin: 0 0 8rem 0;*/
+	/*padding: 0 15rem;*/
+	max-width: 1500px;
+	margin: 0 auto 8rem;
 }
 
 /*--- Media Query for single systems container ---*/
@@ -26,14 +29,14 @@
 }
 
 /*--- Featured image styles ---*/
-.systems-single .featured-image {
+.featured-image {
 	position: relative;
 	padding-bottom: 35%;
 	min-height: 30rem;
 }
 
 /*--- Source for featured image ---*/
-.systems-single .featured-image div {
+.featured-image div {
 	background-size: cover;
 	background-position: center;
 	position: absolute;
@@ -45,14 +48,7 @@
 
 /*--- Control section padding ---*/
 .systems-single section {
-	padding: 0 4rem;
-}
-
-/*--- Media Query to control section padding ---*/
-@media only screen and ( max-width: 992px ) {
-	.systems-single section {
-		padding: 0 2rem;
-	}
+	padding: 0 2rem;
 }
 
 /*--- Control styles of 'h1' in title container ---*/
@@ -178,7 +174,8 @@
 
 /*--- Styles for 'custom' elements ---*/
 .systems-single .custom  {
-	padding: 2rem 0;
+	/*padding: 2rem 0;*/
+	padding: 3rem 0;
 	border-bottom: 0.1rem solid #221E1F;
 }
 

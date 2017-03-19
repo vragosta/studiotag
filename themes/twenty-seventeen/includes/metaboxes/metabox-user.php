@@ -6,7 +6,7 @@
  * @param  array $fields Existing fields array.
  * @return array $fields Existing fields array with new social fields.
  */
-function studiowall_user_fields( $fields ) {
+function tagwall_user_fields( $fields ) {
 	$fields['job_title']      = 'Job Title';
 	$fields['hashtag']        = 'Hashtag';
 	$fields['facebook']       = 'Facebook';
@@ -19,7 +19,7 @@ function studiowall_user_fields( $fields ) {
 
 	return $fields;
 }
-add_filter( 'user_contactmethods', 'studiowall_user_fields' );
+add_filter( 'user_contactmethods', 'tagwall_user_fields' );
 
 /**
  * Save additional profile fields.
@@ -29,7 +29,7 @@ add_filter( 'user_contactmethods', 'studiowall_user_fields' );
  * @uses   current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
-function studiowall_save_user_fields( $user_id ) {
+function tagwall_save_user_fields( $user_id ) {
 	// Check the user's permissions.
 	if ( ! current_user_can( 'edit_user', $user_id ) )
 		return false;
@@ -55,5 +55,5 @@ function studiowall_save_user_fields( $user_id ) {
 	update_usermeta( $user_id, 'work_phone', $work_phone );
 	update_usermeta( $user_id, 'personal_phone', $personal_phone );
 }
-add_action( 'personal_options_update', 'studiowall_save_user_fields' );
-add_action( 'edit_user_profile_update', 'studiowall_save_user_fields' );
+add_action( 'personal_options_update', 'tagwall_save_user_fields' );
+add_action( 'edit_user_profile_update', 'tagwall_save_user_fields' );

@@ -2,24 +2,23 @@
 /**
  * Template for displaying the footer.
  *
- * @package    Studio Tag - Twenty Seventeen
- * @subpackage Studio Wall - Twenty Seventeen
- * @since      0.1.0
- * @uses       wp_footer()
+ * @package Tag Wall - Twenty Seventeen
+ * @since   0.1.0
+ * @uses    get_user_by(), get_user_meta(), home_url(), esc_html(), esc_attr(), dynamic_sidebar(), wp_footer()
  */
 
 	// Get the admin user by 'id'.
-	$user  = get_user_by( 'id', STUDIO_WALL_SITE_ADMIN );
+	$user  = get_user_by( 'id', TAGWALL_SITE_ADMIN );
 
 	// Get the phone number of the admin user.
 	$phone = get_user_meta( $user->ID, 'phone', true );
 
 	// Get social meta from admin user.
-	$twitter   = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'twitter', true );
-	$facebook  = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'facebook', true );
-	$pinterest = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'pinterest', true );
-	$instagram = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'instagram', true );
-	$linkedin  = get_user_meta( STUDIO_WALL_SITE_ADMIN, 'linkedin', true );
+	$twitter   = get_user_meta( TAGWALL_SITE_ADMIN, 'twitter', true );
+	$facebook  = get_user_meta( TAGWALL_SITE_ADMIN, 'facebook', true );
+	$pinterest = get_user_meta( TAGWALL_SITE_ADMIN, 'pinterest', true );
+	$instagram = get_user_meta( TAGWALL_SITE_ADMIN, 'instagram', true );
+	$linkedin  = get_user_meta( TAGWALL_SITE_ADMIN, 'linkedin', true );
 
 ?>
 
@@ -28,7 +27,7 @@
 
 				<!-- Logo -->
 				<a href="<?php echo home_url(); ?>">
-					<img src="<?php echo STUDIO_WALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
+					<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
 				</a>
 
 				<div>
