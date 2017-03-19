@@ -14,21 +14,20 @@
  */
 
 // Useful global constants.
-define( 'STUDIO_WALL_VERSION', '0.1.0' );
-define( 'STUDIO_WALL_TEMPLATE_URL', get_template_directory_uri() );
-define( 'STUDIO_WALL_PATH', get_template_directory() . '/' );
-define( 'STUDIO_WALL_INC', STUDIO_WALL_PATH . 'includes/' );
-define( 'STUDIO_WALL_SITE_ADMIN', 1 );
+define( 'TAGWALL_VERSION', '0.1.0' );
+define( 'TAGWALL_TEMPLATE_URL', get_template_directory_uri() );
+define( 'TAGWALL_INC', get_template_directory() . '/includes/' );
+define( 'TAGWALL_SITE_ADMIN', 1 );
 
 // Include compartmentalized functions.
-require_once STUDIO_WALL_INC . 'functions/core.php';
+require_once TAGWALL_INC . 'functions/core.php';
 
 // Include helper functions.
-require_once STUDIO_WALL_INC . 'functions/helpers.php';
+require_once TAGWALL_INC . 'functions/helpers.php';
 
 // Include various metabox files.
-require_once STUDIO_WALL_INC . 'metaboxes/metabox-system.php';
-require_once STUDIO_WALL_INC . 'metaboxes/metabox-user.php';
+require_once TAGWALL_INC . 'metaboxes/metabox-system.php';
+require_once TAGWALL_INC . 'metaboxes/metabox-user.php';
 
 // Run the setup functions.
-Tag_wall\Twenty_Seventeen\Core\setup();
+Tag_Wall\Twenty_Seventeen\Core\setup();

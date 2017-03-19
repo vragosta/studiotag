@@ -4,7 +4,7 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), studiowall_get_featured_image(), json_decode(), get_post_meta(), esc_attr(), the _title(), the_content()
+ * @uses    get_header(), tagwall_get_featured_image(), json_decode(), get_post_meta(), esc_attr(), the _title(), the_content()
  */
 ?>
 
@@ -16,7 +16,7 @@
 
 			<?php
 				// Get the featured image from the post.
-				$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+				$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
 				// Get all 'system' specific meta.
 				$custom_one_title     = json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) );

@@ -4,7 +4,7 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    studiowall_get_hero_image(), studiowall_get_featued_image(), esc_Attr(), the_content(), wp_reset_postdata(), get_footer()
+ * @uses    tagwall_get_hero_image(), tagwall_get_featured_image(), esc_Attr(), the_content(), wp_reset_postdata(), get_footer()
  */
 ?>
 
@@ -16,10 +16,10 @@
 
 			<?php
 				// Get the 'hero-image' from the post.
-				$hero_image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_hero_image( $post );
+				$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
 
 				// Get the 'featured' image from the post.
-				$image = Tag_wall\Twenty_Seventeen\Helpers\studiowall_get_featured_image( $post );
+				$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 			?>
 
 			<figure class="hero-image settings">

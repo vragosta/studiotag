@@ -7,7 +7,7 @@
  */
 
 // Declare core file namespace.
-namespace Tag_wall\Twenty_Seventeen\Core;
+namespace Tag_Wall\Twenty_Seventeen\Core;
 
 /**
  * Allows use of multiple post thumbnails plugin in this file
@@ -27,7 +27,7 @@ function setup() {
 		return __NAMESPACE__ . "\\$function";
 	};
 
-	add_action( 'after_setup_theme',  $n( 'studiowall_setup' ) );
+	add_action( 'after_setup_theme',  $n( 'tagwall_setup' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'widgets_init',       $n( 'sidebars' ) );
@@ -40,7 +40,7 @@ function setup() {
  * @uses   add_theme_support(), set_post_thumbnail_size(), add_post_type_support(), show_admin_bar()
  * @return void
  */
-function studiowall_setup() {
+function tagwall_setup() {
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
@@ -85,13 +85,13 @@ function studiowall_setup() {
 	 */
 	if ( class_exists( 'MultiPostThumbnails' ) ) {
 		new MultiPostThumbnails( array(
-			'label'     => __( 'Hero Image', 'studio_tag' ),
+			'label'     => __( 'Hero Image', 'tagwall' ),
 			'id'        => 'hero-image',
 			'post_type' => 'system'
 		) );
 
 		new MultiPostThumbnails( array(
-			'label'     => __( 'Hero Image', 'studio_tag' ),
+			'label'     => __( 'Hero Image', 'tagwall' ),
 			'id'        => 'hero-image',
 			'post_type' => 'page'
 		) );
@@ -108,9 +108,9 @@ function studiowall_setup() {
 function scripts() {
 	wp_register_script(
 		'bootstrap',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/js/bootstrap.min.js",
 		array( 'jquery' ),
-		STUDIO_WALL_VERSION,
+		TAGWALL_VERSION,
 		true
 	);
 
@@ -123,10 +123,10 @@ function scripts() {
 	);
 
 	wp_enqueue_script(
-		'studio_wall',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/js/tagwall---twenty-seventeen.js",
+		'tagwall',
+		TAGWALL_TEMPLATE_URL . "/assets/js/tagwall---twenty-seventeen.js",
 		array( 'jquery', 'bootstrap', 'slick' ),
-		STUDIO_WALL_VERSION,
+		TAGWALL_VERSION,
 		true
 	);
 }
@@ -141,37 +141,37 @@ function scripts() {
 function styles() {
 	wp_register_style(
 		'fontawesome',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/fontawesome/css/font-awesome.min.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'ionicons',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/ionicons/css/ionicons.min.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'bootstrap',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/bootstrap/dist/css/bootstrap.min.css",
 		array( 'fontawesome' ),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'sanitize',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/sanitize/sanitize.min.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'hamburger',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/lib/hamburger/hamburger.css",
+		TAGWALL_TEMPLATE_URL . "/assets/lib/hamburger/hamburger.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
@@ -190,79 +190,80 @@ function styles() {
 
 	wp_register_style(
 		'fonts',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-fonts---twenty-seventeen.css",
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-fonts---twenty-seventeen.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'core-components',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-core-components---twenty-seventeen.css",
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-core-components---twenty-seventeen.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
 		'helpers',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-helpers---twenty-seventeen.css",
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-helpers---twenty-seventeen.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
-		'studio-wall-header',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-header---twenty-seventeen.css",
+		'tagwall-header',
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-header---twenty-seventeen.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	wp_register_style(
-		'studio-wall-footer',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-footer---twenty-seventeen.css",
+		'tagwall-footer',
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-footer---twenty-seventeen.css",
 		array(),
-		STUDIO_WALL_VERSION
+		TAGWALL_VERSION
 	);
 
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'studio-wall-systems',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-systems---twenty-seventeen.css",
+			'tagwall-systems',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-systems---twenty-seventeen.css",
 			array(),
-			STUDIO_WALL_VERSION
+			TAGWALL_VERSION
 		);
+
 		wp_enqueue_style(
-			'studio-wall-header-front-page',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-header-front-page---twenty-seventeen.css",
+			'tagwall-header-front-page',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-header-front-page---twenty-seventeen.css",
 			array(),
-			STUDIO_WALL_VERSION
+			TAGWALL_VERSION
 		);
 
 	endif;
 
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
-			'studio-wall-systems',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-systems-single---twenty-seventeen.css",
+			'tagwall-systems',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-systems-single---twenty-seventeen.css",
 			array(),
-			STUDIO_WALL_VERSION
+			TAGWALL_VERSION
 		);
 	endif;
 
 	if ( is_page() ) :
 		wp_enqueue_style(
-			'studio-wall-page',
-			STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall-page---twenty-seventeen.css",
+			'tagwall-page',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page---twenty-seventeen.css",
 			array(),
-			STUDIO_WALL_VERSION
+			TAGWALL_VERSION
 		);
 	endif;
 
 	wp_enqueue_style(
-		'studio_wall',
-		STUDIO_WALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'studio-wall-header', 'studio-wall-footer' ),
-		STUDIO_WALL_VERSION
+		'tagwall',
+		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'tagwall-header', 'tagwall-footer' ),
+		TAGWALL_VERSION
 	);
 }
 

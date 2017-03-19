@@ -1,6 +1,10 @@
 <?php
+
 // TODO
 
+/**
+ * TODO
+ */
 function register_post_type_system() {
 	register_post_type( 'system', array(
 			'label' => 'System',
@@ -39,6 +43,9 @@ function register_post_type_system() {
 }
 add_action( 'init', 'register_post_type_system' );
 
+/**
+ * TODO
+ */
 function register_post_type_technical() {
 	register_post_type( 'techincal', array(
 			'label' => 'Techincal',
@@ -77,6 +84,9 @@ function register_post_type_technical() {
 }
 add_action( 'init', 'register_post_type_technical' );
 
+/**
+ * TODO
+ */
 function register_post_type_applied_details() {
 	register_post_type( 'applied_detail', array(
 			'label' => 'Applied Details',
@@ -115,6 +125,9 @@ function register_post_type_applied_details() {
 }
 add_action( 'init', 'register_post_type_applied_details' );
 
+/**
+ * TODO
+ */
 function register_post_type_door() {
 	register_post_type( 'door', array(
 			'label' => 'Door',
@@ -153,6 +166,9 @@ function register_post_type_door() {
 }
 add_action( 'init', 'register_post_type_door' );
 
+/**
+ * TODO
+ */
 function register_post_type_hardware() {
 	register_post_type( 'hardware', array(
 			'label' => 'Hardware',
@@ -191,6 +207,9 @@ function register_post_type_hardware() {
 }
 add_action( 'init', 'register_post_type_hardware' );
 
+/**
+ * TODO
+ */
 function register_post_type_glass() {
 	register_post_type( 'glass', array(
 			'label' => 'Glass',
@@ -229,7 +248,9 @@ function register_post_type_glass() {
 }
 add_action( 'init', 'register_post_type_glass' );
 
-
+/**
+ * TODO
+ */
 function register_post_type_film() {
 	register_post_type( 'film', array(
 			'label' => 'Film',
@@ -268,6 +289,9 @@ function register_post_type_film() {
 }
 add_action( 'init', 'register_post_type_film' );
 
+/**
+ * TODO
+ */
 function register_post_type_finish() {
 	register_post_type( 'finish', array(
 			'label' => 'Finishes',
@@ -307,14 +331,7 @@ function register_post_type_finish() {
 add_action( 'init', 'register_post_type_finish' );
 
 /**
- * Register editorial custom taxonomy.
- *
- * @uses register_taxonomy()
- */
-
-/**
- *	Technicals taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_encore_technicals() {
     $post_types = array( 'techincal' );
@@ -343,6 +360,9 @@ function storycorps_register_taxonomy_encore_technicals() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_encore_technicals' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_slimline_technicals() {
     $post_types = array( 'techincal' );
     register_taxonomy( 'slimline_technicals', $post_types, array(
@@ -370,8 +390,11 @@ function storycorps_register_taxonomy_slimline_technicals() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_slimline_technicals' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_ion_technicals() {
-    $post_types = array( 'techincal' );
+    $post_types = array( 'technical' );
     register_taxonomy( 'ion_technicals', $post_types, array(
         'hierarchical'      => true,
         'label'             => 'Ion Technicals',
@@ -397,8 +420,11 @@ function storycorps_register_taxonomy_ion_technicals() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_ion_technicals' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_industrial_sash_technicals() {
-    $post_types = array( 'techincal' );
+    $post_types = array( 'technical' );
     register_taxonomy( 'industrial_sash_technicals', $post_types, array(
         'hierarchical'      => true,
         'label'             => 'Industrial Sash Technicals',
@@ -424,10 +450,8 @@ function storycorps_register_taxonomy_industrial_sash_technicals() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_industrial_sash_technicals' );
 
-
 /**
- *	Applied Details taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_hydraulic_patch() {
     $post_types = array( 'applied_detail' );
@@ -456,6 +480,9 @@ function storycorps_register_taxonomy_hydraulic_patch() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_hydraulic_patch' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_sliding_door_detail() {
     $post_types = array( 'applied_detail' );
     register_taxonomy( 'sliding_door_detail', $post_types, array(
@@ -483,6 +510,9 @@ function storycorps_register_taxonomy_sliding_door_detail() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_sliding_door_detail' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_demising_intersection() {
     $post_types = array( 'applied_detail' );
     register_taxonomy( 'demising_intersection', $post_types, array(
@@ -510,6 +540,9 @@ function storycorps_register_taxonomy_demising_intersection() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_demising_intersection' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_corner_detail() {
     $post_types = array( 'applied_detail' );
     register_taxonomy( 'corner_detail', $post_types, array(
@@ -537,6 +570,9 @@ function storycorps_register_taxonomy_corner_detail() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_corner_detail' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_bottom_pivot() {
     $post_types = array( 'applied_detail' );
     register_taxonomy( 'bottom_pivot', $post_types, array(
@@ -564,12 +600,8 @@ function storycorps_register_taxonomy_bottom_pivot() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_bottom_pivot' );
 
-
-
-
 /**
- *	Door taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_swing() {
     $post_types = array( 'door' );
@@ -598,6 +630,9 @@ function storycorps_register_taxonomy_swing() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_swing' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_sliding() {
     $post_types = array( 'door' );
     register_taxonomy( 'sliding', $post_types, array(
@@ -625,6 +660,9 @@ function storycorps_register_taxonomy_sliding() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_sliding' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_solid() {
     $post_types = array( 'door' );
     register_taxonomy( 'solid', $post_types, array(
@@ -652,6 +690,9 @@ function storycorps_register_taxonomy_solid() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_solid' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_solid_woodgrain() {
     $post_types = array( 'door' );
     register_taxonomy( 'solid_woodgrain', $post_types, array(
@@ -679,6 +720,9 @@ function storycorps_register_taxonomy_solid_woodgrain() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_solid_woodgrain' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_solid_painted() {
     $post_types = array( 'door' );
     register_taxonomy( 'solid_painted', $post_types, array(
@@ -706,6 +750,9 @@ function storycorps_register_taxonomy_solid_painted() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_solid_painted' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_powder() {
     $post_types = array( 'door' );
     register_taxonomy( 'powder', $post_types, array(
@@ -735,8 +782,7 @@ add_action( 'init', 'storycorps_register_taxonomy_powder' );
 
 
 /**
- *	Hardware taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_electronic_ladder_pull() {
     $post_types = array( 'hardware' );
@@ -765,6 +811,9 @@ function storycorps_register_taxonomy_electronic_ladder_pull() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_electronic_ladder_pull' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_KLO_ladder_pull() {
     $post_types = array( 'hardware' );
     register_taxonomy( 'KLO_ladder_pull', $post_types, array(
@@ -792,6 +841,9 @@ function storycorps_register_taxonomy_KLO_ladder_pull() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_KLO_ladder_pull' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_HGU_view() {
     $post_types = array( 'hardware' );
     register_taxonomy( 'HGU_view', $post_types, array(
@@ -819,6 +871,9 @@ function storycorps_register_taxonomy_HGU_view() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_HGU_view' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_HGU_lever() {
     $post_types = array( 'hardware' );
     register_taxonomy( 'HGU_lever', $post_types, array(
@@ -846,6 +901,9 @@ function storycorps_register_taxonomy_HGU_lever() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_HGU_lever' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_HGU_finish() {
     $post_types = array( 'hardware' );
     register_taxonomy( 'HGU_finish', $post_types, array(
@@ -874,8 +932,7 @@ function storycorps_register_taxonomy_HGU_finish() {
 add_action( 'init', 'storycorps_register_taxonomy_HGU_finish' );
 
 /**
- *	Glass taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_tagwall_glass() {
     $post_types = array( 'glass' );
@@ -904,6 +961,9 @@ function storycorps_register_taxonomy_tagwall_glass() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_tagwall_glass' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_decorative_glass() {
     $post_types = array( 'glass' );
     register_taxonomy( 'decorative_glass', $post_types, array(
@@ -931,6 +991,9 @@ function storycorps_register_taxonomy_decorative_glass() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_decorative_glass' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_organic() {
     $post_types = array( 'glass' );
     register_taxonomy( 'organic', $post_types, array(
@@ -958,6 +1021,9 @@ function storycorps_register_taxonomy_organic() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_organic' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_linen() {
     $post_types = array( 'glass' );
     register_taxonomy( 'linen', $post_types, array(
@@ -985,6 +1051,9 @@ function storycorps_register_taxonomy_linen() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_linen' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_mesh() {
     $post_types = array( 'glass' );
     register_taxonomy( 'mesh', $post_types, array(
@@ -1012,6 +1081,9 @@ function storycorps_register_taxonomy_mesh() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_mesh' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_film() {
     $post_types = array( 'glass' );
     register_taxonomy( 'film', $post_types, array(
@@ -1039,6 +1111,9 @@ function storycorps_register_taxonomy_film() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_film' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_metal() {
     $post_types = array( 'glass' );
     register_taxonomy( 'metal', $post_types, array(
@@ -1066,6 +1141,9 @@ function storycorps_register_taxonomy_metal() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_metal' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_lace() {
     $post_types = array( 'glass' );
     register_taxonomy( 'lace', $post_types, array(
@@ -1093,6 +1171,9 @@ function storycorps_register_taxonomy_lace() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_lace' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_geometric() {
     $post_types = array( 'glass' );
     register_taxonomy( 'geometric', $post_types, array(
@@ -1121,8 +1202,7 @@ function storycorps_register_taxonomy_geometric() {
 add_action( 'init', 'storycorps_register_taxonomy_geometric' );
 
 /**
- *	Film taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_transparent() {
     $post_types = array( 'film' );
@@ -1151,6 +1231,9 @@ function storycorps_register_taxonomy_transparent() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_transparent' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_gradient() {
     $post_types = array( 'film' );
     register_taxonomy( 'gradient', $post_types, array(
@@ -1178,6 +1261,9 @@ function storycorps_register_taxonomy_gradient() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_gradient' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_lux() {
     $post_types = array( 'film' );
     register_taxonomy( 'lux', $post_types, array(
@@ -1205,6 +1291,9 @@ function storycorps_register_taxonomy_lux() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_lux' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_vision_strips() {
     $post_types = array( 'film' );
     register_taxonomy( 'vision_strips', $post_types, array(
@@ -1232,6 +1321,9 @@ function storycorps_register_taxonomy_vision_strips() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_vision_strips' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_personalize() {
     $post_types = array( 'film' );
     register_taxonomy( 'personalize', $post_types, array(
@@ -1259,6 +1351,9 @@ function storycorps_register_taxonomy_personalize() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_personalize' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_supergraphic() {
     $post_types = array( 'film' );
     register_taxonomy( 'supergraphic', $post_types, array(
@@ -1286,6 +1381,9 @@ function storycorps_register_taxonomy_supergraphic() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_supergraphic' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_art_film() {
     $post_types = array( 'film' );
     register_taxonomy( 'art_film', $post_types, array(
@@ -1314,8 +1412,7 @@ function storycorps_register_taxonomy_art_film() {
 add_action( 'init', 'storycorps_register_taxonomy_art_film' );
 
 /**
- *	Finishes taxonomies
- *
+ * TODO
  */
 function storycorps_register_taxonomy_powder_coatings() {
     $post_types = array( 'finish' );
@@ -1344,6 +1441,9 @@ function storycorps_register_taxonomy_powder_coatings() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_powder_coatings' );
 
+/**
+ * TODO
+ */
 function storycorps_register_taxonomy_anodized() {
     $post_types = array( 'finish' );
     register_taxonomy( 'anodized', $post_types, array(
@@ -1370,84 +1470,3 @@ function storycorps_register_taxonomy_anodized() {
     ));
 }
 add_action( 'init', 'storycorps_register_taxonomy_anodized' );
-
-
-
-
-/* Company Post Type */
-// function register_post_type_company() {
-// 	register_post_type( 'company', array(
-// 			'label' => 'Company',
-// 			'description' => '',
-// 			'public' => true,
-// 			'show_ui' => true,
-// 			'show_in_menu' => true,
-// 			'capability_type' => 'post',
-// 			'map_meta_cap' => true,
-// 			'hierarchical' => false,
-// 			'rewrite' => array( 'slug' => 'companies', 'with_front' => false ),
-// 			'query_var' => true,
-// 			'has_archive' => true,
-// 			'menu_position' => 41,
-// 			'menu_icon' => 'dashicons-feedback',
-// 			'taxonomies'  => array( 'category' ),
-// 			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author' ),
-// 			'labels' => array (
-// 					'name' => 'Companies',
-// 					'singular_name' => 'Company',
-// 					'menu_name' => 'Companies',
-// 					'add_new' => 'Add Company',
-// 					'add_new_item' => 'Add New Company',
-// 					'edit' => 'Edit',
-// 					'edit_item' => 'Edit Company',
-// 					'new_item' => 'New Company',
-// 					'view' => 'View Company',
-// 					'view_item' => 'View Company',
-// 					'search_items' => 'Search Companies',
-// 					'not_found' => 'No Companies Found',
-// 					'not_found_in_trash' => 'No Companies Found in Trash',
-// 					'parent' => 'Parent Company',
-// 			)
-// 		)
-// 	);
-// }
-// add_action( 'init', 'register_post_type_company' );
-
-// function register_post_type_manufacturer() {
-// 	register_post_type( 'manufacturer', array(
-// 			'label' => 'Manufacturer',
-// 			'description' => '',
-// 			'public' => true,
-// 			'show_ui' => true,
-// 			'show_in_menu' => true,
-// 			'capability_type' => 'post',
-// 			'map_meta_cap' => true,
-// 			'hierarchical' => false,
-// 			'rewrite' => array( 'slug' => 'manufacturers', 'with_front' => false ),
-// 			'query_var' => true,
-// 			'has_archive' => true,
-// 			'menu_position' => 41,
-// 			'menu_icon' => 'dashicons-feedback',
-// 			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author', 'category' ),
-// 			'labels' => array (
-// 					'name' => 'Manufacturers',
-// 					'singular_name' => 'Manufacturer',
-// 					'menu_name' => 'Manufacturers',
-// 					'add_new' => 'Add Manufacturer',
-// 					'add_new_item' => 'Add New Manufacturer',
-// 					'edit' => 'Edit',
-// 					'edit_item' => 'Edit Manufacturer',
-// 					'new_item' => 'New Manufacturer',
-// 					'view' => 'View Manufacturer',
-// 					'view_item' => 'View Manufacturer',
-// 					'search_items' => 'Search Manufacturers',
-// 					'not_found' => 'No Manufacturers Found',
-// 					'not_found_in_trash' => 'No Manufacturers Found in Trash',
-// 					'parent' => 'Parent Manufacturer',
-// 			)
-// 		)
-// 	);
-// }
-// add_action( 'init', 'register_post_type_manufacturer' );
-
-?>
