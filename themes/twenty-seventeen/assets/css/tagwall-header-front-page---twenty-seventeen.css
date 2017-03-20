@@ -1,5 +1,5 @@
 /**
- * Studio Wall - Twenty Seventeen
+ * Tag Wall - Twenty Seventeen
  * Styles for header on the front page
  *
  * Location: partials/content-header-navigation-front-page
@@ -10,7 +10,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 1.5rem 1.5rem 1.5rem;
+	/*padding: 0 1.5rem 1.5rem 1.5rem;*/
+	padding: 0 2rem;
+	max-width: 1500px;
+	margin: 0 auto 1.5rem;
 	height: 7rem;
 }
 
@@ -27,11 +30,9 @@
 
 /*--- Menu container ---*/
 .menu-container {
-	display: flex;
 	position: absolute;
 	height: 0;
 	overflow: hidden;
-	padding: 10rem 0 0 0;
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
@@ -44,7 +45,7 @@
 .menu-container.visible {
 	opacity: 1;
 	visibility: visible;
-	height: 100%;
+	height: 5200px; /*--- Control whitespace ---*/
 }
 
 /*--- Not visible class for use in js ---*/
@@ -52,6 +53,15 @@
 	opacity: 0;
 	visibility: hidden;
 	height: 0;
+}
+
+/*--- TODO ---*/
+.menu-container > div {
+	max-width: 1500px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10% 2rem 0;
+	display: flex;
 }
 
 /*--- Styles for list elements within menu container ---*/
@@ -68,7 +78,7 @@
 }
 
 /*--- Media Query to control the width of the first unordered list element within the menu container ---*/
-@media only screen and ( max-width: 1200px ) {
+@media only screen and ( max-width: 1199px ) {
 	.menu-container ul:first-child {
 		width: 100%;
 	}
@@ -114,7 +124,7 @@
 	transition: color 0.3s ease-in-out;
 }
 
-@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.menu-container ul li a {
 		font-size: 2.5rem;
 	}
@@ -133,7 +143,7 @@
 	font-weight: 600;
 }
 
-@media only screen and ( max-width: 992px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.menu-container ul:first-child li a {
 		font-size: 6rem;
 	}

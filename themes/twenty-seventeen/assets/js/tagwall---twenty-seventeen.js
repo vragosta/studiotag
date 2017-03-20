@@ -1,5 +1,5 @@
 /**
- * Studio Wall - Twenty Seventeen
+ * Tag Wall - Twenty Seventeen
  * Core
  *
  * Copyright (c) 2017
@@ -61,6 +61,35 @@
 				// Remove calss 'visible' from the menu.
 				$( '.menu-container ul:last-child' )
 					.removeClass( 'visible' );
+			}
+		});
+
+		$( '.wall-details .details-menu h1' ).on( 'mouseenter', function() {
+			var id = $( this ).data( 'menu' );
+
+			if ( $( window ).width() > 768 ) {
+				if ( id == 'one' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'two' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'three' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'four' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'five' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'six' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				} else if ( id == 'seven' ) {
+					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
+					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
+				}
 			}
 		});
 
