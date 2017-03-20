@@ -5,19 +5,7 @@
  * Location: page-templates/two-column-textblock.php
  */
 
-/*--- Control margins of textblock container ---*/
-.two-column-textblock {
-	margin: 0 auto 8rem;
-	max-width: 1500px;
-}
-
-/*--- Media Query to control the margins fo textblock container ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.two-column-textblock {
-		margin: 0 0 4rem;
-	}
-}
-
+/*--- GENERIC IMAGE STYLES ---*/
 /*--- Control margins for hero image ---*/
 .hero-image {
 	margin: 0 0 8rem 0;
@@ -31,9 +19,16 @@
 	}
 }
 
-/*--- Add min-height to hero image settings ---*/
-.hero-image .settings {
-	min-height: 30rem;
+/*--- Control margins of the featured image ---*/
+.featured-image {
+	margin: 0 45% -15% 0;
+}
+
+/*--- Media Query to control margins of the featured image ---*/
+@media only screen and ( max-width: 767px ) {
+	.featured-image {
+		margin: 6rem 3rem 5rem;
+	}
 }
 
 /*--- Featured image styles ---*/
@@ -42,22 +37,9 @@
 	padding-bottom: 35%;
 }
 
-/*--- Control margins of the featured image ---*/
-.featured-image {
-	margin: 0px 45% -15% 2%;
-}
-
-/*--- TODO ---*/
-.two-column-textblock .featured-image {
-	margin: 0px 30% -16% 2%;
-}
-
-/*--- Media Query to control margins of the featured image ---*/
-@media only screen and ( max-width: 767px ) {
-	.featured-image,
-	.two-column-textblock .featured-image {
-		margin: 6rem 3rem 5rem;
-	}
+/*--- Add min-height to hero image settings ---*/
+.hero-image .settings {
+	min-height: 30rem;
 }
 
 /*--- Source for featured image ---*/
@@ -71,9 +53,51 @@
 	right: 0;
 }
 
+/*--- TWO COLUMN TEXTBLOCK STYLES ---*/
+/*--- Control margins of textblock container ---*/
+.two-column-textblock {
+	margin: 0 auto 8rem;
+	max-width: 1500px;
+	padding: 0 2rem;
+}
+
+/*--- Media Query to control the margins fo textblock container ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock {
+		margin: 0 0 4rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock {
+		padding: 0;
+	}
+}
+
+/*--- TODO ---*/
+.two-column-textblock .featured-image {
+	margin: 0px 30% -16% 0%;
+}
+
+/*--- Media Query to control margins of the featured image ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .featured-image {
+		margin: 6rem 3rem 5rem;
+	}
+}
+
 /*--- Remove the margins of the content container ---*/
 .two-column-textblock .content-container {
 	margin: 0;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .content-container {
+		margin: 0;
+		padding: 0 2rem;
+	}
 }
 
 /*--- Control columns of the content ---*/
@@ -82,6 +106,7 @@
 	column-gap: 2rem;
 	column-fill: auto;
 	height: 900px;
+	padding: 0;
 }
 
 /*--- Media Query to control the min-height of the columns ---*/
@@ -95,7 +120,7 @@
 @media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content {
 		column-count: 1;
-		padding: 0 1rem;
+		/*padding: 0 1rem;*/
 		height: auto;
 	}
 }
@@ -123,8 +148,7 @@
 	}
 }
 
-/*=========================================================*/
-
+/*--- TEAM GRID STYLES ---*/
 /*--- Systems grid container ---*/
 .archive-users {
 	max-width: 1500px;
@@ -373,4 +397,79 @@
 	.archive-users .team-grid .info p {
 		font-size: 1.6rem;
 	}
+}
+
+/*--- WALL DETAILS STYLES ---*/
+.wall-details {
+	padding: 0 2rem;
+	margin: 0 0 20rem 0;
+}
+
+/*--- TODO ---*/
+.wall-details .settings {
+	padding-bottom: 25%;
+}
+
+/*--- TODO ---*/
+.wall-details .featured-image {
+	margin: 0 45% -10% 0;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu > div {
+	padding: 0 0 0 3%;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .main {
+	display: flex;
+}
+
+.wall-details .details-menu .main > div:first-child {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu h1 {
+	font-size: 8rem;
+	font-weight: bold;
+	font-family: HelveticaNeueLT Std;
+	margin: 0;
+	color: #221E1F;
+	display: flex;
+	align-self: flex-start;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.wall-details .details-menu h1 {
+		font-size: 7rem;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu {
+	margin: 0 0 4rem;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu h2 {
+	font-family: HelveticaNeueLT Std;
+	font-weight: bold;
+	color: #221E1F;
+	margin: 0;
+	font-size: 2rem;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu span {
+	color: #A2A4A7;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu ul {
+	padding: 0;
 }
