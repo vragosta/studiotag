@@ -405,14 +405,22 @@
 	margin: 0 0 20rem 0;
 }
 
+@media only screen and ( max-width: 767px ) {
+	.wall-details {
+		margin: 0 0 10rem 0;
+	}
+}
+
 /*--- TODO ---*/
 .wall-details .settings {
 	padding-bottom: 25%;
 }
 
 /*--- TODO ---*/
-.wall-details .featured-image {
-	margin: 0 45% -10% 0;
+@media only screen and ( min-width: 768px ) {
+	.wall-details .featured-image {
+		margin: 0 45% -10% 0;
+	}
 }
 
 /*--- TODO ---*/
@@ -420,11 +428,20 @@
 	padding: 0 0 0 3%;
 }
 
-/*--- TODO ---*/
-.wall-details .details-menu .main {
-	display: flex;
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu > div {
+		padding: 0 1rem;
+	}
 }
 
+/*--- TODO ---*/
+@media only screen and ( min-width: 768px ) {
+	.wall-details .details-menu .main {
+		display: flex;
+	}
+}
+
+/*--- TODO ---*/
 .wall-details .details-menu .main > div:first-child {
 	display: flex;
 	flex-direction: column;
@@ -433,14 +450,39 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .main > div:first-child {
+		margin: 0 0 3rem 0;
+	}
+}
+
+/*--- TODO ---*/
 .wall-details .details-menu h1 {
 	font-size: 8rem;
 	font-weight: bold;
 	font-family: HelveticaNeueLT Std;
 	margin: 0;
+	/*color: #221E1F;
+	transition: color 0.2s ease-in-out;*/
+	cursor: pointer;
+}
+
+/*--- TODO ---*/
+@media only screen and ( min-width: 768px ) {
+	.wall-details .details-menu h1 {
+		display: flex;
+		align-self: flex-start;
+	}
+}
+
+.wall-details .details-menu h1 a {
 	color: #221E1F;
-	display: flex;
-	align-self: flex-start;
+	transition: color 0.2s ease-in-out;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu h1 a:hover {
+	color: #A2A4A7;
 }
 
 /*--- TODO ---*/
@@ -451,8 +493,62 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .details-menu h1 {
+		font-size: 6rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu h1 {
+		font-size: 5rem;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .main .break {
+	display: flex;
+	width: 100%;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .main .break {
+		justify-content: center;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .main .break h1[data-menu=five] {
+	margin: 0 2rem 0 0;
+}
+
+/*--- TODO ---*/
 .wall-details .details-menu .menu {
-	margin: 0 0 4rem;
+	margin: 0 0 3rem;
+	transition: opacity 0.2s ease-in-out;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu.dim {
+	opacity: 0.3;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu.dim {
+		opacity: 1;
+	}
 }
 
 /*--- TODO ---*/
@@ -465,6 +561,20 @@
 }
 
 /*--- TODO ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .details-menu .menu h2 {
+		font-size: 1.8rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu h2 {
+		font-size: 3rem;
+	}
+}
+
+/*--- TODO ---*/
 .wall-details .details-menu .menu span {
 	color: #A2A4A7;
 }
@@ -472,4 +582,50 @@
 /*--- TODO ---*/
 .wall-details .details-menu .menu ul {
 	padding: 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu ul li a {
+	font-size: 1.8rem;
+	color: #221E1F;
+	transition: color 0.2s ease-in-out;
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu ul li a:hover {
+	color: #A2A4A7;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu ul li a {
+		font-size: 2.2rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .details-menu .menu ul li a {
+		font-size: 1.6rem;
+	}
+}
+
+/*--- TODO ---*/
+.wall-details .details-menu .menu ul li.term {
+	padding: 0 0 0 2rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details .details-menu .menu ul li.term {
+		padding: 0;
+	}
 }

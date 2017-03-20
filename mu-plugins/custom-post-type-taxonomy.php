@@ -215,7 +215,7 @@ function register_post_type_applied_details() {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'applied_details', 'with_front' => false ),
+			'rewrite' => array( 'slug' => 'applied-details', 'with_front' => false ),
 			'query_var' => true,
 			'has_archive' => true,
 			'menu_position' => 41,
@@ -625,7 +625,7 @@ function register_post_type_hardware() {
 			'capability_type' => 'post',
 			'map_meta_cap' => true,
 			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'hardwares', 'with_front' => false ),
+			'rewrite' => array( 'slug' => 'hardware', 'with_front' => false ),
 			'query_var' => true,
 			'has_archive' => true,
 			'menu_position' => 41,
@@ -902,216 +902,6 @@ function storycorps_register_taxonomy_decorative_glass() {
 }
 add_action( 'init', 'storycorps_register_taxonomy_decorative_glass' );
 
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_organic() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'organic', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Organic',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Organic',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_organic' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_linen() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'linen', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Linen',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Linen',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_linen' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_mesh() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'mesh', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Mesh',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Mesh',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_mesh' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_film() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'film', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Film',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Film',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_film' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_metal() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'metal', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Metal',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Metal',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_metal' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_lace() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'lace', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Lace',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Lace',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_lace' );
-//
-// /**
-//  * TODO
-//  */
-// function storycorps_register_taxonomy_geometric() {
-//     $post_types = array( 'glass' );
-//     register_taxonomy( 'geometric', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Geometric',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Geometric',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Category',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'storycorps_register_taxonomy_geometric' );
-
 /**
  * TODO
  */
@@ -1151,46 +941,6 @@ function register_post_type_film() {
 	);
 }
 add_action( 'init', 'register_post_type_film' );
-
-/**
- * TODO
- */
-function register_post_type_finish() {
-	register_post_type( 'finish', array(
-			'label' => 'Finishes',
-			'description' => '',
-			'public' => true,
-			'show_ui' => true,
-			'show_in_menu' => true,
-			'capability_type' => 'post',
-			'map_meta_cap' => true,
-			'hierarchical' => false,
-			'rewrite' => array( 'slug' => 'finishes', 'with_front' => false ),
-			'query_var' => true,
-			'has_archive' => true,
-			'menu_position' => 41,
-			'menu_icon' => 'dashicons-feedback',
-			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author' ),
-			'labels' => array (
-					'name' => 'Finishes',
-					'singular_name' => 'Finishes',
-					'menu_name' => 'Finishes',
-					'add_new' => 'Add Finishes',
-					'add_new_item' => 'Add New Finish',
-					'edit' => 'Edit',
-					'edit_item' => 'Edit Finishes',
-					'new_item' => 'New Finish',
-					'view' => 'View Finishes',
-					'view_item' => 'View Finishes',
-					'search_items' => 'Search Finishes',
-					'not_found' => 'No Finishes Found',
-					'not_found_in_trash' => 'No Finishes Found in Trash',
-					'parent' => 'Parent Finish',
-			)
-		)
-	);
-}
-add_action( 'init', 'register_post_type_finish' );
 
 /**
  * TODO
@@ -1401,6 +1151,46 @@ function storycorps_register_taxonomy_art_film() {
     ));
 }
 add_action( 'init', 'storycorps_register_taxonomy_art_film' );
+
+/**
+ * TODO
+ */
+function register_post_type_finish() {
+	register_post_type( 'finish', array(
+			'label' => 'Finishes',
+			'description' => '',
+			'public' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'capability_type' => 'post',
+			'map_meta_cap' => true,
+			'hierarchical' => false,
+			'rewrite' => array( 'slug' => 'finish', 'with_front' => false ),
+			'query_var' => true,
+			'has_archive' => true,
+			'menu_position' => 41,
+			'menu_icon' => 'dashicons-feedback',
+			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author' ),
+			'labels' => array (
+					'name' => 'Finishes',
+					'singular_name' => 'Finishes',
+					'menu_name' => 'Finishes',
+					'add_new' => 'Add Finishes',
+					'add_new_item' => 'Add New Finish',
+					'edit' => 'Edit',
+					'edit_item' => 'Edit Finishes',
+					'new_item' => 'New Finish',
+					'view' => 'View Finishes',
+					'view_item' => 'View Finishes',
+					'search_items' => 'Search Finishes',
+					'not_found' => 'No Finishes Found',
+					'not_found_in_trash' => 'No Finishes Found in Trash',
+					'parent' => 'Parent Finish',
+			)
+		)
+	);
+}
+add_action( 'init', 'register_post_type_finish' );
 
 /**
  * TODO
