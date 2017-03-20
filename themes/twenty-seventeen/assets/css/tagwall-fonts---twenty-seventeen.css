@@ -5,7 +5,32 @@
 
 @font-face {
 	font-family: HelveticaNeueLT Std;
+	font-weight: 100;
+	src: url( '../fonts/HelveticaNeueLTStd-Th.otf' );
+}
+
+@font-face {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 200;
+	src: url( '../fonts/HelveticaNeueLTStd-Lt.otf' );
+}
+
+@font-face{
+	font-family: HelveticaNeueLT Std;
+	font-weight: 400;
 	src: url( '../fonts/HelveticaNeueLTStd-Md.otf' );
+}
+
+@font-face{
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
+	src: url( '../HelveticaNeueLTStd-Bd.otf' );
+}
+
+@font-face{
+	font-family: HelveticaNeueLT Std;
+	font-weight: 900;
+	src: url( '../fonts/HelveticaNeueLTStd-Blk.otf' );
 }
 
 @font-face{
@@ -13,7 +38,3 @@
 	src: url( '../fonts/Linotype - BodoniLTPro.otf' );
 }
 
-@font-face{
-	font-family: HelveticaNeueLT Std;
-	src: url( '../fonts/HelveticaNeueLTStd-Md.otf' );
-}
