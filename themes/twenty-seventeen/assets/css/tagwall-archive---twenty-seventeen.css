@@ -1,0 +1,111 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for all archive pages
+ *
+ * Location: archive-{post-type}.php
+ */
+
+.details-container {
+	display: flex;
+	height: 40rem;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.details-container {
+		height: 30rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container {
+		flex-direction: column;
+	}
+}
+
+.details-container > div {
+	display: flex;
+	align-items: center;
+}
+
+.details-container > div:first-child {
+	justify-content: center;
+}
+
+.details-container > div:last-child {
+	justify-content: flex-start;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container > div:last-child {
+		justify-content: center;
+	}
+}
+
+.details-container h1 {
+	font-size: 7rem;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.details-container h1 {
+		font-size: 5rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container h1 {
+		font-size: 5.5rem;
+		margin: 1.5rem 0;
+	}
+}
+
+.details-container ul {
+	padding: 2rem;
+	border-left: 0.1rem solid #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container ul {
+		border: none;
+	}
+}
+
+.details-container ul li {
+	line-height: 1.1;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container ul li {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.details-container ul a {
+	font-size: 3rem;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.details-container ul a {
+		font-size: 2rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container ul a {
+		font-size: 2.5rem;
+	}
+}
+
+.details-container ul li a:hover {
+	color: #A3A5A8;
+}
+
+.details-container ul a.back {
+	color: #A3A5A8;
+}
+
+.details-container ul a.back:hover {
+	color: #221E1F;
+}

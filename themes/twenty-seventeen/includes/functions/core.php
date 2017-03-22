@@ -238,7 +238,15 @@ function styles() {
 			array(),
 			TAGWALL_VERSION
 		);
+	endif;
 
+	if ( is_post_type_archive() ) :
+		wp_enqueue_style(
+			'tagwall-archive',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
 	endif;
 
 	if ( is_singular( 'system' ) ) :

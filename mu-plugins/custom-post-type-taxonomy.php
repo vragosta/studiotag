@@ -85,126 +85,6 @@ add_action( 'init', 'register_post_type_technical' );
 /**
  * TODO
  */
-function storycorps_register_taxonomy_encore_technicals() {
-    $post_types = array( 'technical' );
-    register_taxonomy( 'encore_technicals', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Encore Technicals',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Encore Technicals',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_encore_technicals' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_slimline_technicals() {
-    $post_types = array( 'technical' );
-    register_taxonomy( 'slimline_technicals', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Slimline Technicals',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Slimline Technicals',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_slimline_technicals' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_ion_technicals() {
-    $post_types = array( 'technical' );
-    register_taxonomy( 'ion_technicals', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Ion Technicals',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Ion Technicals',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_ion_technicals' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_industrial_sash_technicals() {
-    $post_types = array( 'technical' );
-    register_taxonomy( 'industrial_sash_technicals', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Industrial Sash Technicals',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Industrial Sash Technicals',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_industrial_sash_technicals' );
-
-/**
- * TODO
- */
 function register_post_type_applied_details() {
 	register_post_type( 'applied-detail', array(
 			'label' => 'Applied Details',
@@ -241,156 +121,6 @@ function register_post_type_applied_details() {
 	);
 }
 add_action( 'init', 'register_post_type_applied_details' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_hydraulic_patch() {
-    $post_types = array( 'applied-detail' );
-    register_taxonomy( 'hydraulic_patch', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Hydraulic Patch',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Hydraulic Patch',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_hydraulic_patch' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_sliding_door_detail() {
-    $post_types = array( 'applied-detail' );
-    register_taxonomy( 'sliding_door_detail', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Sliding Door Detail',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Sliding Door Detail',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_sliding_door_detail' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_demising_intersection() {
-    $post_types = array( 'applied-detail' );
-    register_taxonomy( 'demising_intersection', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Demising Intersection',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Demising Intersection',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_demising_intersection' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_corner_detail() {
-    $post_types = array( 'applied-detail' );
-    register_taxonomy( 'corner_detail', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Corner Detail',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Corner Detail',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_corner_detail' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_bottom_pivot() {
-    $post_types = array( 'applied-detail' );
-    register_taxonomy( 'bottom_pivot', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Bottom Pivot',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Bottom Pivot',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_bottom_pivot' );
 
 /**
  * TODO
@@ -435,186 +165,6 @@ add_action( 'init', 'register_post_type_door' );
 /**
  * TODO
  */
-function storycorps_register_taxonomy_swing() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'swing', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Swing',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Swing',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_swing' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_sliding() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'sliding', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Sliding',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Sliding',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_sliding' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_solid() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'solid', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Solid',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Solid',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_solid' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_solid_woodgrain() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'solid_woodgrain', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Solid Door Panel - Woodgrain',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Solid Door Panel - Woodgrain',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_solid_woodgrain' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_solid_painted() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'solid_painted', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Solid Door Panel - Painted',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Solid Door Panel - Painted',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_solid_painted' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_powder() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'powder', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Powder Coating - Laminated',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Powder Coating - Laminated',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_powder' );
-
-/**
- * TODO
- */
 function register_post_type_hardware() {
 	register_post_type( 'hardware', array(
 			'label' => 'Hardware',
@@ -651,156 +201,6 @@ function register_post_type_hardware() {
 	);
 }
 add_action( 'init', 'register_post_type_hardware' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_electronic_ladder_pull() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'electronic_ladder_pull', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Electronic Ladder Pull',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Electronic Ladder Pull',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_electronic_ladder_pull' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_KLO_ladder_pull() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'KLO_ladder_pull', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'KLO Ladder Pull',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'KLO Ladder Pull',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_KLO_ladder_pull' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_HGU_view() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'HGU_view', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'HGU View',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'HGU View',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_HGU_view' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_HGU_lever() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'HGU_lever', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'HGU Lever',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'HGU Lever',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_HGU_lever' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_HGU_finish() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'HGU_finish', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'HGU Finish',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'HGU Finish',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_HGU_finish' );
 
 /**
  * TODO
@@ -845,17 +245,17 @@ add_action( 'init', 'register_post_type_glass' );
 /**
  * TODO
  */
-function storycorps_register_taxonomy_tagwall_glass() {
+function storycorps_register_taxonomy_organic() {
     $post_types = array( 'glass' );
-    register_taxonomy( 'tagwall_glass', $post_types, array(
+    register_taxonomy( 'organic', $post_types, array(
         'hierarchical'      => true,
-        'label'             => 'Tagwall Glass',
+        'label'             => 'Organic',
         'show_ui'           => true,
         'query_var'         => true,
         'show_admin_column' => false,
         'rewrite'           => array( 'with_front' => false ),
         'labels'            => array(
-            'search_items'               => 'Tagwall Glass',
+            'search_items'               => 'Organic',
             'popular_items'              => '',
             'all_items'                  => 'All',
             'parent_item'                => '',
@@ -870,22 +270,22 @@ function storycorps_register_taxonomy_tagwall_glass() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_tagwall_glass' );
+add_action( 'init', 'storycorps_register_taxonomy_organic' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_decorative_glass() {
+function storycorps_register_taxonomy_linen() {
     $post_types = array( 'glass' );
-    register_taxonomy( 'decorative_glass', $post_types, array(
+    register_taxonomy( 'linen', $post_types, array(
         'hierarchical'      => true,
-        'label'             => 'Decorative Glass',
+        'label'             => 'Linen',
         'show_ui'           => true,
         'query_var'         => true,
         'show_admin_column' => false,
         'rewrite'           => array( 'with_front' => false ),
         'labels'            => array(
-            'search_items'               => 'Decorative Glass',
+            'search_items'               => 'Linen',
             'popular_items'              => '',
             'all_items'                  => 'All',
             'parent_item'                => '',
@@ -900,7 +300,157 @@ function storycorps_register_taxonomy_decorative_glass() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_decorative_glass' );
+add_action( 'init', 'storycorps_register_taxonomy_linen' );
+
+/**
+ * TODO
+ */
+function storycorps_register_taxonomy_mesh() {
+    $post_types = array( 'glass' );
+    register_taxonomy( 'mesh', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Mesh',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Mesh',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Category',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'storycorps_register_taxonomy_mesh' );
+
+/**
+ * TODO
+ */
+function storycorps_register_taxonomy_film() {
+    $post_types = array( 'glass' );
+    register_taxonomy( 'film', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Film',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Film',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Category',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'storycorps_register_taxonomy_film' );
+
+/**
+ * TODO
+ */
+function storycorps_register_taxonomy_metal() {
+    $post_types = array( 'glass' );
+    register_taxonomy( 'metal', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Metal',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Metal',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Category',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'storycorps_register_taxonomy_metal' );
+
+/**
+ * TODO
+ */
+function storycorps_register_taxonomy_lace() {
+    $post_types = array( 'glass' );
+    register_taxonomy( 'lace', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Lace',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Lace',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Category',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'storycorps_register_taxonomy_lace' );
+
+/**
+ * TODO
+ */
+function storycorps_register_taxonomy_geometric() {
+    $post_types = array( 'glass' );
+    register_taxonomy( 'geometric', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Geometric',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Geometric',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Category',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'storycorps_register_taxonomy_geometric' );
 
 /**
  * TODO
@@ -945,216 +495,6 @@ add_action( 'init', 'register_post_type_film' );
 /**
  * TODO
  */
-function storycorps_register_taxonomy_transparent() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'transparent', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Transparent',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Transparent',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_transparent' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_gradient() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'gradient', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Gradient',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Gradient',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_gradient' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_lux() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'lux', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Lux',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Lux',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_lux' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_vision_strips() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'vision_strips', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Vision Strips',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Vision Strips',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_vision_strips' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_personalize() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'personalize', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Personalize',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Personalize',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_personalize' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_supergraphic() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'supergraphic', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Supergraphic',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Supergraphic',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_supergraphic' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_art_film() {
-    $post_types = array( 'film' );
-    register_taxonomy( 'art_film', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Art Film',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Art Film',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_art_film' );
-
-/**
- * TODO
- */
 function register_post_type_finish() {
 	register_post_type( 'finish', array(
 			'label' => 'Finishes',
@@ -1191,63 +531,3 @@ function register_post_type_finish() {
 	);
 }
 add_action( 'init', 'register_post_type_finish' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_powder_coatings() {
-    $post_types = array( 'finish' );
-    register_taxonomy( 'powder_coatings', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Powder Coatings',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Powder Coatings',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_powder_coatings' );
-
-/**
- * TODO
- */
-function storycorps_register_taxonomy_anodized() {
-    $post_types = array( 'finish' );
-    register_taxonomy( 'anodized', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Anodized',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Anodized',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Category',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'storycorps_register_taxonomy_anodized' );

@@ -52,10 +52,10 @@
 					$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
 					// Get the excerpt.
-					$excerpt = wp_trim_words( $temp_post->post_excerpt, 35, '...' );
+					$excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
 
 					// Get the mobile excerpt.
-					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 25, '...' );
+					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
 
 					// If this is the first iteration through the loop..
 					if ( $count == 0 ) : ?>
