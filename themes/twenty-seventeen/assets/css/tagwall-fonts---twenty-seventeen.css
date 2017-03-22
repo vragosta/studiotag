@@ -3,7 +3,7 @@
  * Fonts
  */
 
-@font-face {
+@font-face{
 	font-family: HelveticaNeueLT Std;
 	font-weight: 100;
 	src: url( '../fonts/HelveticaNeueLTStd-Th.otf' );
@@ -37,4 +37,3 @@
 	font-family: Bodoni;
 	src: url( '../fonts/Linotype - BodoniLTPro.otf' );
 }
-
