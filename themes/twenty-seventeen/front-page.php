@@ -29,9 +29,11 @@
 
 	<!-- TODO Replace this with carousel -->
 	<section class="carousel">
-		<figure class="settings">
+		<!-- <figure class="settings">
 			<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-		</figure>
+		</figure> -->
+		<!-- Switched to img tag due to bug with slick carousel and figure tag -->
+		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>">
 	</section>
 	<!-- TODO Replace this with carousel -->
 
