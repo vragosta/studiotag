@@ -11,3 +11,13 @@
 ?>
 
 <?php get_header(); ?>
+
+
+<div class="row">
+	<div class="col-xs-12 col-sm-6">
+
+	</div>
+	<div class="col-xs-12 col-sm-6">
+
+	</div>
+</div>
