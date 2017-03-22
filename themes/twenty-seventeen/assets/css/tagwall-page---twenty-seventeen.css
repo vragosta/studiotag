@@ -554,7 +554,7 @@
 /*--- TODO ---*/
 .wall-details .details-menu .menu h2 {
 	font-family: HelveticaNeueLT Std;
-	font-weight: bold;
+	font-weight: 600;
 	color: #221E1F;
 	margin: 0;
 	font-size: 2rem;
@@ -596,6 +596,7 @@
 /*--- TODO ---*/
 .wall-details .details-menu .menu ul li a {
 	font-size: 1.8rem;
+	font-weight: 200;
 	color: #221E1F;
 	transition: color 0.2s ease-in-out;
 }
