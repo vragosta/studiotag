@@ -10,7 +10,6 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/*padding: 0 1.5rem 1.5rem 1.5rem;*/
 	padding: 0 2rem;
 	max-width: 1500px;
 	margin: 0 auto 1.5rem;
@@ -119,6 +118,7 @@
 /*--- Styles for all links in menu container ---*/
 .menu-container ul li a {
 	font-size: 3rem; /*--- Control the font size of the second <ul> links here ---*/
+	font-weight: 200;
 	text-decoration: none;
 	color: #A2A4A7;
 	transition: color 0.3s ease-in-out;

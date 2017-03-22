@@ -156,6 +156,7 @@
 .systems-single p {
 	font-size: 2rem;
 	line-height: 1.3;
+	font-weight: 200;
 }
 
 /*--- Media Query for all paragraph tags on single template ---*/
