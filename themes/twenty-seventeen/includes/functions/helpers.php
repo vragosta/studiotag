@@ -39,3 +39,17 @@ function tagwall_get_hero_image( $post ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'hero-image', $post->ID ) ) ?
 		MultiPostThumbnails::get_post_thumbnail_url( $post->post_type, 'hero-image', $post->ID, 'full' ) : '';
 }
+
+/**
+ * If the blueprint image exists, return the attached image url with the appropriate size dimensions,
+ * otherwise return nothing.
+ *
+ * @uses   class_exists(), MultiPostThumbnails::has_post_thumbnail(), MultiPostThumbnails::get_post_thumbnail_url
+ * @param  int    $post wp_post object
+ * @param  string $id   blueprint image identifier
+ * @return string void  image url
+ */
+function tagwall_get_blueprint_image( $post, $id ) {
+	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'blueprint-' . $id . '-image', $post->ID ) ) ?
+		MultiPostThumbnails::get_post_thumbnail_url( $post->post_type, 'blueprint-' . $id . '-image', $post->ID, 'full' ) : '';
+}

@@ -113,10 +113,41 @@
 .archive-container {
 	margin: 0 2rem;
 	border-top: 0.1rem solid #ccc;
-	padding: ;
+	padding: 12rem 0;
+}
+
+.archive-container section {
+	width: 100%;
+}
+
+.archive-container .title {
+	padding: 0 0 0 8rem;
+	border-bottom: 0.1rem solid #221E1F;
 }
 
 .archive-container h1 {
-	margin: 2rem 0;
-	border-bottom: 0.1rem solid #221E1F;
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
+	margin: 1.5rem 0;
+}
+
+.archive-container .featured-image {
+	margin: 6rem 0;
+}
+
+.archive-container .settings {
+	position: relative;
+	padding-bottom: 65%;
+	min-height: 30rem;
+}
+
+/*--- Source for featured image ---*/
+.archive-container .settings div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
