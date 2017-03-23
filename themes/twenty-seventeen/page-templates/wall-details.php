@@ -70,7 +70,7 @@
 									<ul>
 										<?php if ( $technicals->have_posts() ) : ?>
 											<?php while( $technicals->have_posts() ) : $technicals->the_post(); ?>
-												<li><a href="<?php echo home_url( '/technicals#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title . ' Technicals' ); ?></a></li>
+												<li><a href="<?php echo home_url( '/technicals#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
 											<?php endwhile; ?>
 											<?php wp_reset_postdata(); ?>
 
