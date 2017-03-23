@@ -74,6 +74,10 @@
 		<?php wp_reset_postdata(); ?>
 	<?php endif; ?>
 
+	<div class="arrow top">
+		<a href="#"><i class="ion ion-ios-arrow-up"></i></a>
+	</div>
+
 </div>
 
 <?php get_footer(); ?>

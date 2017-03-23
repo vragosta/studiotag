@@ -125,6 +125,15 @@
 	border-bottom: 0.1rem solid #221E1F;
 }
 
+@media only screen and ( max-width: 767px ) {
+	.archive-container .title {
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .archive-container h1 {
 	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
@@ -138,7 +147,7 @@
 .archive-container .settings {
 	position: relative;
 	padding-bottom: 65%;
-	min-height: 30rem;
+	/*min-height: 30rem;*/
 }
 
 /*--- Source for featured image ---*/
@@ -150,4 +159,42 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+}
+
+.arrow.top {
+	position: fixed;
+	bottom: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.arrow.top.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.arrow.top a {
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid #221e1f;
+	height: 5rem;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.arrow.top i {
+	font-size: 4rem;
+	padding-bottom: .2rem;
 }

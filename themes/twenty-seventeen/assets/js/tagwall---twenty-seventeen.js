@@ -64,6 +64,12 @@
 			}
 		});
 
+		/**
+		 * TODO
+		 *
+		 * @since 0.1.0
+		 * @uses  TODO
+		 */
 		$( '.wall-details .details-menu h1' ).on( 'mouseenter', function() {
 			var id = $( this ).data( 'menu' );
 
@@ -90,6 +96,20 @@
 					$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
 					$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
 				}
+			}
+		});
+
+		/**
+		 * TODO
+		 *
+		 * @since 0.1.0
+		 * @uses  TODO
+		 */
+		$( window ).scroll( function() {
+			if ( $( window ).scrollTop() >= 800 && $( window ).scrollTop() < ( $( document ).height() - 1400 ) ) {
+				$( '.arrow.top' ).addClass( 'visible' );
+			} else {
+				$( '.arrow.top' ).removeClass( 'visible' );
 			}
 		});
 
