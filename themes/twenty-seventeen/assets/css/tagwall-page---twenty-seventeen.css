@@ -542,6 +542,11 @@
 }
 
 /*--- TODO ---*/
+.wall-details .details-menu .menu.dim:hover {
+	opacity: 1;
+}
+
+/*--- TODO ---*/
 @media only screen and ( max-width: 767px ) {
 	.wall-details .details-menu .menu.dim {
 		opacity: 1;

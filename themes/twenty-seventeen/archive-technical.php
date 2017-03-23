@@ -14,4 +14,10 @@
 
 <?php get_template_part( 'partials/content', 'details' ); ?>
 
+<div class="archive-container">
+	<div>
+		<h1>Encore Details</h1>
+	</div>
+</div>
+
 <?php get_footer(); ?>

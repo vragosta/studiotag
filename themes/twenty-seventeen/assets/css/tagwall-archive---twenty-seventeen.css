@@ -109,3 +109,14 @@
 .details-container ul a.back:hover {
 	color: #221E1F;
 }
+
+.archive-container {
+	margin: 0 2rem;
+	border-top: 0.1rem solid #ccc;
+	padding: ;
+}
+
+.archive-container h1 {
+	margin: 2rem 0;
+	border-bottom: 0.1rem solid #221E1F;
+}
