@@ -66,7 +66,7 @@
 							<div class="col-xs-12 col-sm-12 col-md-6">
 
 								<div class="menu one">
-									<h2><a name="technicals"><span>Wall</span> Technicals</a></h2>
+									<h2><a href="<?php echo home_url( '/technicals/' ); ?>" name="technicals"><span>Wall</span> Technicals</a></h2>
 									<ul>
 										<?php if ( $technicals->have_posts() ) : ?>
 											<?php while( $technicals->have_posts() ) : $technicals->the_post(); ?>
@@ -83,7 +83,7 @@
 								</div>
 
 								<div class="menu two">
-									<h2><a name="applied-details"><span>Wall</span> Applied Details</a></h2>
+									<h2><a href="<?php echo home_url( '/applied-details/' ); ?>" name="applied-details"><span>Wall</span> Applied Details</a></h2>
 									<ul>
 										<?php if ( $applied_details->have_posts() ) : ?>
 											<?php while( $applied_details->have_posts() ) : $applied_details->the_post(); ?>
@@ -92,7 +92,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $applied_detail_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/applied-details#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>
@@ -100,7 +100,7 @@
 								</div>
 
 								<div class="menu three">
-									<h2><a name="doors"><span>Wall</span> Doors</a></h2>
+									<h2><a href="<?php echo home_url( '/doors/' ); ?>"name="doors"><span>Wall</span> Doors</a></h2>
 									<ul>
 										<?php if ( $doors->have_posts() ) : ?>
 											<?php while( $doors->have_posts() ) : $doors->the_post(); ?>
@@ -109,7 +109,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $door_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/doors#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>
@@ -117,7 +117,7 @@
 								</div>
 
 								<div class="menu four">
-									<h2><a name="hardware"><span>Wall</span> Hardware</a></h2>
+									<h2><a href="<?php echo home_url( '/hardware/' ); ?>" name="hardware"><span>Wall</span> Hardware</a></h2>
 									<ul>
 										<?php if ( $hardware->have_posts() ) : ?>
 											<?php while( $hardware->have_posts() ) : $hardware->the_post(); ?>
@@ -126,7 +126,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $hardware_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/hardware#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>
@@ -134,7 +134,7 @@
 								</div>
 
 								<div class="menu five">
-									<h2><a name="glass">Glass</a></h2>
+									<h2><a href="<?php echo home_url( '/glass/' ); ?>" name="glass">Glass</a></h2>
 									<ul>
 										<?php if ( $glass->have_posts() ) : ?>
 											<?php while( $glass->have_posts() ) : $glass->the_post(); ?>
@@ -143,7 +143,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $glass_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/glass#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>
@@ -151,7 +151,7 @@
 								</div>
 
 								<div class="menu six">
-									<h2><a name="film">Film</a></h2>
+									<h2><a href="<?php echo home_url( '/film/' ); ?>" name="film">Film</a></h2>
 									<ul>
 										<?php if ( $film->have_posts() ) : ?>
 											<?php while( $film->have_posts() ) : $film->the_post(); ?>
@@ -160,7 +160,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $film_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/film#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>
@@ -168,7 +168,7 @@
 								</div>
 
 								<div class="menu seven">
-									<h2><a name="finishes"><span>Tagwall</span> Finishes</a></h2>
+									<h2><a href="<?php echo home_url( '/finishes/' ); ?>" name="finishes"><span>Tagwall</span> Finishes</a></h2>
 									<ul>
 										<?php if ( $finishes->have_posts() ) : ?>
 											<?php while( $finishes->have_posts() ) : $finishes->the_post(); ?>
@@ -177,7 +177,7 @@
 											<?php wp_reset_postdata(); ?>
 
 											<?php foreach( $finish_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+												<li class="term"><a href="<?php echo home_url( '/finishes#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>

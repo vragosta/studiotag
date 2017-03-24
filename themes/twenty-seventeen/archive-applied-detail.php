@@ -46,6 +46,7 @@
 
 			<div class="row">
 				<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
+					<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 					<figure class="featured-image">
 						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 					</figure>
@@ -57,6 +58,7 @@
 
 			<div class="row">
 				<div class="left no-padding col-xs-12 col-sm-6">
+					<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 					<figure class="featured-image">
 						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 					</figure>
@@ -74,6 +76,7 @@
 					<h3><?php echo esc_html( $temp_post->post_title ); ?></h3>
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
+					<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 					<figure class="featured-image">
 						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 					</figure>
@@ -97,6 +100,7 @@
 	// Accomodate for the last temporary post's data. ?>
 	<div class="row">
 		<div class="left no-padding col-xs-12 col-sm-6">
+			<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 			<figure class="featured-image not-visible">
 				<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 			</figure>
