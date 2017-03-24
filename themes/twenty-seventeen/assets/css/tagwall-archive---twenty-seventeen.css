@@ -46,6 +46,7 @@
 .details-container h1 {
 	font-size: 7rem;
 	font-weight: 600;
+	font-family: HelveticaNeueLT Std;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -98,6 +99,7 @@
 @media only screen and ( max-width: 767px ) {
 	.details-container ul a {
 		font-size: 2.5rem;
+		text-align: center;
 	}
 }
 
@@ -116,7 +118,7 @@
 /*========== TECHNICALS ==========*/
 
 .archive-container {
-	margin: 0 2rem 20rem 0;
+	margin: 0 0 20rem;
 	border-top: 0.1rem solid #ccc;
 	padding: 12rem 0 0;
 }
@@ -139,7 +141,7 @@
 
 @media only screen and ( max-width: 767px ) {
 	.archive-container .title {
-		padding: 0;
+		padding: 0 2rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -150,10 +152,6 @@
 	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
 	margin: 1.5rem 0;
-}
-
-.archive-container.door h1 {
-	text-align: center;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -386,16 +384,91 @@
 }
 
 /*========== DOORS ==========*/
-.archive-container.door .row {
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container {
+		padding: 6rem 0 0;
+	}
+}
+
+.archive-container.door > .row {
 	padding: 6rem 10%;
 }
 
-.archive-container.door .row + .row {
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row {
+		padding: 6rem 10% 0;
+	}
+}
+
+.archive-container.door > .row + .row {
 	margin-top: 4rem;
 	border-top: 0.1rem solid #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row + .row {
+		margin: 0;
+		border: none;
+		padding: 0 10%;
+	}
 }
 
 /*--- System images will conform to 16:9 aspect ratio ---*/
 .archive-container.door .featured-image {
 	padding-bottom: 125%;
+}
+
+.archive-container.door figure + h1 {
+	text-align: center;
+}
+
+.archive-container.door .taxonomies {
+	width: 100%;
+	margin-top: 20rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door .taxonomies {
+		margin: 5rem 0;
+	}
+}
+
+.archive-container.door .taxonomies > .row {
+	border-bottom: 0.1rem solid #221E1f;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door .taxonomies > .row {
+		border: none;
+	}
+}
+
+.archive-container.door .taxonomy-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2rem;
+}
+
+.archive-container.door .featured-image-circle {
+	width: 220px;
+	height: 220px;
+	vertical-align: middle;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.archive-container.door .featured-image-circle img {
+	width: 220px;
+	height: auto;
+	min-height: 220px;
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+.archive-container.door .featured-image-circle + h1 {
+	margin: 2rem 0 0;
+	text-align: center;
 }
