@@ -28,8 +28,8 @@
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
 				<ul class="dropdown-menu">
 					<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
 					<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-					<li><a href="<?php echo home_url( '/solutions/' ); ?>">Solutions</a></li>
 					<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 				</ul>
 			</li>
@@ -39,8 +39,8 @@
 				<a href="#">Company</a>
 				<ul class="expand">
 					<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
 					<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-					<li><a href="<?php echo home_url( '/solutions/' ); ?>">Solutions</a></li>
 					<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 				</ul>
 			</li>
