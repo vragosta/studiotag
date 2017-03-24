@@ -22,6 +22,10 @@
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 
+			<?php foreach( $terms as $term ) : ?>
+				<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+			<?php endforeach; ?>
+
 			<a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a>
 
 		</ul>

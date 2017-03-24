@@ -10,9 +10,9 @@
  */
 ?>
 
-<?php get_header(); ?>
-
 <?php
+
+	get_header();
 
 	// Get the post type object.
 	$post_type = get_queried_object();

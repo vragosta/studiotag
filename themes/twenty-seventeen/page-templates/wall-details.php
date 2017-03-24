@@ -22,18 +22,59 @@
 			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
 			// TODO
-			$technicals      = new WP_Query( array( 'post_type' => 'technical', 'order' => 'ASC' ) );
-			$applied_details = new WP_Query( array( 'post_type' => 'applied-detail', 'order' => 'ASC' ) );
-			$doors           = new WP_Query( array( 'post_type' => 'door', 'order' => 'ASC' ) );
-			$hardware        = new WP_Query( array( 'post_type' => 'hardware', 'order' => 'ASC' ) );
-			$glass           = new WP_Query( array( 'post_type' => 'glass', 'order' => 'ASC' ) );
-			$film            = new WP_Query( array( 'post_type' => 'film', 'order' => 'ASC' ) );
-			$finishes        = new WP_Query( array( 'post_type' => 'finish', 'order' => 'ASC' ) );
+			$technicals = new WP_Query( array(
+				'post_type' => 'technical',
+				'order'     => 'ASC',
+
+			) );
+
+			$applied_details = new WP_Query( array(
+				'post_type' => 'applied-detail',
+				'order'     => 'ASC'
+			) );
+
+			$doors = new WP_Query( array(
+				'post_type' => 'door',
+				'order'     => 'ASC',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'panel',
+						'terms'    => get_terms( 'panel', array( 'fields' => 'ids' ) ),
+						'operator' => 'NOT IN'
+					)
+				)
+			) );
+
+			$hardware = new WP_Query( array(
+				'post_type' => 'hardware',
+				'order'     => 'ASC'
+			) );
+
+			$glass = new WP_Query( array(
+				'post_type' => 'glass',
+				'order'     => 'ASC'
+			) );
+
+			$film = new WP_Query( array(
+				'post_type' => 'film',
+				'order'     => 'ASC'
+			) );
+
+			$finishes = new WP_Query( array(
+				'post_type' => 'finish',
+				'order'     => 'ASC'
+			) );
 
 			// TODO
 			$technical_taxonomies      = get_object_taxonomies( 'technical', 'objects' );
 			$applied_detail_taxonomies = get_object_taxonomies( 'applied-detail', 'objects' );
-			$door_taxonomies           = get_object_taxonomies( 'door', 'objects' );
+			// $door_taxonomies           = get_object_taxonomies( 'door', 'objects' );
+			// TODO
+			$door_terms = get_terms( array(
+				'taxonomy'   => 'panel',
+				'hide_empty' => false
+			) );
+
 			$hardware_taxonomies       = get_object_taxonomies( 'hardware', 'objects' );
 			$glass_taxonomies          = get_object_taxonomies( 'glass', 'objects' );
 			$film_taxonomies           = get_object_taxonomies( 'film', 'objects' );
@@ -108,8 +149,8 @@
 											<?php endwhile; ?>
 											<?php wp_reset_postdata(); ?>
 
-											<?php foreach( $door_taxonomies as $term ) : ?>
-												<li class="term"><a href="<?php echo home_url( '/doors#' . $term->name ); ?>"><?php echo esc_html( $term->label ); ?></a></li>
+											<?php foreach( $door_terms as $term ) : ?>
+												<li><a href="<?php echo home_url( '/doors#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 											<?php endforeach; ?>
 
 										<?php endif; ?>

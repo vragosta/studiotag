@@ -165,6 +165,126 @@ add_action( 'init', 'register_post_type_door' );
 /**
  * TODO
  */
+function register_taxonomy_panel() {
+    $post_types = array( 'door' );
+    register_taxonomy( 'panel', $post_types, array(
+        'hierarchical'      => true,
+        'label'             => 'Panels',
+        'show_ui'           => true,
+        'query_var'         => true,
+        'show_admin_column' => false,
+        'rewrite'           => array( 'with_front' => false ),
+        'labels'            => array(
+            'search_items'               => 'Search Panels',
+            'popular_items'              => '',
+            'all_items'                  => 'All',
+            'parent_item'                => '',
+            'parent_item_colon'          => '',
+            'edit_item'                  => '',
+            'update_item'                => '',
+            'add_new_item'               => 'Add New Panel',
+            'new_item_name'              => '',
+            'separate_items_with_commas' => '',
+            'add_or_remove_items'        => '',
+            'choose_from_most_used'      => '',
+        )
+    ));
+}
+add_action( 'init', 'register_taxonomy_panel' );
+
+// /**
+//  * TODO
+//  */
+// function register_taxonomy_woodgrain() {
+//     $post_types = array( 'door' );
+//     register_taxonomy( 'woodgrain', $post_types, array(
+//         'hierarchical'      => true,
+//         'label'             => 'Solid Door Panel - Woodgrain',
+//         'show_ui'           => true,
+//         'query_var'         => true,
+//         'show_admin_column' => false,
+//         'rewrite'           => array( 'with_front' => false ),
+//         'labels'            => array(
+//             'search_items'               => 'Solid Door Panel - Woodgrain',
+//             'popular_items'              => '',
+//             'all_items'                  => 'All',
+//             'parent_item'                => '',
+//             'parent_item_colon'          => '',
+//             'edit_item'                  => '',
+//             'update_item'                => '',
+//             'add_new_item'               => 'Add New Category',
+//             'new_item_name'              => '',
+//             'separate_items_with_commas' => '',
+//             'add_or_remove_items'        => '',
+//             'choose_from_most_used'      => '',
+//         )
+//     ));
+// }
+// add_action( 'init', 'register_taxonomy_woodgrain' );
+
+// /**
+//  * TODO
+//  */
+// function register_taxonomy_painted() {
+//     $post_types = array( 'door' );
+//     register_taxonomy( 'painted', $post_types, array(
+//         'hierarchical'      => true,
+//         'label'             => 'Solid Door Panel - Painted',
+//         'show_ui'           => true,
+//         'query_var'         => true,
+//         'show_admin_column' => false,
+//         'rewrite'           => array( 'with_front' => false ),
+//         'labels'            => array(
+//             'search_items'               => 'Solid Door Panel - Painted',
+//             'popular_items'              => '',
+//             'all_items'                  => 'All',
+//             'parent_item'                => '',
+//             'parent_item_colon'          => '',
+//             'edit_item'                  => '',
+//             'update_item'                => '',
+//             'add_new_item'               => 'Add New Category',
+//             'new_item_name'              => '',
+//             'separate_items_with_commas' => '',
+//             'add_or_remove_items'        => '',
+//             'choose_from_most_used'      => '',
+//         )
+//     ));
+// }
+// add_action( 'init', 'register_taxonomy_painted' );
+
+// /**
+//  * TODO
+//  */
+// function register_taxonomy_laminated() {
+//     $post_types = array( 'door' );
+//     register_taxonomy( 'laminated', $post_types, array(
+//         'hierarchical'      => true,
+//         'label'             => 'Powder Coating - Laminated',
+//         'show_ui'           => true,
+//         'query_var'         => true,
+//         'show_admin_column' => false,
+//         'rewrite'           => array( 'with_front' => false ),
+//         'labels'            => array(
+//             'search_items'               => 'Powder Coating - Laminated',
+//             'popular_items'              => '',
+//             'all_items'                  => 'All',
+//             'parent_item'                => '',
+//             'parent_item_colon'          => '',
+//             'edit_item'                  => '',
+//             'update_item'                => '',
+//             'add_new_item'               => 'Add New Category',
+//             'new_item_name'              => '',
+//             'separate_items_with_commas' => '',
+//             'add_or_remove_items'        => '',
+//             'choose_from_most_used'      => '',
+//         )
+//     ));
+// }
+// add_action( 'init', 'register_taxonomy_laminated' );
+
+/**
+ * TODO
+ */
 function register_post_type_hardware() {
 	register_post_type( 'hardware', array(
 			'label' => 'Hardware',
@@ -245,7 +365,7 @@ add_action( 'init', 'register_post_type_glass' );
 /**
  * TODO
  */
-function storycorps_register_taxonomy_organic() {
+function register_taxonomy_organic() {
     $post_types = array( 'glass' );
     register_taxonomy( 'organic', $post_types, array(
         'hierarchical'      => true,
@@ -270,12 +390,12 @@ function storycorps_register_taxonomy_organic() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_organic' );
+add_action( 'init', 'register_taxonomy_organic' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_linen() {
+function register_taxonomy_linen() {
     $post_types = array( 'glass' );
     register_taxonomy( 'linen', $post_types, array(
         'hierarchical'      => true,
@@ -300,12 +420,12 @@ function storycorps_register_taxonomy_linen() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_linen' );
+add_action( 'init', 'register_taxonomy_linen' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_mesh() {
+function register_taxonomy_mesh() {
     $post_types = array( 'glass' );
     register_taxonomy( 'mesh', $post_types, array(
         'hierarchical'      => true,
@@ -330,12 +450,12 @@ function storycorps_register_taxonomy_mesh() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_mesh' );
+add_action( 'init', 'register_taxonomy_mesh' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_film() {
+function register_taxonomy_film() {
     $post_types = array( 'glass' );
     register_taxonomy( 'film', $post_types, array(
         'hierarchical'      => true,
@@ -360,12 +480,12 @@ function storycorps_register_taxonomy_film() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_film' );
+add_action( 'init', 'register_taxonomy_film' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_metal() {
+function register_taxonomy_metal() {
     $post_types = array( 'glass' );
     register_taxonomy( 'metal', $post_types, array(
         'hierarchical'      => true,
@@ -390,12 +510,12 @@ function storycorps_register_taxonomy_metal() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_metal' );
+add_action( 'init', 'register_taxonomy_metal' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_lace() {
+function register_taxonomy_lace() {
     $post_types = array( 'glass' );
     register_taxonomy( 'lace', $post_types, array(
         'hierarchical'      => true,
@@ -420,12 +540,12 @@ function storycorps_register_taxonomy_lace() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_lace' );
+add_action( 'init', 'register_taxonomy_lace' );
 
 /**
  * TODO
  */
-function storycorps_register_taxonomy_geometric() {
+function register_taxonomy_geometric() {
     $post_types = array( 'glass' );
     register_taxonomy( 'geometric', $post_types, array(
         'hierarchical'      => true,
@@ -450,7 +570,7 @@ function storycorps_register_taxonomy_geometric() {
         )
     ));
 }
-add_action( 'init', 'storycorps_register_taxonomy_geometric' );
+add_action( 'init', 'register_taxonomy_geometric' );
 
 /**
  * TODO
