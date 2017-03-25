@@ -242,7 +242,7 @@ function register_post_type_hardware() {
 			'menu_icon' => 'dashicons-feedback',
 			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'revisions', 'thumbnail', 'author' ),
 			'labels' => array (
-					'name' => 'Hardwares',
+					'name' => 'Hardware',
 					'singular_name' => 'Hardware',
 					'menu_name' => 'Hardware',
 					'add_new' => 'Add Hardware',

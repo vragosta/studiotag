@@ -402,7 +402,7 @@
 }
 
 .archive-container.door > .row + .row {
-	margin-top: 4rem;
+	/*margin-top: 4rem;*/
 	border-top: 0.1rem solid #221E1F;
 }
 
@@ -471,4 +471,5 @@
 .archive-container.door .featured-image-circle + h1 {
 	margin: 2rem 0 0;
 	text-align: center;
+	font-weight: 400;
 }

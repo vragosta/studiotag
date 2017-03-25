@@ -517,7 +517,7 @@
 }
 
 /*--- TODO ---*/
-.wall-details .details-menu .main .break h1[data-menu=five] {
+.wall-details .details-menu .main .break h1[data-menu]:first-child {
 	margin: 0 2rem 0 0;
 }
 
