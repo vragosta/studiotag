@@ -134,6 +134,26 @@ function tagwall_get_terms( $post_type ) {
 }
 
 /**
+ * TODO
+ *
+ * @uses   tagwall_get_query_arguements(), tagwall_get_terms()
+ * @return array $terms post-type terms
+ */
+function tagwall_get_post_type_object( $post_type ) {
+
+	// TODO
+	$custom = (object) array(
+		'name'  => $post_type->name,
+		'label' => $post_type->label,
+		'slug'  => $post_type->rewrite['slug'],
+		'query' => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+		'terms' => tagwall_get_terms( $post_type->name )
+	);
+
+	return $custom;
+}
+
+/**
  * Create an array that holds specific post type information.
  *
  * @uses   get_post_types(), array_shift(), tagwall_get_query_arguements(), tagwall_get_terms()

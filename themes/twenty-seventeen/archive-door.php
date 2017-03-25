@@ -20,41 +20,41 @@
 	// Initialize the global count.
 	$count = 1;
 
-	$panels          = get_terms( array( 'taxonomy' => 'panel' ) );
-	$powder_coatings = get_terms( array( 'taxonomy' => 'powder-coating' ) );
-	$terms           = array_merge( $panels, $powder_coatings );
-
-	$panels_query          = get_terms( 'panel', array( 'fields' => 'ids' ) );
-	$powder_coatings_query = get_terms( 'powder-coating', array( 'fields' => 'ids' ) );
-
-	// Arguements for main query.
-	$args = array(
-		'post_type' => $post_type->name,
-		'order'     => 'ASC',
-		'tax_query' => array(
-			'relation' => 'AND',
-			array(
-				'taxonomy' => 'panel',
-				'terms'    => $panels_query,
-				'operator' => 'NOT IN'
-			),
-			array(
-				'taxonomy' => 'powder-coating',
-				'terms'    => $powder_coatings_query,
-				'operator' => 'NOT IN'
-			)
-		)
-	);
-
-	// Initialize the query.
-	$query = new WP_Query( $args );
+	// TODO
+	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( $post_type );
 
 	// echo '<pre>';
-	// var_dump( $woodgrain_term );
-	// var_dump( $terms );
-	// get_term_by( 'slug', )
+	// var_dump( $custom );
 	// echo '</pre>';
-	// exit;
+	// exit();
+
+	// $panels_query          = get_terms( 'panel', array( 'fields' => 'ids' ) );
+	// $powder_coatings_query = get_terms( 'powder-coating', array( 'fields' => 'ids' ) );
+
+	// Arguements for main query.
+	// $args = array(
+	// 	'post_type' => $post_type->name,
+	// 	'order'     => 'ASC',
+	// 	'tax_query' => array(
+	// 		'relation' => 'AND',
+	// 		array(
+	// 			'taxonomy' => 'panel',
+	// 			'terms'    => $panels_query,
+	// 			'operator' => 'NOT IN'
+	// 		),
+	// 		array(
+	// 			'taxonomy' => 'powder-coating',
+	// 			'terms'    => $powder_coatings_query,
+	// 			'operator' => 'NOT IN'
+	// 		)
+	// 	)
+	// );
+	//
+	// // Initialize the query.
+	// $query = new WP_Query( $args );
+
+	$query = $custom->query;
+	$terms = $custom->terms;
 
 	// TODO
 	include( 'partials/content-details.php' );
