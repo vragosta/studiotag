@@ -25,6 +25,7 @@ a:focus,
 a:active:focus {
 	color: #221E1F;
 	text-decoration: none;
+	outline: none;
 }
 
 /*--- TODO ---*/

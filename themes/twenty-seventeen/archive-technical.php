@@ -45,7 +45,7 @@
 
 			<section class="<?php echo esc_attr( $post->post_name ); ?>">
 				<div class="title">
-					<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ) . ' Technicals'; ?></a></h1>
+					<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></h1>
 				</div>
 
 				<div class="blueprint-container">
