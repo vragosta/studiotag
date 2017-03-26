@@ -32,12 +32,12 @@
 			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
 			<li><a href="#">Projects</a></li>
 			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
-			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact</a></li>
+			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
 		</ul>
 		<ul>
 			<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+			<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
 			<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-			<li><a href="<?php echo home_url( '/solutions/' ); ?>">Solutions</a></li>
 			<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 		</ul>
 	</div>
