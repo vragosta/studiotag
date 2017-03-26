@@ -20,9 +20,7 @@
 	<!-- Menu -->
 	<section class="menu-container">
 
-		<!-- Menu -->
 		<ul id="menu">
-
 			<!-- Company will only display at 768px [+] -->
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
@@ -46,7 +44,24 @@
 			</li>
 
 			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
-			<li><a href="#">Projects</a></li>
+			
+			<!-- Projects  will only display at 768px [+] -->
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+				<ul class="dropdown-menu">
+					<li><a href="https://www.pinterest.com/tagwall/showroom/">Gallery</a></li>
+					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+			</li>
+
+			<!-- Projects mobile will only display at 768px [-] -->
+			<li class="mobile">
+				<a href="#">Projects</a>
+				<ul class="expand">
+					<li><a href="https://www.pinterest.com/tagwall/showroom/">Gallery</a></li>
+					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+				</ul>
+			</li>
+
 			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
 			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
 		</ul>
