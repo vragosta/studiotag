@@ -95,6 +95,25 @@ function tagwall_setup() {
 			'id'        => 'hero-image',
 			'post_type' => 'page'
 		) );
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Blueprint #1', 'tagwall' ),
+			'id'        => 'blueprint-one-image',
+			'post_type' => 'technical'
+		) );
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Blueprint #2', 'tagwall' ),
+			'id'        => 'blueprint-two-image',
+			'post_type' => 'technical'
+		) );
+
+		new MultiPostThumbnails( array(
+			'label'     => __( 'Blueprint #3', 'tagwall' ),
+			'id'        => 'blueprint-three-image',
+			'post_type' => 'technical'
+		) );
+
 	}
 }
 
@@ -238,7 +257,15 @@ function styles() {
 			array(),
 			TAGWALL_VERSION
 		);
+	endif;
 
+	if ( is_post_type_archive() ) :
+		wp_enqueue_style(
+			'tagwall-archive',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
 	endif;
 
 	if ( is_singular( 'system' ) ) :
