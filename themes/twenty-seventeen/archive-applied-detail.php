@@ -14,29 +14,20 @@
 
 	get_header();
 
-	// Get the post type object.
-	$post_type = get_queried_object();
-
-	// Initialize the global count.
+	// Initialize the local count variable.
 	$count = 0;
 
-	// Arguements for main query.
-	$args = array(
-		'post_type' => $post_type->name,
-		'order'     => 'ASC'
-	);
+	// Get the post type object.
+	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
 
-	// Initialize the query.
-	$query = new WP_Query( $args );
-
-	// TODO
+	// Include the content/details partial.
 	include( 'partials/content-details.php' );
 
 ?>
 
 <div class="archive-container applied-detail"><?php
-	if ( $query->have_posts() ) :
-		while ( $query->have_posts() ) : $query->the_post();
+	if ( $custom->query->have_posts() ) :
+		while ( $custom->query->have_posts() ) : $custom->query->the_post();
 
 		// Get the featured image.
 		$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );

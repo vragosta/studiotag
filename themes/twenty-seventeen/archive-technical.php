@@ -14,33 +14,26 @@
 
 	get_header();
 
-	// Get the post type object.
-	$post_type = get_queried_object();
+	// Get the custom catered post type object based off the archive template we are on.
+	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
 
-	// Arguements for main query.
-	$args = array(
-		'post_type' => $post_type->name,
-		'order'     => 'ASC'
-	);
-
-	// Initialize the query.
-	$query = new WP_Query( $args );
-
-	// TODO
+	// Include content/details  partial.
 	include( 'partials/content-details.php' );
 
 ?>
 
 <div class="archive-container technical">
 
-	<?php if ( $query->have_posts() ) : ?>
-		<?php while( $query->have_posts() ) : $query->the_post(); ?>
+	<?php if ( $custom->query->have_posts() ) : ?>
+		<?php while( $custom->query->have_posts() ) : $custom->query->the_post(); ?>
 
 			<?php
-				// TODO
+
+				// Get all blueprint images if they are set.
 				$blueprint_one   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'one' );
 				$blueprint_two   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'two' );
 				$blueprint_three = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'three' );
+
 			?>
 
 			<section class="<?php echo esc_attr( $post->post_name ); ?>">

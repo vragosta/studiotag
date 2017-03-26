@@ -134,14 +134,13 @@ function tagwall_get_terms( $post_type ) {
 }
 
 /**
- * TODO
+ * Create an array that holds specific post type information.
  *
  * @uses   tagwall_get_query_arguements(), tagwall_get_terms()
  * @return array $terms post-type terms
  */
 function tagwall_get_post_type_object( $post_type ) {
 
-	// TODO
 	$custom = (object) array(
 		'name'  => $post_type->name,
 		'label' => $post_type->label,
@@ -154,7 +153,7 @@ function tagwall_get_post_type_object( $post_type ) {
 }
 
 /**
- * Create an array that holds specific post type information.
+ * Create an array that holds all post type information.
  *
  * @uses   get_post_types(), array_shift(), tagwall_get_query_arguements(), tagwall_get_terms()
  * @return array $terms post-type terms
@@ -187,4 +186,22 @@ function tagwall_get_post_type_objects() {
 	endforeach;
 
 	return $custom;
+}
+
+function tagwall_get_post_type_term_query( $post_type, $term ) {
+
+	// Arguements for woodgrain query.
+	$args = array(
+		'post_type' => $post_type,
+		'order'     => 'ASC',
+		'tax_query' => array(
+			array(
+				'taxonomy' => $term->taxonomy,
+				'terms'    => $term->term_id,
+				'operator' => 'IN'
+			)
+		)
+	);
+
+	return new WP_Query( $args );
 }
