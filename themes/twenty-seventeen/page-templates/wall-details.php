@@ -12,6 +12,9 @@
 
 	get_header();
 
+	// Initialize counter;
+	$count = 0;
+
 	if ( have_posts() ) :
 		while( have_posts() ) : the_post();
 
@@ -21,14 +24,8 @@
 			// Get the 'featured' image from the post.
 			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
-			// TODO
-			$technicals      = get_object_taxonomies( 'technical', 'objects' );
-			$applied_details = get_object_taxonomies( 'applied-detail', 'objects' );
-			$doors           = get_object_taxonomies( 'door', 'objects' );
-			$hardware        = get_object_taxonomies( 'hardware', 'objects' );
-			$glass           = get_object_taxonomies( 'glass', 'objects' );
-			$film            = get_object_taxonomies( 'film', 'objects' );
-			$finishes        = get_object_taxonomies( 'finish', 'objects' ); ?>
+			// Get the custom post type array.
+			$post_types = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_objects(); ?>
 
 			<figure class="hero-image settings">
 				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
@@ -44,180 +41,70 @@
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-9">
 						<div class="main row">
 							<div class="col-xs-12 col-sm-12 col-md-6">
-								<h1 data-menu="one"><a href="#one">Technicals</a></h1>
-								<h1 data-menu="two"><a href="#two">Applied Details</a></h1>
-								<h1 data-menu="three"><a href="#three">Doors</a></h1>
-								<h1 data-menu="four"><a href="#four">Hardware</a></h1>
-								<div class="break">
-									<h1 data-menu="five"><a href="#five">Glass</a></h1>
-									<h1 data-menu="six"><a href="#six">Film</a></h1>
-								</div>
-								<h1 data-menu="seven"><a href="#seven">Finishes</a></h1>
+
+								<?php foreach( $post_types as $post_type ) : ?>
+									<?php if ( $count == 4 ) : ?>
+										<div class="break">
+									<?php elseif ( $count == 6 ) : ?>
+										</div>
+									<?php endif; ?>
+
+									<h1 data-menu="<?php echo esc_attr( $post_type->slug ); ?>">
+										<a href="#<?php echo esc_attr( $post_type->name ); ?>">
+											<?php echo esc_html( $post_type->label ); ?>
+										</a>
+									</h1>
+
+									<?php $count++; ?>
+								<?php endforeach; ?>
+
 							</div>
 							<div class="col-xs-12 col-sm-12 col-md-6">
 
-								<div class="menu one">
-									<h2><a name="one"><span>Wall</span> Technicals</a></h2>
-									<ul>
-										<?php foreach( $technicals as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/technicals#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></li><?php
+								<?php foreach( $post_types as $post_type ) : ?>
 
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
+									<div class="menu <?php echo esc_attr( $post_type->slug ); ?>">
 
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/technicals#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
+										<h2>
+											<a href="<?php echo home_url( '/' . $post_type->slug . '/' ); ?>" name="<?php echo esc_attr( $post_type->name ); ?>">
+												<span>Wall</span> <?php echo esc_html( $post_type->label ); ?>
+											</a>
+										</h2>
 
-										endforeach; ?>
-										<li></li>
-									</ul>
-								</div>
+										<ul>
+											<?php if ( $post_type->query->have_posts() ) : ?>
+												<?php while( $post_type->query->have_posts() ) : $post_type->query->the_post(); ?>
 
-								<div class="menu two">
-									<h2><a name="two"><span>Wall</span> Applied Details</a></h2>
-									<ul>
-										<?php foreach( $applied_details as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/applied-details#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></li><?php
+													<li>
+														<a href="<?php echo home_url( '/' . $post_type->slug . '#' . $post->post_name ); ?>">
+															<?php echo esc_html( $post->post_title ); ?>
+														</a>
+													</li>
 
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
+												<?php endwhile; ?>
+												<?php wp_reset_postdata(); ?>
+											<?php endif; ?>
 
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/applied-details#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
+											<?php if ( $post_type->terms ) : ?>
+												<?php foreach( $post_type->terms as $term ) : ?>
 
-										endforeach; ?>
-									</ul>
-								</div>
+													<li><a href="<?php echo home_url( '/' . $post_type->slug . '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 
-								<div class="menu three">
-									<h2><a name="three"><span>Wall</span> Doors</a></h2>
-									<ul>
-										<?php foreach( $doors as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/doors#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a><li><?php
+												<?php endforeach; ?>
+											<?php endif; ?>
+										</ul>
 
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
+									</div>
 
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/doors#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
-
-										endforeach; ?>
-									</ul>
-								</div>
-
-								<div class="menu four">
-									<h2><a name="four"><span>Wall</span> Hardware</a></h2>
-									<ul>
-										<?php foreach( $hardware as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/hardware#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a><li><?php
-
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
-
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/hardware#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
-
-										endforeach; ?>
-									</ul>
-								</div>
-
-								<div class="menu five">
-									<h2><a name="five">Glass</a></h2>
-									<ul>
-										<?php foreach( $glass as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/glass#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a><li><?php
-
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
-
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/glass#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
-
-										endforeach; ?>
-									</ul>
-								</div>
-
-								<div class="menu six">
-									<h2><a name="six">Film</a></h2>
-									<ul>
-										<?php foreach( $film as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/film#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></a><li><?php
-
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
-
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/film#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
-
-										endforeach; ?>
-									</ul>
-								</div>
-
-								<div class="menu seven">
-									<h2><a name="seven"><span>Tagwall</span> Finishes</a></h2>
-									<ul>
-										<?php foreach( $finishes as $taxonomy ) : ?>
-											<li><a href="<?php echo home_url( '/finish#' . $taxonomy->name ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a><li><?php
-
-											$terms = get_terms( array(
-												'taxonomy'   => $taxonomy->name,
-												'hide_empty' => false,
-												'order'      => 'desc'
-											) );
-
-											if ( $terms ) :
-												foreach( $terms as $term ) : ?>
-													<li class="term"><a href="<?php echo home_url( '/finish#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li><?php
-												endforeach;
-											endif;
-
-										endforeach; ?>
-									</ul>
-								</div>
+								<?php endforeach; ?>
 
 							</div>
 						</div>
 					</div>
 				</div>
 			</main>
-<?php endwhile; ?>
-<?php wp_reset_postdata(); ?>
-<?php endif; ?>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+	<?php endif; ?>
 
 <?php get_footer(); ?>

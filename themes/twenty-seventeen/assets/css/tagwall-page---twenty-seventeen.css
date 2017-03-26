@@ -120,7 +120,6 @@
 @media only screen and ( max-width: 991px ) {
 	.two-column-textblock .content-container .content {
 		column-count: 1;
-		/*padding: 0 1rem;*/
 		height: auto;
 	}
 }
@@ -459,11 +458,9 @@
 /*--- TODO ---*/
 .wall-details .details-menu h1 {
 	font-size: 8rem;
-	font-weight: bold;
+	font-weight: 600;
 	font-family: HelveticaNeueLT Std;
 	margin: 0;
-	/*color: #221E1F;
-	transition: color 0.2s ease-in-out;*/
 	cursor: pointer;
 }
 
@@ -503,6 +500,7 @@
 @media only screen and ( max-width: 767px ) {
 	.wall-details .details-menu h1 {
 		font-size: 5rem;
+		text-align: center;
 	}
 }
 
@@ -519,7 +517,7 @@
 }
 
 /*--- TODO ---*/
-.wall-details .details-menu .main .break h1[data-menu=five] {
+.wall-details .details-menu .main .break h1[data-menu]:first-child {
 	margin: 0 2rem 0 0;
 }
 
@@ -545,6 +543,11 @@
 }
 
 /*--- TODO ---*/
+.wall-details .details-menu .menu.dim:hover {
+	opacity: 1;
+}
+
+/*--- TODO ---*/
 @media only screen and ( max-width: 767px ) {
 	.wall-details .details-menu .menu.dim {
 		opacity: 1;
@@ -554,7 +557,7 @@
 /*--- TODO ---*/
 .wall-details .details-menu .menu h2 {
 	font-family: HelveticaNeueLT Std;
-	font-weight: bold;
+	font-weight: 600;
 	color: #221E1F;
 	margin: 0;
 	font-size: 2rem;
@@ -596,6 +599,7 @@
 /*--- TODO ---*/
 .wall-details .details-menu .menu ul li a {
 	font-size: 1.8rem;
+	font-weight: 200;
 	color: #221E1F;
 	transition: color 0.2s ease-in-out;
 }

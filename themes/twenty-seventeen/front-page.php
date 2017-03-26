@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Archive - Systems
  * Template for displaying the front page.
  *
  * @package Tag Wall - Twenty Seventeen
@@ -29,9 +30,11 @@
 
 	<!-- TODO Replace this with carousel -->
 	<section class="carousel">
-		<figure class="settings">
+		<!-- <figure class="settings">
 			<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-		</figure>
+		</figure> -->
+		<!-- Switched to img tag due to bug with slick carousel and figure tag -->
+		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>">
 	</section>
 	<!-- TODO Replace this with carousel -->
 
@@ -51,10 +54,10 @@
 					$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
 					// Get the excerpt.
-					$excerpt = wp_trim_words( $temp_post->post_excerpt, 35, '...' );
+					$excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
 
 					// Get the mobile excerpt.
-					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 25, '...' );
+					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
 
 					// If this is the first iteration through the loop..
 					if ( $count == 0 ) : ?>

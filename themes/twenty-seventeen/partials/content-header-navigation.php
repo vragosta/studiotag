@@ -20,16 +20,14 @@
 	<!-- Menu -->
 	<section class="menu-container">
 
-		<!-- Menu -->
 		<ul id="menu">
-
 			<!-- Company will only display at 768px [+] -->
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
 				<ul class="dropdown-menu">
 					<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
 					<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-					<li><a href="<?php echo home_url( '/solutions/' ); ?>">Solutions</a></li>
 					<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 				</ul>
 			</li>
@@ -39,16 +37,34 @@
 				<a href="#">Company</a>
 				<ul class="expand">
 					<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+					<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
 					<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-					<li><a href="<?php echo home_url( '/solutions/' ); ?>">Solutions</a></li>
 					<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 				</ul>
 			</li>
 
 			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
-			<li><a href="#">Projects</a></li>
+
+			<!-- Projects  will only display at 768px [+] -->
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
+				<ul class="dropdown-menu">
+					<li><a href="https://www.pinterest.com/tagwall/showroom/">Gallery</a></li>
+					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+				</ul>
+			</li>
+
+			<!-- Projects mobile will only display at 768px [-] -->
+			<li class="mobile">
+				<a href="#">Projects</a>
+				<ul class="expand">
+					<li><a href="https://www.pinterest.com/tagwall/showroom/">Gallery</a></li>
+					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+				</ul>
+			</li>
+
 			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
-			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact</a></li>
+			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
 		</ul>
 	</section>
 
