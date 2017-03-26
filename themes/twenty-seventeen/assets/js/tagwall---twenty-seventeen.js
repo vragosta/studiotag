@@ -65,10 +65,10 @@
 		});
 
 		/**
-		 * TODO
+		 * Dim the sub menus on hover of main menu items on the wall details template.
 		 *
 		 * @since 0.1.0
-		 * @uses  TODO
+		 * @uses  data(), width(), removeClass(), addClass()
 		 */
 		$( '.wall-details .details-menu h1' ).on( 'mouseenter', function() {
 			var id = $( this ).data( 'menu' );
@@ -76,36 +76,14 @@
 			if ( $( window ).width() > 768 ) {
 				$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
 				$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// if ( id == 'one' ) {
-					// $( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-					// $( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'two' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'three' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'four' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'five' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'six' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// } else if ( id == 'seven' ) {
-				// 	$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				// 	$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-				// }
 			}
 		});
 
 		/**
-		 * TODO
+		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
 		 *
 		 * @since 0.1.0
-		 * @uses  TODO
+		 * @uses  scrollTop(), height(), addClass(), removeClass()
 		 */
 		$( window ).scroll( function() {
 			if ( $( window ).scrollTop() >= 800 && $( window ).scrollTop() < ( $( document ).height() - 1400 ) ) {
