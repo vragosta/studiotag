@@ -15,14 +15,14 @@
 	<div class="col-xs-12 col-sm-6">
 		<ul>
 
-			<?php if ( $query->have_posts() ) : ?>
-				<?php while( $query->have_posts() ) : $query->the_post(); ?>
+			<?php if ( $custom->query->have_posts() ) : ?>
+				<?php while( $custom->query->have_posts() ) : $custom->query->the_post(); ?>
 					<li><a href="<?php echo esc_attr( '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
 				<?php endwhile; ?>
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
 
-			<?php foreach( $terms as $term ) : ?>
+			<?php foreach( $custom->terms as $term ) : ?>
 				<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 			<?php endforeach; ?>
 

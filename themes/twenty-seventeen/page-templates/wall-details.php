@@ -87,7 +87,9 @@
 
 											<?php if ( $post_type->terms ) : ?>
 												<?php foreach( $post_type->terms as $term ) : ?>
-													<li><a href="<?php echo home_url( '/technicals#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+
+													<li><a href="<?php echo home_url( '/' . $post_type->slug . '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+
 												<?php endforeach; ?>
 											<?php endif; ?>
 										</ul>

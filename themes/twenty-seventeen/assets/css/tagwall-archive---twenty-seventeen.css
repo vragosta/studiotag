@@ -460,6 +460,10 @@
 	border-radius: 50%;
 }
 
+.archive-container.door .featured-image-circle.custom {
+	border: 0.1rem dashed #221e1f;
+}
+
 .archive-container.door .featured-image-circle img {
 	width: 220px;
 	height: auto;
