@@ -188,6 +188,11 @@ function tagwall_get_post_type_objects() {
 	return $custom;
 }
 
+/**
+ * Craft a taxonomy query based on the post type and term entered.
+ *
+ * @return object query wp_query object
+ */
 function tagwall_get_post_type_term_query( $post_type, $term ) {
 
 	// Arguements for woodgrain query.
