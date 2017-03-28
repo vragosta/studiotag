@@ -129,7 +129,7 @@
 			// Accomodate for the last temporary post's data. ?>
 			<div class="row">
 				<div class="info left col-xs-12 col-sm-6">
-					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+					<a href="<?php echo get_the_permalink( $post->ID ); ?>">
 						<h3><span>Tagwall</span> <?php echo esc_html( $post->post_title ); ?></h3>
 					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
@@ -137,7 +137,7 @@
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image not-visible">
-						<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+						<a href="<?php echo get_the_permalink( $post->ID ); ?>">
 							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</a>
 					</figure>
