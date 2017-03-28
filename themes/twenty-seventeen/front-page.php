@@ -130,7 +130,7 @@
 			<div class="row">
 				<div class="info left col-xs-12 col-sm-6">
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
-						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
+						<h3><span>Tagwall</span> <?php echo esc_html( $post->post_title ); ?></h3>
 					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
 					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
