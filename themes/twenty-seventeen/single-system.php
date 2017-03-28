@@ -64,33 +64,24 @@
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
 							<!-- Greenwall doesnt have wall details -->
-							<?php if (is_single('greenwall')) { ?>
+							<?php if (is_single('greenwall')) : ?>
 								<li><a href="<?php echo $_GREENWALL_GALLERY; ?>">View Gallery</a></li>
 								<li><a href="#">View LookBook</a></li>
-							<?php } else { ?>
+							<?php else : ?>
 								<!-- Set each galery link based on single page template -->
-								<?php if (is_single('encore')) { ?>
+								<?php if (is_single('encore')) : ?>
 									<li><a href="<?php echo $_ENCORE_GALLERY; ?>">View Gallery</a></li>
-								<?php } ?>
-
-								<?php if (is_single('slimline')) { ?>
+								<?php elseif (is_single('slimline')) : ?>
 									<li><a href="<?php echo $_SLIMLINE_GALLERY; ?>">View Gallery</a></li>
-								<?php } ?>
-
-								<?php if (is_single('ion')) { ?>
+								<?php elseif (is_single('ion')) : ?>
 									<li><a href="<?php echo $_ION_GALLERY; ?>">View Gallery</a></li>
-								<?php } ?>
-
-								<?php if (is_single('industrial-sash')) { ?>
+								<?php elseif (is_single('industrial-sash')) :?>
 									<li><a href="<?php echo $_INDUSTRIAL_SASH_GALLERY; ?>">View Gallery</a></li>
-								<?php } ?>
-
-								<?php if (is_single('prebuilt')) { ?>
+								<?php elseif (is_single('prebuilt')) : ?>
 									<li><a href="<?php echo $_PREBUILT_GALLERY; ?>">View Gallery</a></li>
-								<?php } ?>
-								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
-								<li><a href="#">View LookBook</a></li>
-							<?php } ?>
+									<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+									<li><a href="#">View LookBook</a></li>
+							<?php endif; ?>
 						</ul>
 					</div>
 
