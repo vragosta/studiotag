@@ -8,7 +8,15 @@
  */
 ?>
 
-<?php get_header(); ?>
+<?php get_header(); 
+	// Pinterest Galley constants
+	$_ENCORE_GALLERY = "http://pin.it/nQO04sa";
+	$_SLIMLINE_GALLERY = "http://pin.it/hryCyU2";
+	$_ION_GALLERY = "http://pin.it/te8N5sY";
+	$_INDUSTRIAL_SASH_GALLERY = "http://pin.it/Hb0Tnws";
+	$_GREENWALL_GALLERY = "http://pin.it/ujvL0-k";
+	$_PREBUILT_GALLERY = "http://pin.it/c8OBUYS";
+?>
 
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post();
@@ -55,9 +63,25 @@
 				<div class="specs-container row">
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
-							<li><a href="#">View Gallery</a></li>
-							<li><a href="#">View Wall Details</a></li>
-							<li><a href="#">View LookBook</a></li>
+							<!-- Greenwall doesnt have wall details -->
+							<?php if (is_single('greenwall')) : ?>
+								<li><a href="<?php echo $_GREENWALL_GALLERY; ?>">View Gallery</a></li>
+								<li><a href="#">View LookBook</a></li>
+							<?php else : ?>
+								<!-- Set each galery link based on single page template -->
+								<?php if (is_single('encore')) : ?>
+									<li><a href="<?php echo $_ENCORE_GALLERY; ?>">View Gallery</a></li>
+								<?php elseif (is_single('slimline')) : ?>
+									<li><a href="<?php echo $_SLIMLINE_GALLERY; ?>">View Gallery</a></li>
+								<?php elseif (is_single('ion')) : ?>
+									<li><a href="<?php echo $_ION_GALLERY; ?>">View Gallery</a></li>
+								<?php elseif (is_single('industrial-sash')) :?>
+									<li><a href="<?php echo $_INDUSTRIAL_SASH_GALLERY; ?>">View Gallery</a></li>
+								<?php elseif (is_single('prebuilt')) : ?>
+									<li><a href="<?php echo $_PREBUILT_GALLERY; ?>">View Gallery</a></li>
+									<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+									<li><a href="#">View LookBook</a></li>
+							<?php endif; ?>
 						</ul>
 					</div>
 
