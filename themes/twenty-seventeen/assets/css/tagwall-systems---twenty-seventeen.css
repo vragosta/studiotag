@@ -281,3 +281,46 @@
 		font-size: 1.5rem;
 	}
 }
+
+.right .slash {
+	right: 0;
+}
+
+.slash {
+	display: flex;
+	position: absolute;
+	top: 0;
+	/*transform: skew(-20deg);*/
+	transform: skew(-15deg);
+	/*width: 35%;*/
+	width: 30%;
+	background-color: #fff;
+	height: 100%;
+}
+
+.slash hr {
+	margin: 0;
+	background-color: #E6E7E8;
+	width: 20px;
+	/*height: 500px;*/
+	height: 120%;
+	border: 0;
+}
+
+.slash hr:first-child {
+	background-color: #E6E7E8;
+	/*width: 20px;*/
+	width: 7%;
+}
+
+.slash hr.mid {
+	background-color: #fff;
+	/*width: 25px;*/
+	width: 8%;
+}
+
+.slash hr:last-child {
+	background-color: #DEDFE0;
+	/*width: 15px;*/
+	width: 5%;
+}

@@ -69,6 +69,12 @@
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+								<!-- <div style="display: flex; justify-content: center;"> -->
+								<div class="slash">
+									<hr />
+									<hr class="mid" />
+									<hr />
+								</div>
 							</div>
 						</div><?php
 
