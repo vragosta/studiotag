@@ -137,7 +137,7 @@
 
 /*--- Give margin 10rem to images that display on the right ---*/
 .archive-systems .systems-grid .right .featured-image div {
-	right: 10rem;
+	right: 10%;
 }
 
 /*--- Media Query for right images, reduce margin to 0 ---*/
@@ -149,7 +149,7 @@
 
 /*--- Give margin 10rem to images that display on the left ---*/
 .archive-systems .systems-grid .left .featured-image div {
-	left: 10rem;
+	left: 10%;
 }
 
 /*--- Media Query for left images, reduce margin to 0 ---*/
@@ -175,7 +175,7 @@
 
 /*--- Control the spacing of the left 'info' containers ---*/
 .archive-systems .systems-grid .info.left {
-	padding: 0 3rem 0 12rem;
+	padding: 0 3% 0 5%;
 }
 
 /*--- Media Query to control the spacing of the left 'info' containers ---*/
@@ -187,7 +187,7 @@
 
 /*--- Control the spacing of the right 'info' containers ---*/
 .archive-systems .systems-grid .info.right {
-	padding: 0 10rem 0 3rem;
+	padding: 0 9% 0 3%;
 }
 
 /*--- Media Query to control the spacing of the right 'info' containers ---*/
@@ -199,8 +199,10 @@
 
 /*--- Styles to h3 elements within 'info' container ---*/
 .archive-systems .systems-grid .info h3 {
-	font-size: 3.5rem;
-	font-weight: 600;
+	/*font-size: 3.5rem;*/
+	font-size: 2.5vw;
+	/*font-weight: 600;*/
+	font-weight: 400;
 	margin-top: 4rem;
 	font-family: HelveticaNeueLT Std;
 	position: absolute;
@@ -208,25 +210,26 @@
 }
 
 /*--- Media Query to h3 elements within 'info' container ---*/
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.archive-systems .systems-grid .info h3 {
 		margin-top: 3.2rem;
 		font-size: 2.8rem;
 	}
-}
+}*/
 
 /*--- Media Query to h3 elements within 'info' container ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.archive-systems .systems-grid .info h3 {
 		margin-top: 2.5rem;
 		font-size: 2.2rem;
 	}
-}
+}*/
 
 /*--- Media Query to h3 elements within 'info' container ---*/
 @media only screen and ( max-width: 767px ) {
 	.archive-systems .systems-grid .info h3 {
-		font-size: 3rem;
+		/*font-size: 3rem;*/
+		font-size: 5.5vw;
 		position: relative;
 		margin: 1rem 0 2rem;
 	}
@@ -241,7 +244,8 @@
 .archive-systems .systems-grid .info p {
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
-	font-size: 2.5rem;
+	/*font-size: 2.5rem;*/
+	font-size: 1.5vw;
 	line-height: 1.3;
 	word-break: break-word;
 	hyphens: auto;
@@ -249,36 +253,52 @@
 }
 
 /*--- Media Query to paragraph elements within the 'info' container ---*/
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.archive-systems .systems-grid .info p {
 		font-size: 1.8rem;
 	}
-}
+}*/
 
 /*--- Media Query to hide the paragraph elements within the 'info' container ---*/
-@media only screen and ( max-width: 991px ) {
+/*@media only screen and ( max-width: 991px ) {
 	.archive-systems .systems-grid .info p {
 		display: none;
 	}
-}
+}*/
 
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 767px ) {
 	.archive-systems .systems-grid .info p {
-		font-size: 1.3rem;
+		font-size: 4vw;
 	}
 }
 
 /*--- Styles for the mobile specific paragraph element within the 'info' container ---*/
-.archive-systems .systems-grid .info p.mobile {
+/*.archive-systems .systems-grid .info p.mobile {
 	display: none;
-}
+}*/
 
 /*--- Media Query to display the mobile specific paragraph element within the 'info' container ---*/
-@media only screen and ( max-width: 991px ) {
+/*@media only screen and ( max-width: 991px ) {
 	.archive-systems .systems-grid .info p.mobile {
 		display: block;
 		font-size: 1.5rem;
+	}
+}*/
+
+.slash {
+	display: flex;
+	position: absolute;
+	top: 0;
+	transform: skew(-15deg);
+	width: 30%;
+	background-color: #fff;
+	height: 100%;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash {
+		display: none;
 	}
 }
 
@@ -286,41 +306,29 @@
 	right: 0;
 }
 
-.slash {
-	display: flex;
-	position: absolute;
-	top: 0;
-	/*transform: skew(-20deg);*/
-	transform: skew(-15deg);
-	/*width: 35%;*/
-	width: 30%;
-	background-color: #fff;
-	height: 100%;
+.left .slash {
+	right: -15.9%;
 }
 
 .slash hr {
 	margin: 0;
 	background-color: #E6E7E8;
 	width: 20px;
-	/*height: 500px;*/
 	height: 120%;
 	border: 0;
 }
 
 .slash hr:first-child {
 	background-color: #E6E7E8;
-	/*width: 20px;*/
-	width: 7%;
+	width: 8%;
 }
 
 .slash hr.mid {
 	background-color: #fff;
-	/*width: 25px;*/
-	width: 8%;
+	width: 9%;
 }
 
 .slash hr:last-child {
 	background-color: #DEDFE0;
-	/*width: 15px;*/
 	width: 5%;
 }

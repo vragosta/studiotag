@@ -40,11 +40,11 @@
 
 	<main class="archive-systems">
 
-		<section class="featured-image">
+		<!-- <section class="featured-image">
 			<figure class="settings">
 				<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' );"></div>
 			</figure>
-		</section>
+		</section> -->
 
 		<section class="systems-grid"><?php
 			if ( $query->have_posts() ) :
@@ -57,7 +57,7 @@
 					$excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
 
 					// Get the mobile excerpt.
-					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
+					// $mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
 
 					// If this is the first iteration through the loop..
 					if ( $count == 0 ) : ?>
@@ -69,12 +69,13 @@
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
-								<!-- <div style="display: flex; justify-content: center;"> -->
+
 								<div class="slash">
 									<hr />
-									<hr class="mid" />
+									<hr class="mid"/>
 									<hr />
 								</div>
+
 							</div>
 						</div><?php
 
@@ -88,13 +89,20 @@
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+
+								<div class="slash">
+									<hr />
+									<hr class="mid"/>
+									<hr />
+								</div>
+
 							</div>
 							<div class="info right col-xs-12 col-sm-6">
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+								<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
 							</div>
 						</div><?php
 
@@ -107,7 +115,7 @@
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+								<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image">
@@ -115,6 +123,13 @@
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+
+								<div class="slash">
+									<hr />
+									<hr class="mid"/>
+									<hr />
+								</div>
+
 							</div>
 						</div><?php
 					endif;
@@ -139,7 +154,7 @@
 						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
-					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+					<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image not-visible">
