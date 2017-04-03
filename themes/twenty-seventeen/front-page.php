@@ -53,12 +53,6 @@
 					// Get the featured image.
 					$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
-					// Get the excerpt.
-					$excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
-
-					// Get the mobile excerpt.
-					// $mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
-
 					// If this is the first iteration through the loop..
 					if ( $count == 0 ) : ?>
 
@@ -102,7 +96,7 @@
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
 							</div>
 						</div><?php
 
@@ -114,8 +108,10 @@
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
+								<!-- <div class="content"> -->
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+								<!-- </div> -->
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image">
@@ -139,6 +135,7 @@
 					 * NOTE: This is the key statement!
 					 */
 					$temp_post = $post;
+					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 50, '...' );
 
 					// Increment the global count variable.
 					$count++;
@@ -153,8 +150,10 @@
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					</a>
+					<!-- <div class="content"> -->
 					<p><?php echo esc_html( $excerpt ); ?></p>
-					<!-- <p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p> -->
+					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+					<!-- </div> -->
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image not-visible">
