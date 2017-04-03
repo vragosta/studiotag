@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Archive - Systems
+ * Template Name: Systems Grid
  * Template for displaying the front page.
  *
  * @package Tag Wall - Twenty Seventeen
@@ -36,7 +36,7 @@
 
 	<main class="archive-systems">
 
-		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( 'Systems' ); ?>
+		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 		<section class="grid"><?php
 			if ( $query->have_posts() ) :

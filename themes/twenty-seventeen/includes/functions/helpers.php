@@ -232,7 +232,9 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
  * @uses   sprintf()
  * @return string void title HTML with slash
  */
-function tagwall_get_wall_title( $title, $slug = false ) {
+function tagwall_get_wall_title() {
+	global $post;
+
 	$html = '
 		<section class="wall-title %2$s">
 			<h1>Wall</h1>
@@ -248,5 +250,5 @@ function tagwall_get_wall_title( $title, $slug = false ) {
 		</section>
 	';
 
-	return sprintf( $html, $title, $slug );
+	return sprintf( $html, $post->post_title, $post->post_name );
 }

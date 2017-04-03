@@ -33,7 +33,7 @@
 
 			<main class="wall-details">
 
-				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( get_the_title() ); ?>
+				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 				<div class="details-menu row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-3 col-lg-9">

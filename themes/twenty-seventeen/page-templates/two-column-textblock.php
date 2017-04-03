@@ -24,7 +24,7 @@
 
 			<main class="two-column-textblock">
 
-				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( get_the_title(), $post->post_name ); ?>
+				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 				<section class="content-container row">
 					<div class="content">

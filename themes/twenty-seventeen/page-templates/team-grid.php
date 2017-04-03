@@ -31,9 +31,7 @@
 
 	<main class="archive-users">
 
-		<figure class="featured-image settings">
-			<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-		</figure>
+		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 		<section class="team-grid"><?php
 			foreach( $users as $user ) :
