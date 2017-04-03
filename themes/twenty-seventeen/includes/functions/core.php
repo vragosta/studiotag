@@ -245,7 +245,7 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'tagwall-systems',
+			'tagwall-archive-systems',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
@@ -295,10 +295,28 @@ function styles() {
 		);
 	endif;
 
-	if ( is_page( 'details' ) ) :
+	if ( is_page_template( 'page-templates/team-grid.php' ) ) :
+		wp_enqueue_style(
+			'tagwall-team',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-team-grid---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_page_template( 'page-templates/wall-details.php' ) ) :
 		wp_enqueue_style(
 			'tagwall-details',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-wall-details---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_page_template( 'page-templates/two-column-textblock.php' ) ) :
+		wp_enqueue_style(
+			'tagwall-two-column-textblock',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-two-column-textblock---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);

@@ -40,25 +40,6 @@
 	}
 }
 
-/*--- MOVE ---*/
-.two-column-textblock .wall-title h1 {
-	font-size: 6em;
-}
-
-/*--- MOVE ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.two-column-textblock .wall-title h1 {
-		font-size: 4em;
-	}
-}
-
-/*--- MOVE ---*/
-@media only screen and ( max-width: 767px ) {
-	.two-column-textblock .wall-title h1 {
-		font-size: 2em;
-	}
-}
-
 .wall-title h1:last-child {
 	font-family: Bodoni;
 }
