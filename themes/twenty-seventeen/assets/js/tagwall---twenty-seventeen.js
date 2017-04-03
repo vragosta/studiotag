@@ -98,7 +98,7 @@
 			slidesToShow: 1,
 			autoplay: true,
   			autoplaySpeed: 3000,
-  			speed: 600
+  			speed: 600,
 		});
 
 	});
