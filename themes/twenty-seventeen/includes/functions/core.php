@@ -246,7 +246,7 @@ function styles() {
 	if ( is_front_page() ) :
 		wp_enqueue_style(
 			'tagwall-systems',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-systems---twenty-seventeen.css",
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
@@ -268,10 +268,19 @@ function styles() {
 		);
 	endif;
 
+	if ( is_post_type_archive( 'technical' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-technicals',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-technicals---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'tagwall-systems',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-systems-single---twenty-seventeen.css",
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-single-systems---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
@@ -281,6 +290,15 @@ function styles() {
 		wp_enqueue_style(
 			'tagwall-page',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_page( 'details' ) ) :
+		wp_enqueue_style(
+			'tagwall-details',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-wall-details---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);

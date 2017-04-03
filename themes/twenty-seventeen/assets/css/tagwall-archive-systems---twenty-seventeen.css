@@ -17,22 +17,6 @@
 	}
 }
 
-/*--- Temporary carousel placeholder ---*/
-.carousel .settings {
-	padding-bottom: 68%;
-	position: relative;
-}
-
-/*--- Source container for image ---*/
-.carousel .settings div {
-	background-size: contain;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
 /*--- TODO ---*/
 .archive-systems {
 	max-width: 1500px;
@@ -46,41 +30,6 @@
 		padding: 0;
 	}
 }
-
-/*--- Wall systems featured image, use negative margins to have preceeding container overlap the image ---*/
-/*.archive-systems > .featured-image {
-	margin: 0 1% -15%;
-}*/
-
-/*--- Media Query for wall systems logo, readjust margin ---*/
-/*@media only screen and ( max-width: 767px ) {
-	.archive-systems > .featured-image {
-		margin: 5rem 3rem 6rem;
-	}
-}*/
-
-/*--- Only display wall systems featured image for 85% of container---*/
-/*.archive-systems .featured-image .settings {
-	padding-bottom: 40%;
-	position: relative;
-}*/
-
-/*--- Source container for systems featured image ---*/
-/*.archive-systems .featured-image .settings div {
-	background-size: contain;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}*/
-
-/*--- Media Query for source container for systems logo, change background-size ---*/
-/*@media only screen and ( max-width: 767px ) {
-	.archive-systems .featured-image .settings div {
-		background-size: cover;
-	}
-}*/
 
 /*--- Systems grid container ---*/
 .grid {

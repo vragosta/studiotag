@@ -224,15 +224,22 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
 	return new WP_Query( $args );
 }
 
-// TODO
-function tagwall_get_wall_title( $title ) {
+/**
+ * Returns the appropriate title HTML with slash CSS.
+ *
+ * @since  0.1.0
+ * @param  string $title wall / $title
+ * @uses   sprintf()
+ * @return string void title HTML with slash
+ */
+function tagwall_get_wall_title( $title, $slug = false ) {
 	$html = '
-		<section class="title">
+		<section class="wall-title %2$s">
 			<h1>Wall</h1>
 
-			<div class="slash header">
+			<div class="slash">
 				<hr />
-				<hr class="mid"/>
+				<hr />
 				<hr />
 			</div>
 
@@ -241,5 +248,5 @@ function tagwall_get_wall_title( $title ) {
 		</section>
 	';
 
-	return sprintf( $html, $title );
+	return sprintf( $html, $title, $slug );
 }

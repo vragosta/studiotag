@@ -9,15 +9,14 @@
 ?>
 
 <?php
+
 	get_header();
 
 	if ( have_posts() ) :
 		while( have_posts() ) : the_post();
-			// Get the 'hero-image' from the post.
-			$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
 
-			// Get the 'featured' image from the post.
-			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+			// Get the 'hero-image' from the post.
+			$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
 
 			<figure class="hero-image settings">
 				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
@@ -25,12 +24,10 @@
 
 			<main class="two-column-textblock">
 
-				<figure class="featured-image settings">
-					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-				</figure>
+				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( get_the_title(), $post->post_name ); ?>
 
 				<section class="content-container row">
-					<div class="content col-xs-12 col-sm-offset-4 col-sm-8">
+					<div class="content">
 						<?php the_content(); ?>
 					</div>
 				</section>

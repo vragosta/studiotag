@@ -36,19 +36,6 @@
 
 	<main class="archive-systems">
 
-		<!-- <section class="title">
-			<h1>Wall</h1>
-
-			<div class="slash header">
-				<hr />
-				<hr class="mid"/>
-				<hr />
-			</div>
-
-			<h1>Systems</h1>
-
-		</section> -->
-
 		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( 'Systems' ); ?>
 
 		<section class="grid"><?php
@@ -63,6 +50,7 @@
 
 						<div class="row">
 							<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -71,7 +59,7 @@
 
 								<div class="slash">
 									<hr />
-									<hr class="mid"/>
+									<hr />
 									<hr />
 								</div>
 
@@ -83,6 +71,7 @@
 
 						<div class="row">
 							<div class="left no-padding col-xs-12 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -91,17 +80,19 @@
 
 								<div class="slash">
 									<hr />
-									<hr class="mid"/>
+									<hr />
 									<hr />
 								</div>
 
 							</div>
 							<div class="info right col-xs-12 col-sm-6">
+
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 							</div>
 						</div><?php
 
@@ -110,13 +101,16 @@
 
 						<div class="row">
 							<div class="info left col-xs-12 col-sm-6">
+
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -125,7 +119,7 @@
 
 								<div class="slash">
 									<hr />
-									<hr class="mid"/>
+									<hr />
 									<hr />
 								</div>
 
@@ -150,18 +144,22 @@
 			// Accomodate for the last temporary post's data. ?>
 			<div class="row">
 				<div class="info left col-xs-12 col-sm-6">
+
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
+
 					<figure class="featured-image not-visible">
 						<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</a>
 					</figure>
+
 				</div>
 			</div>
 
