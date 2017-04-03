@@ -7,3 +7,136 @@
  */
 
 /*--- This is needed as a base file for wp_enqueue_style() ---*/
+
+.slash {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: -14%;
+	transform: skew(-15deg);
+	width: 30%;
+	background-color: #fff;
+	height: 100%;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.slash:not(.header) {
+		right: -13%;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash:not(.header) {
+		display: none;
+	}
+}
+
+.slash.header {
+	/*display: flex;*/
+	position: static;
+	background: transparent;
+	/*transform: skew(-15deg);*/
+	height: 200%;
+	width: auto;
+	margin: 0 2em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash.header {
+		margin: 0 1em;
+		height: 100%;
+	}
+}
+
+.slash hr {
+	margin: 0;
+	background-color: #E6E7E8;
+	width: 20px;
+	height: 120%; /*--- Makes the stripe extend passed the bottom dimensions ---*/
+	border: 0;
+}
+
+.slash.header hr {
+	height: 100%;
+}
+
+.slash hr:first-child {
+	background-color: #E6E7E8;
+	width: 8%;
+}
+
+.slash.header hr:first-child {
+	width: 1.1em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash.header hr:first-child {
+		width: .7em;
+	}
+}
+
+.slash hr.mid {
+	background-color: #fff;
+	width: 9%;
+}
+
+.slash.header hr.mid {
+	width: 1.4em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash.header hr.mid {
+		width: .9em;
+	}
+}
+
+.slash hr:last-child {
+	background-color: #D1D3D4;
+	width: .7em;
+}
+
+.slash.header hr:last-child {
+	background-color: #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash.header hr:last-child {
+		width: .4em;
+	}
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	height: 15em;
+	margin: 12em 0 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.title {
+		margin: 4em 0;
+		justify-content: center;
+	}
+}
+
+.title h1 {
+	font-family: HelveticaNeueLT Std;
+	text-transform: uppercase;
+	font-size: 7em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.title h1 {
+		font-size: 6em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.title h1 {
+		font-size: 2.5em;
+	}
+}
+
+.title h1:last-child {
+	font-family: Bodoni;
+}

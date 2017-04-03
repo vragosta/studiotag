@@ -30,23 +30,28 @@
 
 	<!-- TODO Replace this with carousel -->
 	<section class="carousel">
-		<!-- <figure class="settings">
-			<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-		</figure> -->
-		<!-- Switched to img tag due to bug with slick carousel and figure tag -->
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>">
 	</section>
 	<!-- TODO Replace this with carousel -->
 
 	<main class="archive-systems">
 
-		<!-- <section class="featured-image">
-			<figure class="settings">
-				<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' );"></div>
-			</figure>
+		<!-- <section class="title">
+			<h1>Wall</h1>
+
+			<div class="slash header">
+				<hr />
+				<hr class="mid"/>
+				<hr />
+			</div>
+
+			<h1>Systems</h1>
+
 		</section> -->
 
-		<section class="systems-grid"><?php
+		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( 'Systems' ); ?>
+
+		<section class="grid"><?php
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) : $query->the_post();
 
@@ -108,10 +113,8 @@
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
-								<!-- <div class="content"> -->
 								<p><?php echo esc_html( $excerpt ); ?></p>
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
-								<!-- </div> -->
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
 								<figure class="featured-image">
@@ -150,10 +153,8 @@
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					</a>
-					<!-- <div class="content"> -->
 					<p><?php echo esc_html( $excerpt ); ?></p>
 					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
-					<!-- </div> -->
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
 					<figure class="featured-image not-visible">

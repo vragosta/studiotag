@@ -22,9 +22,10 @@ use \MultiPostThumbnails;
  * If the featured image exists, return the attached image url with appropriate size dimensions,
  * otherwise return the attached image url.
  *
+ * @since  0.1.0
+ * @param  int $post wp_post object
  * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
- * @param  int    $post wp_post object
- * @return string void  image url
+ * @return string void image url
  */
 function tagwall_get_featured_image( $post ) {
 	return wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' )[0];
@@ -34,9 +35,10 @@ function tagwall_get_featured_image( $post ) {
  * If the hero image exists, return the attached image url with the appropriate size dimensions,
  * otherwise return nothing.
  *
+ * @since  0.1.0
+ * @param  int $post wp_post object
  * @uses   class_exists(), MultiPostThumbnails::has_post_thumbnail(), MultiPostThumbnails::get_post_thumbnail_url
- * @param  int    $post wp_post object
- * @return string void  image url
+ * @return string void image url
  */
 function tagwall_get_hero_image( $post ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'hero-image', $post->ID ) ) ?
@@ -47,10 +49,11 @@ function tagwall_get_hero_image( $post ) {
  * If the blueprint image exists, return the attached image url with the appropriate size dimensions,
  * otherwise return nothing.
  *
+ * @since  0.1.0
+ * @param  int $post wp_post object
+ * @param  string $id blueprint image identifier
  * @uses   class_exists(), MultiPostThumbnails::has_post_thumbnail(), MultiPostThumbnails::get_post_thumbnail_url
- * @param  int    $post wp_post object
- * @param  string $id   blueprint image identifier
- * @return string void  image url
+ * @return string void image url
  */
 function tagwall_get_blueprint_image( $post, $id ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'blueprint-' . $id . '-image', $post->ID ) ) ?
@@ -60,9 +63,10 @@ function tagwall_get_blueprint_image( $post, $id ) {
 /**
  * Cater a custom query per post type if taxonomies and terms exist.
  *
- * @uses   get_object_taxonomies(), get_terms()
+ * @since  0.1.0
  * @param  string $post_type post-type
- * @return array  $args      arguements for wp_query
+ * @uses   get_object_taxonomies(), get_terms()
+ * @return array $args arguements for wp_query
  */
 function tagwall_get_query_arguements( $post_type ) {
 
@@ -98,9 +102,10 @@ function tagwall_get_query_arguements( $post_type ) {
 /**
  * Get the taxonomies based on post type sent to function.
  *
- * @uses   get_object_taxonomies(), get_terms()
+ * @since  0.1.0
  * @param  string $post_type post-type
- * @return array  $terms     post-type terms
+ * @uses   get_object_taxonomies(), get_terms()
+ * @return array $terms post-type terms
  */
 function tagwall_get_terms( $post_type ) {
 
@@ -136,6 +141,8 @@ function tagwall_get_terms( $post_type ) {
 /**
  * Create an array that holds specific post type information.
  *
+ * @since  0.1.0
+ * @param  string $post_type post-type
  * @uses   tagwall_get_query_arguements(), tagwall_get_terms()
  * @return array $terms post-type terms
  */
@@ -155,6 +162,8 @@ function tagwall_get_post_type_object( $post_type ) {
 /**
  * Create an array that holds all post type information.
  *
+ * @since  0.1.0
+ * @param  void
  * @uses   get_post_types(), array_shift(), tagwall_get_query_arguements(), tagwall_get_terms()
  * @return array $terms post-type terms
  */
@@ -188,6 +197,15 @@ function tagwall_get_post_type_objects() {
 	return $custom;
 }
 
+/**
+ * Return all terms based on post type, term taxonomy and term ID.
+ *
+ * @since  0.1.0
+ * @param  string $post_type post-type to query
+ * @param  object $term post-type term object
+ * @uses   void
+ * @return array $terms post-type terms
+ */
 function tagwall_get_post_type_term_query( $post_type, $term ) {
 
 	// Arguements for woodgrain query.
@@ -204,4 +222,24 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
 	);
 
 	return new WP_Query( $args );
+}
+
+// TODO
+function tagwall_get_wall_title( $title ) {
+	$html = '
+		<section class="title">
+			<h1>Wall</h1>
+
+			<div class="slash header">
+				<hr />
+				<hr class="mid"/>
+				<hr />
+			</div>
+
+			<h1>%1$s</h1>
+
+		</section>
+	';
+
+	return sprintf( $html, $title );
 }
