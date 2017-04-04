@@ -1,0 +1,119 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for the two column textblock page template
+ *
+ * Location: page-templates/two-column-textblock.php
+ */
+
+/*--- Control margins of textblock container ---*/
+.two-column-textblock {
+	margin: 0 auto 8rem;
+	max-width: 1500px;
+	padding: 0 2rem;
+}
+
+/*--- Media Query to control the margins fo textblock container ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock {
+		margin: 0 0 4rem;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock {
+		padding: 0;
+	}
+}
+
+/*--- TODO ---*/
+.two-column-textblock .wall-title h1 {
+	font-size: 6em;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock .wall-title h1 {
+		font-size: 4em;
+	}
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .wall-title h1 {
+		font-size: 2em;
+	}
+}
+
+/*--- Remove the margins of the content container ---*/
+.two-column-textblock .content-container {
+	margin: 0;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .content-container {
+		margin: 0;
+		padding: 0 2rem;
+	}
+}
+
+/*--- Control columns of the content ---*/
+.two-column-textblock .content-container .content {
+	column-count: 2;
+	column-gap: 2rem;
+	column-fill: auto;
+	height: 900px;
+	padding: 0;
+	margin-left: 24em;
+}
+
+/*--- Media Query to control the min-height of the columns ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content {
+		height: 800px;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.two-column-textblock .content-container .content {
+		margin-left: 18.5em;
+	}
+}
+
+/*--- Media Query to adjust column count and padding of the columns ---*/
+@media only screen and ( max-width: 991px ) {
+	.two-column-textblock .content-container .content {
+		column-count: 1;
+		height: auto;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.two-column-textblock .content-container .content {
+		margin-left: 0;
+	}
+}
+
+/*--- Styles to the paragraph tags ---*/
+.two-column-textblock .content-container .content  p {
+	font-size: 2rem;
+	font-family: HelveticaNeueLT Std;
+	word-break: break-word;
+	hyphens: auto;
+	margin: 0 0 2rem 0;
+}
+
+/*--- Media Query to control the font sie of the paragraph tags ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.8rem;
+	}
+}
+
+/*--- Media Query to control the font size of the paragraph tags ---*/
+@media only screen and ( max-width: 991px ) {
+	.two-column-textblock .content-container .content p {
+		font-size: 1.6rem;
+	}
+}
