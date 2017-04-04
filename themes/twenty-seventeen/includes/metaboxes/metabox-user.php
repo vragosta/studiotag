@@ -7,15 +7,15 @@
  * @return array $fields Existing fields array with new social fields.
  */
 function tagwall_user_fields( $fields ) {
-	$fields['job_title']      = 'Job Title';
-	$fields['hashtag']        = 'Hashtag';
-	$fields['facebook']       = 'Facebook';
-	$fields['twitter']        = 'Twitter';
-	$fields['instagram']      = 'Instagram';
-	$fields['pinterest']      = 'Pinterest';
-	$fields['linkedin']       = 'LinkedIn';
-	$fields['work_phone']     = 'Work Phone';
-	$fields['personal_phone'] = 'Personal Phone';
+	$fields['job_title']    = 'Job Title';
+	$fields['hashtag']      = 'Hashtag';
+	$fields['facebook']     = 'Facebook';
+	$fields['twitter']      = 'Twitter';
+	$fields['instagram']    = 'Instagram';
+	$fields['pinterest']    = 'Pinterest';
+	$fields['linkedin']     = 'LinkedIn';
+	$fields['direct_phone'] = 'Direct Phone';
+	$fields['cell_phone']   = 'Cell Phone';
 
 	return $fields;
 }
@@ -35,15 +35,15 @@ function tagwall_save_user_fields( $user_id ) {
 		return false;
 
 	// Sanitize user input.
-	$job_title      = sanitize_text_field( $_POST['job_title'] );
-	$hashtag        = sanitize_text_field( $_POST['hashtag'] );
-	$facebook       = sanitize_text_field( $_POST['facebook'] );
-	$twitter        = sanitize_text_field( $_POST['twitter'] );
-	$instagram      = sanitize_text_field( $_POST['instagram'] );
-	$pinterest      = sanitize_text_field( $_POST['pinterest'] );
-	$linkedin       = sanitize_text_field( $_POST['linkedin'] );
-	$work_phone     = sanitize_text_field( $_POST['work_phone'] );
-	$personal_phone = sanitize_text_field( $_POST['personal_phone'] );
+	$job_title    = sanitize_text_field( $_POST['job_title'] );
+	$hashtag      = sanitize_text_field( $_POST['hashtag'] );
+	$facebook     = sanitize_text_field( $_POST['facebook'] );
+	$twitter      = sanitize_text_field( $_POST['twitter'] );
+	$instagram    = sanitize_text_field( $_POST['instagram'] );
+	$pinterest    = sanitize_text_field( $_POST['pinterest'] );
+	$linkedin     = sanitize_text_field( $_POST['linkedin'] );
+	$direct_phone = sanitize_text_field( $_POST['direct_phone'] );
+	$cell_phone   = sanitize_text_field( $_POST['cell_phone'] );
 
 	update_usermeta( $user_id, 'job_title', $job_title );
 	update_usermeta( $user_id, 'hashtag', $hashtag );
@@ -52,8 +52,8 @@ function tagwall_save_user_fields( $user_id ) {
 	update_usermeta( $user_id, 'instagram', $instagram );
 	update_usermeta( $user_id, 'pinterest', $pinterest );
 	update_usermeta( $user_id, 'linkedin', $linkedin );
-	update_usermeta( $user_id, 'work_phone', $work_phone );
-	update_usermeta( $user_id, 'personal_phone', $personal_phone );
+	update_usermeta( $user_id, 'direct_phone', $direct_phone );
+	update_usermeta( $user_id, 'cell_phone', $cell_phone );
 }
 add_action( 'personal_options_update', 'tagwall_save_user_fields' );
 add_action( 'edit_user_profile_update', 'tagwall_save_user_fields' );

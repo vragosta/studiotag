@@ -95,6 +95,10 @@
 
 /*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
 @media only screen and ( max-width: 767px ) {
+	.grid .info {
+		padding: 1em;
+	}
+
 	.grid .no-padding {
 		order: 1;
 	}
