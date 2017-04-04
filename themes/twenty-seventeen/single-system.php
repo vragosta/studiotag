@@ -81,6 +81,7 @@
 									<li><a href="<?php echo $_PREBUILT_GALLERY; ?>">View Gallery</a></li>
 									<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
 									<li><a href="#">View LookBook</a></li>
+								<?php endif; ?>
 							<?php endif; ?>
 						</ul>
 					</div>
