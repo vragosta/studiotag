@@ -7,3 +7,129 @@
  */
 
 /*--- This is needed as a base file for wp_enqueue_style() ---*/
+
+.wall-title {
+	display: flex;
+	align-items: center;
+	height: 15em;
+	margin: 12em 0 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-title {
+		margin: 4em 0;
+		justify-content: center;
+	}
+}
+
+.wall-title h1 {
+	font-family: HelveticaNeueLT Std;
+	text-transform: uppercase;
+	font-size: 7em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-title h1 {
+		font-size: 6em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-title h1 {
+		font-size: 2.5em;
+	}
+}
+
+.wall-title h1:last-child {
+	font-family: Bodoni;
+}
+
+.slash {
+	display: flex;
+	position: static;
+	background: transparent;
+	transform: skew(-15deg);
+	height: 200%;
+	width: auto;
+	margin: 0 2em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash {
+		margin: 0 1em;
+		height: 100%;
+	}
+}
+
+.grid .slash {
+	position: absolute;
+	top: 0;
+	right: -14%;
+	width: 30%;
+	background-color: #fff;
+	height: 100%;
+	margin: 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .slash {
+		display: none;
+	}
+}
+
+.slash hr {
+	height: 100%;
+	margin: 0;
+	background-color: #E6E7E8;
+	border: 0;
+}
+
+.grid .slash hr {
+	height: 120%; /*--- Makes the stripe extend passed the bottom dimensions ---*/
+}
+
+.slash hr:first-child {
+	background-color: #E6E7E8;
+	width: 1.1em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash hr:first-child {
+		width: .7em;
+	}
+}
+
+.grid .slash hr:first-child {
+	width: 8%;
+}
+
+.slash hr:nth-child(2) {
+	background-color: #fff;
+	width: 1.4em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash hr:nth-child(2) {
+		width: .9em;
+	}
+}
+
+.grid .slash hr:nth-child(2) {
+	width: 9%;
+}
+
+.slash hr:last-child {
+	background-color: #221E1F;
+	width: .7em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.slash hr:last-child {
+		width: .4em;
+	}
+}
+
+.grid .slash hr:last-child {
+	background-color: #D1D3D4;
+	width: 4%;
+}

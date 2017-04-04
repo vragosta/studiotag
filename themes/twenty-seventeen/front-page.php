@@ -1,6 +1,7 @@
+
 <?php
 /**
- * Template Name: Archive - Systems
+ * Template Name: Systems Grid
  * Template for displaying the front page.
  *
  * @package Tag Wall - Twenty Seventeen
@@ -30,49 +31,42 @@
 
 	<!-- TODO Replace this with carousel -->
 	<section class="carousel">
-		<!-- <figure class="settings">
-			<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/vigoss.jpg'; ?>' );"></div>
-		</figure> -->
-		<!-- Switched to img tag due to bug with slick carousel and figure tag -->
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/1.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/2.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/3.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/4.jpg'; ?>">
-
 	</section>
 	<!-- TODO Replace this with carousel -->
 
 	<main class="archive-systems">
 
-		<section class="featured-image">
-			<figure class="settings">
-				<div style="background-image: url( '<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/wallsystems.png'; ?>' );"></div>
-			</figure>
-		</section>
+		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
-		<section class="systems-grid"><?php
+		<section class="grid"><?php
 			if ( $query->have_posts() ) :
 				while ( $query->have_posts() ) : $query->the_post();
 
 					// Get the featured image.
 					$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
 
-					// Get the excerpt.
-					$excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
-
-					// Get the mobile excerpt.
-					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 15, '...' );
-
 					// If this is the first iteration through the loop..
 					if ( $count == 0 ) : ?>
 
 						<div class="row">
 							<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+
+								<div class="slash">
+									<hr />
+									<hr />
+									<hr />
+								</div>
+
 							</div>
 						</div><?php
 
@@ -81,18 +75,28 @@
 
 						<div class="row">
 							<div class="left no-padding col-xs-12 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+
+								<div class="slash">
+									<hr />
+									<hr />
+									<hr />
+								</div>
+
 							</div>
 							<div class="info right col-xs-12 col-sm-6">
+
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 							</div>
 						</div><?php
 
@@ -101,18 +105,28 @@
 
 						<div class="row">
 							<div class="info left col-xs-12 col-sm-6">
+
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
-								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 							</div>
 							<div class="right no-padding col-xs-12 col-sm-6">
+
 								<figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
 								</figure>
+
+								<div class="slash">
+									<hr />
+									<hr />
+									<hr />
+								</div>
+
 							</div>
 						</div><?php
 					endif;
@@ -122,6 +136,7 @@
 					 * NOTE: This is the key statement!
 					 */
 					$temp_post = $post;
+					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 50, '...' );
 
 					// Increment the global count variable.
 					$count++;
@@ -133,18 +148,21 @@
 			// Accomodate for the last temporary post's data. ?>
 			<div class="row">
 				<div class="info left col-xs-12 col-sm-6">
-					<a href="<?php echo get_the_permalink( $post->ID ); ?>">
-						<h3><span>Tagwall</span> <?php echo esc_html( $post->post_title ); ?></h3>
+					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>">
+						<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 					</a>
 					<p><?php echo esc_html( $excerpt ); ?></p>
-					<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
+					<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
+
 				</div>
 				<div class="right no-padding col-xs-12 col-sm-6">
+
 					<figure class="featured-image not-visible">
 						<a href="<?php echo get_the_permalink( $post->ID ); ?>">
 							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</a>
 					</figure>
+
 				</div>
 			</div>
 

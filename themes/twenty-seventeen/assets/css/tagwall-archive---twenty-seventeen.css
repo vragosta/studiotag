@@ -5,8 +5,6 @@
  * Location: archive-{post-type}.php
  */
 
-/*========== CONTENT DETAILS PARTIAL ==========*/
-
 .details-container {
 	display: flex;
 	height: 40rem;
@@ -115,8 +113,6 @@
 	color: #221E1F;
 }
 
-/*========== TECHNICALS ==========*/
-
 .archive-container {
 	margin: 0 0 20rem;
 	border-top: 0.1rem solid #ccc;
@@ -160,10 +156,6 @@
 	}
 }
 
-.archive-container.technical .featured-image {
-	margin: 6rem 0;
-}
-
 .archive-container .settings {
 	position: relative;
 	padding-bottom: 65%;
@@ -180,43 +172,9 @@
 	right: 0;
 }
 
-.arrow.top {
-	position: fixed;
-	bottom: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
+/*========== CONTENT DETAILS PARTIAL ==========*/
 
-	opacity: 0;
-	visibility: hidden;
-	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-.arrow.top.visible {
-	opacity: 1;
-	visibility: visible;
-}
-
-.arrow.top a {
-	padding: 0;
-	background-color: #fff;
-	border: 1px solid #221e1f;
-	height: 5rem;
-	border-radius: 50%;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	width: 5rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-}
-
-.arrow.top i {
-	font-size: 4rem;
-	padding-bottom: .2rem;
-}
+/*========== TECHNICALS ==========*/
 
 /*========== APPLIED DETAILS ==========*/
 
