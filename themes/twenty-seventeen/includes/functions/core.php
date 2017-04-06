@@ -243,7 +243,7 @@ function styles() {
 	);
 
 	// Only load this CSS if on the front page.
-	if ( is_front_page() ) :
+	if ( is_front_page() || is_post_type_archive( 'applied-detail' ) ) :
 		wp_enqueue_style(
 			'tagwall-archive-systems',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
