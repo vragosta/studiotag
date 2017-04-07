@@ -28,7 +28,7 @@
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
 #logo img {
-	width: 250px;
+	width: 200px;
 }
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
