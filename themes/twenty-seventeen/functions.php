@@ -25,6 +25,9 @@ require_once TAGWALL_INC . 'functions/core.php';
 // Include helper functions.
 require_once TAGWALL_INC . 'functions/helpers.php';
 
+//Include essentials functions.
+require_once TAGWALL_INC . 'functions/essentials.php';
+
 // Include various metabox files.
 require_once TAGWALL_INC . 'metaboxes/metabox-system.php';
 require_once TAGWALL_INC . 'metaboxes/metabox-user.php';
