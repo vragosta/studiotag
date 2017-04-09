@@ -29,14 +29,12 @@
 
 ?>
 
-	<!-- TODO Replace this with carousel -->
 	<section class="carousel">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/1.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/2.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/3.jpg'; ?>">
 		<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/4.jpg'; ?>">
 	</section>
-	<!-- TODO Replace this with carousel -->
 
 	<main class="archive-systems">
 
