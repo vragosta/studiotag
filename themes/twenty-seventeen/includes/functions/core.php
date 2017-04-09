@@ -243,7 +243,7 @@ function styles() {
 	);
 
 	// Only load this CSS if on the front page.
-	if ( is_front_page() || is_post_type_archive( 'applied-detail' ) ) :
+	if ( is_front_page() ) :
 		wp_enqueue_style(
 			'tagwall-archive-systems',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
@@ -272,6 +272,15 @@ function styles() {
 		wp_enqueue_style(
 			'tagwall-archive-technicals',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-technicals---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_post_type_archive( 'applied-detail' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-applied-details',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-applied-details---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
