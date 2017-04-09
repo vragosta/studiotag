@@ -20,36 +20,37 @@
 	// Get the custom catered post type object based off the archive template we are on.
 	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
 
+	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->all_terms );
+
 	// Include content/details partial.
 	include( 'partials/content-details.php' );
 
 ?>
 
 <div class="archive-container hardware">
-	<?php if ( $custom->query->have_posts() ) : ?>
-		<?php while( $custom->query->have_posts() ) : $custom->query->the_post();
+	<?php foreach( $custom->all_terms as $term ) :
 
-			// Get the featured image.
-			$image_one = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+			// Get the array mof images.
+			$images = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_images( $term->term_id, true ); ?>
 
-			<section class="<?php echo esc_attr( $post->post_name ); ?>">
+			<section class="<?php echo esc_attr( $term->slug ); ?>">
 				<div class="title">
-					<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></h1>
+					<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
 				</div>
 
-				<div class="image-container">
-					<?php if ( $image_one ) : ?>
-						<div class="col-xs-12 col-sm-6">
-							<figure class="featured-image settings">
-								<div style="background-image: url( '<?php echo esc_attr( $image_one ); ?>' );"></div>
-							</figure>
-						</div>
-					<?php endif; ?>
-				</div>
+				<?php if ( $images ) : ?>
+					<div class="images row">
+						<?php foreach( $images as $image ) : ?>
+							<div class="col-xs-12 col-sm-4">
+								<figure class="featured-image settings">
+									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+								</figure>
+							</div>
+						<?php endforeach; ?>
+					</div>
+				<?php endif; ?>
 
 			</section>
 
-		<?php endwhile; ?>
-		<?php wp_reset_postdata(); ?>
-	<?php endif; ?>
+	<?php endforeach; ?>
 </div>

@@ -61,8 +61,7 @@ function tagwall_get_blueprint_image( $post, $id ) {
 }
 
 /**
- * Return the attached image url with appropriate size dimensions,
- * otherwise return the attached image url.
+ * Return the featured image for the taxonomy term.
  *
  * @since  0.1.0
  * @param  int $post wp_post object
@@ -71,6 +70,26 @@ function tagwall_get_blueprint_image( $post, $id ) {
  */
 function tagwall_get_term_featured_image( $id ) {
 	return get_option( 'taxonomy_term_' . $id )['featured_image_url'];
+}
+
+/**
+ * TODO
+ *
+ * @since  0.1.0
+ * @param  int $post wp_post object
+ * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
+ * @return string void image url
+ */
+function tagwall_get_term_images( $id, $filter = false ) {
+	$images = array();
+
+	$images['image_one'] = get_option( 'taxonomy_term_' . $id )['image_one'];
+	$images['image_two'] = get_option( 'taxonomy_term_' . $id )['image_two'];
+	$images['image_three'] = get_option( 'taxonomy_term_' . $id )['image_three'];
+	$images['image_four'] = get_option( 'taxonomy_term_' . $id )['image_four'];
+	$images['image_five'] = get_option( 'taxonomy_term_' . $id )['image_five'];
+
+	return ( $filter ) ? array_filter( $images ) : $images;
 }
 
 /**
@@ -210,6 +229,7 @@ function tagwall_get_post_type_object( $post_type ) {
 		'label'       => $post_type->label,
 		'slug'        => $post_type->rewrite['slug'],
 		'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+		'taxonomies'  => get_object_taxonomies( $post_type->name, 'objects' ),
 		'terms'       => $terms,
 		'child_terms' => tagwall_get_term_children( $terms ),
 		'all_terms'   => tagwall_get_terms( $post_type->name, true ),
@@ -250,6 +270,7 @@ function tagwall_get_post_type_objects() {
 			'label'       => $post_type->label,
 			'slug'        => $post_type->rewrite['slug'],
 			'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+			'taxonomies'  => get_object_taxonomies( $post_type->name, 'objects' ),
 			'terms'       => $terms,
 			'child_terms' => tagwall_get_term_children( $terms ),
 			'all_terms'   => tagwall_get_terms( $post_type->name, true )

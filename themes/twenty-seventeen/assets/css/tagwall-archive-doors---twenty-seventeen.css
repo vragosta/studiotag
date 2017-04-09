@@ -30,6 +30,16 @@
 /*--- System images will conform to the new aspect ratio ---*/
 .archive-container.door .featured-image {
 	padding-bottom: 125%;
+	position: relative;
+}
+
+.archive-container.door .featured-image div {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
 
 .archive-container.door figure + h1 {
