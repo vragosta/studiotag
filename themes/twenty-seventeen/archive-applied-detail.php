@@ -44,12 +44,6 @@
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
 
-							<!-- <div class="slash">
-								<hr />
-								<hr />
-								<hr />
-							</div> -->
-
 						</div>
 					</div><?php
 
@@ -63,12 +57,6 @@
 							<figure class="featured-image">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
-
-							<!-- <div class="slash">
-								<hr />
-								<hr />
-								<hr />
-							</div> -->
 
 						</div>
 						<div class="info right col-xs-12 col-sm-6">
@@ -93,12 +81,6 @@
 							<figure class="featured-image">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
-
-							<!-- <div class="slash">
-								<hr />
-								<hr />
-								<hr />
-							</div> -->
 
 						</div>
 					</div><?php
