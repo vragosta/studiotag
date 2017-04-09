@@ -19,7 +19,7 @@ use \WP_Query;
 use \MultiPostThumbnails;
 
 /**
- * If the featured image exists, return the attached image url with appropriate size dimensions,
+ * Return the attached image url with appropriate size dimensions,
  * otherwise return the attached image url.
  *
  * @since  0.1.0
@@ -58,6 +58,19 @@ function tagwall_get_hero_image( $post ) {
 function tagwall_get_blueprint_image( $post, $id ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'blueprint-' . $id . '-image', $post->ID ) ) ?
 		MultiPostThumbnails::get_post_thumbnail_url( $post->post_type, 'blueprint-' . $id . '-image', $post->ID, 'full' ) : '';
+}
+
+/**
+ * Return the attached image url with appropriate size dimensions,
+ * otherwise return the attached image url.
+ *
+ * @since  0.1.0
+ * @param  int $post wp_post object
+ * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
+ * @return string void image url
+ */
+function tagwall_get_term_featured_image( $id ) {
+	return get_option( 'taxonomy_term_' . $id )['featured_image_url'];
 }
 
 /**
@@ -230,13 +243,16 @@ function tagwall_get_post_type_objects() {
 	// Foreach custom post type, set the respective arguements and terms.
 	foreach( $post_types as $post_type ) :
 
+		$terms = tagwall_get_terms( $post_type->name );
+
 		$custom[] = (object) array(
-			'name'  => $post_type->name,
-			'label' => $post_type->label,
-			'slug'  => $post_type->rewrite['slug'],
-			'query' => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
-			'terms' => tagwall_get_terms( $post_type->name ),
-			'all_terms' => tagwall_get_terms( $post_type->name, true )
+			'name'        => $post_type->name,
+			'label'       => $post_type->label,
+			'slug'        => $post_type->rewrite['slug'],
+			'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+			'terms'       => $terms,
+			'child_terms' => tagwall_get_term_children( $terms ),
+			'all_terms'   => tagwall_get_terms( $post_type->name, true )
 		);
 
 	endforeach;
