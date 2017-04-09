@@ -19,7 +19,7 @@ use \WP_Query;
 use \MultiPostThumbnails;
 
 /**
- * If the featured image exists, return the attached image url with appropriate size dimensions,
+ * Return the attached image url with appropriate size dimensions,
  * otherwise return the attached image url.
  *
  * @since  0.1.0
@@ -58,6 +58,19 @@ function tagwall_get_hero_image( $post ) {
 function tagwall_get_blueprint_image( $post, $id ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'blueprint-' . $id . '-image', $post->ID ) ) ?
 		MultiPostThumbnails::get_post_thumbnail_url( $post->post_type, 'blueprint-' . $id . '-image', $post->ID, 'full' ) : '';
+}
+
+/**
+ * Return the attached image url with appropriate size dimensions,
+ * otherwise return the attached image url.
+ *
+ * @since  0.1.0
+ * @param  int $post wp_post object
+ * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
+ * @return string void image url
+ */
+function tagwall_get_term_featured_image( $id ) {
+	return get_option( 'taxonomy_term_' . $id )['featured_image_url'];
 }
 
 /**
@@ -107,7 +120,7 @@ function tagwall_get_query_arguements( $post_type ) {
  * @uses   get_object_taxonomies(), get_terms()
  * @return array $terms post-type terms
  */
-function tagwall_get_terms( $post_type ) {
+function tagwall_get_terms( $post_type, $include_children = false ) {
 
 	// Define local variables.
 	$terms = array();
@@ -123,20 +136,62 @@ function tagwall_get_terms( $post_type ) {
 			// Get the taxonomy terms.
 			$tax_terms = get_terms( array(
 				'taxonomy'   => $taxonomy->name,
-				'hide_empty' => false
-				)
-			);
+				'hide_empty' => false,
+				'parent'     => 0,
+				'orderby' => 'ID'
+			) );
 
 			// In the event that multiple terms are returned per taxonomy, we need to iterate through those as well.
 			foreach( $tax_terms as $term ) :
 				$terms[] = $term;
 			endforeach;
 
+			if ( $include_children ) :
+				// Get term children.
+				foreach( $terms as $term ) :
+					$children = get_term_children( $term->term_id, $taxonomy->name );
+
+					// Iterate through the child terms and add them to the end of the $terms array.
+					foreach( $children as $child ) :
+						$child_term = get_term_by( 'id', $child, $taxonomy->name );
+						$terms[]    = $child_term;
+					endforeach;
+				endforeach;
+			endif;
+
 		endforeach;
 	endif;
 
 	return $terms;
 }
+
+/**
+ * Get the term children.
+ *
+ * @since  0.1.0
+ * @param  array $terms TODO
+ * @uses   TODO
+ * @return TODO
+ */
+function tagwall_get_term_children( $terms ) {
+
+	$children = array();
+
+	// Get term children.
+	foreach( $terms as $term ) :
+		$taxonomy      = get_taxonomy( $term->taxonomy );
+		$term_children = get_term_children( $term->term_id, $taxonomy->name );
+
+		// Iterate through the child terms and add them to the end of the $terms array.
+		foreach( $term_children as $child ) :
+			$child_term = get_term_by( 'id', $child, $taxonomy->name );
+			$children[] = $child_term;
+		endforeach;
+	endforeach;
+
+	return $children;
+}
+
 
 /**
  * Create an array that holds specific post type information.
@@ -148,12 +203,16 @@ function tagwall_get_terms( $post_type ) {
  */
 function tagwall_get_post_type_object( $post_type ) {
 
+	$terms = tagwall_get_terms( $post_type->name );
+
 	$custom = (object) array(
-		'name'  => $post_type->name,
-		'label' => $post_type->label,
-		'slug'  => $post_type->rewrite['slug'],
-		'query' => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
-		'terms' => tagwall_get_terms( $post_type->name )
+		'name'        => $post_type->name,
+		'label'       => $post_type->label,
+		'slug'        => $post_type->rewrite['slug'],
+		'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+		'terms'       => $terms,
+		'child_terms' => tagwall_get_term_children( $terms ),
+		'all_terms'   => tagwall_get_terms( $post_type->name, true ),
 	);
 
 	return $custom;
@@ -184,12 +243,16 @@ function tagwall_get_post_type_objects() {
 	// Foreach custom post type, set the respective arguements and terms.
 	foreach( $post_types as $post_type ) :
 
+		$terms = tagwall_get_terms( $post_type->name );
+
 		$custom[] = (object) array(
-			'name'  => $post_type->name,
-			'label' => $post_type->label,
-			'slug'  => $post_type->rewrite['slug'],
-			'query' => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
-			'terms' => tagwall_get_terms( $post_type->name )
+			'name'        => $post_type->name,
+			'label'       => $post_type->label,
+			'slug'        => $post_type->rewrite['slug'],
+			'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+			'terms'       => $terms,
+			'child_terms' => tagwall_get_term_children( $terms ),
+			'all_terms'   => tagwall_get_terms( $post_type->name, true )
 		);
 
 	endforeach;
@@ -251,4 +314,12 @@ function tagwall_get_wall_title() {
 	';
 
 	return sprintf( $html, $post->post_title, $post->post_name );
+}
+
+// TODO
+function tagwall_var_dump( $custom, $toggle = false ) {
+	echo '<pre>';
+	var_dump( $custom );
+	echo '</pre>';
+	( $toggle ) ? exit() : '';
 }

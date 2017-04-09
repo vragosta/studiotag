@@ -277,6 +277,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_post_type_archive( 'door' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-doors',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-doors---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'tagwall-systems',

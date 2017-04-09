@@ -83,8 +83,8 @@
 												<?php wp_reset_postdata(); ?>
 											<?php endif; ?>
 
-											<?php if ( $post_type->terms ) : ?>
-												<?php foreach( $post_type->terms as $term ) : ?>
+											<?php if ( $post_type->all_terms ) : ?>
+												<?php foreach( $post_type->all_terms as $term ) : ?>
 
 													<li><a href="<?php echo home_url( '/' . $post_type->slug . '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 

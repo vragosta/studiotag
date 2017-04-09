@@ -195,32 +195,32 @@ add_action( 'init', 'register_taxonomy_panel' );
 /**
  * TODO
  */
-function register_taxonomy_powder_coating() {
-    $post_types = array( 'door' );
-    register_taxonomy( 'powder-coating', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'Powder Coatings',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Search Powder Coatings',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New Powder Coating',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'register_taxonomy_powder_coating' );
+// function register_taxonomy_powder_coating() {
+//     $post_types = array( 'door' );
+//     register_taxonomy( 'powder-coating', $post_types, array(
+//         'hierarchical'      => true,
+//         'label'             => 'Powder Coatings',
+//         'show_ui'           => true,
+//         'query_var'         => true,
+//         'show_admin_column' => false,
+//         'rewrite'           => array( 'with_front' => false ),
+//         'labels'            => array(
+//             'search_items'               => 'Search Powder Coatings',
+//             'popular_items'              => '',
+//             'all_items'                  => 'All',
+//             'parent_item'                => '',
+//             'parent_item_colon'          => '',
+//             'edit_item'                  => '',
+//             'update_item'                => '',
+//             'add_new_item'               => 'Add New Powder Coating',
+//             'new_item_name'              => '',
+//             'separate_items_with_commas' => '',
+//             'add_or_remove_items'        => '',
+//             'choose_from_most_used'      => '',
+//         )
+//     ));
+// }
+// add_action( 'init', 'register_taxonomy_powder_coating' );
 
 /**
  * TODO
