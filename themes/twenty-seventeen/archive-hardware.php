@@ -46,7 +46,20 @@
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</figure>
 							</div>
+
+							<?php if ( $count++ % 5 == 0 ) : ?>
+								</div>
+								<div class="images row">
+							<?php endif; ?>
+
 						<?php endforeach; ?>
+
+						<?php if ( $term->slug === 'electronic' ) : ?>
+							<div class="col-xs-12 col-sm-4 segment">
+								<h2>Comes in the same finishes as KLO Ladder Pull</h2>
+							</div>
+						<?php endif; ?>
+
 					</div>
 				<?php endif; ?>
 

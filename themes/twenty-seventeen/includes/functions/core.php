@@ -295,6 +295,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_post_type_archive( 'hardware' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-hardware',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-hardware---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'tagwall-systems',

@@ -1,0 +1,33 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for hardware archive
+ *
+ * Location: archive-hardware.php
+ */
+
+.archive-container.hardware > section {
+	padding-bottom: 4em;
+}
+
+.archive-container.hardware .images {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 4em 0 0;
+	display: flex;
+}
+
+.archive-container.hardware .images .settings {
+	padding-bottom: 200%;
+}
+
+.archive-container.hardware .electronic .segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.archive-container.hardware .electronic .segment h2 {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2.5em;
+}
