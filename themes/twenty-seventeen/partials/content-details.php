@@ -15,16 +15,34 @@
 	<div class="col-xs-12 col-sm-6">
 		<ul>
 
-			<?php if ( $custom->query && $custom->query->have_posts() ) : ?>
-				<?php while( $custom->query->have_posts() ) : $custom->query->the_post(); ?>
-					<li><a href="<?php echo esc_attr( '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
-				<?php endwhile; ?>
-				<?php wp_reset_postdata(); ?>
+			<?php if ( $custom->name === 'technical' || $custom->name === 'applied-detail' ) : ?>
+				<?php if ( $custom->query && $custom->query->have_posts() ) : ?>
+					<?php while( $custom->query->have_posts() ) : $custom->query->the_post(); ?>
+						<li><a href="<?php echo esc_attr( '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
+					<?php endwhile; ?>
+					<?php wp_reset_postdata(); ?>
+				<?php endif; ?>
 			<?php endif; ?>
 
-			<?php foreach( $custom->all_terms as $term ) : ?>
-				<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
-			<?php endforeach; ?>
+			<?php if ( $custom->name === 'door' ) : ?>
+				<?php foreach( $custom->all_terms as $term ) : ?>
+					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+
+			<?php if ( $custom->name === 'hardware' ) : ?>
+				<?php $terms = get_terms( array( 'taxonomy' => 'ladder_pull', 'hide_empty' => false ) ); ?>
+				<?php foreach( $terms as $term ) : ?>
+					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+				<?php endforeach; ?>
+
+				<?php $taxonomies = get_object_taxonomies( $custom->name, 'objects' ); ?>
+				<?php foreach( $taxonomies as $taxonomy ) : ?>
+					<?php if ( $taxonomy->name !== 'ladder_pull' ) : ?>
+						<li><a href="<?php echo esc_attr( '#' . $taxonomy->rewrite['slug'] ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></li>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
 
 			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
 

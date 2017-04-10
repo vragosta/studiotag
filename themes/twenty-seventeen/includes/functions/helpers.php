@@ -83,11 +83,11 @@ function tagwall_get_term_featured_image( $id ) {
 function tagwall_get_term_images( $id, $filter = false ) {
 	$images = array();
 
-	$images['image_one'] = get_option( 'taxonomy_term_' . $id )['image_one'];
-	$images['image_two'] = get_option( 'taxonomy_term_' . $id )['image_two'];
+	$images['image_one']   = get_option( 'taxonomy_term_' . $id )['image_one'];
+	$images['image_two']   = get_option( 'taxonomy_term_' . $id )['image_two'];
 	$images['image_three'] = get_option( 'taxonomy_term_' . $id )['image_three'];
-	$images['image_four'] = get_option( 'taxonomy_term_' . $id )['image_four'];
-	$images['image_five'] = get_option( 'taxonomy_term_' . $id )['image_five'];
+	$images['image_four']  = get_option( 'taxonomy_term_' . $id )['image_four'];
+	$images['image_five']  = get_option( 'taxonomy_term_' . $id )['image_five'];
 
 	return ( $filter ) ? array_filter( $images ) : $images;
 }
