@@ -61,6 +61,7 @@
 
 						<?php if ( $term->slug === 'electronic' ) : ?>
 							<div class="col-xs-12 col-sm-4 segment">
+
 								<!-- TODO Make this dynamic -->
 								<h2>Comes in the same finishes as KLO Ladder Pull</h2>
 							</div>
@@ -73,7 +74,7 @@
 	<?php endforeach; ?>
 
 	<?php foreach( $custom->taxonomies as $taxonomy ): ?>
-		<?php if ( $taxonomy->name !== 'ladder_pull' ) : ?>
+		<?php if ( $taxonomy->name === 'view' ) : ?>
 			<section class="<?php echo esc_attr( $taxonomy->reqrite['slug'] ); ?>">
 				<div class="title">
 					<h1><a name="<?php echo esc_attr( $taxonomy->rewrite['slug'] ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></h1>
