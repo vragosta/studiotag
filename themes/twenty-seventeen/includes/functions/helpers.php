@@ -55,7 +55,7 @@ function tagwall_get_hero_image( $post ) {
  * @uses   class_exists(), MultiPostThumbnails::has_post_thumbnail(), MultiPostThumbnails::get_post_thumbnail_url
  * @return string void image url
  */
-function tagwall_get_blueprint_image( $post, $id ) {
+function tagwall_get_blueprint_image( $post, $id = null ) {
 	return ( class_exists( 'MultiPostThumbnails' ) && MultiPostThumbnails::has_post_thumbnail( $post->post_type, 'blueprint-' . $id . '-image', $post->ID ) ) ?
 		MultiPostThumbnails::get_post_thumbnail_url( $post->post_type, 'blueprint-' . $id . '-image', $post->ID, 'full' ) : '';
 }
@@ -157,7 +157,7 @@ function tagwall_get_terms( $post_type, $include_children = false ) {
 				'taxonomy'   => $taxonomy->name,
 				'hide_empty' => false,
 				'parent'     => 0,
-				'orderby' => 'ID'
+				'orderby'    => 'ID'
 			) );
 
 			// In the event that multiple terms are returned per taxonomy, we need to iterate through those as well.

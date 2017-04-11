@@ -23,8 +23,8 @@
 	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( get_terms( array( 'taxonomy' => 'ladder_pull', 'hide_empty' => false ) ), true );
 	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->terms, true );
 	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->all_terms, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->taxonomies, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->name, true );
+	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->terms, true );
+	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom, true );
 
 	// Include content/details partial.
 	include( 'partials/content-details.php' );
@@ -32,73 +32,25 @@
 ?>
 
 <div class="archive-container hardware">
-	<?php $terms = get_terms( array( 'taxonomy' => 'ladder_pull', 'hide_empty' => false ) ); ?>
-	<?php foreach( $terms as $term ) :
+	<?php foreach( $custom->terms as $term ) : ?>
 
-			// Get the array mof images.
-			$images = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_images( $term->term_id, true ); ?>
+		<section class="<?php echo esc_attr( $term->slug ); ?>">
+			<div class="title">
+				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
+			</div>
 
-			<section class="<?php echo esc_attr( $term->slug ); ?>">
-				<div class="title">
-					<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
-				</div>
+			<?php if ( $term->slug === 'electronic-ladder-pull' ) : ?>
 
-				<?php if ( $images ) : ?>
-					<div class="images row">
-						<?php foreach( $images as $image ) : ?>
-							<div class="col-xs-12 col-sm-4">
-								<figure class="featured-image settings">
-									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-								</figure>
-							</div>
+				<?php include( 'partials/content-hardware-electronic-ladder-pull.php' ); ?>
 
-							<?php if ( $count++ % 5 == 0 ) : ?>
-								</div>
-								<div class="images row">
-							<?php endif; ?>
+			<?php elseif ( $term->slug === 'klo-ladder-pull' ) : ?>
 
-						<?php endforeach; ?>
+				<?php include( 'partials/content-hardware-klo-ladder-pull.php' ); ?>
+				
+			<?php endif; ?>
 
-						<?php if ( $term->slug === 'electronic' ) : ?>
-							<div class="col-xs-12 col-sm-4 segment">
+		</section>
 
-								<!-- TODO Make this dynamic -->
-								<h2>Comes in the same finishes as KLO Ladder Pull</h2>
-							</div>
-						<?php endif; ?>
-
-					</div>
-				<?php endif; ?>
-
-			</section>
-	<?php endforeach; ?>
-
-	<?php foreach( $custom->taxonomies as $taxonomy ): ?>
-		<?php if ( $taxonomy->name === 'view' ) : ?>
-			<section class="<?php echo esc_attr( $taxonomy->reqrite['slug'] ); ?>">
-				<div class="title">
-					<h1><a name="<?php echo esc_attr( $taxonomy->rewrite['slug'] ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></h1>
-				</div>
-
-				<?php $terms = get_terms( array( 'taxonomy' => 'view', 'hide_empty' => false, 'orderby' => 'ID' ) ); ?>
-				<?php if ( $terms ) : ?>
-					<div class="images row">
-						<?php foreach( $terms as $term ) : ?>
-							<?php $image = get_option( 'taxonomy_term_' . $term->term_id )['featured_image_url']; ?>
-							<div class="col-xs-12 col-sm-4">
-								<figure class="featured-image settings" style="padding-bottom: 100%;">
-									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-								</figure>
-
-								<div class="term-title" style="display: flex; justify-content: center;">
-									<h1><?php echo esc_html( $term->name ); ?></h1>
-								</div>
-							</div>
-						<?php endforeach; ?>
-					</div>
-				<?php endif; ?>
-			</section>
-		<?php endif; ?>
 	<?php endforeach; ?>
 </div>
 

@@ -232,27 +232,28 @@ function register_post_type_hardware() {
 }
 add_action( 'init', 'register_post_type_hardware' );
 
+
 /**
  * TODO
  */
-function register_taxonomy_ladder_pull() {
+function register_taxonomy_hardware_type() {
     $post_types = array( 'hardware' );
-    register_taxonomy( 'ladder_pull', $post_types, array(
+    register_taxonomy( 'hardware_type', $post_types, array(
         'hierarchical'      => true,
-        'label'             => 'Ladder Pulls',
+        'label'             => 'Hardware Types',
         'show_ui'           => true,
         'query_var'         => true,
         'show_admin_column' => false,
         'rewrite'           => array( 'with_front' => false ),
         'labels'            => array(
-            'search_items'               => 'Search Ladder Pulls',
+            'search_items'               => 'Search Hardware Types',
             'popular_items'              => '',
             'all_items'                  => 'All',
             'parent_item'                => '',
             'parent_item_colon'          => '',
             'edit_item'                  => '',
             'update_item'                => '',
-            'add_new_item'               => 'Add New Ladder Pull',
+            'add_new_item'               => 'Add New Hardware Type',
             'new_item_name'              => '',
             'separate_items_with_commas' => '',
             'add_or_remove_items'        => '',
@@ -260,97 +261,7 @@ function register_taxonomy_ladder_pull() {
         )
     ));
 }
-add_action( 'init', 'register_taxonomy_ladder_pull' );
-
-/**
- * TODO
- */
-function register_taxonomy_view() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'view', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'HGU View',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Search HGU Views',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New HGU View',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'register_taxonomy_view' );
-
-/**
- * TODO
- */
-function register_taxonomy_lever() {
-    $post_types = array( 'hardware' );
-    register_taxonomy( 'lever', $post_types, array(
-        'hierarchical'      => true,
-        'label'             => 'HGU Levers',
-        'show_ui'           => true,
-        'query_var'         => true,
-        'show_admin_column' => false,
-        'rewrite'           => array( 'with_front' => false ),
-        'labels'            => array(
-            'search_items'               => 'Search HGU Levers',
-            'popular_items'              => '',
-            'all_items'                  => 'All',
-            'parent_item'                => '',
-            'parent_item_colon'          => '',
-            'edit_item'                  => '',
-            'update_item'                => '',
-            'add_new_item'               => 'Add New HGU Lever',
-            'new_item_name'              => '',
-            'separate_items_with_commas' => '',
-            'add_or_remove_items'        => '',
-            'choose_from_most_used'      => '',
-        )
-    ));
-}
-add_action( 'init', 'register_taxonomy_lever' );
-
-// /**
-//  * TODO
-//  */
-// function register_taxonomy_finish() {
-//     $post_types = array( 'hardware' );
-//     register_taxonomy( 'finish', $post_types, array(
-//         'hierarchical'      => true,
-//         'label'             => 'Finishes',
-//         'show_ui'           => true,
-//         'query_var'         => true,
-//         'show_admin_column' => false,
-//         'rewrite'           => array( 'with_front' => false ),
-//         'labels'            => array(
-//             'search_items'               => 'Search Finishes',
-//             'popular_items'              => '',
-//             'all_items'                  => 'All',
-//             'parent_item'                => '',
-//             'parent_item_colon'          => '',
-//             'edit_item'                  => '',
-//             'update_item'                => '',
-//             'add_new_item'               => 'Add New Finish',
-//             'new_item_name'              => '',
-//             'separate_items_with_commas' => '',
-//             'add_or_remove_items'        => '',
-//             'choose_from_most_used'      => '',
-//         )
-//     ));
-// }
-// add_action( 'init', 'register_taxonomy_finish' );
+add_action( 'init', 'register_taxonomy_hardware_type' );
 
 /**
  * TODO

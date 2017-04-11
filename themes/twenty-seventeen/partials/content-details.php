@@ -24,24 +24,14 @@
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<?php if ( $custom->name === 'door' ) : ?>
+			<?php if ( $custom->name === 'door' || $custom->name === 'hardware' ) : ?>
 				<?php foreach( $custom->all_terms as $term ) : ?>
 					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 				<?php endforeach; ?>
 			<?php endif; ?>
 
 			<?php if ( $custom->name === 'hardware' ) : ?>
-				<?php $terms = get_terms( array( 'taxonomy' => 'ladder_pull', 'hide_empty' => false ) ); ?>
-				<?php foreach( $terms as $term ) : ?>
-					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
-				<?php endforeach; ?>
 
-				<?php $taxonomies = get_object_taxonomies( $custom->name, 'objects' ); ?>
-				<?php foreach( $taxonomies as $taxonomy ) : ?>
-					<?php if ( $taxonomy->name !== 'ladder_pull' ) : ?>
-						<li><a href="<?php echo esc_attr( '#' . $taxonomy->rewrite['slug'] ); ?>"><?php echo esc_html( $taxonomy->label ); ?></a></li>
-					<?php endif; ?>
-				<?php endforeach; ?>
 			<?php endif; ?>
 
 			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
