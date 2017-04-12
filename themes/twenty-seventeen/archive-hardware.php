@@ -46,7 +46,11 @@
 			<?php elseif ( $term->slug === 'klo-ladder-pull' ) : ?>
 
 				<?php include( 'partials/content-hardware-klo-ladder-pull.php' ); ?>
-				
+
+			<?php elseif ( $term->slug === 'hgu-view' ) : ?>
+
+				<?php include( 'partials/content-hardware-hgu-views.php' ); ?>
+
 			<?php endif; ?>
 
 		</section>
