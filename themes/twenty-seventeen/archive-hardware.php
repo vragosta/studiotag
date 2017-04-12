@@ -14,9 +14,6 @@
 
 	get_header();
 
-	// Initialize the local count variable.
-	$count = 1;
-
 	// Get the custom catered post type object based off the archive template we are on.
 	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
 
@@ -39,6 +36,8 @@
 				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
 			</div>
 
+			<hr style="border-color: #221E1F;" />
+
 			<?php if ( $term->slug === 'electronic-ladder-pull' ) : ?>
 
 				<?php include( 'partials/content-hardware-electronic-ladder-pull.php' ); ?>
@@ -49,7 +48,11 @@
 
 			<?php elseif ( $term->slug === 'hgu-view' ) : ?>
 
-				<?php include( 'partials/content-hardware-hgu-views.php' ); ?>
+				<?php include( 'partials/content-hardware-hgu-view.php' ); ?>
+
+			<?php elseif ( $term->slug === 'hgu-lever' ) : ?>
+
+				<?php include( 'partials/content-hardware-hgu-lever.php' ); ?>
 
 			<?php endif; ?>
 

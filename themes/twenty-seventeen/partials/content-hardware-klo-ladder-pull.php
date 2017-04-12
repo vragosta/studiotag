@@ -8,7 +8,11 @@
  */
 ?>
 
-<?php $klo_ladder_pulls = new WP_Query( array(
+<?php
+
+	$count = 1;
+
+	$klo_ladder_pulls = new WP_Query( array(
 		'post_type' => 'hardware',
 		'order'     => 'ASC',
 		'tax_query' => array(
