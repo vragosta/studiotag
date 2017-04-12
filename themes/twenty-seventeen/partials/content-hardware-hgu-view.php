@@ -24,10 +24,10 @@
 	<div class="content row">
 		<?php while( $hgu_views->have_posts() ) : $hgu_views->the_post();
 			$image = [
-					'Front' => get_post_meta( $post->ID, 'detailed_image_front', true ),
-					'Side'  => get_post_meta( $post->ID, 'detailed_image_side', true ),
-					'Back'  => get_post_meta( $post->ID, 'detailed_image_back', true )
-				]; ?>
+				'Front' => get_post_meta( $post->ID, 'detailed_image_front', true ),
+				'Side'  => get_post_meta( $post->ID, 'detailed_image_side', true ),
+				'Back'  => get_post_meta( $post->ID, 'detailed_image_back', true )
+			]; ?>
 
 			<!-- TODO -->
 			<?php foreach( $image as $key => $image_url ) : ?>

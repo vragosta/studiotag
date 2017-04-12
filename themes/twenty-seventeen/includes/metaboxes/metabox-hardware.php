@@ -22,6 +22,13 @@ function tagwall_hardware_metaboxes() {
 		'hardware'
 	);
 
+	add_meta_box(
+		'finish-details',
+		__( 'Finish Details', 'tagwall' ),
+		'tagwall_hardware_finish_details_callback',
+		'hardware'
+	);
+
 }
 add_action( 'add_meta_boxes', 'tagwall_hardware_metaboxes' );
 
@@ -111,3 +118,68 @@ function tagwall_hardware_view_details_save_data( $post_id ) {
 	update_post_meta( $post_id, 'detailed_image_back', $detailed_image_back );
 }
 add_action( 'save_post', 'tagwall_hardware_view_details_save_data' );
+
+/**
+ * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
+ *
+ * @since  0.1.0
+ * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
+ * @return void
+ */
+function tagwall_hardware_finish_details_callback( $post ) {
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'tagwall_hardware_finish_details_save_data', 'tagwall_hardware_finish_details_nonce' );
+
+	/**
+	 * Use get_post_meta() to retrieve an existing value
+	 * from the database and use the value for the form.
+	 */
+	$polish = get_post_meta( $post->ID, 'polish', true ); ?>
+
+	<table style="width: 100%;">
+		<tr>
+			<td class="label">
+				<label for="polish"><?php echo __( 'Polish:', 'tagwall' ); ?></label>
+			</td>
+			<td>
+				<textarea id="polish" name="polish" style="width: 100%;"><?php echo esc_textarea( $polish ); ?></textarea>
+			</td>
+		</tr>
+	</table><?php
+}
+
+/**
+ * Saves and sanitizes the POST data.
+ *
+ * @since  0.1.0
+ * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
+ * @return void
+ */
+function tagwall_hardware_finish_details_save_data( $post_id ) {
+	/**
+	 * We need to verify this came from our screen and with proper authorization,
+	 * because the save_post action can be triggered at other times.
+	 */
+	// Check if our nonce is set.
+	if ( ! isset( $_POST['tagwall_hardware_finish_details_nonce'] ) )
+		return;
+
+	// Verify that the nonce is valid.
+	if ( ! wp_verify_nonce( $_POST['tagwall_hardware_finish_details_nonce'], 'tagwall_hardware_finish_details_save_data' ) )
+		return;
+
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+		return;
+
+	// Check the user's permissions.
+	if ( ! current_user_can( 'edit_page', $post_id ) )
+		return;
+
+	// Sanitize user input.
+	$polish = sanitize_text_field( $_POST['polish'] );
+
+	// Update the meta field in the database.
+	update_post_meta( $post_id, 'polish', $polish );
+}
+add_action( 'save_post', 'tagwall_hardware_finish_details_save_data' );

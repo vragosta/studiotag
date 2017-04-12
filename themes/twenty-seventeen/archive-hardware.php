@@ -54,6 +54,10 @@
 
 				<?php include( 'partials/content-hardware-hgu-lever.php' ); ?>
 
+			<?php elseif ( $term->slug === 'hgu-finish' ) : ?>
+
+				<?php include( 'partials/content-hardware-hgu-finish.php' ); ?>
+
 			<?php endif; ?>
 
 		</section>
