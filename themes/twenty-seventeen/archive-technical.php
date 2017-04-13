@@ -40,6 +40,7 @@
 				<div class="title">
 					<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></h1>
 				</div>
+				<hr />
 
 				<div class="blueprint-container">
 

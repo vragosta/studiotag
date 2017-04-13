@@ -30,6 +30,7 @@ require_once TAGWALL_INC . 'functions/essentials.php';
 
 // Include various metabox files.
 require_once TAGWALL_INC . 'metaboxes/metabox-system.php';
+require_once TAGWALL_INC . 'metaboxes/metabox-hardware.php';
 require_once TAGWALL_INC . 'metaboxes/metabox-user.php';
 
 // Run the setup functions.
