@@ -36,6 +36,12 @@
 				<?php endforeach; ?>
 			<?php endif; ?>
 
+			<?php if ( $custom->name === 'glass' ) : ?>
+				<?php foreach( $custom->all_terms as $term ) : ?>
+					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+
 			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
 
 		</ul>

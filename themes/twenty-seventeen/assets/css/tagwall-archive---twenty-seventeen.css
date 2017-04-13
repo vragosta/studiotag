@@ -143,8 +143,6 @@
 }
 
 .archive-container .title {
-	/*padding: 0 0 0 8rem;*/
-	/*border-bottom: 0.1rem solid #221E1F;*/
 	max-width: 1550px;
 	margin: 0 auto;
 	padding-left: 15px;
@@ -270,4 +268,29 @@
 
 .archive-container hr {
 	border-color: #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .title + hr {
+		margin-top: 0;
+	}
+}
+
+.archive-container .taxonomies {
+	width: 100%;
+	margin-top: 20rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .taxonomies {
+		margin: 2rem 0;
+	}
+}
+
+.archive-container .taxonomy-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2rem;
 }

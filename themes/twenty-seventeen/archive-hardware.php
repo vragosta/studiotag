@@ -28,7 +28,7 @@
 
 ?>
 
-<div class="archive-container hardware">
+<div class="archive-container <?php echo esc_attr( $custom->name ); ?>">
 	<?php foreach( $custom->terms as $term ) : ?>
 
 		<section class="<?php echo esc_attr( $term->slug ); ?>">

@@ -77,6 +77,7 @@
 
 						if ( $count % 3 == 0 ) : ?>
 							</div>
+							<hr />
 							<div class="row"><?php
 						endif;
 
