@@ -1,0 +1,17 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for applied details archive
+ *
+ * Location: archive-applied-detail.php
+ */
+
+.archive-container.applied-detail {
+	margin: 0 auto;
+	padding: 12em 2rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.applied-detail {
+		padding: 0;
+	}
+}

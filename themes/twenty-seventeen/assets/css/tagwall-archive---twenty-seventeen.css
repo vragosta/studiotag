@@ -5,20 +5,26 @@
  * Location: archive-{post-type}.php
  */
 
-.details-container {
+.details-container.row {
 	display: flex;
 	height: 40rem;
+	border-bottom: 0.1rem solid #ccc;
+
+	/*--- Need this for applied details archive ---*/
+	margin: 0;
 }
 
-@media only screen and ( max-width: 991px ) {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.details-container.technical {
 		height: 30rem;
 	}
 }
 
 @media only screen and ( max-width: 767px ) {
-	.details-container {
+	.details-container.row {
 		flex-direction: column;
+		height: auto;
+		border: none;
 	}
 }
 
@@ -56,7 +62,7 @@
 @media only screen and ( max-width: 767px ) {
 	.details-container h1 {
 		font-size: 5.5rem;
-		margin: 1.5rem 0;
+		margin: 1.5rem 0 0;
 		text-align: center;
 	}
 }
@@ -115,8 +121,14 @@
 
 .archive-container {
 	margin: 0 0 20rem;
-	border-top: 0.1rem solid #ccc;
+	/*border-top: 0.1rem solid #ccc;*/
 	padding: 12rem 0 0;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container {
+		padding: 6rem 0 0;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -131,8 +143,11 @@
 }
 
 .archive-container .title {
-	padding: 0 0 0 8rem;
-	border-bottom: 0.1rem solid #221E1F;
+	/*padding: 0 0 0 8rem;*/
+	/*border-bottom: 0.1rem solid #221E1F;*/
+	max-width: 1550px;
+	margin: 0 auto;
+	padding-left: 15px;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -172,245 +187,45 @@
 	right: 0;
 }
 
-/*========== CONTENT DETAILS PARTIAL ==========*/
-
-/*========== TECHNICALS ==========*/
-
-/*========== APPLIED DETAILS ==========*/
-
-/*--- Only display wall systems featured image for 85% of container---*/
-.archive-container.applied-details .featured-image .settings {
-	padding-bottom: 40%;
-	position: relative;
-}
-
-/*--- Source container for systems featured image ---*/
-.archive-container.applied-details .featured-image .settings div {
-	background-size: contain;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-/*--- Media Query for source container for systems logo, change background-size ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container.applied-details .featured-image .settings div {
-		background-size: cover;
-	}
-}
-
-/*--- Provide flex on bootstrap rows ---*/
-.archive-container .row {
-	display: flex;
-	margin: 0;
-}
-
-/*--- Media Query for bootstrap rows, add flex direction column ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .row {
-		flex-direction: column;
-	}
-
-	/*--- Do not display image placeholder ---*/
-	.archive-container .row:last-child .no-padding {
-		display: none;
-	}
-}
-
-/*--- TODO ---*/
-.archive-container .featured-image {
-	position: relative;
-}
-
-/*--- System images will conform to 16:9 aspect ratio ---*/
-.archive-container.applied-detail .featured-image {
-	padding-bottom: 56.25%;
-}
-
-/*--- If any system image has the 'not-visible' class on it, do not display the image ---*/
-.archive-container .featured-image.not-visible {
-	opacity: 0;
-	visibility: hidden;
-}
-
-/*--- Source for system images ---*/
-.archive-container .featured-image div {
-	background-size: cover;
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-}
-
-/*--- Give margin 10rem to images that display on the right ---*/
-.archive-container .right .featured-image div {
-	right: 10rem;
-}
-
-/*--- Media Query for right images, reduce margin to 0 ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .right .featured-image div {
-		right: 0;
-	}
-}
-
-/*--- Give margin 10rem to images that display on the left ---*/
-.archive-container .left .featured-image div {
-	left: 10rem;
-}
-
-/*--- Media Query for left images, reduce margin to 0 ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .left .featured-image div {
-		left: 0;
-	}
-}
-
-/*--- Content block for system images ---*/
-.archive-container .info {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-/*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .no-padding {
-		order: 1;
-	}
-}
-
-/*--- Control the spacing of the left 'info' containers ---*/
-.archive-container .info.left {
-	padding: 0 3rem 0 12rem;
-}
-
-/*--- Media Query to control the spacing of the left 'info' containers ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .info.left {
-		padding: 8rem 4rem;
-	}
-}
-
-/*--- Control the spacing of the right 'info' containers ---*/
-.archive-container .info.right {
-	padding: 0 10rem 0 3rem;
-}
-
-/*--- Media Query to control the spacing of the right 'info' containers ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .info.right {
-		padding: 8rem 4rem;
-	}
-}
-
-/*--- Styles to h3 elements within 'info' container ---*/
-.archive-container .info h3 {
-	font-size: 3.5rem;
-	font-weight: 600;
-	font-family: HelveticaNeueLT Std;
-	margin: 0;
-}
-
-/*--- Media Query to h3 elements within 'info' container ---*/
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	.archive-container .info h3 {
-		margin-top: 3.2rem;
-		font-size: 2.8rem;
-	}
-}
-
-/*--- Media Query to h3 elements within 'info' container ---*/
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.archive-container .info h3 {
-		margin-top: 2.5rem;
-		font-size: 2.2rem;
-	}
-}
-
-/*--- Media Query to h3 elements within 'info' container ---*/
-@media only screen and ( max-width: 767px ) {
-	.archive-container .info h3 {
-		font-size: 3rem;
-		position: relative;
-		margin: 1rem 0 2rem;
-		text-align: center;
-	}
-}
-
-/*========== DOORS ==========*/
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.archive-container {
-		padding: 6rem 0 0;
-	}
-}
-
-.archive-container.door > .row {
-	padding: 6rem 10%;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container.door > .row {
-		padding: 6rem 10% 0;
-	}
-}
-
-.archive-container.door > .row + .row {
-	/*margin-top: 4rem;*/
-	border-top: 0.1rem solid #221E1F;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container.door > .row + .row {
-		margin: 0;
-		border: none;
-		padding: 0 10%;
-	}
-}
-
-/*--- System images will conform to 16:9 aspect ratio ---*/
-.archive-container.door .featured-image {
-	padding-bottom: 125%;
-}
-
-.archive-container.door figure + h1 {
-	text-align: center;
-}
-
-.archive-container.door .taxonomies {
-	width: 100%;
-	margin-top: 20rem;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container.door .taxonomies {
-		margin: 5rem 0;
-	}
-}
-
-.archive-container.door .taxonomies > .row {
-	border-bottom: 0.1rem solid #221E1f;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container.door .taxonomies > .row {
-		border: none;
-	}
-}
-
-.archive-container.door .taxonomy-item {
+.arrow.top {
+	position: fixed;
+	bottom: 2rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
-	padding: 2rem;
+	width: 100%;
+
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.archive-container.door .featured-image-circle {
+.arrow.top.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.arrow.top a {
+	padding: 0;
+	background-color: #fff;
+	border: 1px solid #221e1f;
+	height: 5rem;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.arrow.top i {
+	font-size: 4rem;
+	padding-bottom: .2rem;
+}
+
+.archive-container .featured-image-circle {
 	width: 220px;
 	height: 220px;
 	vertical-align: middle;
@@ -418,11 +233,21 @@
 	border-radius: 50%;
 }
 
-.archive-container.door .featured-image-circle.custom {
+.archive-container .featured-image-circle.custom {
 	border: 0.1rem dashed #221e1f;
 }
 
-.archive-container.door .featured-image-circle img {
+.archive-container .featured-image-circle.not-visible {
+	opacity: 0; visibility: none;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .featured-image-circle.not-visible {
+		display: none;
+	}
+}
+
+.archive-container .featured-image-circle img {
 	width: 220px;
 	height: auto;
 	min-height: 220px;
@@ -430,8 +255,19 @@
 	object-fit: cover;
 }
 
-.archive-container.door .featured-image-circle + h1 {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .featured-image-circle img {
+		width: 180px;
+		min-height: 180px;
+	}
+}
+
+.archive-container .featured-image-circle + h1 {
 	margin: 2rem 0 0;
 	text-align: center;
 	font-weight: 400;
+}
+
+.archive-container hr {
+	border-color: #221E1F;
 }

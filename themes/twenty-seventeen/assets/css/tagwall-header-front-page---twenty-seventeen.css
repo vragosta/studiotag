@@ -13,7 +13,7 @@
 	padding: 0 2rem;
 	max-width: 1500px;
 	margin: 0 auto 1.5rem;
-	height: 7rem;
+	height: 5rem;
 }
 
 /*--- Only target first level button elements ---*/
@@ -35,7 +35,7 @@
 	width: 100%;
 	opacity: 0;
 	visibility: hidden;
-	z-index: 1;
+	z-index: 2;
 	background: #fff;
 	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }

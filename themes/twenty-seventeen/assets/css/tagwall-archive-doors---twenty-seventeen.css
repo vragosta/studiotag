@@ -1,0 +1,76 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for doors archive
+ *
+ * Location: archive-door.php
+ */
+
+.archive-container.door > .row {
+	padding: 6rem 10%;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row {
+		padding: 6rem 10% 0;
+	}
+}
+
+.archive-container.door > .row + .row {
+	border-top: 0.1rem solid #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row + .row {
+		margin: 0;
+		border: none;
+		padding: 0 10%;
+	}
+}
+
+/*--- System images will conform to the new aspect ratio ---*/
+.archive-container.door .featured-image {
+	padding-bottom: 125%;
+	position: relative;
+}
+
+.archive-container.door .featured-image div {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.archive-container.door figure + h1 {
+	text-align: center;
+}
+
+.archive-container.door .taxonomies {
+	width: 100%;
+	margin-top: 20rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door .taxonomies {
+		margin: 2rem 0;
+	}
+}
+
+.archive-container.door .taxonomies > .row {
+	border-bottom: 0.1rem solid #221E1f;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door .taxonomies > .row {
+		border: none;
+	}
+}
+
+.archive-container.door .taxonomy-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2rem;
+}

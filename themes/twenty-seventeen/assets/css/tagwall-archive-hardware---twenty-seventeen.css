@@ -1,0 +1,94 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for hardware archive
+ *
+ * Location: archive-hardware.php
+ */
+
+.archive-container.hardware > section {
+	padding-bottom: 4em;
+}
+
+.archive-container.hardware .content {
+	max-width: 1550px;
+	margin: 0 auto;
+	padding: 4em 0;
+	display: flex;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .content {
+		padding: 0;
+	}
+
+	.archive-container.hardware .content h2 {
+		font-size: 2.2rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.hardware .content {
+		flex-direction: column;
+		padding: 2em 0 0;
+	}
+
+	.archive-container.hardware .content h2 {
+		/*font-size: 1.8rem;*/
+	}
+
+	.archive-container.hardware .content > div:not(:first-child) {
+		margin: 2em 0;
+	}
+}
+
+.archive-container.hardware .content .settings {
+	padding-bottom: 165%;
+}
+
+.archive-container.hardware .content .settings.lever {
+	padding-bottom: 35%;
+}
+
+.archive-container.hardware .segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.archive-container.hardware .segment h2 {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2.5em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .segment h2 {
+		font-size: 2em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.hardware .segment h2 {
+		font-size: 1.8em;
+		text-align: center;
+	}
+}
+
+.archive-container.hardware .sub-title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.archive-container.hardware .content .finish-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.archive-container.hardware .content .finish-item h2 {
+	margin: 0;
+	text-align: center;
+}
