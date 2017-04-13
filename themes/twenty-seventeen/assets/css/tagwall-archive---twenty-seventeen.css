@@ -8,20 +8,23 @@
 .details-container.row {
 	display: flex;
 	height: 40rem;
+	border-bottom: 0.1rem solid #ccc;
 
 	/*--- Need this for applied details archive ---*/
 	margin: 0;
 }
 
-@media only screen and ( max-width: 991px ) {
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.details-container.technical {
 		height: 30rem;
 	}
 }
 
 @media only screen and ( max-width: 767px ) {
-	.details-container {
+	.details-container.row {
 		flex-direction: column;
+		height: auto;
+		border: none;
 	}
 }
 
@@ -118,7 +121,7 @@
 
 .archive-container {
 	margin: 0 0 20rem;
-	border-top: 0.1rem solid #ccc;
+	/*border-top: 0.1rem solid #ccc;*/
 	padding: 12rem 0 0;
 }
 
@@ -144,6 +147,7 @@
 	/*border-bottom: 0.1rem solid #221E1F;*/
 	max-width: 1550px;
 	margin: 0 auto;
+	padding-left: 15px;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -219,4 +223,51 @@
 .arrow.top i {
 	font-size: 4rem;
 	padding-bottom: .2rem;
+}
+
+.archive-container .featured-image-circle {
+	width: 220px;
+	height: 220px;
+	vertical-align: middle;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.archive-container .featured-image-circle.custom {
+	border: 0.1rem dashed #221e1f;
+}
+
+.archive-container .featured-image-circle.not-visible {
+	opacity: 0; visibility: none;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .featured-image-circle.not-visible {
+		display: none;
+	}
+}
+
+.archive-container .featured-image-circle img {
+	width: 220px;
+	height: auto;
+	min-height: 220px;
+	vertical-align: middle;
+	object-fit: cover;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .featured-image-circle img {
+		width: 180px;
+		min-height: 180px;
+	}
+}
+
+.archive-container .featured-image-circle + h1 {
+	margin: 2rem 0 0;
+	text-align: center;
+	font-weight: 400;
+}
+
+.archive-container hr {
+	border-color: #221E1F;
 }

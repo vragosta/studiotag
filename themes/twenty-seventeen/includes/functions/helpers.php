@@ -232,7 +232,7 @@ function tagwall_get_post_type_object( $post_type ) {
 		'taxonomies'  => get_object_taxonomies( $post_type->name, 'objects' ),
 		'terms'       => $terms,
 		'child_terms' => tagwall_get_term_children( $terms ),
-		'all_terms'   => tagwall_get_terms( $post_type->name, true ),
+		'all_terms'   => tagwall_get_terms( $post_type->name, true )
 	);
 
 	return $custom;

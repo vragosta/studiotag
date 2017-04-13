@@ -36,7 +36,7 @@
 				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
 			</div>
 
-			<hr style="border-color: #221E1F;" />
+			<hr />
 
 			<?php if ( $term->slug === 'electronic-ladder-pull' ) : ?>
 

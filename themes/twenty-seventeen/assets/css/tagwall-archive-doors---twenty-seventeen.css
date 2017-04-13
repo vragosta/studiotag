@@ -74,29 +74,3 @@
 	flex-direction: column;
 	padding: 2rem;
 }
-
-.archive-container.door .featured-image-circle {
-	width: 220px;
-	height: 220px;
-	vertical-align: middle;
-	overflow: hidden;
-	border-radius: 50%;
-}
-
-.archive-container.door .featured-image-circle.custom {
-	border: 0.1rem dashed #221e1f;
-}
-
-.archive-container.door .featured-image-circle img {
-	width: 220px;
-	height: auto;
-	min-height: 220px;
-	vertical-align: middle;
-	object-fit: cover;
-}
-
-.archive-container.door .featured-image-circle + h1 {
-	margin: 2rem 0 0;
-	text-align: center;
-	font-weight: 400;
-}

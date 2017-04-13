@@ -8,7 +8,7 @@
  */
 ?>
 
-<div class="details-container <?php echo esc_attr( $post_type->name ); ?> row">
+<div class="details-container <?php echo esc_attr( $custom->name ); ?> row">
 	<div class="col-xs-12 col-sm-6">
 		<h1><?php post_type_archive_title(); ?></h1>
 	</div>
@@ -24,8 +24,14 @@
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<?php if ( $custom->name === 'door' || $custom->name === 'hardware' ) : ?>
+			<?php if ( $custom->name === 'door' ) : ?>
 				<?php foreach( $custom->all_terms as $term ) : ?>
+					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+				<?php endforeach; ?>
+			<?php endif; ?>
+
+			<?php if ( $custom->name === 'hardware' ) : ?>
+				<?php foreach( $custom->terms as $term ) : ?>
 					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 				<?php endforeach; ?>
 			<?php endif; ?>

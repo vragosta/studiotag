@@ -31,11 +31,11 @@
 		<?php while( $hgu_levers->have_posts() ) : $hgu_levers->the_post();
 			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 			<div class="col-xs-12 col-sm-4">
-				<figure class="featured-image settings" style="padding-bottom: 35%;">
+				<figure class="featured-image settings lever">
 					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 				</figure>
 
-				<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+				<div class="sub-title">
 					<h2><?php echo esc_html( $post->post_title ); ?></h2>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 			<!-- TODO -->
 			<?php if ( $count++ % 3 == 0 ) : ?>
 				</div>
-				<hr style="border-color: #221E1F;" />
+				<hr />
 				<div class="content row">
 			<?php endif; ?>
 
