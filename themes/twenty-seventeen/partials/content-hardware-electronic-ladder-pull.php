@@ -1,6 +1,6 @@
 <?php
 /**
- * Partial used for the Electronic Ladder Pull on the hardware template.
+ * Partial used for Electronic Ladder Pull on the hardware template.
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0

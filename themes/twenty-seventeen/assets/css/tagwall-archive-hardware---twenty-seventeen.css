@@ -32,10 +32,6 @@
 		padding: 2em 0 0;
 	}
 
-	.archive-container.hardware .content h2 {
-		/*font-size: 1.8rem;*/
-	}
-
 	.archive-container.hardware .content > div:not(:first-child) {
 		margin: 2em 0;
 	}
