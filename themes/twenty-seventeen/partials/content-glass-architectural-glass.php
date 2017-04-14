@@ -16,7 +16,6 @@
 	</div>
 </div>
 
-<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $post_type, $term ); ?>
 <div class="taxonomies row"><?php
 	if ( $taxonomy_query->have_posts() ) :
 		while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post();
