@@ -1,0 +1,12 @@
+
+.archive-container.film .content {
+	max-width: 1550px;
+	margin: 0 auto;
+}
+
+.archive-container.film p {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2em;
+	font-weight: 300;
+}

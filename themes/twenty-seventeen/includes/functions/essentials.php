@@ -30,6 +30,7 @@ function tagwall_taxonomy_panel_add_meta_fields( $tag ) {
 }
 add_action( 'panel_edit_form_fields', 'tagwall_taxonomy_panel_add_meta_fields', 10, 2 );
 add_action( 'hardware_type_edit_form_fields', 'tagwall_taxonomy_panel_add_meta_fields', 10, 2 );
+add_action( 'film_type_edit_form_fields', 'tagwall_taxonomy_panel_add_meta_fields', 10, 2 );
 
 /**
  * Saving algorithm for taxonomies.
@@ -56,21 +57,7 @@ function tagwall_taxonomy_panel_save_meta_fields( $term_id ) {
 }
 add_action( 'edited_panel', 'tagwall_taxonomy_panel_save_meta_fields', 10, 2 );
 add_action( 'edited_hardware_type', 'tagwall_taxonomy_panel_save_meta_fields', 10, 2 );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+add_action( 'edited_film_type', 'tagwall_taxonomy_panel_save_meta_fields', 10, 2 );
 
 /**
  * Generates the HTML needed to create the new glass term meta fields.
