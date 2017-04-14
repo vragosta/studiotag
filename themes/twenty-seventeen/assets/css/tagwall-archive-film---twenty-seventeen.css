@@ -1,7 +1,18 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for film archive
+ *
+ * Location: archive-film.php
+ */
+
+.archive-container .archive-item:not(:first-child) {
+	margin: 15em 0;
+}
 
 .archive-container.film .content {
 	max-width: 1550px;
-	margin: 0 auto;
+	margin: 2em auto;
+	display: flex;
 }
 
 .archive-container.film p {
@@ -9,4 +20,14 @@
 	color: #A3A5A8;
 	font-size: 2em;
 	font-weight: 300;
+}
+
+.archive-container.film .content a {
+	position: absolute;
+	bottom: -10px;
+	text-decoration: underline;
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2em;
+	font-weight: 400;
 }
