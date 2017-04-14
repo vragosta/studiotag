@@ -45,12 +45,6 @@
 	}
 }
 
-/*@media only screen and ( max-width: 767px ) {
-	.archive-container.glass .child {
-		padding: 0;
-	}
-}*/
-
 .archive-container.glass .row.indent p {
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;

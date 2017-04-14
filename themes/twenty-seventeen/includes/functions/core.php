@@ -313,6 +313,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_post_type_archive( 'film' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-film',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-film---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'tagwall-systems',
