@@ -87,7 +87,9 @@
 					wp_reset_postdata(); ?>
 				</div>
 			<?php endif; ?>
-			
+
 		</section>
 	<?php endforeach; ?>
 </div>
+
+<?php get_footer(); ?>
