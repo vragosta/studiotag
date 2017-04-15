@@ -5,7 +5,7 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses
+ * @uses    TODO
  */
 ?>
 
@@ -28,7 +28,6 @@
 
 <div class="archive-container <?php echo esc_attr( $film->name ); ?>">
 	<?php foreach( $film->terms as $term ) : ?>
-
 		<?php $image          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
 		<?php $portfolio_link = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'portfolio_link' ); ?>
 		<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $post_type, $term ); ?>
@@ -40,22 +39,22 @@
 
 			<hr />
 
-			<div class="content row">
-				<div class="col-xs-12 col-sm-9">
-					<?php if ( $image ) : ?>
+			<?php if ( $image ) : ?>
+				<div class="content row">
+					<div class="col-xs-12 col-sm-9">
 						<figure class="featured-image settings">
 							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</figure>
-					<?php endif; ?>
-				</div>
-				<div class="col-xs-12 col-sm-3">
-					<?php echo term_description( $term->term_id ); ?>
+					</div>
+					<div class="col-xs-12 col-sm-3">
+						<?php echo term_description( $term->term_id ); ?>
 
-					<?php if ( $portfolio_link ) : ?>
-						<a href="<?php echo esc_attr( $portfolio_link ); ?>" target="_blank">View <?php echo esc_html( $term->name ); ?> Portfolio</a>
-					<?php endif; ?>
+						<?php if ( $portfolio_link ) : ?>
+							<a href="<?php echo esc_attr( $portfolio_link ); ?>" target="_blank">View <?php echo esc_html( $term->name ); ?> Portfolio</a>
+						<?php endif; ?>
+					</div>
 				</div>
-			</div>
+			<?php endif; ?>
 
 			<?php if ( $taxonomy_query->have_posts() ) : ?>
 				<div class="taxonomies row">
