@@ -153,51 +153,52 @@
 
 					<?php $count = 1; ?>
 					<?php $children = get_term_children( $term->term_id, 'glass_type' ); ?>
-					<?php //Tag_Wall\Twenty_Seventeen\Helpers\tagwall_var_dump( $children, true ); ?>
 					<?php foreach( $children as $child ) : ?>
 						<?php $child = get_term_by( 'id', $child, 'glass_type' ); ?>
-						<?php $glass = new WP_Query( array(
+						<?php
+							// TODO
+							$glass = new WP_Query( [
 								'post_type' => 'glass',
 								'order'     => 'ASC',
-								'tax_query' => array(
-									array(
+								'tax_query' => [
+									[
 										'taxonomy' => 'glass_type',
 										'field'    => 'id',
 										'terms'    => $child->term_id
-									),
-								)
-							) ); ?>
+									],
+								]
+							] );
+						?>
 
-						<?php // Tag_Wall\Twenty_Seventeen\Helpers\tagwall_var_dump( $organic_glass->posts, true ); ?>
 						<div class="taxonomies row">
 							<div class="title">
 								<h1><a name="<?php echo esc_attr( $child->slug ); ?>"><?php echo esc_html( $child->name ); ?></a></h1>
 							</div>
 
-							<hr /><?php
-							if ( $glass->have_posts() ) :
-								while ( $glass->have_posts() ) : $glass->the_post();
+							<hr />
+							<?php if ( $glass->have_posts() ) : ?>
+								<?php while ( $glass->have_posts() ) : $glass->the_post(); ?>
+									<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 
-									// Get the featured image.
-									$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+									<?php if ( $image ) : ?>
+										<div class="taxonomy-item col-xs-12 col-sm-4">
+											<div class="featured-image-circle">
+												<img src="<?php echo esc_attr( $image ); ?>" />
+											</div>
 
-									<div class="taxonomy-item col-xs-12 col-sm-4">
-										<div class="featured-image-circle">
-											<img src="<?php echo esc_attr( $image ); ?>" />
+											<h1><?php echo esc_html( $post->post_title ); ?></h1>
 										</div>
+									<?php endif; ?>
 
-										<h1><?php echo esc_html( $post->post_title ); ?></h1>
-									</div><?php
-
-									if ( $count++ % 3 == 0 ) : ?>
+									<?php if ( $count++ % 3 == 0 ) : ?>
 										</div>
 										<hr />
-										<div class="row"><?php
-									endif;
+										<div class="row">
+									<?php endif; ?>
 
-								endwhile;
-								wp_reset_postdata();
-							endif; ?>
+								<?php endwhile; ?>
+								<?php wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>
 
