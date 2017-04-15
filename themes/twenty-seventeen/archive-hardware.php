@@ -30,7 +30,7 @@
 <div class="archive-container <?php echo esc_attr( $hardware->name ); ?>">
 	<?php foreach( $hardware->terms as $term ) : ?>
 
-		<section class="<?php echo esc_attr( $term->slug ); ?>">
+		<section class="archive-item <?php echo esc_attr( $term->slug ); ?>">
 			<div class="title">
 				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
 			</div>
@@ -38,24 +38,364 @@
 			<hr />
 
 			<?php if ( $term->slug === 'electronic-ladder-pull' ) : ?>
+				<?php
+					$electronic_ladder_pulls = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'electronic-ladder-pull'
+						] ]
+					] );
+				?>
 
-				<?php include( 'partials/content-hardware-electronic-ladder-pull.php' ); ?>
+				<?php if ( $electronic_ladder_pulls->have_posts() ) : ?>
+					<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+
+					<div class="content row">
+						<?php while( $electronic_ladder_pulls->have_posts() ) : $electronic_ladder_pulls->the_post(); ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post->ID ); ?>
+
+							<?php if ( $image ) : ?>
+								<div class="col-xs-12 col-sm-4">
+									<figure class="featured-image settings">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</figure>
+								</div>
+							<?php endif; ?>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<?php if ( $term_image ) : ?>
+							<div class="col-xs-12 col-sm-4">
+								<figure class="featured-image settings">
+									<div style="background-image: url( '<?php echo esc_attr( $term_image ); ?>' );"></div>
+								</figure>
+							</div>
+						<?php endif; ?>
+
+						<div class="col-xs-12 col-sm-4 segment">
+							<h2><?php echo term_description( $term->term_id ); ?></h2>
+						</div>
+					</div>
+				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'klo-ladder-pull' ) : ?>
+				<?php $count = 1; ?>
+				<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+				<?php
+					$klo_ladder_pulls = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'klo-ladder-pull'
+						] ]
+					] );
+				?>
 
-				<?php include( 'partials/content-hardware-klo-ladder-pull.php' ); ?>
+				<?php if ( $klo_ladder_pulls->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $klo_ladder_pulls->have_posts() ) : $klo_ladder_pulls->the_post(); ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post->ID ); ?>
+
+							<?php if ( $image ) : ?>
+								<div class="col-xs-12 col-sm-4">
+									<figure class="featured-image settings">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</figure>
+								</div>
+							<?php endif; ?>
+
+								<?php if ( $count++ % 3 == 0 ) : ?>
+									</div>
+									<div class="content row">
+								<?php endif; ?>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<?php if ( $term_image ) : ?>
+							<div class="col-xs-12 col-sm-4">
+								<figure class="featured-image settings">
+									<div style="background-image: url( '<?php echo esc_attr( $term_image ); ?>' );"></div>
+								</figure>
+							</div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-view' ) : ?>
+				<?php
+					$hgu_views = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'hgu-view'
+						] ]
+					] );
+				?>
 
-				<?php include( 'partials/content-hardware-hgu-view.php' ); ?>
+				<?php if ( $hgu_views->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $hgu_views->have_posts() ) : $hgu_views->the_post(); ?>
+							<?php
+								$image = [
+									'Front' => get_post_meta( $post->ID, 'detailed_image_front', true ),
+									'Side'  => get_post_meta( $post->ID, 'detailed_image_side', true ),
+									'Back'  => get_post_meta( $post->ID, 'detailed_image_back', true )
+								];
+							?>
+
+							<?php foreach( $image as $key => $image_url ) : ?>
+								<?php if ( $image_url ) : ?>
+									<div class="col-xs-12 col-sm-4">
+										<figure class="featured-image settings">
+											<div style="background-image: url( '<?php echo esc_attr( $image_url ); ?>' );"></div>
+										</figure>
+
+										<div class="sub-title">
+											<h2><?php echo esc_html( $key ); ?></h2>
+										</div>
+									</div>
+								<?php endif; ?>
+							<?php endforeach; ?>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					</div>
+				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-lever' ) : ?>
+				<?php $count = 1; ?>
+				<?php
+					$hgu_levers = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'posts_per_page' => -1,
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'hgu-lever'
+						] ]
+					] );
+				?>
 
-				<?php include( 'partials/content-hardware-hgu-lever.php' ); ?>
+				<?php if ( $hgu_levers->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $hgu_levers->have_posts() ) : $hgu_levers->the_post();
+							$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+
+							<?php if ( $image ) : ?>
+								<div class="col-xs-12 col-sm-4">
+									<figure class="featured-image settings lever">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</figure>
+
+									<div class="sub-title">
+										<h2><?php echo esc_html( $post->post_title ); ?></h2>
+									</div>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( $count++ % 3 == 0 ) : ?>
+								</div>
+								<hr />
+								<div class="content row">
+							<?php endif; ?>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					</div>
+				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-finish' ) : ?>
+				<?php
+					$hgu_default_finishes = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [
+							'relation' => 'AND',
+							[
+								'taxonomy' => 'hardware_type',
+								'field'    => 'slug',
+								'terms'    => [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ]
+							],
+							[
+								'taxonomy' => 'hardware_type',
+								'field'    => 'slug',
+								'terms'    => [ 'wenge-essence', 'ash-essence', 'mahogany-essence' ],
+								'operator' => 'NOT IN'
+							]
+						]
+					] );
 
-				<?php include( 'partials/content-hardware-hgu-finish.php' ); ?>
+					$wenge_essence_finishes = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'wenge-essence'
+						] ]
+					] );
+
+					$ash_essence_finishes = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'ash-essence'
+						] ]
+					] );
+
+					$mahogany_essence_finishes = new WP_Query( [
+						'post_type' => 'hardware',
+						'order'     => 'ASC',
+						'tax_query' => [ [
+							'taxonomy' => 'hardware_type',
+							'field'    => 'slug',
+							'terms'    => 'mahogany-essence'
+						] ]
+					] );
+				?>
+
+				<?php if ( $hgu_default_finishes->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $hgu_default_finishes->have_posts() ) : $hgu_default_finishes->the_post(); ?>
+							<?php $polish = get_post_meta( $post->ID, 'polish', true ); ?>
+							<?php $ansi   = wp_get_post_terms( $post->ID, 'hardware_type' )[0]; ?>
+
+							<div class="finish-item col-xs-12 col-sm-4">
+								<?php if ( $polish ) : ?>
+									<h2><?php echo esc_html( $polish ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $ansi ) : ?>
+									<h2><?php echo esc_html( $ansi->name ); ?></h2>
+								<?php endif; ?>
+								<h2><?php echo esc_html( $post->post_title ); ?></h2>
+							</div>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<div class="finish-item col-xs-12 col-sm-4">
+							<div class="featured-image-circle not-visible"></div>
+						</div>
+
+					</div>
+					<hr />
+				<?php endif; ?>
+
+				<?php if ( $wenge_essence_finishes->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $wenge_essence_finishes->have_posts() ) : $wenge_essence_finishes->the_post(); ?>
+							<?php $image  = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $wenge_essence->term_id ); ?>
+							<?php $polish = get_post_meta( $post->ID, 'polish', true ); ?>
+
+							<?php
+								$terms = wp_get_post_terms( $post->ID, 'hardware_type' );
+								foreach( $terms as $term ) :
+									$ansi = ( $term->slug === 'ansi-bhma-629-usd32' ) ? $term : '';
+								endforeach;
+
+								foreach( $terms as $term ) :
+									$wenge_essence = ( $term->slug === 'wenge-essence' ) ? $term : '';
+								endforeach;
+
+								echo '<pre>';
+								var_dump( $ansi );
+								echo '</pre>';
+								exit();
+							?>
+
+							<div class="finish-item col-xs-12 col-sm-4">
+								<?php if ( $polish ) : ?>
+									<h2><?php echo esc_html( $polish ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $wenge_essence ) : ?>
+									<h2>w/ <?php echo esc_html( $wenge_essence->name ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $ansi ) : ?>
+									<h2><?php echo esc_html( $ansi->name ); ?></h2>
+								<?php endif; ?>
+								<h2><?php echo esc_html( $post->post_title ); ?></h2>
+							</div>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<div class="finish-item col-xs-12 col-sm-4">
+							<div class="featured-image-circle">
+								<img src="<?php echo esc_attr( $image ); ?>" />
+							</div>
+						</div>
+
+					</div>
+					<hr />
+				<?php endif; ?>
+
+				<?php if ( $ash_essence_finishes->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $ash_essence_finishes->have_posts() ) : $ash_essence_finishes->the_post(); ?>
+
+							<?php $ash_essence = wp_get_post_terms( $post->ID, 'hardware_type' )[1]; ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $ash_essence->term_id ); ?>
+
+							<!-- TODO -->
+							<div class="finish-item col-xs-12 col-sm-4">
+								<h2><?php echo esc_html( get_post_meta( $post->ID, 'polish', true ) ); ?></h2>
+								<h2>w/ <?php echo esc_html( $ash_essence->name ); ?></h2>
+								<h2><?php echo esc_html( wp_get_post_terms( $post->ID, 'hardware_type' )[0]->name ); ?></h2>
+								<h2><?php echo esc_html( $post->post_title ); ?></h2>
+							</div>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<div class="finish-item col-xs-12 col-sm-4">
+							<div class="featured-image-circle">
+								<img src="<?php echo esc_attr( $image ); ?>" />
+							</div>
+						</div>
+
+					</div>
+					<hr />
+				<?php endif; ?>
+
+				<?php if ( $mahogany_essence_finishes->have_posts() ) : ?>
+					<div class="content row">
+						<?php while( $mahogany_essence_finishes->have_posts() ) : $mahogany_essence_finishes->the_post(); ?>
+
+							<?php $mahogany_essence = wp_get_post_terms( $post->ID, 'hardware_type' )[1]; ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $mahogany_essence->term_id ); ?>
+
+							<!-- TODO -->
+							<div class="finish-item col-xs-12 col-sm-4">
+								<h2><?php echo esc_html( get_post_meta( $post->ID, 'polish', true ) ); ?></h2>
+								<h2>w/ <?php echo esc_html( $mahogany_essence->name ); ?></h2>
+								<h2><?php echo esc_html( wp_get_post_terms( $post->ID, 'hardware_type' )[0]->name ); ?></h2>
+								<h2><?php echo esc_html( $post->post_title ); ?></h2>
+							</div>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+
+						<div class="finish-item col-xs-12 col-sm-4">
+							<div class="featured-image-circle">
+								<img src="<?php echo esc_attr( $image ); ?>" />
+							</div>
+						</div>
+
+					</div>
+					<hr />
+				<?php endif; ?>
 
 			<?php endif; ?>
 

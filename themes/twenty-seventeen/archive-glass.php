@@ -169,13 +169,11 @@
 							$glass_type = new WP_Query( [
 								'post_type' => 'glass',
 								'order'     => 'ASC',
-								'tax_query' => [
-									[
-										'taxonomy' => 'glass_type',
-										'field'    => 'id',
-										'terms'    => $child->term_id
-									],
-								]
+								'tax_query' => [ [
+									'taxonomy' => 'glass_type',
+									'field'    => 'id',
+									'terms'    => $child->term_id
+								] ]
 							] );
 						?>
 
