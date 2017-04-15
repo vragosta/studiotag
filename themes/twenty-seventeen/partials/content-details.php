@@ -30,7 +30,7 @@
 				<?php endforeach; ?>
 			<?php endif; ?>
 
-			<?php if ( $custom->name === 'hardware' || $custom->name === 'film' ) : ?>
+			<?php if ( $custom->name === 'hardware' || $custom->name === 'film' || $custom->name === 'finish' ) : ?>
 				<?php foreach( $custom->terms as $term ) : ?>
 					<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
 				<?php endforeach; ?>
