@@ -107,7 +107,6 @@
 				)
 			) ); ?>
 
-		<?php // Tag_Wall\Twenty_Seventeen\Helpers\tagwall_var_dump( $organic_glass->posts, true ); ?>
 		<div class="taxonomies row">
 			<div class="title">
 				<h1><a name="<?php echo esc_attr( $child->slug ); ?>"><?php echo esc_html( $child->name ); ?></a></h1>
