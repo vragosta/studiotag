@@ -5,16 +5,6 @@
  * Location: archive-film.php
  */
 
-.archive-container .archive-item:not(:first-child) {
-	margin: 15em 0;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container .archive-item:not(:first-child) {
-		margin: 5em 0;
-	}
-}
-
 .archive-container.film .content {
 	max-width: 1550px;
 	margin: 2em auto;
