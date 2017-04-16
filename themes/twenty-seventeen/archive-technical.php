@@ -5,73 +5,68 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), get_template_part(), tagwall_get_featued_image(), wp_trim_words(), the_permalink(),
- *          get_the_permalink(), esc_html(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
-<?php
+<?php get_header(); ?>
+<?php $technical = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() ); ?>
 
-	get_header();
+<div class="details-container <?php echo esc_attr( $technical->name ); ?> row">
+	<div class="col-xs-12 col-sm-6">
+		<h1><?php post_type_archive_title(); ?></h1>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<ul>
+			<?php if ( $technical->query && $technical->query->have_posts() ) : ?>
+				<?php while( $technical->query->have_posts() ) : $technical->query->the_post(); ?>
+					<li><a href="<?php echo esc_attr( '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
+		</ul>
+	</div>
+</div>
 
-	// Get the custom catered post type object based off the archive template we are on.
-	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
-
-	// Include content/details  partial.
-	include( 'partials/content-details.php' );
-
-?>
-
-<div class="archive-container technical">
-
-	<?php if ( $custom->query->have_posts() ) : ?>
-		<?php while( $custom->query->have_posts() ) : $custom->query->the_post(); ?>
-
+<div class="archive-container <?php echo esc_attr( $technical->name ); ?>">
+	<?php if ( $technical->query->have_posts() ) : ?>
+		<?php while( $technical->query->have_posts() ) : $technical->query->the_post(); ?>
 			<?php
-
-				// Get all blueprint images if they are set.
-				$blueprint_one   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'one' );
-				$blueprint_two   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'two' );
-				$blueprint_three = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'three' );
-
+				$image = [
+					Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'one' ),
+					Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'two' ),
+					Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_blueprint_image( $post, 'three' )
+				];
 			?>
 
-			<section class="<?php echo esc_attr( $post->post_name ); ?>">
-				<div class="title">
-					<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></h1>
-				</div>
-				<hr />
+			<?php if ( $image ) : ?>
+				<section class="archive-item <?php echo esc_attr( $post->post_name ); ?>">
+					<div class="title">
+						<h1><a name="<?php echo esc_attr( $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></h1>
+					</div>
 
-				<div class="blueprint-container">
+					<hr />
 
-					<?php if ( $blueprint_one ) : ?>
-						<figure class="featured-image settings">
-							<div style="background-image: url( '<?php echo esc_attr( $blueprint_one ); ?>' );"></div>
-						</figure>
-					<?php endif; ?>
-
-					<?php if ( $blueprint_two ) : ?>
-						<figure class="featured-image settings">
-							<div style="background-image: url( '<?php echo esc_attr( $blueprint_two ); ?>' );"></div>
-						</figure>
-					<?php endif; ?>
-
-					<?php if ( $blueprint_three ) : ?>
-						<figure class="featured-image settings">
-							<div style="background-image: url( '<?php echo esc_attr( $blueprint_three ); ?>' );"></div>
-						</figure>
-					<?php endif; ?>
-
-				</div>
-			</section>
+					<div class="blueprint-container">
+						<?php foreach( $image as $image_url ) : ?>
+							<?php if ( $image_url ) : ?>
+								<figure class="featured-image settings">
+									<div style="background-image: url( '<?php echo esc_attr( $image_url ); ?>' );"></div>
+								</figure>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
+				</section>
+			<?php endif; ?>
 
 		<?php endwhile; ?>
 		<?php wp_reset_postdata(); ?>
-	<?php endif; ?>
 
-	<div class="arrow top">
-		<a href="#"><i class="ion ion-ios-arrow-up"></i></a>
-	</div>
+		<div class="arrow top">
+			<a href="#"><i class="ion ion-ios-arrow-up"></i></a>
+		</div>
+	<?php endif; ?>
 
 </div>
 

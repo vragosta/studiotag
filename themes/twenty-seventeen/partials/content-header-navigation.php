@@ -9,19 +9,14 @@
 ?>
 
 <nav class="header-navigation">
-
-	<!-- Logo -->
 	<section id="logo">
 		<a href="<?php echo home_url(); ?>">
 			<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/tagwall-black.png'; ?>" />
 		</a>
 	</section>
 
-	<!-- Menu -->
 	<section class="menu-container">
-
 		<ul id="menu">
-			<!-- Company will only display at 768px [+] -->
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
 				<ul class="dropdown-menu">
@@ -32,7 +27,6 @@
 				</ul>
 			</li>
 
-			<!-- Company mobile will only display at 768px [-] -->
 			<li class="mobile">
 				<a href="#">Company</a>
 				<ul class="expand">
@@ -45,7 +39,6 @@
 
 			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
 
-			<!-- Projects  will only display at 768px [+] -->
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
 				<ul class="dropdown-menu">
@@ -54,7 +47,6 @@
 				</ul>
 			</li>
 
-			<!-- Projects mobile will only display at 768px [-] -->
 			<li class="mobile">
 				<a href="#">Projects</a>
 				<ul class="expand">
@@ -67,5 +59,4 @@
 			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
 		</ul>
 	</section>
-
 </nav>

@@ -5,97 +5,101 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), get_template_part(), tagwall_get_featued_image(), wp_trim_words(), the_permalink(),
- *          get_the_permalink(), esc_html(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
-<?php
+<?php get_header(); ?>
+<?php $door = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() ); ?>
 
-	get_header();
+<div class="details-container <?php echo esc_attr( $custom->name ); ?> row">
+	<div class="col-xs-12 col-sm-6">
+		<h1><?php post_type_archive_title(); ?></h1>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<ul>
+			<?php foreach( $door->all_terms as $term ) : ?>
+				<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+			<?php endforeach; ?>
+			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
+		</ul>
+	</div>
+</div>
 
-	// Initialize the local count variable.
-	$count = 1;
-
-	// Get the custom catered post type object based off the archive template we are on.
-	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
-
-	// Include content/details partial.
-	include( 'partials/content-details.php' );
-
-?>
-
-<div class="archive-container door">
+<div class="archive-container <?php echo esc_attr( $door->name ); ?>">
 	<div class="row">
-		<?php foreach( $custom->terms as $term ) :
-			$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+		<?php foreach( $door->terms as $term ) : ?>
+			<?php $count = 1; ?>
+			<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
 
-			<div class="col-xs-12 col-sm-6">
-				<a name="<?php echo esc_attr( $term->slug ); ?>"></a>
+			<?php if ( $image ) : ?>
+				<div class="col-xs-12 col-sm-6">
+					<a name="<?php echo esc_attr( $term->slug ); ?>"></a>
 
-				<figure class="featured-image">
-					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-				</figure>
+					<figure class="featured-image">
+						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+					</figure>
 
-				<h1><?php echo esc_html( $term->name ); ?></h1>
-			</div>
+					<h1><?php echo esc_html( $term->name ); ?></h1>
+				</div>
+			<?php endif; ?>
 
 			<?php if ( $count++ % 2 == 0 ) : ?>
 				</div>
+				<hr />
 				<div class="row">
 			<?php endif; ?>
+
 		<?php endforeach; ?>
-	</div><?php
+	</div>
 
-	foreach( $custom->child_terms as $term ) :
+	<?php foreach( $door->child_terms as $term ) : ?>
+		<?php $count          = 1; ?>
+		<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $door->name, $term ); ?>
 
-		// Reinitialize the count variable.
-		$count = 1;
+		<?php if ( $taxonomy_query->have_posts() ) : ?>
+			<section class="archive-item <?php echo esc_attr( $term->slug ); ?>">
+				<div class="title">
+					<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
+				</div>
 
-		// Initialize the query.
-		$taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $custom->name, $term ); ?>
+				<hr />
 
-		<section class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
-			<div class="title">
-				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
-			</div>
+				<div class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
+					<div class="row">
+						<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 
-			<div class="row"><?php
-				if ( $taxonomy_query->have_posts() ) :
-					while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post();
+							<?php if ( $image ) : ?>
+								<div class="taxonomy-item col-xs-12 col-sm-4">
+									<div class="featured-image-circle">
+										<img src="<?php echo esc_attr( $image ); ?>" />
+									</div>
 
-						// Get the featured image.
-						$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+									<h1><?php echo esc_html( $post->post_title ); ?></h1>
+								</div>
+							<?php endif; ?>
+
+							<?php if ( $count++ % 3 == 0 ) : ?>
+								</div>
+								<hr />
+								<div class="row">
+							<?php endif; ?>
+
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
 
 						<div class="taxonomy-item col-xs-12 col-sm-4">
-							<div class="featured-image-circle">
-								<img src="<?php echo esc_attr( $image ); ?>" />
-							</div>
+							<div class="featured-image-circle custom"></div>
+							<h1>Custom</h1>
+						</div>
 
-							<h1><?php echo esc_html( $post->post_title ); ?></h1>
-						</div><?php
-
-						if ( $count % 3 == 0 ) : ?>
-							</div>
-							<hr />
-							<div class="row"><?php
-						endif;
-
-					$count++;
-
-					endwhile;
-					wp_reset_postdata();
-				endif; ?>
-
-				<div class="taxonomy-item col-xs-12 col-sm-4">
-					<div class="featured-image-circle custom"></div>
-					<h1>Custom</h1>
+					</div>
 				</div>
-			</div>
-		</section><?php
+			</section>
+		<?php endif; ?>
 
-	endforeach; ?>
-
+	<?php endforeach; ?>
 </div>
 
 <?php get_footer(); ?>

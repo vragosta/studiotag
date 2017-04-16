@@ -4,53 +4,38 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), get_users(), tagwall_get_hero_image(), tagwall_get_featued_image(),
- *          esc_attr(), esc_html(), get_avatar_url(), get_user_meta()
+ * @uses    TODO
  */
 ?>
 
-<?php
+<?php get_header(); ?>
+<?php $count = 0; ?>
+<?php $users = get_users( array( 'order' => 'DESC' ) ); ?>
+<?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
+<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 
-	get_header();
-
-	// Initialize the global count.
-	$count = 0;
-
-	// TODO
-	$users = get_users( array( 'order' => 'DESC' ) );
-
-	// Get the 'hero-image' from the post.
-	$hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post );
-
-	// Get the 'featured' image from the post.
-	$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
-
+<?php if ( $hero_image ) : ?>
 	<figure class="hero-image settings">
 		<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
 	</figure>
+<?php endif; ?>
 
-	<main class="archive-users">
+<main class="archive-users">
 
-		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
+	<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
-		<section class="grid"><?php
-			foreach( $users as $user ) :
+	<?php if ( $users ) : ?>
+		<section class="grid">
+			<?php foreach( $users as $user ) : ?>
+				<?php $image = get_avatar_url( $user->ID, array( 'size' => '400' ) ); ?>
+				<?php $description  = get_user_meta( $user->ID, 'description', true ); ?>
+				<?php $job_title    = get_user_meta( $user->ID, 'job_title', true ); ?>
+				<?php $direct_phone = get_user_meta( $user->ID, 'direct_phone', true ); ?>
+				<?php $cell_phone   = get_user_meta( $user->ID, 'cell_phone', true ); ?>
 
-				// Get the gravatar image.
-				$image = get_avatar_url( $user->ID, array( 'size' => '400' ) );
-
-				// Get the user 'job_title', 'hashtag', 'direct_phone', and 'cell_phone'.
-				$description  = get_user_meta( $user->ID, 'description', true );
-				$job_title    = get_user_meta( $user->ID, 'job_title', true );
-				$direct_phone = get_user_meta( $user->ID, 'direct_phone', true );
-				$cell_phone   = get_user_meta( $user->ID, 'cell_phone', true );
-
-				// If this is the first iteration through the loop..
-				if ( $count == 0 ) : ?>
-
+				<?php if ( $count == 0 && $image ) : ?>
 					<div class="row">
 						<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
-
 							<figure class="featured-image">
 								<a href="<?php the_permalink(); ?>">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -62,101 +47,99 @@
 								<hr />
 								<hr />
 							</div>
-
 						</div>
-					</div><?php
+					</div>
 
-				// If an odd iteration through the loop..
-				elseif ( $count % 2 == 1 ) : ?>
-
+				<?php elseif ( $count % 2 == 1 ) : ?>
 					<div class="row">
-						<div class="left no-padding col-xs-12 col-sm-6">
+						<?php if ( $image ) : ?>
+							<div class="left no-padding col-xs-12 col-sm-6">
+								<figure class="featured-image">
+									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+								</figure>
 
-							<figure class="featured-image">
-								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-							</figure>
-
-							<div class="slash">
-								<hr />
-								<hr />
-								<hr />
+								<div class="slash">
+									<hr />
+									<hr />
+									<hr />
+								</div>
 							</div>
+						<?php endif; ?>
 
-						</div>
-						<div class="info right col-xs-12 col-sm-6">
+						<?php if ( $temp_user ) : ?>
+							<div class="info right col-xs-12 col-sm-6">
+								<a>
+									<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
+									<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
+								</a>
 
-							<a>
-								<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
-								<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
-							</a>
+								<div class="info-content">
+									<?php if ( $temp_description ) : ?>
+										<p><?php echo esc_html( $temp_description ); ?></p>
+									<?php endif; ?>
 
-							<div class="info-content">
-								<?php if ( $temp_description ) : ?>
-									<p><?php echo esc_html( $temp_description ); ?></p>
-								<?php endif; ?>
+									<?php if ( $temp_direct_phone ) : ?>
+										<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
+									<?php endif; ?>
 
-								<?php if ( $temp_direct_phone ) : ?>
-									<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
-								<?php endif; ?>
+									<?php if ( $temp_cell_phone ) : ?>
+										<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
+									<?php endif; ?>
 
-								<?php if ( $temp_cell_phone ) : ?>
-									<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
-								<?php endif; ?>
-
-								<?php if ( $temp_user->user_email ) : ?>
-									<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
-								<?php endif; ?>
+									<?php if ( $temp_user->user_email ) : ?>
+										<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
+									<?php endif; ?>
+								</div>
 							</div>
-
-						</div>
-					</div><?php
-
-				// If an event iteration through the loop..
-				elseif ( $count % 2 == 0 ) : ?>
-
+						<?php endif; ?>
+					</div>
+				<?php elseif ( $count % 2 == 0 ) : ?>
 					<div class="row">
-						<div class="info left col-xs-12 col-sm-6">
+						<?php if ( $temp_user ) : ?>
+							<div class="info left col-xs-12 col-sm-6">
+								<a>
+									<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
+									<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
+								</a>
 
-							<a>
-								<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
-								<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
-							</a>
+								<div class="info-content">
+									<?php if ( $temp_description ) : ?>
+										<p><?php echo esc_html( $temp_description ); ?></p>
+									<?php endif; ?>
 
-							<div class="info-content">
-								<?php if ( $temp_description ) : ?>
-									<p><?php echo esc_html( $temp_description ); ?></p>
-								<?php endif; ?>
+									<?php if( $temp_direct_phone ) : ?>
+										<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
+									<?php endif; ?>
 
-								<?php if( $temp_direct_phone ) : ?>
-									<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
-								<?php endif; ?>
+									<?php if ( $temp_cell_phone ) : ?>
+										<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
+									<?php endif; ?>
 
-								<?php if ( $temp_cell_phone ) : ?>
-									<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
-								<?php endif; ?>
+									<?php if ( $temp_user->user_email ) : ?>
+										<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
+									<?php endif; ?>
+								</div>
 
-								<?php if ( $temp_user->user_email ) : ?>
-									<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
-								<?php endif; ?>
 							</div>
+						<?php endif; ?>
 
-						</div>
-						<div class="right no-padding col-xs-12 col-sm-6">
+						<?php if ( $image ) : ?>
+							<div class="right no-padding col-xs-12 col-sm-6">
+								<figure class="featured-image">
+									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+								</figure>
 
-							<figure class="featured-image">
-								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-							</figure>
-
-							<div class="slash">
-								<hr />
-								<hr />
-								<hr />
+								<div class="slash">
+									<hr />
+									<hr />
+									<hr />
+								</div>
 							</div>
+						<?php endif; ?>
+					</div>
+				<?php endif; ?>
 
-						</div>
-					</div><?php
-				endif;
-
+			<?php
 				/**
 				 * Store the current user into a local variable for use in next iteration.
 				 * NOTE: This is the key statement!
@@ -166,48 +149,49 @@
 				$temp_job_title    = $job_title;
 				$temp_direct_phone = $direct_phone;
 				$temp_cell_phone   = $cell_phone;
-
-				// Increment the global count variable.
 				$count++;
-				endforeach;
+			?>
 
-			// Accomodate for the last temporary post's data. ?>
+			<?php endforeach; ?>
+
 			<div class="row">
-				<div class="info left col-xs-12 col-sm-6">
+				<?php if ( $temp_user ) : ?>
+					<div class="info left col-xs-12 col-sm-6">
+						<a>
+							<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
+							<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
+						</a>
 
-					<a>
-						<h3><?php echo esc_html( $temp_user->display_name ); ?></h3>
-						<h3><span><?php echo esc_html( $temp_job_title ); ?></span></h3>
-					</a>
+						<div class="info-content">
+							<?php if ( $temp_description ) : ?>
+								<p><?php echo esc_html( $temp_description ); ?></p>
+							<?php endif; ?>
 
-					<div class="info-content">
-						<?php if ( $temp_description ) : ?>
-							<p><?php echo esc_html( $temp_description ); ?></p>
-						<?php endif; ?>
+							<?php if ( $temp_direct_phone ) : ?>
+								<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
+							<?php endif; ?>
 
-						<?php if ( $temp_direct_phone ) : ?>
-							<p>Direct Number: <?php echo esc_html( $temp_direct_phone ); ?></p>
-						<?php endif; ?>
+							<?php if ( $temp_cell_phone ) : ?>
+								<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
+							<?php endif; ?>
 
-						<?php if ( $temp_cell_phone ) : ?>
-							<p>Cell Phone: <?php echo esc_html( $temp_cell_phone ); ?></p>
-						<?php endif; ?>
-
-						<?php if ( $temp_user->user_email ) : ?>
-							<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
-						<?php endif; ?>
+							<?php if ( $temp_user->user_email ) : ?>
+								<p>Email: <?php echo esc_html( $temp_user->user_email ); ?></p>
+							<?php endif; ?>
+						</div>
 					</div>
+				<?php endif; ?>
 
-				</div>
-				<div class="right no-padding col-xs-12 col-sm-6">
-
-					<figure class="featured-image not-visible">
-						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-					</figure>
-
-				</div>
+				<?php if ( $image ) : ?>
+					<div class="right no-padding col-xs-12 col-sm-6">
+						<figure class="featured-image not-visible">
+							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+						</figure>
+					</div>
+				<?php endif; ?>
 			</div>
 		</section>
-	</main>
+	<?php endif; ?>
+</main>
 
 <?php get_footer(); ?>
