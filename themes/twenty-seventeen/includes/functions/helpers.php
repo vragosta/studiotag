@@ -65,7 +65,7 @@ function tagwall_get_blueprint_image( $post, $id = null ) {
  *
  * @since  0.1.0
  * @param  int $post wp_post object
- * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
+ * @uses   $get_option()
  * @return string void image url
  */
 function tagwall_get_term_featured_image( $id ) {
@@ -73,23 +73,15 @@ function tagwall_get_term_featured_image( $id ) {
 }
 
 /**
- * TODO
+ * Return the specified metafield for the taxonomy term.
  *
  * @since  0.1.0
  * @param  int $post wp_post object
- * @uses   wp_get_attachment_image_src(), get_post_thumbnail_id
+ * @uses   get_option()
  * @return string void image url
  */
-function tagwall_get_term_images( $id, $filter = false ) {
-	$images = array();
-
-	$images['image_one']   = get_option( 'taxonomy_term_' . $id )['image_one'];
-	$images['image_two']   = get_option( 'taxonomy_term_' . $id )['image_two'];
-	$images['image_three'] = get_option( 'taxonomy_term_' . $id )['image_three'];
-	$images['image_four']  = get_option( 'taxonomy_term_' . $id )['image_four'];
-	$images['image_five']  = get_option( 'taxonomy_term_' . $id )['image_five'];
-
-	return ( $filter ) ? array_filter( $images ) : $images;
+function tagwall_get_term_meta( $id, $field ) {
+	return get_option( 'taxonomy_term_' . $id )[$field];
 }
 
 /**
@@ -100,7 +92,7 @@ function tagwall_get_term_images( $id, $filter = false ) {
  * @uses   get_object_taxonomies(), get_terms()
  * @return array $args arguements for wp_query
  */
-function tagwall_get_query_arguements( $post_type ) {
+function tagwall_get_query_arguements( $post_type, $include_taxonomies = true ) {
 
 	// Default arguements for all custom queries.
 	$args = array(
@@ -112,7 +104,7 @@ function tagwall_get_query_arguements( $post_type ) {
 	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
 
 	// If the post type has taxonomies, craft new taxonomy array with associated terms.
-	if ( $taxonomies ) :
+	if ( $taxonomies && ! $include_taxonomies ) :
 		foreach( $taxonomies as $taxonomy ) :
 
 			$taxonomy_args[] = array(
@@ -211,7 +203,6 @@ function tagwall_get_term_children( $terms ) {
 	return $children;
 }
 
-
 /**
  * Create an array that holds specific post type information.
  *
@@ -228,7 +219,8 @@ function tagwall_get_post_type_object( $post_type ) {
 		'name'        => $post_type->name,
 		'label'       => $post_type->label,
 		'slug'        => $post_type->rewrite['slug'],
-		'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+		'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name, false ) ),
+		'tax_query'   => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
 		'taxonomies'  => get_object_taxonomies( $post_type->name, 'objects' ),
 		'terms'       => $terms,
 		'child_terms' => tagwall_get_term_children( $terms ),
@@ -269,7 +261,8 @@ function tagwall_get_post_type_objects() {
 			'name'        => $post_type->name,
 			'label'       => $post_type->label,
 			'slug'        => $post_type->rewrite['slug'],
-			'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
+			'query'       => new WP_Query( tagwall_get_query_arguements( $post_type->name, false ) ),
+			'tax_query'   => new WP_Query( tagwall_get_query_arguements( $post_type->name ) ),
 			'taxonomies'  => get_object_taxonomies( $post_type->name, 'objects' ),
 			'terms'       => $terms,
 			'child_terms' => tagwall_get_term_children( $terms ),

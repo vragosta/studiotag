@@ -15,6 +15,7 @@
 	$hgu_levers = new WP_Query( array(
 		'post_type' => 'hardware',
 		'order'     => 'ASC',
+		'posts_per_page' => -1,
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'hardware_type',

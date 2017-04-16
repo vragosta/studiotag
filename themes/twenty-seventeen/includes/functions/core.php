@@ -304,6 +304,33 @@ function styles() {
 		);
 	endif;
 
+	if ( is_post_type_archive( 'glass' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-glass',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-glass---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_post_type_archive( 'film' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-film',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-film---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
+	if ( is_post_type_archive( 'finish' ) ) :
+		wp_enqueue_style(
+			'tagwall-archive-finish',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-finish---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	if ( is_singular( 'system' ) ) :
 		wp_enqueue_style(
 			'tagwall-systems',

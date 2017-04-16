@@ -41,11 +41,6 @@
 							<div class="col-xs-12 col-sm-12 col-md-6">
 
 								<?php foreach( $post_types as $post_type ) : ?>
-									<?php if ( $count == 4 ) : ?>
-										<div class="break">
-									<?php elseif ( $count == 6 ) : ?>
-										</div>
-									<?php endif; ?>
 
 									<h1 data-menu="<?php echo esc_attr( $post_type->slug ); ?>">
 										<a href="#<?php echo esc_attr( $post_type->name ); ?>">
