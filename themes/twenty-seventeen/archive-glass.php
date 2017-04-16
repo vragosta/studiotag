@@ -48,7 +48,8 @@
 
 						<div class="taxonomies row">
 							<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
-								<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+								<?php $image    = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+								<?php $glass_id = get_post_meta( $post->ID, 'glass_id', true ); ?>
 
 								<?php if ( $image ) : ?>
 									<div class="taxonomy-item col-xs-12 col-sm-4">
@@ -56,7 +57,7 @@
 											<img src="<?php echo esc_attr( $image ); ?>" />
 										</div>
 
-										<h1><?php echo esc_html( $post->post_title ) . ' - ' . esc_html( get_post_meta( $post->ID, 'glass_id', true ) ); ?></h1>
+										<h1><span><?php echo esc_html( $post->post_title ); ?></span><span><?php echo ( $glass_id ) ? ' - ' . esc_html( $glass_id ) : ''; ?></span></h1>
 									</div>
 								<?php endif; ?>
 

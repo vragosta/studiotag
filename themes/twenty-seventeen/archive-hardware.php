@@ -270,7 +270,7 @@
 					<div class="content row">
 						<?php while( $hgu_default_finishes->have_posts() ) : $hgu_default_finishes->the_post(); ?>
 							<?php $polish = get_post_meta( $post->ID, 'polish', true ); ?>
-							<?php $ansi   = wp_get_post_terms( $post->ID, 'hardware_type' )[0]; ?>
+							<?php $ansi   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
 
 							<div class="finish-item col-xs-12 col-sm-4">
 								<?php if ( $polish ) : ?>
@@ -296,24 +296,10 @@
 				<?php if ( $wenge_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $wenge_essence_finishes->have_posts() ) : $wenge_essence_finishes->the_post(); ?>
-							<?php $image  = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $wenge_essence->term_id ); ?>
-							<?php $polish = get_post_meta( $post->ID, 'polish', true ); ?>
-
-							<?php
-								$terms = wp_get_post_terms( $post->ID, 'hardware_type' );
-								foreach( $terms as $term ) :
-									$ansi = ( $term->slug === 'ansi-bhma-629-usd32' ) ? $term : '';
-								endforeach;
-
-								foreach( $terms as $term ) :
-									$wenge_essence = ( $term->slug === 'wenge-essence' ) ? $term : '';
-								endforeach;
-
-								echo '<pre>';
-								var_dump( $ansi );
-								echo '</pre>';
-								exit();
-							?>
+							<?php $image         = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $wenge_essence->term_id ); ?>
+							<?php $polish        = get_post_meta( $post->ID, 'polish', true ); ?>
+							<?php $ansi          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
+							<?php $wenge_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'wenge-essence' ); ?>
 
 							<div class="finish-item col-xs-12 col-sm-4">
 								<?php if ( $polish ) : ?>
@@ -344,15 +330,21 @@
 				<?php if ( $ash_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $ash_essence_finishes->have_posts() ) : $ash_essence_finishes->the_post(); ?>
+							<?php $image       = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $ash_essence->term_id ); ?>
+							<?php $polish      = get_post_meta( $post->ID, 'polish', true ); ?>
+							<?php $ansi        = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
+							<?php $ash_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'ash-essence' ); ?>
 
-							<?php $ash_essence = wp_get_post_terms( $post->ID, 'hardware_type' )[1]; ?>
-							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $ash_essence->term_id ); ?>
-
-							<!-- TODO -->
 							<div class="finish-item col-xs-12 col-sm-4">
-								<h2><?php echo esc_html( get_post_meta( $post->ID, 'polish', true ) ); ?></h2>
-								<h2>w/ <?php echo esc_html( $ash_essence->name ); ?></h2>
-								<h2><?php echo esc_html( wp_get_post_terms( $post->ID, 'hardware_type' )[0]->name ); ?></h2>
+								<?php if ( $polish ) : ?>
+									<h2><?php echo esc_html( $polish ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $ash_essence ) : ?>
+									<h2>w/ <?php echo esc_html( $ash_essence->name ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $ansi ) : ?>
+									<h2><?php echo esc_html( $ansi ); ?></h2>
+								<?php endif; ?>
 								<h2><?php echo esc_html( $post->post_title ); ?></h2>
 							</div>
 
@@ -372,15 +364,21 @@
 				<?php if ( $mahogany_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $mahogany_essence_finishes->have_posts() ) : $mahogany_essence_finishes->the_post(); ?>
+							<?php $image            = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $mahogany_essence->term_id ); ?>
+							<?php $polish           = get_post_meta( $post->ID, 'polish', true ); ?>
+							<?php $ansi             = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
+							<?php $mahogany_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'mahogany-essence' ); ?>
 
-							<?php $mahogany_essence = wp_get_post_terms( $post->ID, 'hardware_type' )[1]; ?>
-							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $mahogany_essence->term_id ); ?>
-
-							<!-- TODO -->
 							<div class="finish-item col-xs-12 col-sm-4">
-								<h2><?php echo esc_html( get_post_meta( $post->ID, 'polish', true ) ); ?></h2>
-								<h2>w/ <?php echo esc_html( $mahogany_essence->name ); ?></h2>
-								<h2><?php echo esc_html( wp_get_post_terms( $post->ID, 'hardware_type' )[0]->name ); ?></h2>
+								<?php if ( $polish ) : ?>
+									<h2><?php echo esc_html( $polish ); ?></h2>
+								<?php endif;?>
+								<?php if ( $mahogany_essence ) : ?>
+									<h2>w/ <?php echo esc_html( $mahogany_essence->name ); ?></h2>
+								<?php endif; ?>
+								<?php if ( $ansi ) : ?>
+									<h2><?php echo esc_html( $ansi->name ); ?></h2>
+								<?php endif; ?>
 								<h2><?php echo esc_html( $post->post_title ); ?></h2>
 							</div>
 
