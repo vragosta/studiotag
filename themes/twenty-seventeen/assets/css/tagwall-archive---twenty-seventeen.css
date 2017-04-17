@@ -239,7 +239,8 @@
 }
 
 .archive-container .featured-image-circle.not-visible {
-	opacity: 0; visibility: none;
+	opacity: 0;
+	visibility: hidden;
 }
 
 @media only screen and ( max-width: 767px ) {

@@ -36,10 +36,6 @@
 	}
 }
 
-/*.archive-container.glass .row.indent > div {
-	max-width: 500px;
-}*/
-
 .archive-container.glass .child:not(:first-child) {
 	padding: 6rem 0;
 }
@@ -59,17 +55,9 @@
 	hyphens: auto;
 }
 
-/*.archive-container.glass .row {
-	margin: 0;
-}*/
-
 .archive-container.glass .taxonomies:not(:first-child) {
 	margin: 10em 0;
 }
-
-/*.archive-container.glass .decorative-glass .taxonomies {
-	margin: 6em 0;
-}*/
 
 .archive-container.glass section {
 	margin-bottom: 20rem;
