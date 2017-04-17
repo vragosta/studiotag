@@ -376,6 +376,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page_template( 'page-templates/contact.php' ) ) :
+		wp_enqueue_style(
+			'tagwall-contact',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-contact---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	wp_enqueue_style(
 		'tagwall',
 		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",

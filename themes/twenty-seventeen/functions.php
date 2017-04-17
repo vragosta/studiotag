@@ -42,6 +42,7 @@ require_once TAGWALL_INC . 'metaboxes/metabox-system.php';
 require_once TAGWALL_INC . 'metaboxes/metabox-hardware.php';
 require_once TAGWALL_INC . 'metaboxes/metabox-user.php';
 require_once TAGWALL_INC . 'metaboxes/metabox-glass.php';
+require_once TAGWALL_INC . 'metaboxes/metabox-page.php';
 
 // Run the setup functions.
 Tag_Wall\Twenty_Seventeen\Core\setup();

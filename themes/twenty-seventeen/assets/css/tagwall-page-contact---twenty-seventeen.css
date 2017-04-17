@@ -1,0 +1,21 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for contact page template
+ *
+ * Location: page-templates/contact.php
+ */
+
+ .contact-content {
+ 	margin-left: 2rem;
+ }
+
+ .contact-content .container{
+    padding: 0;
+    margin-left: 20em;
+ }
+
+ .contact-col{
+ 	padding: 2rem;
+ 	width: 300px;
+ 	display: inline-block;
+ }
