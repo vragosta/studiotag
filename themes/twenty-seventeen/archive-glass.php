@@ -81,6 +81,7 @@
 				<?php $max_size               = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'max_size' ); ?>
 				<?php $glass_thickness        = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'glass_thickness' ); ?>
 				<?php $glass_thickness        = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'glass_thickness' ); ?>
+				<?php $children               = get_term_children( $term->term_id, 'glass_type' ); ?>
 
 				<section class="archive-item <?php echo esc_attr( $term->slug ); ?>">
 					<div class="title">
@@ -162,9 +163,8 @@
 
 					</div>
 
-					<?php $count = 1; ?>
-					<?php $children = get_term_children( $term->term_id, 'glass_type' ); ?>
 					<?php foreach( $children as $child ) : ?>
+						<?php $count = 1; ?>
 						<?php $child = get_term_by( 'id', $child, 'glass_type' ); ?>
 						<?php
 							$glass_type = new WP_Query( [

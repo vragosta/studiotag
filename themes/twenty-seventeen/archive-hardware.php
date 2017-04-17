@@ -50,7 +50,7 @@
 				?>
 
 				<?php if ( $electronic_ladder_pulls->have_posts() ) : ?>
-					<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+					<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 
 					<div class="content row">
 						<?php while( $electronic_ladder_pulls->have_posts() ) : $electronic_ladder_pulls->the_post(); ?>
@@ -83,7 +83,7 @@
 
 			<?php elseif ( $term->slug === 'klo-ladder-pull' ) : ?>
 				<?php $count = 1; ?>
-				<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+				<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 				<?php
 					$klo_ladder_pulls = new WP_Query( [
 						'post_type' => 'hardware',
@@ -295,7 +295,7 @@
 				<?php if ( $wenge_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $wenge_essence_finishes->have_posts() ) : $wenge_essence_finishes->the_post(); ?>
-							<?php $image         = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $wenge_essence->term_id ); ?>
+							<?php $image         = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $wenge_essence->term_id, 'featured_image_url' ); ?>
 							<?php $polish        = get_post_meta( $post->ID, 'polish', true ); ?>
 							<?php $ansi          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
 							<?php $wenge_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'wenge-essence' ); ?>
@@ -329,7 +329,7 @@
 				<?php if ( $ash_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $ash_essence_finishes->have_posts() ) : $ash_essence_finishes->the_post(); ?>
-							<?php $image       = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $ash_essence->term_id ); ?>
+							<?php $image       = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $ash_essence->term_id, 'featured_image_url' ); ?>
 							<?php $polish      = get_post_meta( $post->ID, 'polish', true ); ?>
 							<?php $ansi        = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
 							<?php $ash_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'ash-essence' ); ?>
@@ -342,7 +342,7 @@
 									<h2>w/ <?php echo esc_html( $ash_essence->name ); ?></h2>
 								<?php endif; ?>
 								<?php if ( $ansi ) : ?>
-									<h2><?php echo esc_html( $ansi ); ?></h2>
+									<h2><?php echo esc_html( $ansi->name ); ?></h2>
 								<?php endif; ?>
 								<h2><?php echo esc_html( $post->post_title ); ?></h2>
 							</div>
@@ -363,7 +363,7 @@
 				<?php if ( $mahogany_essence_finishes->have_posts() ) : ?>
 					<div class="content row">
 						<?php while( $mahogany_essence_finishes->have_posts() ) : $mahogany_essence_finishes->the_post(); ?>
-							<?php $image            = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $mahogany_essence->term_id ); ?>
+							<?php $image            = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $mahogany_essence->term_id, 'featured_image_url' ); ?>
 							<?php $polish           = get_post_meta( $post->ID, 'polish', true ); ?>
 							<?php $ansi             = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', [ 'ansi-bhma-629-usd32', 'ansi-bhma-630-usd32d' ] ); ?>
 							<?php $mahogany_essence = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_search_terms( $post->ID, 'hardware_type', 'mahogany-essence' ); ?>

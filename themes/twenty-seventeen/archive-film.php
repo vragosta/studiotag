@@ -28,7 +28,7 @@
 
 <div class="archive-container <?php echo esc_attr( $film->name ); ?>">
 	<?php foreach( $film->terms as $term ) : ?>
-		<?php $image          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+		<?php $image          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 		<?php $portfolio_link = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'portfolio_link' ); ?>
 		<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $post_type, $term ); ?>
 
