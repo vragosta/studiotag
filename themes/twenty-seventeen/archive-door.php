@@ -30,7 +30,7 @@
 	<div class="row">
 		<?php foreach( $door->terms as $term ) : ?>
 			<?php $count = 1; ?>
-			<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_featured_image( $term->term_id ); ?>
+			<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 
 			<?php if ( $image ) : ?>
 				<div class="col-xs-12 col-sm-6">

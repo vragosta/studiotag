@@ -61,18 +61,6 @@ function tagwall_get_blueprint_image( $post, $id = null ) {
 }
 
 /**
- * Return the featured image for the taxonomy term.
- *
- * @since  0.1.0
- * @param  int $post wp_post object
- * @uses   $get_option()
- * @return string void image url
- */
-function tagwall_get_term_featured_image( $id ) {
-	return get_option( 'taxonomy_term_' . $id )['featured_image_url'];
-}
-
-/**
  * Return the specified metafield for the taxonomy term.
  *
  * @since  0.1.0
@@ -158,7 +146,7 @@ function tagwall_get_query_arguements( $post_type, $include_taxonomies = true ) 
  *
  * @since  0.1.0
  * @param  string $post_type post-type
- * @uses   get_object_taxonomies(), get_terms()
+ * @uses   TODO
  * @return array $terms post-type terms
  */
 function tagwall_get_terms( $post_type, $include_children = false ) {
@@ -238,7 +226,7 @@ function tagwall_get_term_children( $terms ) {
  *
  * @since  0.1.0
  * @param  string $post_type post-type
- * @uses   tagwall_get_query_arguements(), tagwall_get_terms()
+ * @uses   TODO
  * @return array $terms post-type terms
  */
 function tagwall_get_post_type_object( $post_type ) {
