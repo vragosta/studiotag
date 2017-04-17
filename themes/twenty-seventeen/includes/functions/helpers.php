@@ -85,6 +85,36 @@ function tagwall_get_term_meta( $id, $field ) {
 }
 
 /**
+ * Search through the terms array for a specific term.
+ *
+ * @since  0.1.0
+ * @param  int $id post id
+ * @param  string $taxonomy post taxonomy
+ * @param  string/array $search string or array of strings to search for
+ * @uses   wp_get_post_terms(), is_array()
+ * @return object $found term object
+ */
+function tagwall_search_terms( $id, $taxonomy, $search ) {
+	$terms = wp_get_post_terms( $id, $taxonomy );
+
+	if ( is_array( $search ) ) :
+		foreach( $search as $item ) :
+			foreach( $terms as $term ) :
+				if ( ! $found ) :
+					$found = ( $term->slug === $item ) ? $term : '';
+				endif;
+			endforeach;
+		endforeach;
+	else :
+		foreach( $terms as $term ) :
+			$found = ( $term->slug === $search ) ? $term : '';
+		endforeach;
+	endif;
+
+	return $found;
+}
+
+/**
  * Cater a custom query per post type if taxonomies and terms exist.
  *
  * @since  0.1.0

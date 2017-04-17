@@ -5,119 +5,102 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), get_template_part(), tagwall_get_featued_image(), wp_trim_words(), the_permalink(),
- *          get_the_permalink(), esc_html(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
-<?php
+<?php get_header(); ?>
+<?php $applied_detail = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() ); ?>
 
-	get_header();
-
-	// Initialize the local count variable.
-	$count = 0;
-
-	// Get the post type object.
-	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
-
-	// Include the content/details partial.
-	include( 'partials/content-details.php' );
-
-?>
+<div class="details-container <?php echo esc_attr( $custom->name ); ?> row">
+	<div class="col-xs-12 col-sm-6">
+		<h1><?php post_type_archive_title(); ?></h1>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<ul>
+			<?php if ( $applied_detail->query && $applied_detail->query->have_posts() ) : ?>
+				<?php while( $applied_detail->query->have_posts() ) : $applied_detail->query->the_post(); ?>
+					<li><a href="<?php echo esc_attr( '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
+				<?php endwhile; ?>
+				<?php wp_reset_postdata(); ?>
+			<?php endif; ?>
+			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
+		</ul>
+	</div>
+</div>
 
 <div class="archive-container applied-detail">
-	<section class="grid"><?php
-		if ( $custom->query->have_posts() ) :
-			while ( $custom->query->have_posts() ) : $custom->query->the_post();
+	<?php if ( $applied_detail->query->have_posts() ) : ?>
+		<?php $count = 0; ?>
+		<section class="grid">
+			<?php while ( $applied_detail->query->have_posts() ) : $applied_detail->query->the_post(); ?>
+				<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
 
-				// Get the featured image.
-				$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post );
-
-				// If this is the first iteration through the loop..
-				if ( $count == 0 ) : ?>
-
+				<?php if ( $count == 0 && $image ) : ?>
 					<div class="row">
 						<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
-
 							<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 							<figure class="featured-image">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
 
 						</div>
-					</div><?php
-
-				// If an odd iteration through the loop..
-				elseif ( $count % 2 == 1 ) : ?>
-
+					</div>
+				<?php elseif ( $count % 2 == 1 && $image ) : ?>
 					<div class="row">
 						<div class="left no-padding col-xs-12 col-sm-6">
-
 							<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 							<figure class="featured-image">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
-
 						</div>
 						<div class="info right col-xs-12 col-sm-6">
-
 							<h3><?php echo esc_html( $temp_post->post_title ); ?></h3>
-
 						</div>
-					</div><?php
-
-				// If an event iteration through the loop..
-				elseif ( $count % 2 == 0 ) : ?>
-
+					</div>
+				<?php elseif ( $count % 2 == 0 && $image ) : ?>
 					<div class="row">
 						<div class="info left col-xs-12 col-sm-6">
-
 							<h3><?php echo esc_html( $temp_post->post_title ); ?></h3>
-
 						</div>
 						<div class="right no-padding col-xs-12 col-sm-6">
-
 							<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
 							<figure class="featured-image">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</figure>
-
 						</div>
-					</div><?php
-				endif;
+					</div>
+				<?php endif; ?>
 
-				/**
-				 * Store the current post into a local variable for use in next iteration.
-				 * NOTE: This is the key statement!
-				 */
-				$temp_post = $post;
-				$excerpt   = wp_trim_words( $temp_post->post_excerpt, 50, '...' );
+				<?php
+					/**
+					 * Store the current post into a local variable for use in next iteration.
+					 * NOTE: This is the key statement!
+					 */
+					$temp_post = $post;
+					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 50, '...' );
+					$count++;
+				?>
 
-				// Increment the global count variable.
-				$count++;
+			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 
-			endwhile;
-			wp_reset_postdata();
-		endif;
+			<?php if ( $image ) : ?>
+				<div class="row">
+					<div class="left no-padding col-xs-12 col-sm-6">
+						<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
+						<figure class="featured-image not-visible">
+							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+						</figure>
+					</div>
+					<div class="info right col-xs-12 col-sm-6">
+						<h3><?php echo esc_html( $temp_post->post_title ); ?></h3>
+					</div>
+				</div>
+			<?php endif; ?>
+		</section>
 
-		// Accomodate for the last temporary post's data. ?>
-		<div class="row">
-			<div class="left no-padding col-xs-12 col-sm-6">
-
-				<a name="<?php echo esc_attr( $post->post_name ); ?>"></a>
-				<figure class="featured-image not-visible">
-					<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-				</figure>
-
-			</div>
-			<div class="info right col-xs-12 col-sm-6">
-
-				<h3><?php echo esc_html( $temp_post->post_title ); ?></h3>
-
-			</div>
-		</div>
-	</section>
-
+	<?php endif; ?>
 </div>
 
 <?php get_footer(); ?>
