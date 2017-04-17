@@ -57,33 +57,37 @@
 			<?php endif; ?>
 
 			<?php if ( $taxonomy_query->have_posts() ) : ?>
-				<div class="taxonomies row">
+				<div class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
 					<div class="title">
 						<h1><?php echo ( $term->slug === 'transparent' ) ? 'Color' : 'Type'; ?></h1>
 					</div>
+
 					<hr />
 
-					<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
-						<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+					<div class="row">
+						<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+							<?php $class = ( $count === 1 || $count % 4 === 0 ) ? 'first' : ( ( $count % 3 === 0 ) ? 'last' : '' ); ?>
 
-						<div class="taxonomy-item col-xs-12 col-sm-4">
-							<?php if ( $image ) : ?>
-								<div class="featured-image-circle">
-									<img src="<?php echo esc_attr( $image ); ?>" />
+							<div class="taxonomy-item <?php echo esc_attr( $class ); ?> col-xs-12 col-sm-4">
+								<?php if ( $image ) : ?>
+									<div class="featured-image-circle">
+										<img src="<?php echo esc_attr( $image ); ?>" />
+									</div>
+								<?php endif; ?>
+
+								<h1><?php echo esc_html( $post->post_title ); ?></h1>
+							</div>
+
+							<?php if ( $count++ % 3 == 0 ) : ?>
 								</div>
+								<hr />
+								<div class="row">
 							<?php endif; ?>
 
-							<h1><?php echo esc_html( $post->post_title ); ?></h1>
-						</div>
-
-						<?php if ( $count++ % 3 == 0 ) : ?>
-							</div>
-							<hr />
-							<div class="row">
-						<?php endif; ?>
-
-					<?php endwhile; ?>
-					<?php wp_reset_postdata(); ?>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+					</div>
 				</div>
 			<?php endif; ?>
 
