@@ -5,85 +5,73 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    get_header(), get_template_part(), tagwall_get_featued_image(), wp_trim_words(), the_permalink(),
- *          get_the_permalink(), esc_html(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
-<?php
+<?php get_header(); ?>
+<?php $finish = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() ); ?>
 
-	get_header();
+<div class="details-container <?php echo esc_attr( $finish->name ); ?> row">
+	<div class="col-xs-12 col-sm-6">
+		<h1><?php post_type_archive_title(); ?></h1>
+	</div>
+	<div class="col-xs-12 col-sm-6">
+		<ul>
+			<?php foreach( $finish->terms as $term ) : ?>
+				<li><a href="<?php echo esc_attr( '#' . $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></li>
+			<?php endforeach; ?>
 
-	// Get the custom catered post type object based off the archive template we are on.
-	$custom = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_object( get_queried_object() );
-
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( get_terms( array( 'taxonomy' => 'ladder_pull', 'hide_empty' => false ) ), true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->terms, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->all_terms, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->terms, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->assoc_terms, true );
-	// Tag_Wall\Twenty_seventeen\Helpers\tagwall_var_dump( $custom->taxonomies, true );
-
-	// Include content/details partial.
-	include( 'partials/content-details.php' );
-
-?>
+			<li><a href="<?php echo home_url( '/details/' ); ?>" class="back">Go Back to Wall Details</a></li>
+		</ul>
+	</div>
+</div>
 
 <div class="archive-container <?php echo esc_attr( $custom->name ); ?>">
-	<?php foreach( $custom->terms as $term ) : ?>
-		<?php $count = 1; ?>
-		<section class="archive-item <?php echo esc_attr( $term->slug ); ?>">
-			<div class="title">
-				<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
-			</div>
+	<?php foreach( $finish->terms as $term ) : ?>
+		<?php $count          = 1; ?>
+		<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $finish->name, $term ); ?>
 
-			<hr />
-
-			<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $custom->name, $term ); ?>
-
-			<div class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
-				<!-- <div class="title">
+		<?php if ( $taxonomy_query->have_posts() ) : ?>
+			<section class="archive-item <?php echo esc_attr( $term->slug ); ?>">
+				<div class="title">
 					<h1><a name="<?php echo esc_attr( $term->slug ); ?>"><?php echo esc_html( $term->name ); ?></a></h1>
 				</div>
-				<hr /> -->
-				<div class="row"><?php
-					if ( $taxonomy_query->have_posts() ) :
-						while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post();
 
-							// Get the featured image.
-							$image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+				<hr />
 
-							<div class="taxonomy-item col-xs-12 col-sm-4">
-								<div class="featured-image-circle">
-									<img src="<?php echo esc_attr( $image ); ?>" />
+				<div class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
+					<div class="row">
+						<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
+							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+
+							<?php if ( $image ) : ?>
+								<div class="taxonomy-item col-xs-12 col-sm-4">
+									<div class="featured-image-circle">
+										<img src="<?php echo esc_attr( $image ); ?>" />
+									</div>
+
+									<h1><?php echo esc_html( $post->post_title ); ?></h1>
 								</div>
+							<?php endif; ?>
 
-								<h1><?php echo esc_html( $post->post_title ); ?></h1>
-							</div><?php
-
-							if ( $count % 3 == 0 ) : ?>
+							<?php if ( $count++ % 3 == 0 ) : ?>
 								</div>
 								<hr />
-								<div class="row"><?php
-							endif;
+								<div class="row">
+							<?php endif; ?>
 
-						$count++;
-
-						endwhile;
-						wp_reset_postdata();
-					endif; ?>
-
-					<div class="taxonomy-item col-xs-12 col-sm-4">
-						<div class="featured-image-circle custom"></div>
-						<h1>Custom</h1>
+						<?php endwhile; ?>
+						<?php wp_reset_postdata(); ?>
+						<div class="taxonomy-item col-xs-12 col-sm-4">
+							<div class="featured-image-circle custom"></div>
+							<h1>Custom</h1>
+						</div>
 					</div>
 				</div>
-			</div>
+			</section>
+		<?php endif; ?>
 
-
-
-
-		</section>
 	<?php endforeach; ?>
 </div>
 

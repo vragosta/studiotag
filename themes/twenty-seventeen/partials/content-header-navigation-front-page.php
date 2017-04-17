@@ -9,8 +9,6 @@
 ?>
 
 <nav class="header-navigation-front-page">
-
-	<!-- Logo -->
 	<section id="logo">
 		<a href="<?php echo home_url(); ?>">
 			<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/tagwall.png'; ?>" />
@@ -24,7 +22,6 @@
 	</button>
 </nav>
 
-<!-- Menu -->
 <section class="menu-container">
 	<div>
 		<ul>
