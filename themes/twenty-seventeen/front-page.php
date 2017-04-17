@@ -22,10 +22,10 @@
 <?php $query = new WP_Query( $args ); ?>
 
 <section class="carousel">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/1.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/2.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/3.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/4.jpg'; ?>">
+	<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_one', true ); ?>" style="height: 1000px" />
+	<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_two', true ); ?>" style="height: 1000px" />
+	<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_three', true ); ?>" style="height: 1000px" />
+	<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_four', true ); ?>" style="height: 1000px" />
 </section>
 
 <main class="archive-systems">

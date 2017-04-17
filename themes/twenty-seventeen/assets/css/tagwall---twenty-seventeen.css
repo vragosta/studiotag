@@ -299,3 +299,14 @@
 		margin: 1em 0 1.5em;
 	}
 }
+
+/*---Prevents FOUC ---*/
+.carousel img {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+/*---Prevents FOUC ---*/
+.slick-initialized img {
+	opacity: 1;
+}

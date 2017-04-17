@@ -61,6 +61,9 @@ function tagwall_setup() {
 	// Create thumbnail default size.
 	set_post_thumbnail_size( 672, 372, true );
 
+	// Add custom image sizes.
+	add_image_size( 'tagwall-carousel', 1000, 1000, true );
+
 	/**
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -113,7 +116,6 @@ function tagwall_setup() {
 			'id'        => 'blueprint-three-image',
 			'post_type' => 'technical'
 		) );
-
 	}
 }
 
