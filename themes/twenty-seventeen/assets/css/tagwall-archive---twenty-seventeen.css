@@ -284,7 +284,6 @@
 	width: 100%;
 }
 
-
 @media only screen and ( max-width: 767px ) {
 	.archive-container .taxonomies {
 		margin: 2rem 0;
@@ -303,19 +302,43 @@
 
 .archive-container .taxonomy-item {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	flex-direction: column;
 }
 
-.archive-container .taxonomy-item.first {
+.archive-container .taxonomies > .row .taxonomy-item:first-child {
 	justify-content: center;
 	align-items: flex-start;
 }
 
-.archive-container .taxonomy-item.last {
+@media only screen and ( max-width: 767px ) {
+	.archive-container .taxonomies > .row .taxonomy-item:first-child {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.archive-container .taxonomies > .row .taxonomy-item:nth-child( 2 ) {
+	justify-content: center;
+	align-items: center;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .taxonomies > .row .taxonomy-item:nth-child( 2 ) {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.archive-container .taxonomies > .row .taxonomy-item:last-child:not( :nth-child( 2 ) ):not( :first-child ) {
 	justify-content: center;
 	align-items: flex-end;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .taxonomies > .row .taxonomy-item:last-child:not( :nth-child( 2 ) ):not( :first-child ) {
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .archive-container .archive-item:not(:first-child) {
