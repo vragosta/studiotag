@@ -348,6 +348,60 @@ function tagwall_get_wall_title() {
 	return sprintf( $html, $post->post_title, $post->post_name );
 }
 
+/**
+ * Returns all metadata of single system post.
+ *
+ * @since  0.1.0
+ * @param  string $title wall / $title
+ * @uses   sprintf()
+ * @return string void title HTML with slash
+ */
+function tagwall_get_system_metadata( $id ) {
+	return $metadata = [
+		[
+			'title'     => json_decode( get_post_meta( $id, 'custom_one_title', true ) ),
+			'content'   => json_decode( get_post_meta( $id, 'custom_one_content', true ) )
+		],
+		[
+			'title'   => json_decode( get_post_meta( $id, 'custom_two_title', true ) ),
+			'content' => json_decode( get_post_meta( $id, 'custom_two_content', true ) )
+		],
+		[
+			'title'   => json_decode( get_post_meta( $id, 'custom_three_title', true ) ),
+			'content' => json_decode( get_post_meta( $id, 'custom_three_content', true ) )
+		],
+		[
+			'title'    => json_decode( get_post_meta( $id, 'custom_four_title', true ) ),
+			'content'  => json_decode( get_post_meta( $id, 'custom_four_content', true ) )
+		],
+		[
+			'title'    => json_decode( get_post_meta( $id, 'custom_five_title', true ) ),
+			'content'  => json_decode( get_post_meta( $id, 'custom_five_content', true ) )
+		],
+		[
+			'title'     => json_decode( get_post_meta( $id, 'custom_six_title', true ) ),
+			'content'   => json_decode( get_post_meta( $id, 'custom_six_content', true ) )
+		],
+		[
+			'title'   => json_decode( get_post_meta( $id, 'custom_seven_title', true ) ),
+			'content' => json_decode( get_post_meta( $id, 'custom_seven_content', true ) )
+		],
+		[
+			'title'   => json_decode( get_post_meta( $id, 'custom_eight_title', true ) ),
+			'content' => json_decode( get_post_meta( $id, 'custom_eight_content', true ) )
+		],
+		[
+			'title'    => json_decode( get_post_meta( $id, 'custom_nine_title', true ) ),
+			'content'  => json_decode( get_post_meta( $id, 'custom_nine_content', true ) )
+		],
+		[
+			'title'     => json_decode( get_post_meta( $id, 'custom_ten_title', true ) ),
+			'content'   => json_decode( get_post_meta( $id, 'custom_ten_content', true ) )
+		]
+	];
+}
+
+
 // TODO
 function tagwall_var_dump( $custom, $toggle = false ) {
 	echo '<pre>';

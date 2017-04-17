@@ -19,15 +19,6 @@ define( 'TAGWALL_TEMPLATE_URL', get_template_directory_uri() );
 define( 'TAGWALL_INC', get_template_directory() . '/includes/' );
 define( 'TAGWALL_SITE_ADMIN', 1 );
 
-// Define pinterest constants.
-define( 'TAGWALL_ENCORE_GALLERY', 'http://pin.it/nQO04sa' );
-define( 'TAGWALL_SLIMELINE_GALLERY', 'http://pin.it/hryCyU2' );
-define( 'TAGWALL_ION_GALLERY', 'http://pin.it/te8N5sY' );
-define( 'TAGWALL_INDUSTRIAL_SASH_GALLERY', 'http://pin.it/Hb0Tnws' );
-define( 'TAGWALL_GREENWALL_GALLERY', 'http://pin.it/ujvL0-k' );
-define( 'TAGWALL_PREBUILT_GALLERY', 'http://pin.it/c8OBUYS' );
-
-
 // Include compartmentalized functions.
 require_once TAGWALL_INC . 'functions/core.php';
 
