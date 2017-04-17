@@ -63,6 +63,7 @@
 
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
+
 						<div class="taxonomy-item col-xs-12 col-sm-4">
 							<div class="featured-image-circle custom"></div>
 							<h1>Custom</h1>

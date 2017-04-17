@@ -12,51 +12,9 @@
 
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
-		<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
-		<?php
-			$metadata = [
-				[
-					'title'     => json_decode( get_post_meta( $post->ID, 'custom_one_title', true ) ),
-					'content'   => json_decode( get_post_meta( $post->ID, 'custom_one_content', true ) )
-				],
-				[
-					'title'   => json_decode( get_post_meta( $post->ID, 'custom_two_title', true ) ),
-					'content' => json_decode( get_post_meta( $post->ID, 'custom_two_content', true ) )
-				],
-				[
-					'title'   => json_decode( get_post_meta( $post->ID, 'custom_three_title', true ) ),
-					'content' => json_decode( get_post_meta( $post->ID, 'custom_three_content', true ) )
-				],
-				[
-					'title'    => json_decode( get_post_meta( $post->ID, 'custom_four_title', true ) ),
-					'content'  => json_decode( get_post_meta( $post->ID, 'custom_four_content', true ) )
-				],
-				[
-					'title'    => json_decode( get_post_meta( $post->ID, 'custom_five_title', true ) ),
-					'content'  => json_decode( get_post_meta( $post->ID, 'custom_five_content', true ) )
-				],
-				[
-					'title'     => json_decode( get_post_meta( $post->ID, 'custom_six_title', true ) ),
-					'content'   => json_decode( get_post_meta( $post->ID, 'custom_six_content', true ) )
-				],
-				[
-					'title'   => json_decode( get_post_meta( $post->ID, 'custom_seven_title', true ) ),
-					'content' => json_decode( get_post_meta( $post->ID, 'custom_seven_content', true ) )
-				],
-				[
-					'title'   => json_decode( get_post_meta( $post->ID, 'custom_eight_title', true ) ),
-					'content' => json_decode( get_post_meta( $post->ID, 'custom_eight_content', true ) )
-				],
-				[
-					'title'    => json_decode( get_post_meta( $post->ID, 'custom_nine_title', true ) ),
-					'content'  => json_decode( get_post_meta( $post->ID, 'custom_nine_content', true ) )
-				],
-				[
-					'title'     => json_decode( get_post_meta( $post->ID, 'custom_ten_title', true ) ),
-					'content'   => json_decode( get_post_meta( $post->ID, 'custom_ten_content', true ) )
-				]
-			];
-		?>
+		<?php $image   = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
+		<?php $gallery = get_post_meta( $post->ID, 'gallery', true ); ?>
+		<?php $metadata = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_system_metadata( $post->ID ); ?>
 
 		<?php if ( $image ) : ?>
 			<figure class="featured-image">
@@ -75,23 +33,12 @@
 				<div class="specs-container row">
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
+							<li><a href="<?php echo esc_url( $gallery ); ?>" target="_blank">View Gallery</a></li>
 							<?php if ( is_single( 'greenwall' ) ) : ?>
-								<li><a href="<?php echo TAGWALL_GREENWALL_GALLERY; ?>" target="_blank">View Gallery</a></li>
 								<li><a href="#">View LookBook</a></li>
-							<?php else : ?>
-								<?php if ( is_single( 'encore' ) ) : ?>
-									<li><a href="<?php echo TAGWALL_ENCORE_GALLERY; ?>" target="_blank">View Gallery</a></li>
-								<?php elseif ( is_single( 'slimline') ) : ?>
-									<li><a href="<?php echo TAGWALL_SLIMELINE_GALLERY; ?>" target="_blank">View Gallery</a></li>
-								<?php elseif ( is_single( 'ion' ) ) : ?>
-									<li><a href="<?php echo TAGWALL_ION_GALLERY; ?>" target="_blank">View Gallery</a></li>
-								<?php elseif ( is_single( 'industrial-sash' ) ) :?>
-									<li><a href="<?php echo TAGWALL_INDUSTRIAL_SASH_GALLERY; ?>" target="_blank">View Gallery</a></li>
-								<?php elseif ( is_single( 'prebuilt' ) ) : ?>
-									<li><a href="<?php echo TAGWALL_PREBUILT_GALLERY; ?>" target="_blank">View Gallery</a></li>
-									<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
-									<li><a href="#">View LookBook</a></li>
-								<?php endif; ?>
+							<?php elseif ( is_single( 'prebuilt' ) ) : ?>
+								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+								<li><a href="#">View LookBook</a></li>
 							<?php endif; ?>
 						</ul>
 					</div>
@@ -116,7 +63,6 @@
 								</div>
 							<?php endif; ?>
 						<?php endforeach; ?>
-
 					</div>
 				</div>
 			</section>

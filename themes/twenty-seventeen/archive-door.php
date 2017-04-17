@@ -28,23 +28,23 @@
 
 <div class="archive-container <?php echo esc_attr( $door->name ); ?>">
 	<div class="row">
+		<?php $count = 0; ?>
 		<?php foreach( $door->terms as $term ) : ?>
-			<?php $count = 1; ?>
-			<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
+			<?php $term_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 
-			<?php if ( $image ) : ?>
+			<?php if ( $term_image ) : ?>
 				<div class="col-xs-12 col-sm-6">
 					<a name="<?php echo esc_attr( $term->slug ); ?>"></a>
 
 					<figure class="featured-image">
-						<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+						<div style="background-image: url( '<?php echo esc_attr( $term_image ); ?>' );"></div>
 					</figure>
 
 					<h1><?php echo esc_html( $term->name ); ?></h1>
 				</div>
 			<?php endif; ?>
 
-			<?php if ( $count++ % 2 == 0 ) : ?>
+			<?php if ( ++$count % 2 == 0 ) : ?>
 				</div>
 				<hr />
 				<div class="row">
@@ -65,7 +65,7 @@
 
 				<hr />
 
-				<div class="taxonomies <?php echo esc_attr( $term->taxonomy ); ?>">
+				<div class="taxonomies">
 					<div class="row">
 						<?php while ( $taxonomy_query->have_posts() ) : $taxonomy_query->the_post(); ?>
 							<?php $image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post ); ?>
