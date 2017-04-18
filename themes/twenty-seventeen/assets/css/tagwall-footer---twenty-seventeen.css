@@ -8,7 +8,8 @@
 /*--- Footer container element ---*/
 #footer {
 	display: flex;
-	border: 0.1rem solid #221E1F;
+	border-top: 0.1rem solid #221E1F;
+	border-bottom: 0.1rem solid #221E1F;
 	margin: 0 1rem;
 	font-family: HelveticaNeueLT Std;
 }
@@ -45,13 +46,14 @@
 
 /*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
-	width: 35%;
+	width: 30%;
 	border-right: 0.1rem solid #221E1F;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
-	padding: 2.5rem;
+	/*margin: 2.5rem;*/
+	margin: 2.5rem 0;
 }
 
 /*--- Media Query for first section element in footer ---*/
@@ -65,7 +67,7 @@
 /*--- Control the dimensions of the logo in the footer ---*/
 /*--- NOTE: This can be optimized using the image trick. ---*/
 #footer img {
-	width: 15rem;
+	width: 15em;
 }
 
 /*--- Styles for <ul> elements in first section in footer ---*/
@@ -79,12 +81,19 @@
 	display: flex;
 	justify-content: center;
 	color: #221E1F;
+	font-size: 1.4em;
+	font-weight: 300;
+	font-family: HelveticaNeueLT Std;
 }
 
 /*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
 	transition: color 0.3s ease-in-out;
+}
+
+#footer .social a i {
+	font-size: 1.6em;
 }
 
 #footer .social a.twitter:hover {
@@ -109,7 +118,7 @@
 
 /*--- Styles for last ( second ) section element in footer ---*/
 #footer > section:last-child {
-	width: 65%;
+	width: 70%;
 	display: flex;
 }
 
@@ -152,8 +161,13 @@
 	border-bottom: 0.1rem solid #221E1F;
 	margin: 0;
 	text-transform: uppercase;
-	font-size: 2rem;
+	font-size: 1.8em;
+	font-weight: 600;
 	padding: 2rem;
+}
+
+#footer > section:last-child .column h2 + h2 {
+	display: none;
 }
 
 /*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
@@ -164,10 +178,19 @@
 	}
 }
 
+#footer > section:last-child .column span {
+	font-family: Bodoni;
+	font-weight: 400;
+}
+
 /*--- Control height and padding of generated menu elements ---*/
 #footer > section:last-child .column > div {
 	height: 70%;
 	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 
 /*--- Media Query for generated menu elements ---*/
@@ -180,7 +203,8 @@
 
 /*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
 #footer > section:last-child .column a {
-	font-size: 1.5rem;
+	font-size: 1.4em;
+	font-weight: 300;
 }
 
 /*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
@@ -188,7 +212,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	height: 70%;
 	height: 100%;
 	padding: 0;
@@ -204,6 +228,5 @@
 
 /*--- Center align the <li> elements in columns ---*/
 #footer > section:last-child .column ul li {
-	text-align: center;
 	line-height: 1.6;
 }

@@ -61,11 +61,13 @@
 
 				<!-- Column One -->
 				<div class="column one">
+					<h2>Studio<span>Tag</span></h2>
 					<?php dynamic_sidebar( 'Footer Column One' ); ?>
 				</div>
 
 				<!-- Column Two -->
 				<div class="column two">
+					<h2><span>Tag</span>Wall</h2>
 					<?php dynamic_sidebar( 'Footer Column Two' ); ?>
 				</div>
 
