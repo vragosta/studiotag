@@ -225,7 +225,7 @@ function tagwall_studiotag_general_information_save_data($post_id){
 		return;
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['tagwall_studiotag_general_information_nonce'], 'tagwall_tagwall_general_information_save_data' ) )
+	if ( ! wp_verify_nonce( $_POST['tagwall_studiotag_general_information_nonce'], 'tagwall_studiotag_general_information_save_data' ) )
 		return;
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
@@ -258,7 +258,7 @@ function tagwall_tagwall_general_information_save_data($post_id){
 		return;
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['tagwall_studiotag_general_information_nonce'], 'tagwall_tagwall_general_information_save_data' ) )
+	if ( ! wp_verify_nonce( $_POST['tagwall_tagwall_general_information_nonce'], 'tagwall_tagwall_general_information_save_data' ) )
 		return;
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
