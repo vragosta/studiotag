@@ -27,7 +27,7 @@
 		<ul>
 			<li><a href="#" data-id="company">Company</a></li>
 			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
-			<li><a href="#">Projects</a></li>
+			<li><a href="#" data-id="projects">Projects</a></li>
 			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
 			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
 		</ul>
@@ -37,5 +37,10 @@
 			<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
 			<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
 		</ul>
+		<ul>
+			<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+			<li><a href="<?php echo home_url( '/gallery/' ); ?>">Gallery</a></li>
+		</ul>
+		</div>
 	</div>
 </section>
