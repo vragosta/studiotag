@@ -118,7 +118,7 @@
 /*--- Styles for all links in menu container ---*/
 .menu-container ul li a {
 	font-size: 3rem; /*--- Control the font size of the second <ul> links here ---*/
-	font-weight: 200;
+	font-weight: 300;
 	text-decoration: none;
 	color: #A2A4A7;
 	transition: color 0.3s ease-in-out;

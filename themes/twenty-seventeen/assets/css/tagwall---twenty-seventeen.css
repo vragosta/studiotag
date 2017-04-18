@@ -227,7 +227,7 @@
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
 	font-size: 2em;
-	font-weight: 400;
+	font-weight: 300;
 	margin: 1em 0;
 	font-family: HelveticaNeueLT Std;
 }
@@ -255,7 +255,7 @@
 	font-family: HelveticaNeueLT Std;
 	color: #221E1F;
 	font-size: 1.2em;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1.3;
 	word-break: break-word;
 	hyphens: auto;
