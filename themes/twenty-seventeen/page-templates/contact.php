@@ -27,16 +27,10 @@
 				<div class="contact-col">
 					<h3>STUDIOTAG General Information</h3>
 					<?php echo get_post_meta( $post->ID, 'studiotag_info', true );?>
-					<div>djfkldsjf</div>
-					<hr>
-					<div>jfkdlsjfdks</div>
 				</div>
 				<div class="contact-col">
 					<h3>TAGWALL General Information</h3>
 					<?php echo get_post_meta( $post->ID, 'tagwall_info', true );?>
-					<div>djfkldsjf</div>
-					<hr>
-					<div>jfkdlsjfdks</div>
 				</div>
 			</div>
 		</section>
