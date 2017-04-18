@@ -357,7 +357,7 @@ function tagwall_get_wall_title() {
  * @return string void title HTML with slash
  */
 function tagwall_get_system_metadata( $id ) {
-	return $metadata = [
+	$metadata = [
 		[
 			'title'     => json_decode( get_post_meta( $id, 'custom_one_title', true ) ),
 			'content'   => json_decode( get_post_meta( $id, 'custom_one_content', true ) )
@@ -399,6 +399,21 @@ function tagwall_get_system_metadata( $id ) {
 			'content'   => json_decode( get_post_meta( $id, 'custom_ten_content', true ) )
 		]
 	];
+
+	return array_filter( $metadata );
+}
+
+function tagwall_get_carousel_images( $id ) {
+	$carousel = [
+		'one'   => get_post_meta( $id, 'carousel_image_one', true ),
+		'two'   => get_post_meta( $id, 'carousel_image_two', true ),
+		'three' => get_post_meta( $id, 'carousel_image_three', true ),
+		'four'  => get_post_meta( $id, 'carousel_image_four', true ),
+		'five'  => get_post_meta( $id, 'carousel_image_five', true ),
+		'six'   => get_post_meta( $id, 'carousel_image_six', true )
+	];
+
+	return array_filter( $carousel );
 }
 
 
