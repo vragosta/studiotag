@@ -378,6 +378,15 @@ function styles() {
 		);
 	endif;
 
+	if ( is_page_template( 'page-templates/single-column-list.php' ) ) :
+		wp_enqueue_style(
+			'tagwall-single-column-list',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-single-column-list---twenty-seventeen.css",
+			array(),
+			TAGWALL_VERSION
+		);
+	endif;
+
 	wp_enqueue_style(
 		'tagwall',
 		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",
