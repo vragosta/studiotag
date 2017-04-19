@@ -330,39 +330,27 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
 function tagwall_get_wall_title() {
 	global $post;
 
-	if ($post->post_title === "Contact") :
-		$html = '
-			<section class="wall-title %2$s">
-				<h1>Tag</h1>
+	$html = '
+		<section class="wall-title %1$s">
+			<h1>%2$s</h1>
 
-				<div class="slash">
-					<hr />
-					<hr />
-					<hr />
-				</div>
+			<div class="slash">
+				<hr />
+				<hr />
+				<hr />
+			</div>
 
-				<h1>%1$s Us</h1>
+			<h1>%3$s</h1>
 
-			</section>
-		';
-	else :
-		$html = '
-			<section class="wall-title %2$s">
-				<h1>Wall</h1>
+		</section>
+	';
 
-				<div class="slash">
-					<hr />
-					<hr />
-					<hr />
-				</div>
-
-				<h1>%1$s</h1>
-
-			</section>
-		';
-	endif;
-
-	return sprintf( $html, $post->post_title, $post->post_name );
+	return sprintf(
+		$html,
+		$post->post_name,
+		( $post->post_title === 'contact' ) ? 'Tag' : 'Wall',
+		$post->post_title
+	);
 }
 
 /**
