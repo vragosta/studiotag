@@ -79,6 +79,8 @@
 							<h2><?php echo term_description( $term->term_id ); ?></h2>
 						</div>
 					</div>
+
+					<hr />
 				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'klo-ladder-pull' ) : ?>
@@ -111,6 +113,7 @@
 
 								<?php if ( $count++ % 3 == 0 ) : ?>
 									</div>
+									<hr />
 									<div class="content row">
 								<?php endif; ?>
 
@@ -168,6 +171,8 @@
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					</div>
+
+					<hr />
 				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-lever' ) : ?>
@@ -283,10 +288,6 @@
 
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
-
-						<div class="finish-item col-xs-12 col-sm-4">
-							<div class="featured-image-circle not-visible"></div>
-						</div>
 
 					</div>
 					<hr />

@@ -20,12 +20,14 @@
 ?>
 
 <?php $query = new WP_Query( $args ); ?>
+<?php $carousel_images = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_carousel_images( $post->ID ); ?>
 
 <section class="carousel">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/1.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/2.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/3.jpg'; ?>">
-	<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/Carousel_Images/4.jpg'; ?>">
+	<?php foreach( $carousel_images as $image_url ) : ?>
+		<?php if ( $image_url ) : ?>
+			<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_one', true ); ?>" />
+		<?php endif; ?>
+	<?php endforeach; ?>
 </section>
 
 <main class="archive-systems">

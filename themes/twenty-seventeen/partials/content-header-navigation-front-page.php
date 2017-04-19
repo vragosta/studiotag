@@ -23,19 +23,27 @@
 </nav>
 
 <section class="menu-container">
-	<div>
-		<ul>
-			<li><a href="#" data-id="company">Company</a></li>
-			<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
-			<li><a href="#">Projects</a></li>
-			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
-			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
-		</ul>
-		<ul>
-			<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
-			<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
-			<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
-			<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
-		</ul>
+	<div class="row">
+		<div class="static-menu col-xs-12 col-sm-6">
+			<ul>
+				<li><a href="#" data-id="company">Company</a></li>
+				<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
+				<li><a href="#" data-id="projects">Projects</a></li>
+				<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
+				<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="dynamic-menu col-xs-12 col-sm-6">
+			<ul class="company">
+				<li><a href="<?php echo home_url( '/history/' ); ?>">History</a></li>
+				<li><a href="<?php echo home_url( '/possibilities/' ); ?>">Possibilities</a></li>
+				<li><a href="<?php echo home_url( '/focus/' ); ?>">Focus</a></li>
+				<li><a href="<?php echo home_url( '/team/' ); ?>">Team</a></li>
+			</ul>
+			<ul class="projects not-visible">
+				<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
+				<li><a href="<?php echo home_url( '/gallery/' ); ?>">Gallery</a></li>
+			</ul>
+		</div>
 	</div>
 </section>

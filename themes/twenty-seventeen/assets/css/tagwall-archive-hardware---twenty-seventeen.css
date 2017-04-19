@@ -12,7 +12,7 @@
 .archive-container.hardware .content {
 	max-width: 1550px;
 	margin: 0 auto;
-	padding: 4em 0;
+	padding: 2em 0;
 	display: flex;
 }
 
@@ -35,6 +35,10 @@
 	.archive-container.hardware .content > div:not(:first-child) {
 		margin: 2em 0;
 	}
+}
+
+.archive-container.hardware .hgu-finish .content {
+	min-height: 240px;
 }
 
 .archive-container.hardware .content .settings {
@@ -87,4 +91,6 @@
 .archive-container.hardware .content .finish-item h2 {
 	margin: 0;
 	text-align: center;
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
 }

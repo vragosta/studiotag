@@ -6,7 +6,7 @@
  */
 
 .archive-container.door > .row {
-	padding: 6rem 10%;
+	padding: 2em 20% 0;
 }
 
 @media only screen and ( max-width: 767px ) {

@@ -6,6 +6,7 @@
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
  */
+
 /**
  * Create 'custom Meta' metaboxes for the 'glass' custom post type.
  *
@@ -36,6 +37,7 @@ function tagwall_page_metaboxes() {
 	);
 }
 add_action( 'add_meta_boxes', 'tagwall_page_metaboxes' );
+
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
  *
@@ -46,6 +48,7 @@ add_action( 'add_meta_boxes', 'tagwall_page_metaboxes' );
 function tagwall_carousel_images_callback( $post ) {
 	// Add a nonce field so we can check for it later.
 	wp_nonce_field( 'tagwall_carousel_images_save_data', 'tagwall_carousel_images_nonce' );
+
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
@@ -108,6 +111,7 @@ function tagwall_carousel_images_callback( $post ) {
 		</tr>
 	</table><?php
 }
+
 /**
  * Saves and sanitizes the POST data.
  *
@@ -123,15 +127,19 @@ function tagwall_carousel_images_save_data( $post_id ) {
 	// Check if our nonce is set.
 	if ( ! isset( $_POST['tagwall_carousel_images_nonce'] ) )
 		return;
+
 	// Verify that the nonce is valid.
 	if ( ! wp_verify_nonce( $_POST['tagwall_carousel_images_nonce'], 'tagwall_carousel_images_save_data' ) )
 		return;
+
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
 		return;
+
 	// Check the user's permissions.
 	if ( ! current_user_can( 'edit_page', $post_id ) )
 		return;
+
 	// Sanitize user input.
 	$carousel_image_one   = sanitize_text_field( $_POST['carousel_image_one'] );
 	$carousel_image_two   = sanitize_text_field( $_POST['carousel_image_two'] );
@@ -139,6 +147,7 @@ function tagwall_carousel_images_save_data( $post_id ) {
 	$carousel_image_four  = sanitize_text_field( $_POST['carousel_image_four'] );
 	$carousel_image_five  = sanitize_text_field( $_POST['carousel_image_five'] );
 	$carousel_image_six  = sanitize_text_field( $_POST['carousel_image_six'] );
+
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'carousel_image_one', $carousel_image_one );
 	update_post_meta( $post_id, 'carousel_image_two', $carousel_image_two );
@@ -235,7 +244,7 @@ function tagwall_studiotag_general_information_save_data($post_id){
 	// Check the user's permissions.
 	if ( ! current_user_can( 'edit_page', $post_id ) )
 		return;
-	
+
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'studiotag_info', $_POST['studiotag_info'] );
 }
@@ -269,9 +278,8 @@ function tagwall_tagwall_general_information_save_data($post_id){
 	if ( ! current_user_can( 'edit_page', $post_id ) )
 		return;
 
-	
+
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'tagwall_info', $_POST['tagwall_info']);
 }
 add_action( 'save_post', 'tagwall_tagwall_general_information_save_data' );
-

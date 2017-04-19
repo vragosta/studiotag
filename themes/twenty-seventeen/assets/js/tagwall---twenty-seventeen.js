@@ -23,22 +23,58 @@
 
 			if ( $( this ).hasClass( 'is-active' ) ) {
 
-				// Remove the class 'not-visible' and add the class 'visible' class to the menu container.
 				$( '.menu-container' )
 					.removeClass( 'not-visible' )
 					.addClass( 'visible' );
+
+				$( 'body' ).css( 'overflow', 'hidden' );
 			} else {
 
 				// Remove the class 'visible' and add the class 'not-visible' class to the menu container.
 				$( '.menu-container' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+
+				$( 'body' ).css( 'overflow', 'auto' );
 			}
 
-			// Make sure the second list element within menu container is not displayed by default.
-			$( '.menu-container ul:last-child' )
-				.removeClass( 'visible' );
-		});
+		} );
+
+		/**
+		 * On hover display menu, display the various menu.
+		 *
+		 * @since 0.1.0
+		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
+		 */
+		$( 'header .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+			var id = $( this ).data( 'id' );
+
+			if ( id === 'company' ) {
+				$( '.company' )
+					.removeClass( 'not-visible' )
+					.addClass( 'visible' );
+
+				$( '.projects' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+			} else if ( id === 'projects' ) {
+				$( '.projects' )
+					.removeClass( 'not-visible' )
+					.addClass( 'visible' );
+
+				$( '.company' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+			} else {
+				$( '.company' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
+				$( '.projects' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+			}
+		} );
 
 		/**
 		 * On hover display menu, display the other menu.
@@ -46,38 +82,17 @@
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.menu-container ul:first-child li a' ).on( 'mouseenter', function() {
-
-			// Define local variables.
+		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
 			var id = $( this ).data( 'id' );
 
-			if ( id == 'company' ) {
+			$( '.wall-details .dynamic-menu > div:not( .' + id + ' )' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
 
-				// Add class 'visible' to the menu
-				$( '.menu-container ul:last-child' )
-					.addClass( 'visible' );
-			} else {
-
-				// Remove calss 'visible' from the menu.
-				$( '.menu-container ul:last-child' )
-					.removeClass( 'visible' );
-			}
-		});
-
-		/**
-		 * Dim the sub menus on hover of main menu items on the wall details template.
-		 *
-		 * @since 0.1.0
-		 * @uses  data(), width(), removeClass(), addClass()
-		 */
-		$( '.wall-details .details-menu h1' ).on( 'mouseenter', function() {
-			var id = $( this ).data( 'menu' );
-
-			if ( $( window ).width() > 768 ) {
-				$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-			}
-		});
+			$( '.' + id )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+		} );
 
 		/**
 		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
@@ -94,11 +109,11 @@
 		});
 
 		// Slick carousel controller
-		$('.carousel').slick({
-			slidesToShow: 1,
-			autoplay: true,
-  			autoplaySpeed: 3000,
-  			speed: 600,
+		$( '.carousel' ).slick({
+			slidesToShow  : 1,
+			autoplay      : true,
+			autoplaySpeed : 3000,
+			speed         : 600
 		});
 
 	});

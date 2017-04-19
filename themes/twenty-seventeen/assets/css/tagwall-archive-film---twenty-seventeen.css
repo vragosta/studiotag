@@ -7,7 +7,7 @@
 
 .archive-container.film .content {
 	max-width: 1550px;
-	margin: 2em auto;
+	margin: 4em auto 10em;
 	display: flex;
 }
 
@@ -25,7 +25,9 @@
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
 	font-size: 2em;
-	font-weight: 300;
+	font-weight: 400;
+	word-break: break-word;
+	hyphens: auto;
 }
 
 @media only screen and ( max-width: 1499px ) and ( min-width: 992px ) {
