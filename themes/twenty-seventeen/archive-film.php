@@ -27,7 +27,29 @@
 </div>
 
 <div class="archive-container <?php echo esc_attr( $film->name ); ?>">
+
+	<div class="row indent">
+		<div class="col-xs-12 col-sm-6">
+			<p>
+				Tagwall provides full service design, print and installation of colored glass films.
+				Our experienced designers can take your ideas seamlessly from concept to final production.
+				Chroma brand decorative films transform glass and architectural surfaces into visually engaging facades.
+			</p>
+
+			<p>Transform any glass surface with color from floor to ceiling or partial accent band.
+				Chroma Transparent Glass Films off exceptional clarity, vibrant hues, and a vast spectrum of color choices.
+				Chroma Films can be layered, printed on, and diecut to accomplish almost any design.
+				Personalize Chroma Film by incorporat- ing logos, room names and more.
+			</p>
+
+			<p>
+				For any inquiries regarding special projects please contact us directly.
+			</p>
+		</div>
+	</div>
+
 	<?php foreach( $film->terms as $term ) : ?>
+		<?php $count          = 1; ?>
 		<?php $image          = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'featured_image_url' ); ?>
 		<?php $portfolio_link = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_term_meta( $term->term_id, 'portfolio_link' ); ?>
 		<?php $taxonomy_query = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_post_type_term_query( $post_type, $term ); ?>
@@ -87,6 +109,7 @@
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					</div>
+					<hr />
 				</div>
 			<?php endif; ?>
 

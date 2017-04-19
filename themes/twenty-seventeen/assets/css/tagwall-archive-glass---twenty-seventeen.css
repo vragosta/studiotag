@@ -16,11 +16,9 @@
 	}
 }
 
-.archive-container.glass .row.indent {
+/*.archive-container.glass .row.indent {
 	max-width: 1200px;
-	/*max-width: 1350px;*/
 	margin: 10em auto;
-	/*padding: 0 6em;*/
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -34,7 +32,7 @@
 		margin: 2em auto;
 		padding: 0 1.5em;
 	}
-}
+}*/
 
 .archive-container.glass .child:not(:first-child) {
 	padding: 6rem 0;
