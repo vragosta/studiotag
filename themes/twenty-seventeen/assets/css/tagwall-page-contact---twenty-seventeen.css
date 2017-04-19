@@ -5,66 +5,63 @@
  * Location: page-templates/contact.php
  */
 
- .contact-content {
- 	margin-left: 2rem;
- }
+.contact-content {
+	margin-left: 2rem;
+}
 
-/*Allows metabox items to align with contact us info*/
- .contact-content .container{
-    padding: 0;
-    margin-left: 20em;
- }
+/*--- Allows metabox items to align with contact us info ---*/
+.contact-content .container {
+  padding: 0;
+  margin-left: 20em;
+}
 
-/*Orients Metabox items horizontally by making them inline*/
- .contact-col{
- 	padding: 2rem;
- 	width: 450px;
- 	display: inline-block;
- }
+/*--- Orients Metabox items horizontally by making them inline ---*/
+.contact-col {
+	padding: 2rem;
+	width: 450px;
+	display: inline-block;
+}
 
-/*horizontal line is now black*/
- .contact-col hr{
- 	display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #000;
-    margin: 1em 0;
-    padding: 0; 
- }
+/*--- horizontal line is now black ---*/
+.contact-col hr {
+	display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #221E1F;
+  margin: 1em 0;
+  padding: 0;
+}
 
-/*Bottom part of metabox text is gray*/
- .contact-col div:last-child {
- 	color: #A2A4A7;
- }
+/*--- Bottom part of metabox text is gray ---*/
+.contact-col div:last-child {
+	color: #A2A4A7;
+}
 
-/*Embedded google maps*/
- .map{
- 	display: flex;
- 	justify-content: center;
- 	padding-top: 400px;
- 	margin-bottom: 2rem;
- }
+/*--- Embedded google maps ---*/
+.map {
+	display: flex;
+	justify-content: center;
+	padding-top: 400px;
+	margin-bottom: 2rem;
+}
 
-/*Tablet media queries*/
- @media only screen and ( max-width: 767px ) {
- 	/*display block so that they are not next to each other*/
- 	.contact-col{
- 		display: block;
- 	}
+@media only screen and ( max-width: 767px ) {
+	.contact-col {
+		display: block;
+	}
 
- 	/*Must remove margins so that it can be centered at mobile displays*/
- 	.contact-content .container{
- 		margin-left: 0;
- 		display: flex;
- 		flex-direction: column;
- 		align-items: center;
- 	}
- }
+  /*--- Must remove margins so that it can be centered at mobile displays ---*/
+	.contact-content .container {
+		margin-left: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
 
- /*Phone media queries*/
- @media only screen and ( max-width: 425px ) {
- 	.contact-col{
- 		width: 300px;
- 	}
- }
-
+/*--- Phone media queries ---*/
+@media only screen and ( max-width: 425px ) {
+	.contact-col {
+		width: 300px;
+	}
+}
