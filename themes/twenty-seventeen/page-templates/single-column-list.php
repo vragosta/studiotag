@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Single-Column-List
+ * Template Name: Single - Column List
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
