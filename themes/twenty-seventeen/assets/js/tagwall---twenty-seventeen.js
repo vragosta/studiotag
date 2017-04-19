@@ -41,12 +41,12 @@
 		} );
 
 		/**
-		 * On hover display menu, display the other menu.
+		 * On hover display menu, display the various menu.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+		$( 'header .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
 			var id = $( this ).data( 'id' );
 
 			if ( id === 'company' ) {
@@ -77,19 +77,22 @@
 		} );
 
 		/**
-		 * Dim the sub menus on hover of main menu items on the wall details template.
+		 * On hover display menu, display the other menu.
 		 *
 		 * @since 0.1.0
-		 * @uses  data(), width(), removeClass(), addClass()
+		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.wall-details .details-menu h1' ).on( 'mouseenter', function() {
-			var id = $( this ).data( 'menu' );
+		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+			var id = $( this ).data( 'id' );
 
-			if ( $( window ).width() > 768 ) {
-				$( '.wall-details .details-menu .menu' ).removeClass( 'dim' );
-				$( '.wall-details .details-menu .menu:not(.' + id + ')' ).addClass( 'dim' );
-			}
-		});
+			$( '.wall-details .dynamic-menu > div:not( .' + id + ' )' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+
+			$( '.' + id )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+		} );
 
 		/**
 		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
@@ -107,10 +110,10 @@
 
 		// Slick carousel controller
 		$( '.carousel' ).slick({
-			slidesToShow: 1,
-			autoplay: true,
-			autoplaySpeed: 3000,
-			speed: 600,
+			slidesToShow  : 1,
+			autoplay      : true,
+			autoplaySpeed : 3000,
+			speed         : 600
 		});
 
 	});
