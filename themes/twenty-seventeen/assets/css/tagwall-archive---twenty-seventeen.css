@@ -266,7 +266,7 @@
 .archive-container .featured-image-circle + h1 {
 	margin: 2rem 0 0;
 	text-align: center;
-	font-weight: 300;
+	font-weight: 600;
 	width: 180px;
 }
 
@@ -342,11 +342,29 @@
 }
 
 .archive-container .archive-item:not(:first-child) {
-	margin: 15em 0;
+	margin: 10em 0;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.archive-container .archive-item:not(:first-child) {
 		margin: 5em 0;
+	}
+}
+
+.archive-container .row.indent {
+	max-width: 1200px;
+	margin: 10em auto;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container .row.indent {
+		margin: 4em auto;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container .row.indent {
+		margin: 2em auto;
+		padding: 0 1.5em;
 	}
 }

@@ -13,7 +13,7 @@
 	display: flex;
 	align-items: center;
 	height: 15em;
-	margin: 12em auto;
+	margin: 12em auto 0;
 	max-width: 1500px;
 	padding-left: 2rem;
 }
@@ -230,7 +230,7 @@
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
 	font-size: 2em;
-	font-weight: 300;
+	font-weight: 600;
 	margin: 1em 0;
 	font-family: HelveticaNeueLT Std;
 }
@@ -280,7 +280,8 @@
 .grid .info a.more {
 	color: #A3A5A8;
 	text-decoration: underline;
-	font-size: 1.2em;
+	font-size: 1.5em;
+	font-weight: 600;
 	margin-top: 1.5em;
 }
 
@@ -320,7 +321,7 @@
 }
 
 .wall-details .menu-container {
-	padding-top: 6em;
+	padding-top: 15em;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -471,6 +472,7 @@ header .menu-container .dynamic-menu ul li a {
 
 .menu-container .dynamic-menu h2 {
 	font-size: 1.8em;
+	font-weight: 600;
 	margin: 0;
 }
 

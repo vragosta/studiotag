@@ -5,6 +5,19 @@
  * Location: archive-film.php
  */
 
+.archive-container.film .row.indent {
+	margin-top: 0;
+}
+
+.archive-container.film .row.indent p {
+	font-size: 1.4em;
+	font-weight: 300;
+}
+
+.archive-container.film .row.indent p + p {
+	margin-top: 1em;
+}
+
 .archive-container.film .content {
 	max-width: 1550px;
 	margin: 4em auto 10em;
@@ -25,9 +38,10 @@
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
 	font-size: 2em;
-	font-weight: 300;
+	font-weight: 600;
 	word-break: break-word;
 	hyphens: auto;
+	line-height: 1.3;
 }
 
 @media only screen and ( max-width: 1499px ) and ( min-width: 992px ) {

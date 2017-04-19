@@ -211,6 +211,7 @@
 									<?php endwhile; ?>
 									<?php wp_reset_postdata(); ?>
 								</div>
+								<hr />
 							</div>
 						<?php endif; ?>
 					<?php endforeach; ?>

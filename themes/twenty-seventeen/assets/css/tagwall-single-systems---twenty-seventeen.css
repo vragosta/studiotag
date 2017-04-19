@@ -54,6 +54,7 @@
 /*--- Control styles of 'h1' in title container ---*/
 .systems-single .title-container h1 {
 	font-size: 8rem;
+	font-weight: 600;
 	margin: 12rem 0 4rem;
 }
 
@@ -175,7 +176,6 @@
 
 /*--- Styles for 'custom' elements ---*/
 .systems-single .custom  {
-	/*padding: 2rem 0;*/
 	padding: 3rem 0;
 	border-bottom: 0.1rem solid #221E1F;
 }
@@ -193,6 +193,7 @@
 /*--- Control margin for 'h2' elements in the custom element ---*/
 .systems-single .custom h2 {
 	margin: 0;
+	font-weight: 600;
 }
 
 /*--- Media Query to control font size for 'h2' elements ---*/

@@ -33,7 +33,7 @@
 						<div class="static-menu col-xs-12 col-sm-7">
 							<ul>
 								<?php foreach( $post_types as $post_type ) : ?>
-									<li><a href="#" data-id="<?php echo esc_attr( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></a></li>
+									<li><a data-id="<?php echo esc_attr( $post_type->name ); ?>"><?php echo esc_html( $post_type->label ); ?></a></li>
 								<?php endforeach; ?>
 							</ul>
 						</div>
@@ -51,7 +51,7 @@
 									<ul>
 										<?php if ( $post_type->query->have_posts() ) : ?>
 											<?php while( $post_type->query->have_posts() ) : $post_type->query->the_post(); ?>
-												<li><a href="<?php the_permalink(); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
+												<li><a href="<?php echo home_url( '/' . $post_type->slug . '#' . $post->post_name ); ?>"><?php echo esc_html( $post->post_title ); ?></a></li>
 											<?php endwhile; ?>
 											<?php wp_reset_postdata(); ?>
 										<?php endif; ?>

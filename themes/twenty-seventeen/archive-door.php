@@ -95,6 +95,7 @@
 						</div>
 
 					</div>
+					<hr />
 				</div>
 			</section>
 		<?php endif; ?>
