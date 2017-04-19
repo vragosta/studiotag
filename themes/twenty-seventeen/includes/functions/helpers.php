@@ -330,20 +330,37 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
 function tagwall_get_wall_title() {
 	global $post;
 
-	$html = '
-		<section class="wall-title %2$s">
-			<h1>Wall</h1>
+	if ($post->post_title === "Contact") :
+		$html = '
+			<section class="wall-title %2$s">
+				<h1>Tag</h1>
 
-			<div class="slash">
-				<hr />
-				<hr />
-				<hr />
-			</div>
+				<div class="slash">
+					<hr />
+					<hr />
+					<hr />
+				</div>
 
-			<h1>%1$s</h1>
+				<h1>%1$s Us</h1>
 
-		</section>
-	';
+			</section>
+		';
+	else :
+		$html = '
+			<section class="wall-title %2$s">
+				<h1>Wall</h1>
+
+				<div class="slash">
+					<hr />
+					<hr />
+					<hr />
+				</div>
+
+				<h1>%1$s</h1>
+
+			</section>
+		';
+	endif;
 
 	return sprintf( $html, $post->post_title, $post->post_name );
 }
@@ -415,7 +432,6 @@ function tagwall_get_carousel_images( $id ) {
 
 	return array_filter( $carousel );
 }
-
 
 // TODO
 function tagwall_var_dump( $custom, $toggle = false ) {
