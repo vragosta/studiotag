@@ -13,7 +13,9 @@
 	display: flex;
 	align-items: center;
 	height: 15em;
-	margin: 12em 0 0;
+	margin: 12em auto;
+	max-width: 1500px;
+	padding-left: 2rem;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -309,4 +311,196 @@
 /*---Prevents FOUC ---*/
 .slick-initialized img {
 	opacity: 1;
+}
+
+.menu-container {
+	background: #fff;
+}
+
+.wall-details .menu-container {
+	padding-top: 6em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details .menu-container {
+		padding-top: 0;
+	}
+}
+
+header .menu-container {
+	position: fixed;
+	top: 7.2rem;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top: 15em;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+@media only screen and ( max-width: 767px ) {
+	header .menu-container {
+		padding-top: 10em;
+	}
+}
+
+header .menu-container.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.menu-container > div {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.wall-details .menu-container .static-menu ul li {
+	line-height: 1.1;
+}
+
+.wall-details .menu-container .dynamic-menu ul li {
+	line-height: 1.3;
+}
+
+header .menu-container ul li {
+	line-height: 1.2;
+}
+
+.menu-container ul li a {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+.wall-details .menu-container ul li a:hover {
+	color: #A2A4A7;
+}
+
+header .menu-container ul li a {
+	color: #A2A4A7;
+}
+
+/*--- Hover effect for all links in menu container ---*/
+header .menu-container ul li a:hover {
+	color: #221E1F;
+}
+
+.menu-container .static-menu {
+	border-right: 0.1rem solid #221E1f;
+	padding-left: 2rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.menu-container .static-menu {
+		border: none;
+	}
+}
+
+.menu-container .static-menu ul {
+	padding: 0;
+}
+
+.menu-container .static-menu ul li a {
+	font-size: 6em;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.menu-container .static-menu ul li a {
+		font-size: 5em;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.menu-container .static-menu ul li a {
+		font-size: 3em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	header .menu-container .static-menu ul li a {
+		font-size: 3.5em;
+	}
+
+	.wall-details .menu-container .static-menu ul li a {
+		font-size: 3em;
+	}
+}
+
+.wall-details .dynamic-menu {
+	padding-left: 10em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details .dynamic-menu {
+		padding-left: 2rem;
+	}
+}
+
+.wall-details .dynamic-menu > div:not( :first-child ) {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.menu-container .dynamic-menu ul li a {
+	font-weight: 200;
+}
+
+.wall-details .menu-container .dynamic-menu ul li a {
+	font-size: 2.2rem;
+}
+
+header .menu-container .dynamic-menu ul li a {
+	font-size: 3rem;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	header .menu-container .dynamic-menu ul li a {
+		font-size: 2.5rem;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	header .menu-container .dynamic-menu ul li a {
+		font-size: 2rem;
+	}
+}
+
+.menu-container .dynamic-menu h2 {
+	font-size: 1.8em;
+	margin: 0;
+}
+
+.menu-container .dynamic-menu h2 span {
+	color: #A3A5A8;
+}
+
+.wall-details .menu-container .dynamic-menu ul {
+	padding: 0;
+}
+
+header .menu-container .dynamic-menu ul {
+	padding-left: 1em;
+}
+
+.wall-details .dynamic-menu > div,
+.menu-container .dynamic-menu .company,
+.menu-container .dynamic-menu .projects {
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+	position: absolute;
+}
+
+.wall-details .dynamic-menu > div.visible,
+.menu-container .dynamic-menu .company.visible,
+.menu-container .dynamic-menu .projects.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.wall-details .dynamic-menu > div.not-visible,
+.menu-container .dynamic-menu .company.not-visible,
+.menu-container .dynamic-menu .projects.not-visible {
+	opacity: 0;
+	visibility: hidden;
 }
