@@ -15,7 +15,7 @@
 		</a>
 	</section>
 
-	<section class="menu-container">
+	<section>
 		<ul id="menu">
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
