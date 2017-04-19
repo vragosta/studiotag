@@ -306,6 +306,7 @@
 .carousel img {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
+	max-height: 1000px;
 }
 
 /*---Prevents FOUC ---*/
