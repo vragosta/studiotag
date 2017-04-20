@@ -8,6 +8,7 @@
  */
 function tagwall_user_fields( $fields ) {
 	$fields['job_title']    = 'Job Title';
+	$fields['job_status']   = 'Job Status';
 	$fields['hashtag']      = 'Hashtag';
 	$fields['facebook']     = 'Facebook';
 	$fields['twitter']      = 'Twitter';
@@ -16,6 +17,7 @@ function tagwall_user_fields( $fields ) {
 	$fields['linkedin']     = 'LinkedIn';
 	$fields['direct_phone'] = 'Direct Phone';
 	$fields['cell_phone']   = 'Cell Phone';
+	$fields['image']        = 'User Image URL:';
 
 	return $fields;
 }
@@ -36,6 +38,7 @@ function tagwall_save_user_fields( $user_id ) {
 
 	// Sanitize user input.
 	$job_title    = sanitize_text_field( $_POST['job_title'] );
+	$job_status   = sanitize_text_field( $_POST['job_status'] );
 	$hashtag      = sanitize_text_field( $_POST['hashtag'] );
 	$facebook     = sanitize_text_field( $_POST['facebook'] );
 	$twitter      = sanitize_text_field( $_POST['twitter'] );
@@ -44,8 +47,10 @@ function tagwall_save_user_fields( $user_id ) {
 	$linkedin     = sanitize_text_field( $_POST['linkedin'] );
 	$direct_phone = sanitize_text_field( $_POST['direct_phone'] );
 	$cell_phone   = sanitize_text_field( $_POST['cell_phone'] );
+	$image        = sanitize_text_field( $_POST['image'] );
 
 	update_usermeta( $user_id, 'job_title', $job_title );
+	update_usermeta( $user_id, 'job_status', $job_status );
 	update_usermeta( $user_id, 'hashtag', $hashtag );
 	update_usermeta( $user_id, 'facebook', $facebook );
 	update_usermeta( $user_id, 'twitter', $twitter );
@@ -54,6 +59,7 @@ function tagwall_save_user_fields( $user_id ) {
 	update_usermeta( $user_id, 'linkedin', $linkedin );
 	update_usermeta( $user_id, 'direct_phone', $direct_phone );
 	update_usermeta( $user_id, 'cell_phone', $cell_phone );
+	update_usermeta( $user_id, 'image', $image );
 }
 add_action( 'personal_options_update', 'tagwall_save_user_fields' );
 add_action( 'edit_user_profile_update', 'tagwall_save_user_fields' );

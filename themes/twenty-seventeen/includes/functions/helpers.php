@@ -327,42 +327,30 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
  * @uses   sprintf()
  * @return string void title HTML with slash
  */
-function tagwall_get_wall_title() {
+function tagwall_get_wall_title( $blog = false ) {
 	global $post;
 
-	if ($post->post_title === "Contact") :
-		$html = '
-			<section class="wall-title %2$s">
-				<h1>Tag</h1>
+	if ( $blog )
+		$post = get_post( get_option( 'page_for_posts' ) );
 
-				<div class="slash">
-					<hr />
-					<hr />
-					<hr />
-				</div>
+	$html = '
+		<section class="wall-title %1$s">
+			<h1>%2$s</h1>
+			<div class="slash">
+				<hr />
+				<hr />
+				<hr />
+			</div>
+			<h1>%3$s</h1>
+		</section>
+	';
 
-				<h1>%1$s Us</h1>
-
-			</section>
-		';
-	else :
-		$html = '
-			<section class="wall-title %2$s">
-				<h1>Wall</h1>
-
-				<div class="slash">
-					<hr />
-					<hr />
-					<hr />
-				</div>
-
-				<h1>%1$s</h1>
-
-			</section>
-		';
-	endif;
-
-	return sprintf( $html, $post->post_title, $post->post_name );
+	return sprintf(
+		$html,
+		$post->post_name,
+		( $post->post_name === 'contact' || $post->post_name === 'team' ) ? 'Tag' : 'Wall',
+		$post->post_title
+	);
 }
 
 /**
@@ -431,6 +419,106 @@ function tagwall_get_carousel_images( $id ) {
 	];
 
 	return array_filter( $carousel );
+}
+
+function tagwall_get_job_status_array() {
+	return (object) $users = [
+		'executive' => [
+			'name' => 'Executive',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Executive'
+				] ]
+			] )
+		],
+
+		'accounting' => [
+			'name'  => 'Accounting',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Accounting'
+				] ]
+			] )
+		],
+
+		'studiotag' => [
+			'name'  => 'StudioTag',
+			'users' =>get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'StudioTag'
+				] ]
+			] )
+		],
+
+		'project_management' => [
+			'name'  => 'Tagwall Project Management',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Project Management'
+				] ]
+			] )
+		],
+
+		'coordinator' => [
+			'name' => 'Tagwall Coordinator',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Coordinator'
+				] ]
+			] )
+		],
+
+		'engineering' => [
+			'name'  => 'Tagwall Estimating and Engineering',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Estimating and Engineering'
+				] ]
+			] )
+		],
+
+		'business_development' => [
+			'name'  => 'Tagwall Business Development',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Business Development'
+				] ]
+			] )
+		]
+	];
+}
+
+function tagwall_get_grid_excerpt( $key, $id ) {
+
+	if ( $key === 'accounting' ) :
+		$excerpt = get_post_meta( $id, 'accounting_excerpt', true );
+	elseif ( $key === 'studiotag' ) :
+		$excerpt = get_post_meta( $id, 'studiotag_excerpt', true );
+	elseif ( $key === 'project_management' ) :
+		$excerpt = get_post_meta( $id, 'project_management_excerpt', true );
+	elseif ( $key === 'coordinator' ) :
+		$excerpt = get_post_meta( $id, 'coordinator_excerpt', true );
+	elseif ( $key === 'engineering' ) :
+		$excerpt = get_post_meta( $id, 'engineering_excerpt', true );
+	elseif ( $key === 'business_development' ) :
+		$excerpt = get_post_meta( $id, 'business_development_excerpt', true );
+	endif;
+
+	return $excerpt;
 }
 
 // TODO

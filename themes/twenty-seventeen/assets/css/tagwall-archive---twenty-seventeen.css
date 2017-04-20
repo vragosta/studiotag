@@ -121,7 +121,6 @@
 
 .archive-container {
 	margin: 0 0 20rem;
-	/*border-top: 0.1rem solid #ccc;*/
 	padding: 12rem 0 0;
 }
 
@@ -270,10 +269,6 @@
 	width: 180px;
 }
 
-.archive-container hr {
-	border-color: #221E1F;
-}
-
 @media only screen and ( max-width: 767px ) {
 	.archive-container .title + hr {
 		margin-top: 0;
@@ -338,33 +333,5 @@
 	.archive-container .taxonomies > .row .taxonomy-item:last-child:not( :nth-child( 2 ) ):not( :first-child ) {
 		justify-content: center;
 		align-items: center;
-	}
-}
-
-.archive-container .archive-item:not(:first-child) {
-	margin: 10em 0;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container .archive-item:not(:first-child) {
-		margin: 5em 0;
-	}
-}
-
-.archive-container .row.indent {
-	max-width: 1200px;
-	margin: 10em auto;
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.archive-container .row.indent {
-		margin: 4em auto;
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container .row.indent {
-		margin: 2em auto;
-		padding: 0 1.5em;
 	}
 }
