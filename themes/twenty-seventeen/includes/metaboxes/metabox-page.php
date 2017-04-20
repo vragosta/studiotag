@@ -16,16 +16,9 @@
  */
 function tagwall_page_metaboxes() {
 	add_meta_box(
-		'studiotag-general-information',
-		__( 'STUDIOTAG General Information', 'tagwall' ),
-		'tagwall_studiotag_general_information_callback',
-		'page'
-	);
-
-	add_meta_box(
-		'tagwall-general-information',
-		__( 'TAGWALL General Information', 'tagwall' ),
-		'tagwall_tagwall_general_information_callback',
+		'contact-configuration',
+		__( 'Contact Configuration', 'tagwall' ),
+		'tagwall_contact_configuration_callback',
 		'page'
 	);
 
@@ -65,11 +58,11 @@ function tagwall_carousel_images_callback( $post ) {
 	$carousel_image_three = get_post_meta( $post->ID, 'carousel_image_three', true );
 	$carousel_image_four  = get_post_meta( $post->ID, 'carousel_image_four', true );
 	$carousel_image_five  = get_post_meta( $post->ID, 'carousel_image_five', true );
-	$carousel_image_six  = get_post_meta( $post->ID, 'carousel_image_six', true ); ?>
+	$carousel_image_six   = get_post_meta( $post->ID, 'carousel_image_six', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_one"><?php echo __( 'Image One:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -77,7 +70,7 @@ function tagwall_carousel_images_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_two"><?php echo __( 'Image Two:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -85,7 +78,7 @@ function tagwall_carousel_images_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_three"><?php echo __( 'Image Three:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -93,7 +86,7 @@ function tagwall_carousel_images_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_four"><?php echo __( 'Image Four:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -101,7 +94,7 @@ function tagwall_carousel_images_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_five"><?php echo __( 'Image Five:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -109,7 +102,7 @@ function tagwall_carousel_images_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="carousel_image_six"><?php echo __( 'Image Six:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -153,7 +146,7 @@ function tagwall_carousel_images_save_data( $post_id ) {
 	$carousel_image_three = sanitize_text_field( $_POST['carousel_image_three'] );
 	$carousel_image_four  = sanitize_text_field( $_POST['carousel_image_four'] );
 	$carousel_image_five  = sanitize_text_field( $_POST['carousel_image_five'] );
-	$carousel_image_six  = sanitize_text_field( $_POST['carousel_image_six'] );
+	$carousel_image_six   = sanitize_text_field( $_POST['carousel_image_six'] );
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'carousel_image_one', $carousel_image_one );
@@ -172,49 +165,29 @@ add_action( 'save_post', 'tagwall_carousel_images_save_data' );
  * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
  * @return void
  */
-function tagwall_studiotag_general_information_callback($post){
+function tagwall_contact_configuration_callback( $post ) {
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'tagwall_studiotag_general_information_save_data', 'tagwall_studiotag_general_information_nonce' );
+	wp_nonce_field( 'tagwall_contact_configuration_save_data', 'tagwall_contact_configuration_nonce' );
 
 	/**
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$studiotag_info = get_post_meta( $post->ID, 'studiotag_info', true ); ?>
+	$studiotag_info = get_post_meta( $post->ID, 'studiotag_info', true );
+	$tagwall_info   = get_post_meta( $post->ID, 'tagwall_info', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
-				<label for="studiotag_info"><?php echo __( 'StudioTag General Information Info:', 'tagwall' ); ?></label>
+			<td class="label" style="width: 170px;">
+				<label for="studiotag_info"><?php echo __( 'StudioTag Information:', 'tagwall' ); ?></label>
 			</td>
 			<td>
 				<textarea id="studiotag_info" name="studiotag_info" style="width: 100%;"><?php echo esc_textarea( $studiotag_info ); ?></textarea>
 			</td>
 		</tr>
-	</table><?php
-}
-
-/**
- * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
- *
- * @since  0.1.0
- * @uses   wp_nonce_field(), get_post_meta(), __(), esc_textarea()
- * @return void
- */
-function tagwall_tagwall_general_information_callback( $post ) {
-	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'tagwall_tagwall_general_information_save_data', 'tagwall_tagwall_general_information_nonce' );
-
-	/**
-	 * Use get_post_meta() to retrieve an existing value
-	 * from the database and use the value for the form.
-	 */
-	$tagwall_info = get_post_meta( $post->ID, 'tagwall_info', true ); ?>
-
-	<table style="width: 100%;">
 		<tr>
-			<td class="label">
-				<label for="tagwall_info"><?php echo __( 'Tagwall General Information Info:', 'tagwall' ); ?></label>
+			<td class="label" style="width: 170px;">
+				<label for="tagwall_info"><?php echo __( 'Tagwall Information:', 'tagwall' ); ?></label>
 			</td>
 			<td>
 				<textarea id="tagwall_info" name="tagwall_info" style="width: 100%;"><?php echo esc_textarea( $tagwall_info ); ?></textarea>
@@ -223,25 +196,24 @@ function tagwall_tagwall_general_information_callback( $post ) {
 	</table><?php
 }
 
-
 /**
- * Saves the POST data.
+ * Saves and sanitizes the POST data.
  *
  * @since  0.1.0
  * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
  * @return void
  */
-function tagwall_studiotag_general_information_save_data( $post_id ) {
+function tagwall_contact_configuration_save_data( $post_id ) {
 	/**
 	 * We need to verify this came from our screen and with proper authorization,
 	 * because the save_post action can be triggered at other times.
 	 */
 	// Check if our nonce is set.
-	if ( ! isset( $_POST['tagwall_studiotag_general_information_nonce'] ) )
+	if ( ! isset( $_POST['tagwall_contact_configuration_nonce'] ) )
 		return;
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['tagwall_studiotag_general_information_nonce'], 'tagwall_studiotag_general_information_save_data' ) )
+	if ( ! wp_verify_nonce( $_POST['tagwall_contact_configuration_nonce'], 'tagwall_contact_configuration_save_data' ) )
 		return;
 
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
@@ -252,44 +224,15 @@ function tagwall_studiotag_general_information_save_data( $post_id ) {
 	if ( ! current_user_can( 'edit_page', $post_id ) )
 		return;
 
-	// Update the meta field in the database.
-	update_post_meta( $post_id, 'studiotag_info', $_POST['studiotag_info'] );
-}
-add_action( 'save_post', 'tagwall_studiotag_general_information_save_data' );
-
-/**
- * Saves the POST data.
- *
- * @since  0.1.0
- * @uses   isset(), wp_verify_nonce(), defined(), current_user_can(), sanitize_text_field(), update_post_meta()
- * @return void
- */
-function tagwall_tagwall_general_information_save_data( $post_id ) {
-	/**
-	 * We need to verify this came from our screen and with proper authorization,
-	 * because the save_post action can be triggered at other times.
-	 */
-	// Check if our nonce is set.
-	if ( ! isset( $_POST['tagwall_studiotag_general_information_nonce'] ) )
-		return;
-
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['tagwall_tagwall_general_information_nonce'], 'tagwall_tagwall_general_information_save_data' ) )
-		return;
-
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
-		return;
-
-	// Check the user's permissions.
-	if ( ! current_user_can( 'edit_page', $post_id ) )
-		return;
-
+	// Sanitize user input.
+	$studiotag_info = $_POST['studiotag_info'];
+	$tagwall_info   = $_POST['tagwall_info'];
 
 	// Update the meta field in the database.
-	update_post_meta( $post_id, 'tagwall_info', $_POST['tagwall_info']);
+	update_post_meta( $post_id, 'studiotag_info', $studiotag_info );
+	update_post_meta( $post_id, 'tagwall_info', $tagwall_info );
 }
-add_action( 'save_post', 'tagwall_tagwall_general_information_save_data' );
+add_action( 'save_post', 'tagwall_contact_configuration_save_data' );
 
 /**
  * The callback for add_meta_box(), contains the HTML necessary to create the metaboxes.
@@ -306,16 +249,16 @@ function tagwall_team_configuration_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$accounting_excerpt = get_post_meta( $post->ID, 'accounting_excerpt', true );
-	$studiotag_excerpt = get_post_meta( $post->ID, 'studiotag_excerpt', true );
-	$project_management_excerpt = get_post_meta( $post->ID, 'project_management_excerpt', true );
-	$coordinator_excerpt = get_post_meta( $post->ID, 'coordinator_excerpt', true );
-	$engineering_excerpt = get_post_meta( $post->ID, 'engineering_excerpt', true );
+	$accounting_excerpt           = get_post_meta( $post->ID, 'accounting_excerpt', true );
+	$studiotag_excerpt            = get_post_meta( $post->ID, 'studiotag_excerpt', true );
+	$project_management_excerpt   = get_post_meta( $post->ID, 'project_management_excerpt', true );
+	$coordinator_excerpt          = get_post_meta( $post->ID, 'coordinator_excerpt', true );
+	$engineering_excerpt          = get_post_meta( $post->ID, 'engineering_excerpt', true );
 	$business_development_excerpt = get_post_meta( $post->ID, 'business_development_excerpt', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="accounting_excerpt"><?php echo __( 'Accounting Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -323,7 +266,7 @@ function tagwall_team_configuration_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="studiotag_excerpt"><?php echo __( 'StudioTag Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -331,7 +274,7 @@ function tagwall_team_configuration_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="project_management_excerpt"><?php echo __( 'Project Management Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -339,7 +282,7 @@ function tagwall_team_configuration_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="coordinator_excerpt"><?php echo __( 'Coordinator Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -347,7 +290,7 @@ function tagwall_team_configuration_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="engineering_excerpt"><?php echo __( 'Estimating and Engineering Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -355,7 +298,7 @@ function tagwall_team_configuration_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px;">
 				<label for="business_development_excerpt"><?php echo __( 'Business Development Excerpt:', 'tagwall' ); ?></label>
 			</td>
 			<td>
