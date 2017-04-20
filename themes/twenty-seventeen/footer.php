@@ -11,14 +11,12 @@
 		<footer id="footer">
 			<section>
 
-				<!-- Logo -->
 				<a href="<?php echo home_url(); ?>">
 					<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
 				</a>
 
 				<div>
 
-					<!-- TODO Devise a way to make this dynamic -->
 					<ul>
 						<li>321 West 44th Street</li>
 						<li>Suite 200</li>
@@ -30,7 +28,6 @@
 						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>">info@studio-tag.com</a></li>
 					</ul>
 
-					<!-- Social Icons -->
 					<div class="social">
 						<a href="https://twitter.com/tagwall_llc" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
 						<a href="https://www.facebook.com/studiotagnyc/" class="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
@@ -45,19 +42,16 @@
 
 			<section>
 
-				<!-- Column One -->
 				<div class="column one">
 					<h2>Studio<span>Tag</span></h2>
 					<?php dynamic_sidebar( 'Footer Column One' ); ?>
 				</div>
 
-				<!-- Column Two -->
 				<div class="column two">
 					<h2><span>Tag</span>Wall</h2>
 					<?php dynamic_sidebar( 'Footer Column Two' ); ?>
 				</div>
 
-				<!-- Column Three -->
 				<div class="column three">
 					<?php dynamic_sidebar( 'Footer Column Three' ); ?>
 				</div>
