@@ -151,6 +151,10 @@
 		padding: 0;
 		margin: 0;
 	}
+
+	.archive-users .grid {
+		margin-bottom: 10em;
+	}
 }
 
 /*--- Provide flex on bootstrap rows ---*/
@@ -162,6 +166,12 @@
 
 .grid .archive-item.users .row:last-child {
 	margin-bottom: -10rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .archive-item.users .row:last-child {
+		margin-bottom: 0;
+	}
 }
 
 /*--- Media Query for bootstrap rows, add flex direction column ---*/
@@ -211,6 +221,10 @@
 		padding: 1em;
 	}
 
+	.grid .archive-item.users .info {
+		padding: 2em;
+	}
+
 	.grid .no-padding {
 		order: 1;
 	}
@@ -229,6 +243,19 @@
 
 .grid .archive-item.users .info a:first-child {
 	top: 2em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.grid .archive-item.users .info a:first-child {
+		top: 1.5em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .archive-item.users .info a:first-child {
+		top: 0;
+		margin-bottom: .5em;
+	}
 }
 
 .grid .info a {
@@ -285,8 +312,13 @@
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info p {
-		font-size: .8em;
+		/*font-size: .8em;*/
+		font-size: 1em;
 	}
+}
+
+.grid .archive-item.users .info p + p {
+	margin: 0;
 }
 
 .grid .info a.more {
@@ -541,18 +573,30 @@ header .menu-container .dynamic-menu ul {
 	padding: 0 1em;
 }
 
-.archive-item .title h1 {
-	font-family: HelveticaNeueLT Std;
-	font-weight: 600;
-	margin: 1.5rem 0;
-}
-
 @media only screen and ( max-width: 767px ) {
 	.archive-item .title {
 		padding: 0 2rem;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+}
+
+.archive-item .title h1 {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
+	margin: 1.5rem 0;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-item .title h1 {
+		font-size: 1.8em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-item .title h1 {
+		text-align: center;
 	}
 }
 
@@ -583,15 +627,19 @@ hr {
 }
 
 .archive-item.users .row.indent p {
-	font-size: 1.4em;
-	font-weight: 300;
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
-	font-size: 2em;
-	font-weight: 600;
 	word-break: break-word;
 	hyphens: auto;
 	line-height: 1.3;
+	font-size: 1.4em;
+	font-weight: 300;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-item.users .row.indent p {
+		font-size: 1.2em;
+	}
 }
 
 .archive-item.users .row.indent p + p {
