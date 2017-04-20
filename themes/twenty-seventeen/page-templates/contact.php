@@ -30,13 +30,13 @@
 				<div class="contact-col">
 					<?php if ( $studiotag_info ) : ?>
 						<h3>STUDIOTAG General Information</h3>
-						<?php echo esc_html( $studiotag_info ); ?>
+						<?php echo $studiotag_info; ?>
 					<?php endif; ?>
 				</div>
 				<div class="contact-col">
 					<?php if ( $tagwall_info ) : ?>
 						<h3>TAGWALL General Information</h3>
-						<?php echo esc_html( $tagwall_info ); ?>
+						<?php echo $tagwall_info; ?>
 					<?php endif; ?>
 				</div>
 			</div>
