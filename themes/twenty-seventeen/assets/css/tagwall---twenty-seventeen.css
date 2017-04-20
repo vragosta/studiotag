@@ -8,6 +8,10 @@
 
 /*--- This is needed as a base file for wp_enqueue_style() ---*/
 
+.no-padding {
+	padding: 0;
+}
+
 /*--- Wall Title CSS ---*/
 .wall-title {
 	display: flex;

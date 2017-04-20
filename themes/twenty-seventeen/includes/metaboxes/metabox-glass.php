@@ -43,7 +43,7 @@ function tagwall_glass_configuration_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="glass_id"><?php echo __( 'Glass ID:', 'tagwall' ); ?></label>
 			</td>
 			<td>

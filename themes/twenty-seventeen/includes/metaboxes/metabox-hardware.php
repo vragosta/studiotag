@@ -53,7 +53,7 @@ function tagwall_hardware_view_details_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="detailed_image_front"><?php echo __( 'Detailed Image [Front]:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -61,7 +61,7 @@ function tagwall_hardware_view_details_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="detailed_image_side"><?php echo __( 'Detailed Image [Side]:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -69,7 +69,7 @@ function tagwall_hardware_view_details_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="detailed_image_back"><?php echo __( 'Detailed Image [Back]:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -138,7 +138,7 @@ function tagwall_hardware_finish_details_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="polish"><?php echo __( 'Polish:', 'tagwall' ); ?></label>
 			</td>
 			<td>

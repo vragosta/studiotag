@@ -113,7 +113,7 @@ function tagwall_systems_configuration_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="gallery"><?php echo __( 'Gallery Link:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -179,7 +179,7 @@ function tagwall_systems_custom_one_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_one_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -187,7 +187,7 @@ function tagwall_systems_custom_one_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_one_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -255,7 +255,7 @@ function tagwall_systems_custom_two_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_two_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -263,7 +263,7 @@ function tagwall_systems_custom_two_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_two_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -331,7 +331,7 @@ function tagwall_systems_custom_three_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_three_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -339,7 +339,7 @@ function tagwall_systems_custom_three_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_three_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -407,7 +407,7 @@ function tagwall_systems_custom_four_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_four_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -415,7 +415,7 @@ function tagwall_systems_custom_four_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_four_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -483,7 +483,7 @@ function tagwall_systems_custom_five_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_five_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -491,7 +491,7 @@ function tagwall_systems_custom_five_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_five_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -559,7 +559,7 @@ function tagwall_systems_custom_six_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_six_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -567,7 +567,7 @@ function tagwall_systems_custom_six_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_six_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -635,7 +635,7 @@ function tagwall_systems_custom_seven_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_seven_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -643,7 +643,7 @@ function tagwall_systems_custom_seven_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_seven_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -711,7 +711,7 @@ function tagwall_systems_custom_eight_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_eight_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -719,7 +719,7 @@ function tagwall_systems_custom_eight_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_eight_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -787,7 +787,7 @@ function tagwall_systems_custom_nine_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_nine_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -795,7 +795,7 @@ function tagwall_systems_custom_nine_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_nine_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -863,7 +863,7 @@ function tagwall_systems_custom_ten_callback( $post ) {
 
 	<table style="width: 100%;">
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_ten_title"><?php echo __( 'Title:', 'tagwall' ); ?></label>
 			</td>
 			<td>
@@ -871,7 +871,7 @@ function tagwall_systems_custom_ten_callback( $post ) {
 			</td>
 		</tr>
 		<tr>
-			<td class="label">
+			<td class="label" style="width: 170px">
 				<label for="custom_ten_content"><?php echo __( 'Content:', 'tagwall' ); ?></label>
 			</td>
 			<td>
