@@ -431,7 +431,9 @@ function tagwall_get_job_status_array() {
 		'executive' => [
 			'name' => 'Executive',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Executive'
@@ -442,7 +444,9 @@ function tagwall_get_job_status_array() {
 		'accounting' => [
 			'name'  => 'Accounting',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Accounting'
@@ -453,7 +457,9 @@ function tagwall_get_job_status_array() {
 		'studiotag' => [
 			'name'  => 'StudioTag',
 			'users' =>get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'StudioTag'
@@ -464,7 +470,9 @@ function tagwall_get_job_status_array() {
 		'project_management' => [
 			'name'  => 'Tagwall Project Management',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Tagwall Project Management'
@@ -475,7 +483,9 @@ function tagwall_get_job_status_array() {
 		'coordinator' => [
 			'name' => 'Tagwall Coordinator',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Tagwall Coordinator'
@@ -486,7 +496,9 @@ function tagwall_get_job_status_array() {
 		'engineering' => [
 			'name'  => 'Tagwall Estimating and Engineering',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Tagwall Estimating and Engineering'
@@ -497,7 +509,9 @@ function tagwall_get_job_status_array() {
 		'business_development' => [
 			'name'  => 'Tagwall Business Development',
 			'users' => get_users( [
-				'order'      => 'DESC',
+				'order'      => 'ASC',
+				'orderby'    => 'meta_value_num',
+				'meta_key'   => 'order',
 				'meta_query' => [ [
 					'key'   => 'job_status',
 					'value' => 'Tagwall Business Development'
