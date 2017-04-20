@@ -10,7 +10,7 @@
 
 <?php get_header(); ?>
 <?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $blog_post ); ?>
-<?php $categories = get_categories( [ 'hide_empty' => false, 'parent' => 0, 'order' => 'DESC' ] ); ?>
+<?php $categories = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_filter_array( get_categories( [ 'hide_empty' => false, 'parent' => 0, 'order' => 'DESC' ] ) ); ?>
 
 <?php if ( $hero_image ) : ?>
 	<figure class="hero-image settings">
@@ -28,14 +28,7 @@
 				<div class="static-menu col-xs-12 col-sm-3">
 					<ul>
 						<?php foreach( $categories as $category ) : ?>
-							<?php $children = get_categories( [ 'hide_empty' => false, 'parent' => $category->term_id, 'order' => 'DESC' ] ); ?>
-							<li><a><?php echo esc_html( $category->name ); ?></a></li>
-							<?php foreach( $children as $id ) : ?>
-								<?php $child = get_category( $id ); ?>
-
-								<li class="child"><a data-id="<?php echo esc_attr( strtolower( $child->slug ) ); ?>"><?php echo esc_html( $child->name ); ?></a></li>
-							<?php endforeach; ?>
-							<br />
+							<li><a data-id="<?php echo esc_attr( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
@@ -46,7 +39,12 @@
 							$posts = new WP_Query( [
 								'post_type' => 'post',
 								'order'     => 'DESC',
-								'cat'       => $category->term_id
+								'tax_query' => [ [
+									'taxonomy' => 'category',
+									'field'    => 'term_id',
+									'terms'    => [ $category->term_id ],
+									'operator' => 'IN'
+								] ],
 							] );
 						?>
 

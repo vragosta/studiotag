@@ -412,6 +412,7 @@ function tagwall_get_system_metadata( $id ) {
 	return array_filter( $metadata );
 }
 
+// TODO
 function tagwall_get_carousel_images( $id ) {
 	$carousel = [
 		'one'   => get_post_meta( $id, 'carousel_image_one', true ),
@@ -531,4 +532,16 @@ function tagwall_var_dump( $custom, $toggle = false ) {
 	var_dump( $custom );
 	echo '</pre>';
 	( $toggle ) ? exit() : '';
+}
+
+function tagwall_filter_array( $first_array ) {
+	$months     = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+	$new_array = [];
+	foreach( $first_array as $item ) :
+		if ( ! in_array( $item->name, $months ) ) :
+			$new_array[] = $item;
+		endif;
+	endforeach;
+
+	return $new_array;
 }
