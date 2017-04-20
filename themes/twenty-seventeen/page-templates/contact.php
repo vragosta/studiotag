@@ -4,7 +4,7 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    tagwall_get_hero_image(), tagwall_get_featured_image(), esc_Attr(), the_content(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
@@ -21,7 +21,7 @@
 
 		<section class="contact-content">
 
-		<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
+			<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 			<div class="container">
 				<div class="contact-col">

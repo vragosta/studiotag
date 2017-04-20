@@ -95,6 +95,26 @@
 		} );
 
 		/**
+		 * On hover display menu, display the other menu.
+		 *
+		 * @since 0.1.0
+		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
+		 */
+		$( '.news .menu-container .static-menu ul li a[data-id]' ).on( 'mouseenter', function() {
+			var id = $( this ).data( 'id' );
+
+			$( '.news .dynamic-menu div:not( .' + id + ' )' )
+				.parents( 'div.category-container' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+
+			$( '.news .dynamic-menu .' + id )
+				.parents( 'div.category-container' )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+		} );
+
+		/**
 		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
 		 *
 		 * @since 0.1.0

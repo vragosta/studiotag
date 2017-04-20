@@ -121,7 +121,6 @@
 
 .archive-container {
 	margin: 0 0 20rem;
-	/*border-top: 0.1rem solid #ccc;*/
 	padding: 12rem 0 0;
 }
 
@@ -169,13 +168,13 @@
 	}
 }
 
-.archive-container .settings {
+.settings {
 	position: relative;
 	padding-bottom: 65%;
 }
 
 /*--- Source for featured image ---*/
-.archive-container .settings div {
+.settings div {
 	background-size: cover;
 	background-position: center;
 	position: absolute;
