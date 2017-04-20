@@ -551,6 +551,12 @@ header .menu-container ul li a:hover {
 	}
 }
 
+.news .menu-container .dynamic-menu h2 + h3 {
+	font-style: italic;
+	margin: 1.5em 0 0 0;
+	font-size: 1.2em;
+}
+
 .news .dynamic-menu div.category-container > div:not( :last-child ) {
 	margin-bottom: 4em;
 }

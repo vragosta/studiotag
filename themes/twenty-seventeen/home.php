@@ -57,6 +57,7 @@
 
 									<div class="<?php echo esc_attr( $category->slug ); ?> row">
 										<h2><?php echo esc_html( $post->post_title ); ?></h2>
+										<h3><strong>Date Released: </strong><?php echo date_format( date_create( $post->post_date  ), 'F jS Y' ); ?></h3>
 
 										<?php if ( $image ) : ?>
 											<figure class="featured-image settings">
