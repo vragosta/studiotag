@@ -11,8 +11,8 @@
 
 /*--- Allows metabox items to align with contact us info ---*/
 .contact-content .container {
-  padding: 0;
-  margin-left: 20em;
+  	padding: 0;
+  	margin-left: 22em;
 }
 
 /*--- Orients Metabox items horizontally by making them inline ---*/
@@ -25,11 +25,11 @@
 /*--- horizontal line is now black ---*/
 .contact-col hr {
 	display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #221E1F;
-  margin: 1em 0;
-  padding: 0;
+  	height: 1px;
+  	border: 0;
+  	border-top: 1px solid #221E1F;
+  	margin: 1em 0;
+  	padding: 0;
 }
 
 /*--- Bottom part of metabox text is gray ---*/
@@ -48,6 +48,7 @@
 @media only screen and ( max-width: 767px ) {
 	.contact-col {
 		display: block;
+		width: 350px;
 	}
 
   /*--- Must remove margins so that it can be centered at mobile displays ---*/
@@ -59,9 +60,9 @@
 	}
 }
 
-/*--- Phone media queries ---*/
-@media only screen and ( max-width: 425px ) {
-	.contact-col {
-		width: 300px;
+/*--- Large Screen media queries ---*/
+@media only screen and ( min-width: 1500px ) {
+	.contact-content .container{
+		margin-left: 32em;
 	}
 }
