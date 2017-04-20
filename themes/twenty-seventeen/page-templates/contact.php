@@ -30,24 +30,24 @@
 				<div class="contact-col">
 					<?php if ( $studiotag_info ) : ?>
 						<h3>STUDIOTAG General Information</h3>
-						<?php echo esc_html( $studiotag_info ); ?>
+						<?php echo $studiotag_info; ?>
 					<?php endif; ?>
 				</div>
 				<div class="contact-col">
 					<?php if ( $tagwall_info ) : ?>
 						<h3>TAGWALL General Information</h3>
-						<?php echo esc_html( $tagwall_info ); ?>
+						<?php echo $tagwall_info; ?>
 					<?php endif; ?>
 				</div>
 			</div>
 		</section>
 
-		<section class="map">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1376315255206!2d-73.99085046441789!3d40.75899752912956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25853976c3869%3A0xe9be4f9327b04f6c!2s321+W+44th+St+%23200%2C+New+York%2C+NY+10036!5e0!3m2!1sen!2sus!4v1492485780654" width="1100" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-		</section>
-
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); ?>
 <?php endif; ?>
+
+<section class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1376315255206!2d-73.99085046441789!3d40.75899752912956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25853976c3869%3A0xe9be4f9327b04f6c!2s321+W+44th+St+%23200%2C+New+York%2C+NY+10036!5e0!3m2!1sen!2sus!4v1492485780654" width="1100" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</section>
 
 <?php get_footer(); ?>

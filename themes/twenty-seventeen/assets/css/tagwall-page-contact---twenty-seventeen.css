@@ -45,6 +45,10 @@
 	margin-bottom: 2rem;
 }
 
+.map iframe {
+	width: 100%;
+}
+
 @media only screen and ( max-width: 767px ) {
 	.contact-col {
 		display: block;
