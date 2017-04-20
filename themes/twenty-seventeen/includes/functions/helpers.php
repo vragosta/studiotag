@@ -327,8 +327,9 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
  * @uses   sprintf()
  * @return string void title HTML with slash
  */
-function tagwall_get_wall_title() {
+function tagwall_get_wall_title( $blog_post = false ) {
 	global $post;
+	$post = ( $blog_post ) ? $blog_post : '';
 
 	$html = '
 		<section class="wall-title %1$s">
