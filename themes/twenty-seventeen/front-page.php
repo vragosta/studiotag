@@ -119,7 +119,7 @@
 					 * NOTE: This is the key statement!
 					 */
 					$temp_post = $post;
-					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 50, '...' );
+					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 45, '...' );
 					$count++;
 				?>
 

@@ -10,7 +10,9 @@
 }
 
 .single-column-list h1 {
+	font-weight: 600;
 	font-size: 64px;
+	margin: 0;
 }
 
 .single-column-list .container {

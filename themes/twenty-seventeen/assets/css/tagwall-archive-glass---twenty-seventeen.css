@@ -16,24 +16,6 @@
 	}
 }
 
-/*.archive-container.glass .row.indent {
-	max-width: 1200px;
-	margin: 10em auto;
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.archive-container.glass .row.indent {
-		margin: 4em auto;
-	}
-}
-
-@media only screen and ( max-width: 767px ) {
-	.archive-container.glass .row.indent {
-		margin: 2em auto;
-		padding: 0 1.5em;
-	}
-}*/
-
 .archive-container.glass .child:not(:first-child) {
 	padding: 6rem 0;
 }

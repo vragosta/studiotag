@@ -30,7 +30,7 @@
 				<li><a href="<?php echo home_url( '/details/' ); ?>">Wall Details</a></li>
 				<li><a href="#" data-id="projects">Projects</a></li>
 				<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
-				<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
+				<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact Us</a></li>
 			</ul>
 		</div>
 		<div class="dynamic-menu col-xs-12 col-sm-6">

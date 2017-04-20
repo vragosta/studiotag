@@ -56,7 +56,7 @@
 			</li>
 
 			<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
-			<li><a href="<?php echo home_url( '/team/' ); ?>">Contact Us</a></li>
+			<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact Us</a></li>
 		</ul>
 	</section>
 </nav>

@@ -346,14 +346,13 @@ function tagwall_get_wall_title( $blog = false ) {
 			</div>
 
 			<h1>%3$s</h1>
-
 		</section>
 	';
 
 	return sprintf(
 		$html,
 		$post->post_name,
-		( $post->post_title === 'contact' ) ? 'Tag' : 'Wall',
+		( $post->post_name === 'contact' || $post->post_name === 'team' ) ? 'Tag' : 'Wall',
 		$post->post_title
 	);
 }
@@ -413,6 +412,7 @@ function tagwall_get_system_metadata( $id ) {
 	return array_filter( $metadata );
 }
 
+// TODO
 function tagwall_get_carousel_images( $id ) {
 	$carousel = [
 		'one'   => get_post_meta( $id, 'carousel_image_one', true ),
@@ -426,10 +426,122 @@ function tagwall_get_carousel_images( $id ) {
 	return array_filter( $carousel );
 }
 
+function tagwall_get_job_status_array() {
+	return (object) $users = [
+		'executive' => [
+			'name' => 'Executive',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Executive'
+				] ]
+			] )
+		],
+
+		'accounting' => [
+			'name'  => 'Accounting',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Accounting'
+				] ]
+			] )
+		],
+
+		'studiotag' => [
+			'name'  => 'StudioTag',
+			'users' =>get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'StudioTag'
+				] ]
+			] )
+		],
+
+		'project_management' => [
+			'name'  => 'Tagwall Project Management',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Project Management'
+				] ]
+			] )
+		],
+
+		'coordinator' => [
+			'name' => 'Tagwall Coordinator',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Coordinator'
+				] ]
+			] )
+		],
+
+		'engineering' => [
+			'name'  => 'Tagwall Estimating and Engineering',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Estimating and Engineering'
+				] ]
+			] )
+		],
+
+		'business_development' => [
+			'name'  => 'Tagwall Business Development',
+			'users' => get_users( [
+				'order'      => 'DESC',
+				'meta_query' => [ [
+					'key'   => 'job_status',
+					'value' => 'Tagwall Business Development'
+				] ]
+			] )
+		]
+	];
+}
+
+function tagwall_get_grid_excerpt( $key, $id ) {
+
+	if ( $key === 'accounting' ) :
+		$excerpt = get_post_meta( $id, 'accounting_excerpt', true );
+	elseif ( $key === 'studiotag' ) :
+		$excerpt = get_post_meta( $id, 'studiotag_excerpt', true );
+	elseif ( $key === 'project_management' ) :
+		$excerpt = get_post_meta( $id, 'project_management_excerpt', true );
+	elseif ( $key === 'coordinator' ) :
+		$excerpt = get_post_meta( $id, 'coordinator_excerpt', true );
+	elseif ( $key === 'engineering' ) :
+		$excerpt = get_post_meta( $id, 'engineering_excerpt', true );
+	elseif ( $key === 'business_development' ) :
+		$excerpt = get_post_meta( $id, 'business_development_excerpt', true );
+	endif;
+
+	return $excerpt;
+}
+
 // TODO
 function tagwall_var_dump( $custom, $toggle = false ) {
 	echo '<pre>';
 	var_dump( $custom );
 	echo '</pre>';
 	( $toggle ) ? exit() : '';
+}
+
+function tagwall_filter_array( $first_array ) {
+	$months     = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ];
+	$new_array = [];
+	foreach( $first_array as $item ) :
+		if ( ! in_array( $item->name, $months ) ) :
+			$new_array[] = $item;
+		endif;
+	endforeach;
+
+	return $new_array;
 }
