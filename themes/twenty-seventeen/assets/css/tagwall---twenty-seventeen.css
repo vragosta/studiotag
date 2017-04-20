@@ -364,7 +364,7 @@ header .menu-container.visible {
 
 .news .menu-container .static-menu ul li,
 .wall-details .menu-container .static-menu ul li {
-	line-height: 1.1;
+	line-height: 1.5;
 }
 
 .news .menu-container .dynamic-menu ul li,
@@ -558,6 +558,7 @@ header .menu-container .dynamic-menu ul {
 		padding: 0 2em;
 	}
 }
+
 
 .news .dynamic-menu > div,
 .wall-details .dynamic-menu > div,
