@@ -6,20 +6,6 @@
  * @since   0.1.0
  * @uses    get_user_by(), get_user_meta(), home_url(), esc_html(), esc_attr(), dynamic_sidebar(), wp_footer()
  */
-
-	// Get the admin user by 'id'.
-	$user  = get_user_by( 'id', TAGWALL_SITE_ADMIN );
-
-	// Get the phone number of the admin user.
-	$phone = get_user_meta( $user->ID, 'phone', true );
-
-	// Get social meta from admin user.
-	$twitter   = get_user_meta( TAGWALL_SITE_ADMIN, 'twitter', true );
-	$facebook  = get_user_meta( TAGWALL_SITE_ADMIN, 'facebook', true );
-	$pinterest = get_user_meta( TAGWALL_SITE_ADMIN, 'pinterest', true );
-	$instagram = get_user_meta( TAGWALL_SITE_ADMIN, 'instagram', true );
-	$linkedin  = get_user_meta( TAGWALL_SITE_ADMIN, 'linkedin', true );
-
 ?>
 
 		<footer id="footer">
@@ -40,8 +26,8 @@
 					</ul>
 
 					<ul>
-						<li><a href="tel:<?php echo esc_attr( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li>
-						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>"><?php echo esc_html( $user->user_email ); ?></a></li>
+						<li><a href="tel:<?php echo esc_attr( $phone ); ?>">+1 212.354.9255</a></li>
+						<li><a href="mailto:<?php echo esc_attr( $user->user_email ); ?>">info@studio-tag.com</a></li>
 					</ul>
 
 					<!-- Social Icons -->
