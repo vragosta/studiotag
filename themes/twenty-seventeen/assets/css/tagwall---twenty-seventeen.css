@@ -152,9 +152,9 @@
 		margin: 0;
 	}
 
-	.archive-users .grid {
+	/*.archive-users .grid {
 		margin-bottom: 10em;
-	}
+	}*/
 }
 
 /*--- Provide flex on bootstrap rows ---*/
@@ -218,11 +218,11 @@
 /*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
 @media only screen and ( max-width: 767px ) {
 	.grid .info {
-		padding: 1em;
+		padding: 2em;
 	}
 
-	.grid .archive-item.users .info {
-		padding: 2em;
+	.archive-container.applied-detail .grid .info {
+		padding: 4em;
 	}
 
 	.grid .no-padding {
@@ -273,6 +273,17 @@
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info h3 {
 		font-size: 1.5em;
+		margin: .9em 0;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .info h3 {
+		margin: 0 0 .5em;
+	}
+
+	.archive-container.applied-detail .grid .info h3 {
+		margin: 0;
 	}
 }
 
@@ -303,17 +314,11 @@
 	hyphens: auto;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	.grid .info p {
-		font-size: 1em;
-	}
-}
-
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info p {
-		/*font-size: .8em;*/
 		font-size: 1em;
+		margin-top: 1em;
 	}
 }
 
@@ -331,20 +336,22 @@
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.grid .info a.more {
-		font-size: 1em;
+		font-size: 1.2em;
+		margin-top: .8em;
 	}
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info a.more {
-		font-size: .8em;
-		margin-top: 1em;
+		font-size: 1em;
+		margin-top: 0;
 	}
 }
 
 @media only screen and ( max-width: 767px ) {
 	.grid .info a.more {
-		margin: 1em 0 1.5em;
+		font-size: 1.4em;
+		margin: 0;
 	}
 }
 
@@ -606,6 +613,12 @@ hr {
 
 .archive-item.users + hr {
 	border-color: #A3A5A8;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-users .grid hr:last-child {
+		display: none;
+	}
 }
 
 .row.indent {
