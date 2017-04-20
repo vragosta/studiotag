@@ -12,7 +12,10 @@
 
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
-		<?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
+		<?php $hero_image     = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
+		<?php $studiotag_info = get_post_meta( $post->ID, 'studiotag_info', true ); ?>
+		<?php $tagwall_info   = get_post_meta( $post->ID, 'tagwall_info', true ); ?>
+
 		<?php if ( $hero_image ) : ?>
 			<figure class="hero-image settings">
 				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
@@ -25,12 +28,16 @@
 
 			<div class="container">
 				<div class="contact-col">
-					<h3>STUDIOTAG General Information</h3>
-					<?php echo get_post_meta( $post->ID, 'studiotag_info', true );?>
+					<?php if ( $studiotag_info ) : ?>
+						<h3>STUDIOTAG General Information</h3>
+						<?php echo esc_html( $studiotag_info ); ?>
+					<?php endif; ?>
 				</div>
 				<div class="contact-col">
-					<h3>TAGWALL General Information</h3>
-					<?php echo get_post_meta( $post->ID, 'tagwall_info', true );?>
+					<?php if ( $tagwall_info ) : ?>
+						<h3>TAGWALL General Information</h3>
+						<?php echo esc_html( $tagwall_info ); ?>
+					<?php endif; ?>
 				</div>
 			</div>
 		</section>
