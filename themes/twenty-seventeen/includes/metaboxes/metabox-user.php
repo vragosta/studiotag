@@ -18,6 +18,7 @@ function tagwall_user_fields( $fields ) {
 	$fields['direct_phone'] = 'Direct Phone';
 	$fields['cell_phone']   = 'Cell Phone';
 	$fields['image']        = 'User Image URL:';
+	$fields['order']        = 'Team Page Order:';
 
 	return $fields;
 }
@@ -48,6 +49,7 @@ function tagwall_save_user_fields( $user_id ) {
 	$direct_phone = sanitize_text_field( $_POST['direct_phone'] );
 	$cell_phone   = sanitize_text_field( $_POST['cell_phone'] );
 	$image        = sanitize_text_field( $_POST['image'] );
+	$order        = sanitize_text_field( $_POST['order'] );
 
 	update_usermeta( $user_id, 'job_title', $job_title );
 	update_usermeta( $user_id, 'job_status', $job_status );
@@ -60,6 +62,7 @@ function tagwall_save_user_fields( $user_id ) {
 	update_usermeta( $user_id, 'direct_phone', $direct_phone );
 	update_usermeta( $user_id, 'cell_phone', $cell_phone );
 	update_usermeta( $user_id, 'image', $image );
+	update_usermeta( $user_id, 'order', $order );
 }
 add_action( 'personal_options_update', 'tagwall_save_user_fields' );
 add_action( 'edit_user_profile_update', 'tagwall_save_user_fields' );
