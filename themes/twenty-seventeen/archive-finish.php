@@ -69,6 +69,7 @@
 							<h1>Custom</h1>
 						</div>
 					</div>
+					<hr />
 				</div>
 			</section>
 		<?php endif; ?>

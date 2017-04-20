@@ -7,7 +7,7 @@
 
 /*--- Control margin of temporary carousel ---*/
 .carousel {
-	margin: 0 0 6rem 0;
+	margin: 0 2rem 6rem 2rem;
 }
 
 /*--- Media Query to control margin of temporary carousel ---*/
@@ -20,12 +20,12 @@
 /*--- Overriding carousel arrows ---*/
 .carousel .slick-prev:before {
 	font-size: 50px;
-	color: #A2A4A7;
+	color: #fff;
 }
 
 .carousel .slick-next:before {
 	font-size: 50px;
-	color: #A2A4A7;
+	color: #fff;
 }
 
 /* Place carousel arrows over image*/
@@ -52,5 +52,14 @@
 @media only screen and ( max-width: 767px ) {
 	.archive-systems {
 		padding: 0;
+	}
+
+	/*--- Overriding carousel arrows ---*/
+	.carousel .slick-prev:before {
+		font-size: 25px;
+	}
+
+	.carousel .slick-prev:after {
+		font-size: 25px;
 	}
 }

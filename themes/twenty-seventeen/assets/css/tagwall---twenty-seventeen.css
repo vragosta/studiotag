@@ -13,13 +13,16 @@
 	display: flex;
 	align-items: center;
 	height: 15em;
-	margin: 12em 0 0;
+	margin: 12em auto 0;
+	max-width: 1500px;
+	padding-left: 2rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.wall-title {
 		margin: 4em 0;
 		justify-content: center;
+		padding: 0;
 	}
 }
 
@@ -27,6 +30,7 @@
 	font-family: HelveticaNeueLT Std;
 	text-transform: uppercase;
 	font-size: 7em;
+	font-weight: 600;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -227,7 +231,7 @@
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
 	font-size: 2em;
-	font-weight: 400;
+	font-weight: 600;
 	margin: 1em 0;
 	font-family: HelveticaNeueLT Std;
 }
@@ -255,7 +259,7 @@
 	font-family: HelveticaNeueLT Std;
 	color: #221E1F;
 	font-size: 1.2em;
-	font-weight: 400;
+	font-weight: 300;
 	line-height: 1.3;
 	word-break: break-word;
 	hyphens: auto;
@@ -277,7 +281,8 @@
 .grid .info a.more {
 	color: #A3A5A8;
 	text-decoration: underline;
-	font-size: 1.2em;
+	font-size: 1.5em;
+	font-weight: 600;
 	margin-top: 1.5em;
 }
 
@@ -304,9 +309,350 @@
 .carousel img {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
+	max-height: 1000px;
 }
 
 /*---Prevents FOUC ---*/
 .slick-initialized img {
 	opacity: 1;
+}
+
+.menu-container {
+	background: #fff;
+}
+
+.news .menu-container,
+.wall-details .menu-container {
+	padding: 15em 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.news .menu-container,
+	.wall-details .menu-container {
+		padding-top: 0;
+	}
+}
+
+header .menu-container {
+	position: fixed;
+	top: 7.2rem;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding-top: 15em;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 2;
+	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+@media only screen and ( max-width: 767px ) {
+	header .menu-container {
+		padding-top: 10em;
+	}
+}
+
+header .menu-container.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.menu-container > div {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.news .menu-container .static-menu ul li,
+.wall-details .menu-container .static-menu ul li {
+	line-height: 1.1;
+}
+
+.news .menu-container .dynamic-menu ul li,
+.wall-details .menu-container .dynamic-menu ul li {
+	line-height: 1.3;
+}
+
+header .menu-container ul li {
+	line-height: 1.2;
+}
+
+.menu-container ul li a {
+	text-decoration: none;
+	transition: color 0.3s ease-in-out;
+}
+
+.news .menu-container ul li a:hover,
+.wall-details .menu-container ul li a:hover {
+	color: #A2A4A7;
+}
+
+header .menu-container ul li a {
+	color: #A2A4A7;
+}
+
+/*--- Hover effect for all links in menu container ---*/
+header .menu-container ul li a:hover {
+	color: #221E1F;
+}
+
+.menu-container .static-menu {
+	border-right: 0.1rem solid #221E1f;
+	padding-left: 2rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.menu-container .static-menu {
+		border: none;
+	}
+}
+
+.news .menu-container .static-menu ul {
+	padding-left: 2.5em;
+}
+
+.menu-container .static-menu ul {
+	padding: 0;
+}
+
+.news .menu-container .static-menu ul li a {
+	font-size: 2em;
+	cursor: pointer;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	.news .menu-container .static-menu ul li a {
+		font-size: 1.8em;
+	}
+}
+
+.news .menu-container .static-menu ul li.child a {
+	font-size: 1.5em;
+	font-weight: 300;
+}
+
+.menu-container .static-menu ul li a {
+	font-size: 6em;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.menu-container .static-menu ul li a {
+		font-size: 5em;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.menu-container .static-menu ul li a {
+		font-size: 3em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	header .menu-container .static-menu ul li a {
+		font-size: 3.5em;
+	}
+
+	.news .menu-container .static-menu ul li a,
+	.wall-details .menu-container .static-menu ul li a {
+		font-size: 3em;
+	}
+}
+
+.news .dynamic-menu {
+	padding: 0;
+	min-height: 90em;
+	max-height: 120em;
+	overflow: scroll;
+}
+
+.wall-details .dynamic-menu {
+	padding-left: 10em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.news .dynamic-menu,
+	.wall-details .dynamic-menu {
+		padding-left: 2rem;
+	}
+}
+
+.news .menu-container .dynamic-menu h2 {
+	font-size: 2.5em;
+	text-decoration: underline;
+	margin: 0;
+}
+
+@media only screen and ( max-width: 1199px ) {
+	.news .menu-container .dynamic-menu h2 {
+		font-size: 2em;
+	}
+}
+
+.news .dynamic-menu div.category-container > div:not( :last-child ) {
+	margin-bottom: 4em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.news .dynamic-menu div.category-container > div:not( :last-child ) {
+		margin-bottom: 2em;
+	}
+}
+
+.news .dynamic-menu > div:not( :first-child ),
+.wall-details .dynamic-menu > div:not( :first-child ) {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.menu-container .dynamic-menu ul li a {
+	font-weight: 200;
+}
+
+.news .menu-container .dynamic-menu ul li a,
+.wall-details .menu-container .dynamic-menu ul li a {
+	font-size: 2.2rem;
+}
+
+header .menu-container .dynamic-menu ul li a {
+	font-size: 3rem;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	header .menu-container .dynamic-menu ul li a {
+		font-size: 2.5rem;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	header .menu-container .dynamic-menu ul li a {
+		font-size: 2rem;
+	}
+}
+
+.menu-container .dynamic-menu h2 {
+	font-size: 1.8em;
+	font-weight: 600;
+}
+
+.menu-container .dynamic-menu h2 span {
+	color: #A3A5A8;
+}
+
+.news .menu-container .dynamic-menu ul,
+.wall-details .menu-container .dynamic-menu ul {
+	padding: 0;
+}
+
+header .menu-container .dynamic-menu ul {
+	padding-left: 1em;
+}
+
+.news .dynamic-menu > div {
+	margin: 0;
+	padding: 0 4em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.news .dynamic-menu > div {
+		margin: 0;
+		padding: 0 2em;
+	}
+}
+
+.news .dynamic-menu > div,
+.wall-details .dynamic-menu > div,
+.menu-container .dynamic-menu .company,
+.menu-container .dynamic-menu .projects {
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+	position: absolute;
+}
+
+.news .dynamic-menu > div.visible,
+.wall-details .dynamic-menu > div.visible,
+.menu-container .dynamic-menu .company.visible,
+.menu-container .dynamic-menu .projects.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.news .dynamic-menu > div.not-visible,
+.wall-details .dynamic-menu > div.not-visible,
+.menu-container .dynamic-menu .company.not-visible,
+.menu-container .dynamic-menu .projects.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.news .dynamic-menu .content p {
+	font-family: HelveticaNeueLT Std;
+	font-size: 1.2em;
+	font-weight: 300;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	.news .dynamic-menu .content p {
+		font-size: 1em;
+	}
+}
+
+.hero-image {
+	margin: 0 0 8rem 0;
+	min-height: 30rem;
+}
+
+/*--- Media Query to control margins for hero image ---*/
+@media only screen and ( max-width: 767px ) {
+	.hero-image {
+		margin: 0;
+	}
+}
+
+/*--- Featured image styles ---*/
+.hero-image.settings {
+	position: relative;
+	padding-bottom: 35%;
+}
+
+/*--- Add min-height to hero image settings ---*/
+.hero-image.settings {
+	min-height: 30rem;
+}
+
+/*--- Source for featured image ---*/
+.hero-image.settings div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.news .settings {
+	padding-bottom: 40%;
+	margin: 2em 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.news .settings {
+		margin: 1em 0;
+		padding-bottom: 65%;
+	}
+}
+
+.settings {
+	position: relative;
+	padding-bottom: 65%;
+}
+
+/*--- Source for featured image ---*/
+.settings div {
+	background-size: cover;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
