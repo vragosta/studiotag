@@ -327,9 +327,13 @@ function tagwall_get_post_type_term_query( $post_type, $term ) {
  * @uses   sprintf()
  * @return string void title HTML with slash
  */
-function tagwall_get_wall_title( $blog_post = false ) {
+function tagwall_get_wall_title( $blog = false ) {
 	global $post;
-	$post = ( $blog_post ) ? $blog_post : '';
+
+	if ( $blog ) :
+		$blog_id = get_option( 'page_for_posts' );
+		$post    = get_post( $blog_id );
+	endif;
 
 	$html = '
 		<section class="wall-title %1$s">

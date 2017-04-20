@@ -9,8 +9,6 @@
 ?>
 
 <?php get_header(); ?>
-<?php $blog_id    = get_option( 'page_for_posts' ); ?>
-<?php $blog_post  = get_post( $blog_id ); ?>
 <?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $blog_post ); ?>
 <?php $categories = get_categories( [ 'hide_empty' => false, 'parent' => 0, 'order' => 'DESC' ] ); ?>
 
@@ -22,7 +20,7 @@
 
 <main class="news">
 
-	<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( $blog_post ); ?>
+	<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( $blog = true ); ?>
 
 	<section class="menu-container">
 		<div class="row">
@@ -43,7 +41,7 @@
 				</div>
 				<div class="dynamic-menu col-xs-12 col-sm-9">
 					<?php foreach( $categories as $category ) : ?>
-						
+
 						<?php
 							$posts = new WP_Query( [
 								'post_type' => 'post',
