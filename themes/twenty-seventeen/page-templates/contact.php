@@ -22,24 +22,26 @@
 			</figure>
 		<?php endif; ?>
 
-		<section class="contact-content">
+			<main class="two-column-textblock contact">
 
-			<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
+				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
-			<div class="container">
-				<div class="contact-col">
-					<?php if ( $studiotag_info ) : ?>
-						<h3>STUDIOTAG General Information</h3>
-						<?php echo $studiotag_info; ?>
-					<?php endif; ?>
-				</div>
-				<div class="contact-col">
-					<?php if ( $tagwall_info ) : ?>
-						<h3>TAGWALL General Information</h3>
-						<?php echo $tagwall_info; ?>
-					<?php endif; ?>
-				</div>
-			</div>
+				<section class="content-container row">
+					<div class="col-sm-12 col-md-5">
+						<?php if ( $studiotag_info ) : ?>
+							<h3>STUDIO<span>TAG</span> General Information</h3>
+							<?php echo $studiotag_info; ?>
+						<?php endif; ?>
+					</div>
+					<div class="col-sm-12 col-md-5">
+						<?php if ( $tagwall_info ) : ?>
+							<h3><span>TAG</span>WALL General Information</h3>
+							<?php echo $tagwall_info; ?>
+						<?php endif; ?>
+					</div>
+				</section>
+
+			</main>
 		</section>
 
 		<section class="map">

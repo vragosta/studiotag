@@ -224,13 +224,6 @@ function styles() {
 	);
 
 	wp_register_style(
-		'helpers',
-		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-helpers---twenty-seventeen.css",
-		array(),
-		TAGWALL_VERSION
-	);
-
-	wp_register_style(
 		'tagwall-header',
 		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-header---twenty-seventeen.css",
 		array(),
@@ -369,19 +362,10 @@ function styles() {
 		);
 	endif;
 
-	if ( is_page_template( 'page-templates/two-column-textblock.php' ) ) :
+	if ( is_page_template( 'page-templates/two-column-textblock.php' ) || is_page_template( 'page-templates/contact.php' ) ) :
 		wp_enqueue_style(
 			'tagwall-two-column-textblock',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-two-column-textblock---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_page_template( 'page-templates/contact.php' ) ) :
-		wp_enqueue_style(
-			'tagwall-contact',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-contact---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
@@ -399,7 +383,7 @@ function styles() {
 	wp_enqueue_style(
 		'tagwall',
 		TAGWALL_TEMPLATE_URL . "/assets/css/tagwall---twenty-seventeen.css",
-		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'helpers', 'tagwall-header', 'tagwall-footer' ),
+		array( 'bootstrap', 'fontawesome', 'ionicons', 'sanitize', 'hamburger', 'slick', 'slick-theme', 'fonts', 'core-components', 'tagwall-header', 'tagwall-footer' ),
 		TAGWALL_VERSION
 	);
 }

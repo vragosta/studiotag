@@ -117,3 +117,96 @@
 		font-size: 1.6rem;
 	}
 }
+
+/*--- Allows metabox items to align with contact us info ---*/
+.contact .content-container {
+	padding: 0;
+	margin-left: 20em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.contact .content-container {
+		margin-left: 15.5em;
+	}
+
+	.contact .content-container > div:last-child {
+		margin-top: 4em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.contact .content-container {
+		margin-left: 0em;
+	}
+
+	.contact .content-container > div:last-child {
+		margin-top: 4em;
+	}
+}
+
+/*--- horizontal line is now black ---*/
+.contact .content-container > div hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #221E1F;
+	margin: 2em 0;
+	padding: 0;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.contact .content-container > div hr {
+		margin: 1.5em 0;
+	}
+}
+
+.contact .content-container > div h3 {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
+	font-size: 1.8em;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.contact .content-container > div h3 {
+		font-size: 1.5em;
+	}
+}
+
+.contact .content-container > div h3 span {
+	font-family: Bodoni;
+}
+
+.contact .content-container > div p {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 300;
+	font-size: 1.4em;
+	margin: 0;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.contact .content-container > div p {
+		font-size: 1.2em;
+	}
+}
+
+
+/*--- Bottom part of metabox text is gray ---*/
+.contact .content-container > div p:last-child {
+	color: #A2A4A7;
+}
+
+.map {
+	display: flex;
+	justify-content: center;
+	margin: 15em 0 4em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.map {
+		margin: 4em 0;
+	}
+}
+
+.map iframe {
+	width: 100%;
+}
