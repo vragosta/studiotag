@@ -42,7 +42,7 @@
 			</ul>
 			<ul class="projects not-visible">
 				<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
-				<li><a href="<?php echo home_url( '/gallery/' ); ?>">Gallery</a></li>
+				<li><a href="https://www.pinterest.com/tagwall/">Gallery</a></li>
 			</ul>
 		</div>
 	</div>
