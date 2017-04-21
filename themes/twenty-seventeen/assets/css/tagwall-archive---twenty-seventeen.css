@@ -335,3 +335,271 @@
 		align-items: center;
 	}
 }
+
+.archive-container.applied-detail {
+	margin: 0 auto;
+	padding: 12em 2rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.applied-detail {
+		padding: 0;
+	}
+}
+
+.archive-container.door > .row {
+	padding: 2em 20% 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row {
+		padding: 6rem 10% 0;
+	}
+}
+
+.archive-container.door > .row + .row {
+	border-top: 0.1rem solid #221E1F;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.door > .row + .row {
+		margin: 0;
+		border: none;
+		padding: 0 10%;
+	}
+}
+
+/*--- System images will conform to the new aspect ratio ---*/
+.archive-container.door .featured-image {
+	padding-bottom: 125%;
+	position: relative;
+}
+
+.archive-container.door .featured-image div {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.archive-container.door figure + h1 {
+	text-align: center;
+}
+
+.archive-container.door .taxonomies {
+	margin-top: 0;
+}
+
+.archive-container.film .row.indent {
+	margin-top: 0;
+}
+
+.archive-container.film .row.indent p {
+	font-size: 1.4em;
+	font-weight: 300;
+}
+
+.archive-container.film .row.indent p + p {
+	margin-top: 1em;
+}
+
+.archive-container.film .content {
+	max-width: 1550px;
+	margin: 4em auto 10em;
+	display: flex;
+}
+
+@media only screen and ( max-width: 768px ) {
+	.archive-container.film .content {
+		flex-direction: column;
+	}
+
+	.archive-container.film .content div + div {
+		margin-top: 1em;
+	}
+}
+
+.archive-container.film p {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2em;
+	font-weight: 600;
+	word-break: break-word;
+	hyphens: auto;
+	line-height: 1.3;
+}
+
+@media only screen and ( max-width: 1499px ) and ( min-width: 992px ) {
+	.archive-container.film p {
+		font-size: 1.5em;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.film p {
+		font-size: 1em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.film p {
+		font-size: 1.2em;
+	}
+}
+
+.archive-container.film .content a {
+	position: absolute;
+	bottom: -10px;
+	text-decoration: underline;
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.film .content a {
+		position: relative;
+	}
+}
+
+/*--- CSS hack to target child terms, we can remediate this by making the $custom->all_terms an assoc array with parent/child classes ---*/
+.details-container.glass ul li:nth-child(n+3):not(:last-child) {
+	padding-left: 8%;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.details-container.glass ul li:nth-child(n+3):not(:last-child) {
+		padding-left: 0;
+	}
+}
+
+.archive-container.glass .child:not(:first-child) {
+	padding: 6rem 0;
+}
+
+@media only screen and ( max-width: 991px ) {
+	.archive-container.glass .child {
+		padding: 0;
+	}
+}
+
+.archive-container.glass .row.indent p {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 1.4em;
+	font-weight: 300;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+.archive-container.glass .taxonomies:not(:first-child) {
+	margin: 10em 0;
+}
+
+.archive-container.glass section {
+	margin-bottom: 20rem;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.glass section {
+		margin-bottom: 10rem;
+	}
+}
+
+.archive-container.hardware > section {
+	padding-bottom: 4em;
+}
+
+.archive-container.hardware .content {
+	max-width: 1550px;
+	margin: 0 auto;
+	padding: 2em 0;
+	display: flex;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .content {
+		padding: 0;
+	}
+
+	.archive-container.hardware .content h2 {
+		font-size: 2.2rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.hardware .content {
+		flex-direction: column;
+		padding: 2em 0 0;
+	}
+
+	.archive-container.hardware .content > div:not(:first-child) {
+		margin: 2em 0;
+	}
+}
+
+.archive-container.hardware .hgu-finish .content {
+	min-height: 240px;
+}
+
+.archive-container.hardware .content .settings {
+	padding-bottom: 165%;
+}
+
+.archive-container.hardware .content .settings.lever {
+	padding-bottom: 35%;
+}
+
+.archive-container.hardware .segment {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.archive-container.hardware .segment h2 {
+	font-family: HelveticaNeueLT Std;
+	color: #A3A5A8;
+	font-size: 2.5em;
+	font-weight: 600;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.hardware .segment h2 {
+		font-size: 2em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.hardware .segment h2 {
+		font-size: 1.8em;
+		text-align: center;
+	}
+}
+
+.archive-container.hardware .sub-title {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.archive-container.hardware .sub-title h2 {
+	font-weight: 600;
+}
+
+.archive-container.hardware .content .finish-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.archive-container.hardware .content .finish-item h2 {
+	margin: 0;
+	text-align: center;
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
+}
