@@ -82,7 +82,7 @@
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'click', function() {
 			var id = $( this ).data( 'id' );
 
 			$( '.wall-details .dynamic-menu > div:not( .' + id + ' )' )
