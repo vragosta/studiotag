@@ -22,10 +22,12 @@
 <?php $query = new WP_Query( $args ); ?>
 <?php $carousel_images = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_carousel_images( $post->ID ); ?>
 
+<i class="toggle ion ion-ios-arrow-left"></i>
+<i class="toggle ion ion-ios-arrow-right"></i>
 <section class="carousel">
 	<?php foreach( $carousel_images as $image_url ) : ?>
 		<?php if ( $image_url ) : ?>
-			<img src="<?php echo get_post_meta( $post->ID, 'carousel_image_one', true ); ?>" />
+			<img src="<?php echo esc_attr( $image_url ); ?>" />
 		<?php endif; ?>
 	<?php endforeach; ?>
 </section>
