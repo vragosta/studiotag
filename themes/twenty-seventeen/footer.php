@@ -31,7 +31,7 @@
 					<div class="social">
 						<a href="https://twitter.com/tagwall_llc" class="twitter"><i class="fa fa-twitter fa-2x"></i></a>
 						<a href="https://www.facebook.com/studiotagnyc/" class="facebook"><i class="fa fa-facebook-official fa-2x"></i></a>
-						<a href="https://www.pinterest.com/tagwall/showroom/" class="pinterest"><i class="fa fa-pinterest fa-2x"></i></a>
+						<a href="https://www.pinterest.com/tagwall/" class="pinterest"><i class="fa fa-pinterest fa-2x"></i></a>
 						<a href="https://www.instagram.com/studio_tag/" class="instagram"><i class="fa fa-instagram fa-2x"></i></a>
 						<a href="https://www.linkedin.com/company/studio-tag-llc" class="linkedin"><i class="fa fa-linkedin-square fa-2x"></i></a>
 					</div>
