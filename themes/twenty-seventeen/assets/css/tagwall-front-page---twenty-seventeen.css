@@ -1,9 +1,29 @@
 /**
  * Tag Wall - Twenty Seventeen
- * Styles for systems archive
- *
- * Location: archive-system.php
+ * Styles for the front page
  */
+
+/*--- Header navigation front page container element ---*/
+.header-navigation-front-page {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	max-width: 1500px;
+	margin: 0 auto 1.5rem;
+	height: 5rem;
+}
+
+/*--- Only target first level button elements ---*/
+.header-navigation-front-page > button {
+	display: flex;
+	align-items: center;
+}
+
+/*--- Hover for first level button elements ---*/
+.header-navigation-front-page > button:hover {
+	opacity: 1;
+}
 
 /*--- Control margin of temporary carousel ---*/
 .carousel {
