@@ -24,7 +24,7 @@
 			<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
 			 <?php if ( get_the_content() ) : ?>
-				<section class="container">
+				<section class="row">
 					<?php the_content(); ?>
 				</section>
 			<?php endif; ?>
