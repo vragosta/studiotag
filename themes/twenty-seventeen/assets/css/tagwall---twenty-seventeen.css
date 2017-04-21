@@ -372,11 +372,29 @@
 	}
 }
 
+i.toggle {
+	cursor: pointer;
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+	font-size: 80px;
+	transition: left .5s ease-in-out,right .5s ease-in-out,visibility .5s ease-in-out,opacity .5s ease-in-out;
+}
+
+i.toggle.ion-ios-arrow-left {
+	left: 75px;
+}
+
+i.toggle.ion-ios-arrow-right {
+	right: 75px;
+}
+
 /*---Prevents FOUC ---*/
 .carousel img {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
-	max-height: 1000px;
+	max-height: 850px;
 }
 
 /*---Prevents FOUC ---*/
