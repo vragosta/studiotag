@@ -4,7 +4,7 @@
  *
  * @package Tag Wall - Twenty Seventeen
  * @since   0.1.0
- * @uses    tagwall_get_hero_image(), tagwall_get_featured_image(), esc_Attr(), the_content(), wp_reset_postdata(), get_footer()
+ * @uses    TODO
  */
 ?>
 
@@ -12,23 +12,27 @@
 
 <?php if ( have_posts() ) : ?>
 	<?php while( have_posts() ) : the_post(); ?>
-		<?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
+		<?php $hero_image     = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $post ); ?>
+		<?php $studiotag_info = get_post_meta( $post->ID, 'studiotag_info', true ); ?>
+		<?php $tagwall_info   = get_post_meta( $post->ID, 'tagwall_info', true ); ?>
+
 		<?php if ( $hero_image ) : ?>
 			<figure class="hero-image settings">
 				<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
 			</figure>
 		<?php endif; ?>
 
-		<section class="single-column-list">
+			<main class="two-column-textblock single-column-list">
 
-			<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
+				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
-			 <?php if ( get_the_content() ) : ?>
-				<section class="row">
-					<?php the_content(); ?>
-				</section>
-			<?php endif; ?>
+				<?php if ( get_the_content() ) : ?>
+					<section class="content-container row">
+						<?php the_content(); ?>
+					</section>
+				<?php endif; ?>
 
+			</main>
 		</section>
 
 	<?php endwhile; ?>

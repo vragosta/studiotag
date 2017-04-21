@@ -362,19 +362,10 @@ function styles() {
 		);
 	endif;
 
-	if ( is_page_template( 'page-templates/two-column-textblock.php' ) || is_page_template( 'page-templates/contact.php' ) ) :
+	if ( is_page_template( 'page-templates/two-column-textblock.php' ) || is_page_template( 'page-templates/contact.php' ) || is_page_template( 'page-templates/single-column-list.php' ) ) :
 		wp_enqueue_style(
 			'tagwall-two-column-textblock',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-two-column-textblock---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_page_template( 'page-templates/single-column-list.php' ) ) :
-		wp_enqueue_style(
-			'tagwall-single-column-list',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-single-column-list---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
