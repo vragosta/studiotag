@@ -128,6 +128,11 @@
 							</div>
 						<?php endif; ?>
 					</div>
+
+					<?php if ( $klo_ladder_pulls->post_count % 3 !== 0 ) : ?>
+						<hr />
+					<?php endif; ?>
+
 				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-view' ) : ?>
@@ -216,6 +221,11 @@
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					</div>
+
+					<?php if ( $hgu_levers->post_count % 3 !== 0 ) : ?>
+						<hr />
+					<?php endif; ?>
+					
 				<?php endif; ?>
 
 			<?php elseif ( $term->slug === 'hgu-finish' ) : ?>
@@ -394,9 +404,7 @@
 					</div>
 					<hr />
 				<?php endif; ?>
-
 			<?php endif; ?>
-
 		</section>
 
 	<?php endforeach; ?>

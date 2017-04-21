@@ -71,6 +71,11 @@
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
 							</div>
+
+							<?php if ( $taxonomy_query->post_count % 3 !== 0 ) : ?>
+								<hr />
+							<?php endif; ?>
+							
 						</div>
 					</section>
 				<?php endif; ?>
@@ -211,7 +216,11 @@
 									<?php endwhile; ?>
 									<?php wp_reset_postdata(); ?>
 								</div>
-								<hr />
+
+								<?php if ( $glass_type->post_count % 3 !== 0 ) : ?>
+									<hr />
+								<?php endif; ?>
+
 							</div>
 						<?php endif; ?>
 					<?php endforeach; ?>
