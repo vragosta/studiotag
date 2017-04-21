@@ -210,3 +210,51 @@
 .map iframe {
 	width: 100%;
 }
+
+.single-column-list {
+	margin-bottom: 10em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.single-column-list {
+		margin-bottom: 4em;
+	}
+}
+
+.single-column-list .content-container {
+	margin-left: 23em;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.single-column-list .content-container {
+		margin-left: 17em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.single-column-list .content-container {
+		margin-left: 0;
+	}
+
+	.single-column-list .content-container ul {
+		padding: 0;
+	}
+}
+
+.single-column-list h1 {
+	font-weight: 600;
+	font-size: 64px;
+	margin: 0;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.single-column-list h1 {
+		font-size: 50px;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.single-column-list h1 {
+		font-size: 24px;
+	}
+}
