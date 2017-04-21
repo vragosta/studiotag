@@ -9,6 +9,8 @@
 ?>
 
 <?php get_header(); ?>
+<?php $blog_id    = get_option( 'page_for_posts' ); ?>
+<?php $blog_post  = get_post( $blog_id ); ?>
 <?php $hero_image = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_hero_image( $blog_post ); ?>
 <?php $categories = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_filter_array( get_categories( [ 'hide_empty' => false, 'parent' => 0, 'order' => 'DESC' ] ) ); ?>
 
