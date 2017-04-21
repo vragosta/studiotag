@@ -240,15 +240,8 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'tagwall-archive-systems',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-
-		wp_enqueue_style(
-			'tagwall-header-front-page',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-header-front-page---twenty-seventeen.css",
+			'tagwall-front-page',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-front-page---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
