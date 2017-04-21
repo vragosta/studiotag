@@ -1,9 +1,18 @@
 /**
  * Tag Wall - Twenty Seventeen
- * Styles for the two column textblock page template
- *
- * Location: page-templates/two-column-textblock.php
+ * Styles for all page templates
  */
+
+.wall-details {
+	padding: 0 2rem;
+	margin: 0 0 20rem 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.wall-details {
+		margin: 0 0 20rem 0;
+	}
+}
 
 /*--- Control margins of textblock container ---*/
 .two-column-textblock {
