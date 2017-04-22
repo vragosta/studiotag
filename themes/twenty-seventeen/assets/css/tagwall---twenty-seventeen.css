@@ -372,22 +372,39 @@
 	}
 }
 
+.carousel-container {
+	position: relative;
+	margin: 0 2rem 6rem 2rem;
+}
+
 i.toggle {
 	cursor: pointer;
 	color: #fff;
 	position: absolute;
-	top: 50%;
+	top: 47%;
 	z-index: 1;
-	font-size: 80px;
+	font-size: 4.5em;
 	transition: left .5s ease-in-out,right .5s ease-in-out,visibility .5s ease-in-out,opacity .5s ease-in-out;
 }
 
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	i.toggle {
+		font-size: 3.5em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	i.toggle {
+		font-size: 3em;
+	}
+}
+
 i.toggle.ion-ios-arrow-left {
-	left: 75px;
+	left: 3%;
 }
 
 i.toggle.ion-ios-arrow-right {
-	right: 75px;
+	right: 3%;
 }
 
 /*---Prevents FOUC ---*/

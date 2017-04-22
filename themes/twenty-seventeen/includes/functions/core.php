@@ -291,7 +291,7 @@ function styles() {
  */
 function sidebars() {
 	$footer_column_one = array(
-		'name'          => __( 'Footer Column One', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column One', 'tagwall' ),
 		'id'            => 'footer-column-one',
 		'description'   => 'Column one contents',
 		'class'         => '',
@@ -302,7 +302,7 @@ function sidebars() {
 	);
 
 	$footer_column_two = array(
-		'name'          => __( 'Footer Column Two', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column Two', 'tagwall' ),
 		'id'            => 'footer-column-two',
 		'description'   => 'Column two contents',
 		'class'         => '',
@@ -313,9 +313,20 @@ function sidebars() {
 	);
 
 	$footer_column_three = array(
-		'name'          => __( 'Footer Column Three', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column Three', 'tagwall' ),
 		'id'            => 'footer-column-three',
 		'description'   => 'Column three contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_left = array(
+		'name'          => __( 'Footer Left Column', 'tagwall' ),
+		'id'            => 'footer-left-column',
+		'description'   => 'Left column contents',
 		'class'         => '',
 		'before_widget' => '',
 		'after_widget'  => '',
@@ -326,4 +337,5 @@ function sidebars() {
 	register_sidebar( $footer_column_one );
 	register_sidebar( $footer_column_two );
 	register_sidebar( $footer_column_three );
+	register_sidebar( $footer_left );
 }

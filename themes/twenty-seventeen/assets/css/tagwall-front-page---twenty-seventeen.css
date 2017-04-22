@@ -25,18 +25,6 @@
 	opacity: 1;
 }
 
-/*--- Control margin of temporary carousel ---*/
-.carousel {
-	margin: 0 2rem 6rem 2rem;
-}
-
-/*--- Media Query to control margin of temporary carousel ---*/
-@media only screen and ( max-width: 767px ) {
-	.carousel {
-		margin: 0;
-	}
-}
-
 /*--- Overriding carousel arrows ---*/
 .carousel .slick-prev:before {
 	font-size: 50px;
