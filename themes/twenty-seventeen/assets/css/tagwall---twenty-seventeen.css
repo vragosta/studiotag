@@ -153,6 +153,7 @@
 }
 
 /*--- Grid CSS ---*/
+
 .grid {
 	margin: 0 0 20rem 0;
 	overflow: hidden;
@@ -163,6 +164,16 @@
 	.grid {
 		padding: 0;
 		margin: 0;
+	}
+}
+
+.archive-container.applied-detail .grid {
+	margin: 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.applied-detail .grid {
+		margin: 0 0 10em;
 	}
 }
 
@@ -854,6 +865,12 @@ header .menu-container .dynamic-menu ul {
 	margin: 10em 0;
 }
 
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.film .archive-item:not(:first-child) {
+		margin: 4em 0;
+	}
+}
+
 @media only screen and ( max-width: 767px ) {
 	.archive-item:not(:first-child) {
 		margin: 5em 0;
@@ -879,6 +896,7 @@ header .menu-container .dynamic-menu ul {
 	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
 	margin: 1.5rem 0;
+	font-size: 1.8em;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -949,4 +967,9 @@ hr {
 
 .archive-item.users .row.indent p + p {
 	margin-top: 1em;
+}
+
+.archive-item .row.indent .child h2 {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
 }
