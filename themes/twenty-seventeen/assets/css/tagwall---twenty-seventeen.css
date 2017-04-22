@@ -481,9 +481,10 @@ header .menu-container.visible {
 }
 
 @media only screen and ( max-width: 767px ) {
-	.menu-container > div {
+	header .menu-container > div {
 		align-items: flex-start;
-		padding-top: 47%;
+		/*padding-top: 47%;*/
+		padding-top: 12em;
 	}
 }
 
@@ -572,13 +573,16 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu ul li a {
-	font-size: 6em;
+	/*font-size: 6em;*/
+	font-size: 5em;
 	font-weight: 600;
+	cursor: pointer;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.menu-container .static-menu ul li a {
-		font-size: 5em;
+		/*font-size: 5em;*/
+		font-size: 4em;
 	}
 }
 
@@ -614,10 +618,19 @@ header .dynamic-menu {
 	padding-left: 10em;
 }
 
-@media only screen and ( max-width: 767px ) {
-	.news .dynamic-menu,
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.wall-details .dynamic-menu {
+		padding-left: 6em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.news .dynamic-menu {
 		padding-left: 2rem;
+	}
+
+	.wall-details .dynamic-menu {
+		padding-left: 0;
 	}
 }
 
@@ -665,24 +678,38 @@ header .dynamic-menu {
 }
 
 header .menu-container .dynamic-menu ul li a {
-	font-size: 3rem;
+	/*font-size: 3rem;*/
+	font-size: 2.5rem;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	header .menu-container .dynamic-menu ul li a {
-		font-size: 2.5rem;
-	}
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
 	header .menu-container .dynamic-menu ul li a {
 		font-size: 2rem;
 	}
 }
 
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .menu-container .dynamic-menu ul li a {
+		font-size: 1.8rem;
+	}
+}
+
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	header .menu-container .dynamic-menu ul li a {
+		font-size: 2rem;
+	}
+}*/
+
 .menu-container .dynamic-menu h2 {
 	font-size: 1.8em;
 	font-weight: 600;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .dynamic-menu h2 {
+		font-size: 1.5em;
+	}
 }
 
 .wall-details .dynamic-menu h2 {
@@ -908,9 +935,15 @@ hr {
 	font-weight: 300;
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) {
 	.archive-item.users .row.indent p {
 		font-size: 1.2em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-item.users .row.indent p {
+		margin: 0;
 	}
 }
 
