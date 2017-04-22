@@ -23,16 +23,8 @@
 
 /*--- Control the height of the two section elements ---*/
 #footer > section {
-	/*height: 40rem;*/
 	height: 30rem;
 }
-
-/*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
-/*@media only screen and ( max-width: 767px ) {
-	#footer > section:last-child {
-		height: 30rem;
-	}
-}*/
 
 /*--- Remove all underlines on hover for links ---*/
 #footer > section a {
@@ -48,7 +40,6 @@
 /*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
 	width: 30%;
-	/*width: 25%;*/
 	border-right: 0.1rem solid #221E1F;
 	display: flex;
 	justify-content: space-around;
@@ -72,15 +63,13 @@
 }
 
 /*--- Control the dimensions of the logo in the footer ---*/
-/*--- NOTE: This can be optimized using the image trick. ---*/
 #footer img {
-	/*width: 15em;*/
 	width: 12em;
 }
 
 /*--- Styles for <ul> elements in first section in footer ---*/
 #footer > section:first-child ul {
-	margin: 0 0 2rem 0;
+	margin: 1em 0;
 	padding: 0;
 }
 
@@ -89,7 +78,6 @@
 	display: flex;
 	justify-content: center;
 	color: #221E1F;
-	/*font-size: 1.4em;*/
 	font-size: 1.1em;
 	font-weight: 300;
 	font-family: HelveticaNeueLT Std;
@@ -102,7 +90,6 @@
 }
 
 #footer .social a i {
-	/*font-size: 1.6em;*/
 	font-size: 1.5em;
 }
 
@@ -128,12 +115,9 @@
 
 #footer .content {
 	margin: 2.5rem 0;
-	/*padding: 0 10em;*/
 	width: 70%;
-	/*width: 75%;*/
 	display: flex;
 	flex-direction: column;
-	/*justify-content: center;*/
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
@@ -145,20 +129,12 @@
 @media only screen and ( max-width: 767px ) {
 	#footer .content {
 		width: 100%;
+		margin: 0;
 	}
 }
 
 #footer .content .title-container {
-	/*margin: 0 0 2em;*/
-	/*border-bottom: 0.1rem solid #221E1F;*/
-	/*padding: 2em 10em;*/
 	padding: 2em 0;
-	/*padding: 1.8em 10em 2em;*/
-	/*padding: 1.8em 14em 2em;*/
-	/*padding: 1.8em 14.5% 2em;*/
-	/*padding: 1.8em 14.5% 2em;*/
-	/*padding: 1.8em 14.5% 2em 18.5%;*/
-	/*padding: 2em 14.5% 3em 18.5%;*/
 	max-width: 775px;
 	margin: 0 auto;
 	width: 100%;
@@ -166,21 +142,8 @@
 	align-items: center;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	#footer .content .title-container {
-		/*padding: 2em 10.5% 3em 14.5%;*/
-	}
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	#footer .content .title-container {
-		/*padding: 2em 6.5% 3em 10.5%;*/
-	}
-}
-
 @media only screen and ( max-width: 767px ) {
 	#footer .content .title-container {
-		/*padding: 2em;*/
 		padding: 2em 0 0;
 	}
 
@@ -196,69 +159,40 @@
 	margin: 0;
 	text-align: center;
 	font-size: 1.5em;
-	/*font-size: 2em;*/
-}
-
-@media only screen and ( max-width: 767px ) {
-	#footer .content .title-container h2 {
-		/*text-align: center;*/
-	}
 }
 
 #footer .content .title-container h2 span {
 	font-family: Bodoni;
 }
 
-/*#footer .content .row > div {*/
-	/*display: flex;
-	justify-content: center;*/
-/*}*/
-
-/*#footer .content hr {
+#footer .content hr {
 	width: 100%;
-}*/
-/*#footer .content .row:not( .title-container ) > div {*/
-	/*height: 100%;*/
-	/*display: flex;
-	justify-content: center;*/
-/*}*/
+}
+
+@media only screen and ( max-width: 767px ) {
+	#footer .content hr {
+		margin: 1em 0;
+	}
+}
 
 #footer .content .footer-menus {
 	margin: 0 auto;
-	/*padding: 0 10em;*/
-	/*padding: 0 14em;*/
-	/*padding: 0 14.5% 0 18.5%;*/
 	width: 100%;
 	max-width: 775px;
 	height: 100%;
 	display: flex;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	#footer .content .footer-menus {
-		/*padding: 0 10.5% 0 14.5%;*/
-	}
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	#footer .content .footer-menus {
-		/*padding: 0 6.5% 0 10.5%;*/
-	}
-}
-
 @media only screen and ( max-width: 767px ) {
 	#footer .content .footer-menus {
-		padding: 0 2em;
+		padding: 0;
 	}
 }
 
 #footer .content .footer-menus > div {
-	/*display: flex;
-	justify-content: center;*/
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/*padding-top: 5%;*/
 }
 
 #footer .content .footer-menus h2 {
