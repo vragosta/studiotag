@@ -33,13 +33,14 @@
 .wall-title h1 {
 	font-family: HelveticaNeueLT Std;
 	text-transform: uppercase;
-	font-size: 7em;
+	/*font-size: 7em;*/
+	font-size: 5em;
 	font-weight: 600;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.wall-title h1 {
-		font-size: 6em;
+		font-size: 4em;
 	}
 }
 
@@ -59,7 +60,8 @@
 	position: static;
 	background: transparent;
 	transform: skew(-15deg);
-	height: 200%;
+	/*height: 200%;*/
+	height: 175%;
 	width: auto;
 	margin: 0 2em;
 }
@@ -100,12 +102,14 @@
 
 .slash hr:first-child {
 	background-color: #E6E7E8;
-	width: 1.1em;
+	/*width: 1.1em;*/
+	width: 1.1rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:first-child {
-		width: .7em;
+		/*width: .7em;*/
+		width: .7rem;
 	}
 }
 
@@ -115,12 +119,14 @@
 
 .slash hr:nth-child(2) {
 	background-color: #fff;
-	width: 1.4em;
+	/*width: 1.4em;*/
+	width: 1.4rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:nth-child(2) {
-		width: .9em;
+		/*width: .9em;*/
+		width: .9rem;
 	}
 }
 
@@ -130,12 +136,14 @@
 
 .slash hr:last-child {
 	background-color: #221E1F;
-	width: .7em;
+	/*width: .7em;*/
+	width: .7rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:last-child {
-		width: .4em;
+		/*width: .4em;*/
+		width: .4rem;
 	}
 }
 
@@ -162,7 +170,8 @@
 .grid .row {
 	display: flex;
 	margin: 0 auto;
-	max-width: 1200px;
+	/*max-width: 1200px;*/
+	max-width: 1000px;
 }
 
 .grid .archive-item.users .row:last-child {
@@ -265,7 +274,8 @@
 
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 1.8em;
 	font-weight: 600;
 	margin: 1em 0;
 	font-family: HelveticaNeueLT Std;
@@ -324,7 +334,8 @@
 .grid .info p {
 	font-family: HelveticaNeueLT Std;
 	color: #221E1F;
-	font-size: 1.2em;
+	/*font-size: 1.2em;*/
+	font-size: 1em;
 	font-weight: 300;
 	line-height: 1.3;
 	word-break: break-word;
@@ -346,7 +357,8 @@
 .grid .info a.more {
 	color: #A3A5A8;
 	text-decoration: underline;
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 1.2em;
 	font-weight: 600;
 	margin-top: 1.5em;
 }
@@ -374,7 +386,8 @@
 
 .carousel-container {
 	position: relative;
-	margin: 0 2rem 6rem 2rem;
+	/*margin: 0 2rem 6rem 2rem;*/
+	margin: 0 0 6rem 0;
 }
 
 i.toggle {
@@ -441,18 +454,18 @@ header .menu-container {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	padding-top: 15em;
+	/*padding-top: 15em;*/
 	opacity: 0;
 	visibility: hidden;
 	z-index: 2;
 	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
-@media only screen and ( max-width: 767px ) {
+/*@media only screen and ( max-width: 767px ) {
 	header .menu-container {
 		padding-top: 10em;
 	}
-}
+}*/
 
 header .menu-container.visible {
 	opacity: 1;
@@ -462,6 +475,28 @@ header .menu-container.visible {
 .menu-container > div {
 	max-width: 1500px;
 	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.menu-container > div {
+		align-items: flex-start;
+		padding-top: 47%;
+	}
+}
+
+.menu-container > div > .row {
+	width: 100%;
+	padding: 0 2em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.menu-container > div > .row {
+		padding: 0 1em;
+		margin: 0;
+	}
 }
 
 .news .menu-container .static-menu ul li {
@@ -502,7 +537,8 @@ header .menu-container ul li a:hover {
 
 .menu-container .static-menu {
 	border-right: 0.1rem solid #221E1f;
-	padding-left: 2rem;
+	/*padding-left: 2rem;*/
+	padding: 0;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -561,6 +597,10 @@ header .menu-container ul li a:hover {
 	.wall-details .menu-container .static-menu ul li a {
 		font-size: 3em;
 	}
+}
+
+header .dynamic-menu {
+	padding: 0;
 }
 
 .news .dynamic-menu {
@@ -659,7 +699,13 @@ header .menu-container .dynamic-menu ul li a {
 }
 
 header .menu-container .dynamic-menu ul {
-	padding-left: 1em;
+	padding-left: 2em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	header .menu-container .dynamic-menu ul {
+		padding: 0;
+	}
 }
 
 .news .dynamic-menu > div {
