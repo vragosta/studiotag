@@ -23,15 +23,16 @@
 
 /*--- Control the height of the two section elements ---*/
 #footer > section {
-	height: 40rem;
+	/*height: 40rem;*/
+	height: 30rem;
 }
 
 /*--- Media Query to control the height of the last ( second ) section element in the footer ---*/
-@media only screen and ( max-width: 767px ) {
+/*@media only screen and ( max-width: 767px ) {
 	#footer > section:last-child {
 		height: 30rem;
 	}
-}
+}*/
 
 /*--- Remove all underlines on hover for links ---*/
 #footer > section a {
@@ -47,12 +48,19 @@
 /*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
 	width: 30%;
+	/*width: 25%;*/
 	border-right: 0.1rem solid #221E1F;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
 	margin: 2.5rem 0;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	#footer > section:first-child {
+		width: 35%;
+	}
 }
 
 /*--- Media Query for first section element in footer ---*/
@@ -66,7 +74,8 @@
 /*--- Control the dimensions of the logo in the footer ---*/
 /*--- NOTE: This can be optimized using the image trick. ---*/
 #footer img {
-	width: 15em;
+	/*width: 15em;*/
+	width: 12em;
 }
 
 /*--- Styles for <ul> elements in first section in footer ---*/
@@ -80,7 +89,8 @@
 	display: flex;
 	justify-content: center;
 	color: #221E1F;
-	font-size: 1.4em;
+	/*font-size: 1.4em;*/
+	font-size: 1.1em;
 	font-weight: 300;
 	font-family: HelveticaNeueLT Std;
 }
@@ -92,7 +102,8 @@
 }
 
 #footer .social a i {
-	font-size: 1.6em;
+	/*font-size: 1.6em;*/
+	font-size: 1.5em;
 }
 
 #footer .social a.twitter:hover {
@@ -115,117 +126,154 @@
 	color: #007bb5;
 }
 
-/*--- Styles for last ( second ) section element in footer ---*/
-#footer > section:last-child {
+#footer .content {
+	margin: 2.5rem 0;
+	/*padding: 0 10em;*/
 	width: 70%;
+	/*width: 75%;*/
 	display: flex;
+	flex-direction: column;
+	/*justify-content: center;*/
 }
 
-/*--- Media Query for last ( second ) section element ---*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	#footer .content {
+		width: 65%;
+	}
+}
+
 @media only screen and ( max-width: 767px ) {
-	#footer > section:last-child {
+	#footer .content {
 		width: 100%;
 	}
 }
 
-@media only screen and ( max-width: 575px ) {
-	#footer > section:last-child {
-		height:100%;
-		flex-direction: column;
+#footer .content .title-container {
+	/*margin: 0 0 2em;*/
+	/*border-bottom: 0.1rem solid #221E1F;*/
+	/*padding: 2em 10em;*/
+	padding: 2em 0;
+	/*padding: 1.8em 10em 2em;*/
+	/*padding: 1.8em 14em 2em;*/
+	/*padding: 1.8em 14.5% 2em;*/
+	/*padding: 1.8em 14.5% 2em;*/
+	/*padding: 1.8em 14.5% 2em 18.5%;*/
+	/*padding: 2em 14.5% 3em 18.5%;*/
+	max-width: 775px;
+	margin: 0 auto;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	#footer .content .title-container {
+		/*padding: 2em 10.5% 3em 14.5%;*/
 	}
 }
 
-/*--- Styles for all first level <div> elements in the last ( second ) section in footer ---*/
-#footer > section:last-child .column {
-	width: 100%;
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	#footer .content .title-container {
+		/*padding: 2em 6.5% 3em 10.5%;*/
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
-	#footer > section:last-child .column {
-		border-top: 0.1rem solid #221E1f;
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		min-height: 23rem;
+	#footer .content .title-container {
+		/*padding: 2em;*/
+		padding: 2em 0 0;
+	}
+
+	#footer .content .title-container > div {
+		padding: 0.5em;
 	}
 }
 
-/*--- Styles for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column h2 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 30%;
-	border-bottom: 0.1rem solid #221E1F;
-	margin: 0;
+#footer .content .title-container h2 {
 	text-transform: uppercase;
-	font-size: 1.8em;
+	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
-	padding: 2rem;
+	margin: 0;
+	text-align: center;
+	font-size: 1.5em;
+	/*font-size: 2em;*/
 }
 
-#footer > section:last-child .column h2 + h2 {
+@media only screen and ( max-width: 767px ) {
+	#footer .content .title-container h2 {
+		/*text-align: center;*/
+	}
+}
+
+#footer .content .title-container h2 span {
+	font-family: Bodoni;
+}
+
+/*#footer .content .row > div {*/
+	/*display: flex;
+	justify-content: center;*/
+/*}*/
+
+/*#footer .content hr {
+	width: 100%;
+}*/
+/*#footer .content .row:not( .title-container ) > div {*/
+	/*height: 100%;*/
+	/*display: flex;
+	justify-content: center;*/
+/*}*/
+
+#footer .content .footer-menus {
+	margin: 0 auto;
+	/*padding: 0 10em;*/
+	/*padding: 0 14em;*/
+	/*padding: 0 14.5% 0 18.5%;*/
+	width: 100%;
+	max-width: 775px;
+	height: 100%;
+	display: flex;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	#footer .content .footer-menus {
+		/*padding: 0 10.5% 0 14.5%;*/
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	#footer .content .footer-menus {
+		/*padding: 0 6.5% 0 10.5%;*/
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	#footer .content .footer-menus {
+		padding: 0 2em;
+	}
+}
+
+#footer .content .footer-menus > div {
+	/*display: flex;
+	justify-content: center;*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/*padding-top: 5%;*/
+}
+
+#footer .content .footer-menus h2 {
 	display: none;
 }
 
-/*--- Media Query for the first <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 767px ) {
-	#footer > section:last-child .column h2 {
-		border-bottom: none;
-		padding: 0;
-	}
-}
-
-#footer > section:last-child .column span {
-	font-family: Bodoni;
-	font-weight: 300;
-}
-
-/*--- Control height and padding of generated menu elements ---*/
-#footer > section:last-child .column > div {
-	height: 70%;
-	padding: 2rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
-/*--- Media Query for generated menu elements ---*/
-@media only screen and ( max-width: 575px ) {
-	#footer > section:last-child .column > div {
-		margin: 1rem 0 0 0;
-		padding: 0;
-	}
-}
-
-/*--- Control font-size of links in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column a {
-	font-size: 1.4em;
-	font-weight: 300;
-}
-
-/*--- Styles for the last <div> element in the columns of the last ( second ) section in the footer ---*/
-#footer > section:last-child .column ul {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: flex-start;
-	height: 70%;
-	height: 100%;
+#footer .content .footer-menus ul {
 	padding: 0;
-	margin: 0;
 }
 
-/*--- Media Query for the last <div> element in the columns of the last ( second ) section in the footer ---*/
-@media only screen and ( max-width: 767px ) {
-	#footer > section:last-child .column div:last-child {
-		justify-content: flex-start;
-	}
+#footer .content .footer-menus ul li {
+	line-height: 1.2;
+	max-width: 110px;
 }
 
-/*--- Center align the <li> elements in columns ---*/
-#footer > section:last-child .column ul li {
-	line-height: 1.6;
+#footer .content .footer-menus a {
+	font-size: 1.2em;
 }

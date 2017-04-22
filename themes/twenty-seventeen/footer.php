@@ -40,20 +40,29 @@
 
 			</section>
 
-			<section>
-
-				<div class="column one">
-					<h2>Studio<span>Tag</span></h2>
-					<?php dynamic_sidebar( 'Footer Column One' ); ?>
+			<section class="content">
+				<div class="title-container row">
+					<div class="col-xs-12 col-sm-4">
+						<h2>Studio<span>Tag</span></h2>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h2><span>Tag</span>Wall</h2>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h2>WREN</h2>
+					</div>
 				</div>
-
-				<div class="column two">
-					<h2><span>Tag</span>Wall</h2>
-					<?php dynamic_sidebar( 'Footer Column Two' ); ?>
-				</div>
-
-				<div class="column three">
-					<?php dynamic_sidebar( 'Footer Column Three' ); ?>
+				<hr style="width: 100%;" />
+				<div class="row footer-menus">
+					<div class="col-xs-12 col-sm-4">
+						<?php dynamic_sidebar( 'Footer Column One' ); ?>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<?php dynamic_sidebar( 'Footer Column Two' ); ?>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<?php dynamic_sidebar( 'Footer Column Three' ); ?>
+					</div>
 				</div>
 			</section>
 		</footer>
