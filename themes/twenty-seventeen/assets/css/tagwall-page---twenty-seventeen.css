@@ -132,7 +132,8 @@
 /*--- Allows metabox items to align with contact us info ---*/
 .contact .content-container {
 	padding: 0;
-	margin-left: 20em;
+	/*margin-left: 20em;*/
+	margin-left: 17em;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -174,7 +175,8 @@
 .contact .content-container > div h3 {
 	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
-	font-size: 1.8em;
+	/*font-size: 1.8em;*/
+	font-size: 1.5em;
 }
 
 @media only screen and ( max-width: 991px ) {
@@ -190,7 +192,8 @@
 .contact .content-container > div p {
 	font-family: HelveticaNeueLT Std;
 	font-weight: 300;
-	font-size: 1.4em;
+	/*font-size: 1.4em;*/
+	font-size: 1.2em;
 	margin: 0;
 }
 
