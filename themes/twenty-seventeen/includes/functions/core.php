@@ -256,7 +256,7 @@ function styles() {
 		);
 	endif;
 
-	if ( is_singular( 'system' ) ) :
+	if ( is_singular( 'system' ) || is_home() ) :
 		wp_enqueue_style(
 			'tagwall-systems',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-single-systems---twenty-seventeen.css",

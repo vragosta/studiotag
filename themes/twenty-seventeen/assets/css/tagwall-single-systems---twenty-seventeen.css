@@ -26,6 +26,11 @@
 	font-family: HelveticaNeueLT Std;
 }
 
+.systems-single.news h2 {
+	font-weight: 600;
+	margin: 1em 0 .6em;
+}
+
 /*--- Featured image styles ---*/
 .featured-image {
 	position: relative;
@@ -130,6 +135,12 @@
 	transition: color 0.3s ease-in-out;
 }
 
+.systems-single.news ul li a {
+	font-weight: 600;
+	font-size: 2em;
+	cursor: pointer;
+}
+
 /*--- Media Query to control font size for links in lists ---*/
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.systems-single ul li a {
@@ -153,6 +164,31 @@
 .systems-single .content-container {
 	padding: 0 1.5rem 0 0;
 }
+
+/*.systems-single.news .category-container.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+.systems-single.news .category-container.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}*/
+
+.systems-single.news .category-container:not( :first-child ) {
+	display: none;
+}
+
+.systems-single.news .category-container > .row {
+	margin: 0 0 6em 0;
+	/*margin-bottom: 6em;*/
+}
+
+/*@media only screen and ( max-width: 767px ) {
+	.systems-single.news .category-container > .row {
+		margin: 0;
+	}
+}*/
 
 /*-- Styles to all paragraph tags on single template ---*/
 .systems-single p {
