@@ -203,6 +203,32 @@
 	position: relative;
 }
 
+.archive-item.users .featured-image.not-exists {
+	border-top: 0.1rem solid #221E1F;
+	border-left: 0.1rem solid #221E1F;
+	border-bottom: 0.1rem solid #221E1F;
+}
+
+.archive-item.users .featured-image.not-exists span {
+	position: absolute;
+	top: 45%;
+	left: 30%;
+	font-size: 1.8em;
+	font-weight: 600;
+	color: #A3A5A8;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-item.users .featured-image.not-exists span {
+		font-size: 1.2em;
+	}
+}
+
+.archive-item.users .featured-image.not-exists div {
+	opacity: 0;
+	visibility: hidden;
+}
+
 /*--- If any system image has the 'not-visible' class on it, do not display the image ---*/
 .grid .featured-image.not-visible {
 	opacity: 0;
@@ -283,7 +309,8 @@
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info h3 {
-		font-size: 1.5em;
+		/*font-size: 1.5em;*/
+		font-size: 1.3em;
 		margin: .9em 0;
 	}
 }
@@ -344,7 +371,8 @@
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info p {
-		font-size: 1em;
+		/*font-size: 1em;*/
+		font-size: .8em;
 		margin-top: 1em;
 	}
 }
