@@ -45,20 +45,27 @@
 					<?php endif; ?>
 
 					<?php foreach( $user['users'] as $_user ) : ?>
-						<?php $image        = ( get_user_meta( $_user->ID, 'image', true ) ) ? get_user_meta( $_user->ID, 'image', true ) : get_avatar_url( $user->ID, array( 'size' => '400' ) ); ?>
+						<?php $image       = ( get_user_meta( $_user->ID, 'image', true ) ) ? get_user_meta( $_user->ID, 'image', true ) : get_avatar_url( $user->ID, array( 'size' => '400' ) ); ?>
+						<?php $is_avatar   = ( get_user_meta( $_user->ID, 'image', true ) ) ? false : true; ?>
 						<?php $description  = get_user_meta( $_user->ID, 'description', true ); ?>
 						<?php $job_title    = get_user_meta( $_user->ID, 'job_title', true ); ?>
 						<?php $direct_phone = get_user_meta( $_user->ID, 'direct_phone', true ); ?>
 						<?php $cell_phone   = get_user_meta( $_user->ID, 'cell_phone', true ); ?>
 
-						<?php if ( $count == 0 && $image ) : ?>
+						<?php if ( $count == 0 ) : ?>
 							<div class="row">
 								<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
-									<figure class="featured-image">
-										<a href="<?php the_permalink(); ?>">
+
+									<?php if ( $is_avatar && $image ) : ?>
+										<figure class="featured-image not-exists">
+											<span>Coming Soon</span>
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-										</a>
-									</figure>
+										</figure>
+									<?php elseif ( $image ) : ?>
+										<figure class="featured-image">
+											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+										</figure>
+									<?php endif; ?>
 
 									<div class="slash">
 										<hr />
@@ -70,19 +77,25 @@
 
 						<?php elseif ( $count % 2 == 1 ) : ?>
 							<div class="row">
-								<?php if ( $image ) : ?>
-									<div class="left no-padding col-xs-12 col-sm-6">
+								<div class="left no-padding col-xs-12 col-sm-6">
+
+									<?php if ( $is_avatar && $image ) : ?>
+										<figure class="featured-image not-exists">
+											<span>Coming Soon</span>
+											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+										</figure>
+									<?php elseif ( $image ) : ?>
 										<figure class="featured-image">
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
+									<?php endif; ?>
 
-										<div class="slash">
-											<hr />
-											<hr />
-											<hr />
-										</div>
+									<div class="slash">
+										<hr />
+										<hr />
+										<hr />
 									</div>
-								<?php endif; ?>
+								</div>
 
 								<?php if ( $temp_user ) : ?>
 									<div class="info right col-xs-12 col-sm-6">
@@ -141,19 +154,25 @@
 									</div>
 								<?php endif; ?>
 
-								<?php if ( $image ) : ?>
-									<div class="right no-padding col-xs-12 col-sm-6">
+								<div class="right no-padding col-xs-12 col-sm-6">
+
+									<?php if ( $is_avatar && $image ) : ?>
+										<figure class="featured-image not-exists">
+											<span>Coming Soon</span>
+											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+										</figure>
+									<?php elseif ( $image ) : ?>
 										<figure class="featured-image">
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
+									<?php endif; ?>
 
-										<div class="slash">
-											<hr />
-											<hr />
-											<hr />
-										</div>
+									<div class="slash">
+										<hr />
+										<hr />
+										<hr />
 									</div>
-								<?php endif; ?>
+								</div>
 							</div>
 						<?php endif; ?>
 
@@ -173,13 +192,18 @@
 
 					<div class="row">
 						<?php if ( $count % 2 == 1 ) : ?>
-							<?php if ( $image ) : ?>
-								<div class="left no-padding col-xs-12 col-sm-6">
-									<figure class="featured-image not-visible">
+							<div class="left no-padding col-xs-12 col-sm-6">
+								<?php if ( $is_avatar && $image ) : ?>
+									<figure class="featured-image not-exists">
+										<span>Coming Soon</span>
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</figure>
-								</div>
-							<?php endif; ?>
+								<?php elseif ( $image ) : ?>
+									<figure class="featured-image">
+										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+									</figure>
+								<?php endif; ?>
+							</div>
 
 							<?php if ( $temp_user ) : ?>
 								<div class="info right col-xs-12 col-sm-6">
@@ -236,13 +260,11 @@
 								</div>
 							<?php endif; ?>
 
-							<?php if ( $image ) : ?>
-								<div class="right no-padding col-xs-12 col-sm-6">
-									<figure class="featured-image not-visible">
-										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-									</figure>
-								</div>
-							<?php endif; ?>
+							<div class="right no-padding col-xs-12 col-sm-6">
+								<figure class="featured-image not-visible">
+									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+								</figure>
+							</div>
 						<?php endif; ?>
 					</div>
 				</section>

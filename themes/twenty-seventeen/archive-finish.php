@@ -69,7 +69,11 @@
 							<h1>Custom</h1>
 						</div>
 					</div>
-					<hr />
+
+					<?php if ( $taxonomy_query->post_count % 3 !== 0 ) : ?>
+						<hr />
+					<?php endif; ?>
+					
 				</div>
 			</section>
 		<?php endif; ?>

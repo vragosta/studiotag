@@ -46,7 +46,7 @@
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( 'header .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+		$( 'header .menu-container .static-menu ul li a' ).on( 'click', function() {
 			var id = $( this ).data( 'id' );
 
 			if ( id === 'company' ) {
@@ -77,12 +77,12 @@
 		} );
 
 		/**
-		 * On hover display menu, display the other menu.
+		 * On click, display the appropriate menu.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'mouseenter', function() {
+		$( '.wall-details .menu-container .static-menu ul li a' ).on( 'click', function() {
 			var id = $( this ).data( 'id' );
 
 			$( '.wall-details .dynamic-menu > div:not( .' + id + ' )' )
@@ -95,24 +95,21 @@
 		} );
 
 		/**
-		 * On hover display menu, display the other menu.
+		 * On click display blog posts.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
 		 */
-		$( '.news .menu-container .static-menu ul li a[data-id]' ).on( 'mouseenter', function() {
+		$( '.news .view-container ul li a[data-id]' ).on( 'click', function() {
 			var id = $( this ).data( 'id' );
 
-			$( '.news .dynamic-menu div:not( .' + id + ' )' )
-				.parents( 'div.category-container' )
-				.removeClass( 'visible' )
-				.addClass( 'not-visible' );
+			$( '.news .category-container:not( .' + id + ' )' )
+				.fadeOut( 500 );
 
-			$( '.news .dynamic-menu .' + id )
-				.parents( 'div.category-container' )
-				.removeClass( 'not-visible' )
-				.addClass( 'visible' );
-		} );
+			$( '.news .category-container.' + id )
+				.fadeIn( 500 );
+
+		});
 
 		/**
 		 * On scroll of the doors template, add class visible if scroll from top is above 800px and less than 1400 from bottom of document.
@@ -133,7 +130,9 @@
 			slidesToShow  : 1,
 			autoplay      : true,
 			autoplaySpeed : 3000,
-			speed         : 600
+			speed         : 600,
+			prevArrow     : $( 'i.ion-ios-arrow-left' ),
+			nextArrow     : $( 'i.ion-ios-arrow-right' )
 		});
 
 	});

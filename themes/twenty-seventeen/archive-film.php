@@ -63,12 +63,12 @@
 
 			<?php if ( $image ) : ?>
 				<div class="content row">
-					<div class="col-xs-12 col-sm-9">
+					<div class="col-xs-12 col-sm-8">
 						<figure class="featured-image settings">
 							<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 						</figure>
 					</div>
-					<div class="col-xs-12 col-sm-3">
+					<div class="description col-xs-12 col-sm-4">
 						<?php echo term_description( $term->term_id ); ?>
 
 						<?php if ( $portfolio_link ) : ?>
@@ -109,7 +109,11 @@
 						<?php endwhile; ?>
 						<?php wp_reset_postdata(); ?>
 					</div>
-					<hr />
+
+					<?php if ( $taxonomy_query->post_count % 3 !== 0 ) : ?>
+						<hr />
+					<?php endif; ?>
+
 				</div>
 			<?php endif; ?>
 

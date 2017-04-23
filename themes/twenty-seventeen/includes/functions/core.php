@@ -240,15 +240,8 @@ function styles() {
 	// Only load this CSS if on the front page.
 	if ( is_front_page() ) :
 		wp_enqueue_style(
-			'tagwall-archive-systems',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-systems---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-
-		wp_enqueue_style(
-			'tagwall-header-front-page',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-header-front-page---twenty-seventeen.css",
+			'tagwall-front-page',
+			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-front-page---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
@@ -263,70 +256,7 @@ function styles() {
 		);
 	endif;
 
-	if ( is_post_type_archive( 'technical' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-technicals',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-technicals---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'applied-detail' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-applied-details',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-applied-details---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'door' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-doors',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-doors---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'hardware' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-hardware',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-hardware---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'glass' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-glass',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-glass---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'film' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-film',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-film---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_post_type_archive( 'finish' ) ) :
-		wp_enqueue_style(
-			'tagwall-archive-finish',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-archive-finish---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_singular( 'system' ) ) :
+	if ( is_singular( 'system' ) || is_home() ) :
 		wp_enqueue_style(
 			'tagwall-systems',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-single-systems---twenty-seventeen.css",
@@ -339,33 +269,6 @@ function styles() {
 		wp_enqueue_style(
 			'tagwall-page',
 			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_page_template( 'page-templates/team-grid.php' ) ) :
-		wp_enqueue_style(
-			'tagwall-team',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-team-grid---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_page_template( 'page-templates/wall-details.php' ) ) :
-		wp_enqueue_style(
-			'tagwall-details',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-wall-details---twenty-seventeen.css",
-			array(),
-			TAGWALL_VERSION
-		);
-	endif;
-
-	if ( is_page_template( 'page-templates/two-column-textblock.php' ) || is_page_template( 'page-templates/contact.php' ) || is_page_template( 'page-templates/single-column-list.php' ) ) :
-		wp_enqueue_style(
-			'tagwall-two-column-textblock',
-			TAGWALL_TEMPLATE_URL . "/assets/css/tagwall-page-two-column-textblock---twenty-seventeen.css",
 			array(),
 			TAGWALL_VERSION
 		);
@@ -388,7 +291,7 @@ function styles() {
  */
 function sidebars() {
 	$footer_column_one = array(
-		'name'          => __( 'Footer Column One', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column One', 'tagwall' ),
 		'id'            => 'footer-column-one',
 		'description'   => 'Column one contents',
 		'class'         => '',
@@ -399,7 +302,7 @@ function sidebars() {
 	);
 
 	$footer_column_two = array(
-		'name'          => __( 'Footer Column Two', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column Two', 'tagwall' ),
 		'id'            => 'footer-column-two',
 		'description'   => 'Column two contents',
 		'class'         => '',
@@ -410,9 +313,20 @@ function sidebars() {
 	);
 
 	$footer_column_three = array(
-		'name'          => __( 'Footer Column Three', 'theme_text_domain' ),
+		'name'          => __( 'Footer Column Three', 'tagwall' ),
 		'id'            => 'footer-column-three',
 		'description'   => 'Column three contents',
+		'class'         => '',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2>',
+		'after_title'   => '</h2>',
+	);
+
+	$footer_left = array(
+		'name'          => __( 'Footer Left Column', 'tagwall' ),
+		'id'            => 'footer-left-column',
+		'description'   => 'Left column contents',
 		'class'         => '',
 		'before_widget' => '',
 		'after_widget'  => '',
@@ -423,4 +337,5 @@ function sidebars() {
 	register_sidebar( $footer_column_one );
 	register_sidebar( $footer_column_two );
 	register_sidebar( $footer_column_three );
+	register_sidebar( $footer_left );
 }

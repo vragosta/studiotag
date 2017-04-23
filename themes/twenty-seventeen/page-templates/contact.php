@@ -22,27 +22,26 @@
 			</figure>
 		<?php endif; ?>
 
-			<main class="two-column-textblock contact">
+		<main class="two-column-textblock contact">
 
-				<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
+			<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title(); ?>
 
-				<section class="content-container row">
-					<div class="col-sm-12 col-md-5">
-						<?php if ( $studiotag_info ) : ?>
-							<h3>STUDIO<span>TAG</span> General Information</h3>
-							<?php echo $studiotag_info; ?>
-						<?php endif; ?>
-					</div>
-					<div class="col-sm-12 col-md-5">
-						<?php if ( $tagwall_info ) : ?>
-							<h3><span>TAG</span>WALL General Information</h3>
-							<?php echo $tagwall_info; ?>
-						<?php endif; ?>
-					</div>
-				</section>
+			<section class="content-container row">
+				<div class="col-sm-12 col-md-5">
+					<?php if ( $studiotag_info ) : ?>
+						<h3>STUDIO<span>TAG</span> General Information</h3>
+						<?php echo $studiotag_info; ?>
+					<?php endif; ?>
+				</div>
+				<div class="col-sm-12 col-md-5">
+					<?php if ( $tagwall_info ) : ?>
+						<h3><span>TAG</span>WALL General Information</h3>
+						<?php echo $tagwall_info; ?>
+					<?php endif; ?>
+				</div>
+			</section>
 
-			</main>
-		</section>
+		</main>
 
 		<section class="map">
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1376315255206!2d-73.99085046441789!3d40.75899752912956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25853976c3869%3A0xe9be4f9327b04f6c!2s321+W+44th+St+%23200%2C+New+York%2C+NY+10036!5e0!3m2!1sen!2sus!4v1492485780654" width="1100" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>

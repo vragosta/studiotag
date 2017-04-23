@@ -1,0 +1,92 @@
+/**
+ * Tag Wall - Twenty Seventeen
+ * Styles for the front page
+ */
+
+/*--- Header navigation front page container element ---*/
+.header-navigation-front-page {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	max-width: 1500px;
+	margin: 0 auto 1.5rem;
+	height: 5rem;
+}
+
+/*--- Overriding hamburger css ---*/
+.header-navigation-front-page .hamburger-inner::before {
+	width: 24.6px;
+	height: 2.46px;
+	top: -7px;
+}
+
+/*--- Adjust height and width of hamburger to change size of line, top and bottom to reduce space in between ---*/
+.header-navigation-front-page .hamburger-inner::after {
+	width: 24.6px;
+	height: 2.46px;
+	bottom: -7px;
+}
+
+.header-navigation-front-page .hamburger-inner {
+	width: 24.6px;
+	height: 2.46px;
+}
+
+/*--- Only target first level button elements ---*/
+.header-navigation-front-page > button {
+	display: flex;
+	align-items: center;
+}
+
+/*--- Hover for first level button elements ---*/
+.header-navigation-front-page > button:hover {
+	opacity: 1;
+}
+
+/*--- Overriding carousel arrows ---*/
+.carousel .slick-prev:before {
+	font-size: 50px;
+	color: #fff;
+}
+
+.carousel .slick-next:before {
+	font-size: 50px;
+	color: #fff;
+}
+
+/* Place carousel arrows over image*/
+.carousel .slick-prev {
+	position: absolute;
+	left: 15px;
+	z-index: 1;
+}
+
+.carousel .slick-next {
+	right: 40px;
+	position: absolute;
+	z-index: 1;
+}
+
+/*--- TODO ---*/
+.archive-systems {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+/*--- TODO ---*/
+@media only screen and ( max-width: 767px ) {
+	.archive-systems {
+		padding: 0;
+	}
+
+	/*--- Overriding carousel arrows ---*/
+	.carousel .slick-prev:before {
+		font-size: 25px;
+	}
+
+	.carousel .slick-prev:after {
+		font-size: 25px;
+	}
+}
