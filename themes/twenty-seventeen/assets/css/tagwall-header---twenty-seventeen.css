@@ -28,7 +28,7 @@
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
 #logo img {
-	width: 200px;
+	width: 17rem;
 }
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
@@ -50,7 +50,13 @@
 /*--- Only target the first level li elements ---*/
 #menu > li {
 	list-style: none;
-	margin: 0 1.5rem;
+	margin: 0 2.5rem;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	#menu > li {
+		margin: 0 1.2rem;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -72,6 +78,14 @@
 /*--- Hover behavior for the links within the menu ---*/
 #menu > li a:hover {
 	color: #A2A4A7;
+	background-color: #fff;
+}
+
+#menu .open > .dropdown-menu {
+	border-radius: 0;
+	border: 0;
+	clear: none;
+	margin: 29px 0;
 }
 
 /*--- Hide the mobile button ---*/

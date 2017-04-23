@@ -33,13 +33,13 @@
 .wall-title h1 {
 	font-family: HelveticaNeueLT Std;
 	text-transform: uppercase;
-	font-size: 7em;
+	font-size: 5em;
 	font-weight: 600;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.wall-title h1 {
-		font-size: 6em;
+		font-size: 4em;
 	}
 }
 
@@ -59,7 +59,7 @@
 	position: static;
 	background: transparent;
 	transform: skew(-15deg);
-	height: 200%;
+	height: 175%;
 	width: auto;
 	margin: 0 2em;
 }
@@ -100,12 +100,12 @@
 
 .slash hr:first-child {
 	background-color: #E6E7E8;
-	width: 1.1em;
+	width: 1.1rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:first-child {
-		width: .7em;
+		width: .7rem;
 	}
 }
 
@@ -115,12 +115,12 @@
 
 .slash hr:nth-child(2) {
 	background-color: #fff;
-	width: 1.4em;
+	width: 1.4rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:nth-child(2) {
-		width: .9em;
+		width: .9rem;
 	}
 }
 
@@ -130,12 +130,12 @@
 
 .slash hr:last-child {
 	background-color: #221E1F;
-	width: .7em;
+	width: .7rem;
 }
 
 @media only screen and ( max-width: 767px ) {
 	.slash hr:last-child {
-		width: .4em;
+		width: .4rem;
 	}
 }
 
@@ -158,11 +158,21 @@
 	}
 }
 
+.archive-container.applied-detail .grid {
+	margin: 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.archive-container.applied-detail .grid {
+		margin: 0 0 10em;
+	}
+}
+
 /*--- Provide flex on bootstrap rows ---*/
 .grid .row {
 	display: flex;
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1000px;
 }
 
 .grid .archive-item.users .row:last-child {
@@ -191,6 +201,32 @@
 .grid .featured-image {
 	padding-bottom: 69%;
 	position: relative;
+}
+
+.archive-item.users .featured-image.not-exists {
+	border-top: 0.1rem solid #221E1F;
+	border-left: 0.1rem solid #221E1F;
+	border-bottom: 0.1rem solid #221E1F;
+}
+
+.archive-item.users .featured-image.not-exists span {
+	position: absolute;
+	top: 45%;
+	left: 30%;
+	font-size: 1.8em;
+	font-weight: 600;
+	color: #A3A5A8;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-item.users .featured-image.not-exists span {
+		font-size: 1.2em;
+	}
+}
+
+.archive-item.users .featured-image.not-exists div {
+	opacity: 0;
+	visibility: hidden;
 }
 
 /*--- If any system image has the 'not-visible' class on it, do not display the image ---*/
@@ -265,7 +301,7 @@
 
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
-	font-size: 2em;
+	font-size: 1.8em;
 	font-weight: 600;
 	margin: 1em 0;
 	font-family: HelveticaNeueLT Std;
@@ -273,7 +309,8 @@
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info h3 {
-		font-size: 1.5em;
+		/*font-size: 1.5em;*/
+		font-size: 1.3em;
 		margin: .9em 0;
 	}
 }
@@ -324,7 +361,7 @@
 .grid .info p {
 	font-family: HelveticaNeueLT Std;
 	color: #221E1F;
-	font-size: 1.2em;
+	font-size: 1em;
 	font-weight: 300;
 	line-height: 1.3;
 	word-break: break-word;
@@ -334,7 +371,8 @@
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.grid .info p {
-		font-size: 1em;
+		/*font-size: 1em;*/
+		font-size: .8em;
 		margin-top: 1em;
 	}
 }
@@ -346,7 +384,7 @@
 .grid .info a.more {
 	color: #A3A5A8;
 	text-decoration: underline;
-	font-size: 1.5em;
+	font-size: 1.2em;
 	font-weight: 600;
 	margin-top: 1.5em;
 }
@@ -374,7 +412,7 @@
 
 .carousel-container {
 	position: relative;
-	margin: 0 2rem 6rem 2rem;
+	margin: 0 0 6rem 0;
 }
 
 i.toggle {
@@ -423,13 +461,12 @@ i.toggle.ion-ios-arrow-right {
 	background: #fff;
 }
 
-.news .menu-container,
+/*.news .menu-container,*/
 .wall-details .menu-container {
 	padding: 15em 0;
 }
 
 @media only screen and ( max-width: 767px ) {
-	.news .menu-container,
 	.wall-details .menu-container {
 		padding-top: 0;
 	}
@@ -441,17 +478,10 @@ header .menu-container {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	padding-top: 15em;
 	opacity: 0;
 	visibility: hidden;
 	z-index: 2;
 	transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-}
-
-@media only screen and ( max-width: 767px ) {
-	header .menu-container {
-		padding-top: 10em;
-	}
 }
 
 header .menu-container.visible {
@@ -462,17 +492,34 @@ header .menu-container.visible {
 .menu-container > div {
 	max-width: 1500px;
 	margin: 0 auto;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
 
-.news .menu-container .static-menu ul li {
-	line-height: 1.5;
+@media only screen and ( max-width: 767px ) {
+	header .menu-container > div {
+		align-items: flex-start;
+		padding-top: 12em;
+	}
+}
+
+.menu-container > div > .row {
+	width: 100%;
+	padding: 0 2em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.menu-container > div > .row {
+		padding: 0 1em;
+		margin: 0;
+	}
 }
 
 .wall-details .menu-container .static-menu ul li {
 	line-height: 1.1;
 }
 
-.news .menu-container .dynamic-menu ul li,
 .wall-details .menu-container .dynamic-menu ul li {
 	line-height: 1.3;
 }
@@ -486,7 +533,6 @@ header .menu-container ul li {
 	transition: color 0.3s ease-in-out;
 }
 
-.news .menu-container ul li a:hover,
 .wall-details .menu-container ul li a:hover {
 	color: #A2A4A7;
 }
@@ -502,7 +548,7 @@ header .menu-container ul li a:hover {
 
 .menu-container .static-menu {
 	border-right: 0.1rem solid #221E1f;
-	padding-left: 2rem;
+	padding: 0;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -511,38 +557,19 @@ header .menu-container ul li a:hover {
 	}
 }
 
-.news .menu-container .static-menu ul {
-	padding-left: 2.5em;
-}
-
 .menu-container .static-menu ul {
 	padding: 0;
 }
 
-.news .menu-container .static-menu ul li a {
-	font-size: 2em;
-	cursor: pointer;
-}
-
-@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
-	.news .menu-container .static-menu ul li a {
-		font-size: 1.8em;
-	}
-}
-
-.news .menu-container .static-menu ul li.child a {
-	font-size: 1.5em;
-	font-weight: 300;
-}
-
 .menu-container .static-menu ul li a {
-	font-size: 6em;
+	font-size: 5em;
 	font-weight: 600;
+	cursor: pointer;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.menu-container .static-menu ul li a {
-		font-size: 5em;
+		font-size: 4em;
 	}
 }
 
@@ -557,59 +584,31 @@ header .menu-container ul li a:hover {
 		font-size: 3.5em;
 	}
 
-	.news .menu-container .static-menu ul li a,
 	.wall-details .menu-container .static-menu ul li a {
 		font-size: 3em;
 	}
 }
 
-.news .dynamic-menu {
+header .dynamic-menu {
 	padding: 0;
-	min-height: 90em;
-	max-height: 120em;
-	overflow: scroll;
 }
 
 .wall-details .dynamic-menu {
 	padding-left: 10em;
 }
 
-@media only screen and ( max-width: 767px ) {
-	.news .dynamic-menu,
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.wall-details .dynamic-menu {
-		padding-left: 2rem;
+		padding-left: 6em;
 	}
-}
-
-.news .menu-container .dynamic-menu h2 {
-	font-size: 2.5em;
-	text-decoration: underline;
-	margin: 0;
-}
-
-@media only screen and ( max-width: 1199px ) {
-	.news .menu-container .dynamic-menu h2 {
-		font-size: 2em;
-	}
-}
-
-.news .menu-container .dynamic-menu h2 + h3 {
-	font-style: italic;
-	margin: 1.5em 0 0 0;
-	font-size: 1.2em;
-}
-
-.news .dynamic-menu div.category-container > div:not( :last-child ) {
-	margin-bottom: 4em;
 }
 
 @media only screen and ( max-width: 767px ) {
-	.news .dynamic-menu div.category-container > div:not( :last-child ) {
-		margin-bottom: 2em;
+	.wall-details .dynamic-menu {
+		padding-left: 0;
 	}
 }
 
-.news .dynamic-menu > div:not( :first-child ),
 .wall-details .dynamic-menu > div:not( :first-child ) {
 	opacity: 0;
 	visibility: hidden;
@@ -619,30 +618,35 @@ header .menu-container ul li a:hover {
 	font-weight: 200;
 }
 
-.news .menu-container .dynamic-menu ul li a,
 .wall-details .menu-container .dynamic-menu ul li a {
 	font-size: 2.2rem;
 }
 
 header .menu-container .dynamic-menu ul li a {
-	font-size: 3rem;
+	font-size: 2.5rem;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
 	header .menu-container .dynamic-menu ul li a {
-		font-size: 2.5rem;
+		font-size: 2rem;
 	}
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	header .menu-container .dynamic-menu ul li a {
-		font-size: 2rem;
+	.wall-details .menu-container .dynamic-menu ul li a {
+		font-size: 1.8rem;
 	}
 }
 
 .menu-container .dynamic-menu h2 {
 	font-size: 1.8em;
 	font-weight: 600;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.wall-details .dynamic-menu h2 {
+		font-size: 1.5em;
+	}
 }
 
 .wall-details .dynamic-menu h2 {
@@ -653,29 +657,20 @@ header .menu-container .dynamic-menu ul li a {
 	color: #A3A5A8;
 }
 
-.news .menu-container .dynamic-menu ul,
 .wall-details .menu-container .dynamic-menu ul {
 	padding: 0;
 }
 
 header .menu-container .dynamic-menu ul {
-	padding-left: 1em;
+	padding-left: 2em;
 }
 
-.news .dynamic-menu > div {
-	margin: 0;
-	padding: 0 4em;
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.news .dynamic-menu > div {
-		margin: 0;
-		padding: 0 2em;
+@media only screen and ( max-width: 767px ) {
+	header .menu-container .dynamic-menu ul {
+		padding: 0;
 	}
 }
 
-
-.news .dynamic-menu > div,
 .wall-details .dynamic-menu > div,
 .menu-container .dynamic-menu .company,
 .menu-container .dynamic-menu .projects {
@@ -683,7 +678,6 @@ header .menu-container .dynamic-menu ul {
 	position: absolute;
 }
 
-.news .dynamic-menu > div.visible,
 .wall-details .dynamic-menu > div.visible,
 .menu-container .dynamic-menu .company.visible,
 .menu-container .dynamic-menu .projects.visible {
@@ -691,24 +685,11 @@ header .menu-container .dynamic-menu ul {
 	visibility: visible;
 }
 
-.news .dynamic-menu > div.not-visible,
 .wall-details .dynamic-menu > div.not-visible,
 .menu-container .dynamic-menu .company.not-visible,
 .menu-container .dynamic-menu .projects.not-visible {
 	opacity: 0;
 	visibility: hidden;
-}
-
-.news .dynamic-menu .content p {
-	font-family: HelveticaNeueLT Std;
-	font-size: 1.2em;
-	font-weight: 300;
-}
-
-@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
-	.news .dynamic-menu .content p {
-		font-size: 1em;
-	}
 }
 
 .hero-image {
@@ -745,18 +726,6 @@ header .menu-container .dynamic-menu ul {
 	right: 0;
 }
 
-.news .settings {
-	padding-bottom: 40%;
-	margin: 2em 0;
-}
-
-@media only screen and ( max-width: 767px ) {
-	.news .settings {
-		margin: 1em 0;
-		padding-bottom: 65%;
-	}
-}
-
 .settings {
 	position: relative;
 	padding-bottom: 65%;
@@ -779,6 +748,12 @@ header .menu-container .dynamic-menu ul {
 
 .archive-item:not(:first-child) {
 	margin: 10em 0;
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.archive-container.film .archive-item:not(:first-child) {
+		margin: 4em 0;
+	}
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -806,6 +781,7 @@ header .menu-container .dynamic-menu ul {
 	font-family: HelveticaNeueLT Std;
 	font-weight: 600;
 	margin: 1.5rem 0;
+	font-size: 1.8em;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -862,12 +838,23 @@ hr {
 	font-weight: 300;
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+@media only screen and ( max-width: 991px ) {
 	.archive-item.users .row.indent p {
 		font-size: 1.2em;
 	}
 }
 
+@media only screen and ( max-width: 767px ) {
+	.archive-item.users .row.indent p {
+		margin: 0;
+	}
+}
+
 .archive-item.users .row.indent p + p {
 	margin-top: 1em;
+}
+
+.archive-item .row.indent .child h2 {
+	font-family: HelveticaNeueLT Std;
+	font-weight: 600;
 }

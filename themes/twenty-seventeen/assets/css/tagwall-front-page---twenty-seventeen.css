@@ -14,6 +14,25 @@
 	height: 5rem;
 }
 
+/*--- Overriding hamburger css ---*/
+.header-navigation-front-page .hamburger-inner::before {
+	width: 24.6px;
+	height: 2.46px;
+	top: -7px;
+}
+
+/*--- Adjust height and width of hamburger to change size of line, top and bottom to reduce space in between ---*/
+.header-navigation-front-page .hamburger-inner::after {
+	width: 24.6px;
+	height: 2.46px;
+	bottom: -7px;
+}
+
+.header-navigation-front-page .hamburger-inner {
+	width: 24.6px;
+	height: 2.46px;
+}
+
 /*--- Only target first level button elements ---*/
 .header-navigation-front-page > button {
 	display: flex;

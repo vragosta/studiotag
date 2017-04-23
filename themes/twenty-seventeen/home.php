@@ -15,75 +15,77 @@
 <?php $categories = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_filter_array( get_categories( [ 'hide_empty' => false, 'parent' => 0, 'order' => 'DESC' ] ) ); ?>
 
 <?php if ( $hero_image ) : ?>
-	<figure class="hero-image settings">
+	<figure class="featured-image">
 		<div style="background-image: url( '<?php echo esc_attr( $hero_image ); ?>' );"></div>
 	</figure>
 <?php endif; ?>
 
-<main class="news">
+<main class="systems-single news">
+	<section>
+		<div class="title-container row">
+			<div class="col-xs-12">
+				<h1><span>Wall</span> <?php echo esc_html( $blog_post->post_title ); ?></h1>
+			</div>
+		</div>
 
-	<?php echo Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_wall_title( $blog = true ); ?>
-
-	<section class="menu-container">
-		<div class="row">
-			<?php if ( $categories ) : ?>
-				<div class="static-menu col-xs-12 col-sm-3">
-					<ul>
-						<?php foreach( $categories as $category ) : ?>
-							<li><a data-id="<?php echo esc_attr( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></a></li>
-						<?php endforeach; ?>
-					</ul>
-				</div>
-				<div class="dynamic-menu col-xs-12 col-sm-9">
+		<div class="specs-container row">
+			<div class="view-container col-xs-12 col-sm-3">
+				<ul>
 					<?php foreach( $categories as $category ) : ?>
-
-						<?php
-							$posts = new WP_Query( [
-								'post_type' => 'post',
-								'order'     => 'DESC',
-								'tax_query' => [ [
-									'taxonomy' => 'category',
-									'field'    => 'term_id',
-									'terms'    => [ $category->term_id ],
-									'operator' => 'IN'
-								] ],
-							] );
-						?>
-
-						<?php if ( $posts->have_posts() ) : ?>
-							<div class="category-container">
-								<?php while( $posts->have_posts() ) : $posts->the_post(); ?>
-									<?php $image    = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post->ID ); ?>
-									<?php $id       = wp_get_post_categories( $post->ID, [ 'childless' => true ] )[0]; ?>
-									<?php $category = get_category( $id ); ?>
-
-									<div class="<?php echo esc_attr( $category->slug ); ?> row">
-										<h2><?php echo esc_html( $post->post_title ); ?></h2>
-										<h3><strong>Date Released: </strong><?php echo date_format( date_create( $post->post_date  ), 'F jS Y' ); ?></h3>
-
-										<?php if ( $image ) : ?>
-											<figure class="featured-image settings">
-												<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
-											</figure>
-										<?php endif; ?>
-
-										<?php if ( get_the_content() ) : ?>
-											<div class="content">
-												<?php the_content(); ?>
-											</div>
-										<?php endif; ?>
-
-									</div>
-								<?php endwhile; ?>
-								<?php wp_reset_postdata(); ?>
-							</div>
-						<?php endif; ?>
+						<li><a data-id="<?php echo esc_attr( $category->slug ); ?>"><?php echo esc_html( $category->name ); ?></a></li>
 					<?php endforeach; ?>
-				</div>
-			<?php endif; ?>
+				</ul>
+			</div>
+
+			<div class="content-container col-xs-12 col-sm-7">
+				<?php foreach( $categories as $category ) : ?>
+
+					<?php
+						$posts = new WP_Query( [
+							'post_type' => 'post',
+							'order'     => 'DESC',
+							'tax_query' => [ [
+								'taxonomy' => 'category',
+								'field'    => 'term_id',
+								'terms'    => [ $category->term_id ],
+								'operator' => 'IN'
+							] ],
+						] );
+					?>
+
+					<?php if ( $posts->have_posts() ) : ?>
+						<div class="category-container <?php echo esc_attr( $category->slug ); ?>">
+							<?php while( $posts->have_posts() ) : $posts->the_post(); ?>
+								<?php $image    = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_featured_image( $post->ID ); ?>
+								<?php $id       = wp_get_post_categories( $post->ID, [ 'childless' => true ] )[0]; ?>
+								<?php $category = get_category( $id ); ?>
+
+								<div class="row">
+									<?php if ( $image ) : ?>
+										<figure class="featured-image settings">
+											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
+										</figure>
+									<?php endif; ?>
+
+									<h2><?php echo esc_html( $post->post_title ); ?></h2>
+
+									<?php if ( get_the_content() ) : ?>
+										<div class="content">
+											<?php the_content(); ?>
+										</div>
+									<?php endif; ?>
+
+								</div>
+								
+							<?php endwhile; ?>
+							<?php wp_reset_postdata(); ?>
+						</div>
+					<?php endif; ?>
+				<?php endforeach; ?>
+			</div>
+
 		</div>
 	</section>
-
 </main>
 
 <?php get_footer(); ?>
