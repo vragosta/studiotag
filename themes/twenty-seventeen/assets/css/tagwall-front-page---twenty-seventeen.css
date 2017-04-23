@@ -14,12 +14,14 @@
 	height: 5rem;
 }
 
+/*Overriding hamburger css*/
 .header-navigation-front-page .hamburger-inner::before {
 	width: 24.6px;
     height: 2.46px;
     top: -7px;
 }
 
+/*Adjut height and width of hamburger to change size of line, top and bottom to reduce space in between*/
 .header-navigation-front-page .hamburger-inner::after {
 	width: 24.6px;
     height: 2.46px;
