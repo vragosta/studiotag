@@ -77,7 +77,7 @@
 		} );
 
 		/**
-		 * On hover display menu, display the other menu.
+		 * On click, display the appropriate menu.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
@@ -95,7 +95,7 @@
 		} );
 
 		/**
-		 * On hover display menu, display the other menu.
+		 * On click display blog posts.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()

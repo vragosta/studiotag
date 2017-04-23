@@ -28,7 +28,6 @@
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
 #logo img {
-	/*width: 200px;*/
 	width: 17rem;
 }
 
@@ -51,7 +50,6 @@
 /*--- Only target the first level li elements ---*/
 #menu > li {
 	list-style: none;
-	/*margin: 0 1.5rem;*/
 	margin: 0 2.5rem;
 }
 

@@ -2,7 +2,7 @@
  * Tag Wall - Twenty Seventeen
  * Styles for systems single
  *
- * Location: single-system.php
+ * Location: single-system.php and blog template
  */
 
 /*--- Single systems container ---*/
@@ -56,7 +56,6 @@
 
 /*--- Control styles of 'h1' in title container ---*/
 .systems-single .title-container h1 {
-	/*font-size: 8rem;*/
 	font-size: 6rem;
 	font-weight: 600;
 	margin: 12rem 0 4rem;
@@ -82,7 +81,6 @@
 @media only screen and ( max-width: 575px ) {
 	.systems-single .title-container h1 {
 		margin: 4rem 0 2rem;
-		/*font-size: 5rem;*/
 		font-size: 4rem;
 	}
 }
@@ -130,7 +128,6 @@
 .systems-single ul li a {
 	color: #A3A5A8;
 	text-decoration: none;
-	/*font-size: 2.6rem;*/
 	font-size: 2.4rem;
 	transition: color 0.3s ease-in-out;
 }
@@ -165,34 +162,16 @@
 	padding: 0 1.5rem 0 0;
 }
 
-/*.systems-single.news .category-container.visible {
-	opacity: 1;
-	visibility: visible;
-}
-
-.systems-single.news .category-container.not-visible {
-	opacity: 0;
-	visibility: hidden;
-}*/
-
 .systems-single.news .category-container:not( :first-child ) {
 	display: none;
 }
 
 .systems-single.news .category-container > .row {
 	margin: 0 0 6em 0;
-	/*margin-bottom: 6em;*/
 }
-
-/*@media only screen and ( max-width: 767px ) {
-	.systems-single.news .category-container > .row {
-		margin: 0;
-	}
-}*/
 
 /*-- Styles to all paragraph tags on single template ---*/
 .systems-single p {
-	/*font-size: 2rem;*/
 	font-size: 1.7rem;
 	line-height: 1.3;
 	font-weight: 300;
@@ -201,7 +180,6 @@
 /*--- Media Query for all paragraph tags on single template ---*/
 @media only screen and ( max-width: 1199px ) {
 	.systems-single p {
-		/*font-size: 1.8rem;*/
 		font-size: 1.6rem;
 	}
 }

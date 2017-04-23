@@ -3,11 +3,9 @@
  * Core Components
  */
 
-/*--- TODO ---*/
 body {
 	margin: 0 auto;
 	max-width: 1800px;
-	/*padding: 1.5rem 0 6rem 0;*/
 	padding: 1.5rem 3em 6rem 3em;
 }
 
@@ -17,7 +15,6 @@ body {
 	}
 }
 
-/*--- TODO ---*/
 a {
 	color: #221E1F;
 	font-family: HelveticaNeueLT Std;
@@ -25,7 +22,6 @@ a {
 	transition: color 0.3s ease-in-out;
 }
 
-/*--- TODO ---*/
 a:hover,
 a:active,
 a:focus,
@@ -35,24 +31,20 @@ a:active:focus {
 	outline: none;
 }
 
-/*--- TODO ---*/
 a[name] {
 	padding-top: 4rem;
 }
 
-/*--- TODO ---*/
 button:active,
 button:focus,
 button:active:focus {
 	outline: none;
 }
 
-/*--- TODO ---*/
 li {
 	list-style: none;
 }
 
-/*--- TODO ---*/
 span {
 	font-family: HelveticaNeueLT Std;
 }
