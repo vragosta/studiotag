@@ -45,8 +45,8 @@
 					<?php endif; ?>
 
 					<?php foreach( $user['users'] as $_user ) : ?>
-						<?php $image       = ( get_user_meta( $_user->ID, 'image', true ) ) ? get_user_meta( $_user->ID, 'image', true ) : get_avatar_url( $user->ID, array( 'size' => '400' ) ); ?>
-						<?php $is_avatar   = ( get_user_meta( $_user->ID, 'image', true ) ) ? false : true; ?>
+						<?php $image        = get_user_meta( $_user->ID, 'image', true ); ?>
+						<?php $is_image_set = ( get_user_meta( $_user->ID, 'image', true ) ) ? false : true; ?>
 						<?php $description  = get_user_meta( $_user->ID, 'description', true ); ?>
 						<?php $job_title    = get_user_meta( $_user->ID, 'job_title', true ); ?>
 						<?php $direct_phone = get_user_meta( $_user->ID, 'direct_phone', true ); ?>
@@ -56,12 +56,12 @@
 							<div class="row">
 								<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
 
-									<?php if ( $is_avatar && $image ) : ?>
+									<?php if ( $is_image_set ) : ?>
 										<figure class="featured-image not-exists">
 											<span>Coming Soon</span>
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
-									<?php elseif ( $image ) : ?>
+									<?php else : ?>
 										<figure class="featured-image">
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
@@ -79,12 +79,12 @@
 							<div class="row">
 								<div class="left no-padding col-xs-12 col-sm-6">
 
-									<?php if ( $is_avatar && $image ) : ?>
+									<?php if ( $is_image_set ) : ?>
 										<figure class="featured-image not-exists">
 											<span>Coming Soon</span>
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
-									<?php elseif ( $image ) : ?>
+									<?php else : ?>
 										<figure class="featured-image">
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
@@ -156,12 +156,12 @@
 
 								<div class="right no-padding col-xs-12 col-sm-6">
 
-									<?php if ( $is_avatar && $image ) : ?>
+									<?php if ( $is_image_set ) : ?>
 										<figure class="featured-image not-exists">
 											<span>Coming Soon</span>
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
-									<?php elseif ( $image ) : ?>
+									<?php else : ?>
 										<figure class="featured-image">
 											<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 										</figure>
@@ -193,12 +193,12 @@
 					<div class="row">
 						<?php if ( $count % 2 == 1 ) : ?>
 							<div class="left no-padding col-xs-12 col-sm-6">
-								<?php if ( $is_avatar && $image ) : ?>
+								<?php if ( $is_image_set ) : ?>
 									<figure class="featured-image not-exists">
 										<span>Coming Soon</span>
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</figure>
-								<?php elseif ( $image ) : ?>
+								<?php else : ?>
 									<figure class="featured-image">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</figure>
