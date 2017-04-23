@@ -70,15 +70,7 @@
 }
 
 /*--- Media Query to control styles of 'h1' in title container ---*/
-@media only screen and ( max-width: 767px ) and ( min-width: 576px) {
-	.systems-single .title-container h1 {
-		margin: 4rem 0 2rem;
-		font-size: 7rem;
-	}
-}
-
-/*--- Media Query to control styles of 'h1' in title container ---*/
-@media only screen and ( max-width: 575px ) {
+@media only screen and ( max-width: 767px ) {
 	.systems-single .title-container h1 {
 		margin: 4rem 0 2rem;
 		font-size: 4rem;
