@@ -42,7 +42,7 @@
 			<li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects</a>
 				<ul class="dropdown-menu">
-					<li><a href="https://www.pinterest.com/tagwall/showroom/" target="_blank" rel="noopener noreferrer">Gallery</a></li>
+					<li><a href="https://www.pinterest.com/tagwall/" target="_blank" rel="noopener noreferrer">Gallery</a></li>
 					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
 				</ul>
 			</li>
@@ -50,7 +50,7 @@
 			<li class="mobile">
 				<a href="#">Projects</a>
 				<ul class="expand">
-					<li><a href="https://www.pinterest.com/tagwall/showroom/">Gallery</a></li>
+					<li><a href="https://www.pinterest.com/tagwall/" target="_blank" rel="noopener noreferrer">Gallery</a></li>
 					<li><a href="<?php echo home_url( '/clients/' ); ?>">Clients</a></li>
 				</ul>
 			</li>
