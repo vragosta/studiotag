@@ -8,6 +8,7 @@
 	margin: 0 0 20rem 0;
 }
 
+
 @media only screen and ( max-width: 767px ) {
 	.wall-details {
 		margin: 0 0 20rem 0;
@@ -211,6 +212,7 @@
 
 .single-column-list .content-container {
 	margin-left: 19em;
+	margin-top: 9.5rem;
 }
 
 @media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
@@ -221,6 +223,7 @@
 
 @media only screen and ( max-width: 767px ) {
 	.single-column-list .content-container {
+		margin-top: 0;
 		margin-left: 0;
 	}
 
