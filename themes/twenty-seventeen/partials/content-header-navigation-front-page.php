@@ -12,6 +12,7 @@
 	<section id="logo">
 		<a href="<?php echo home_url(); ?>">
 			<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/tagwall.png'; ?>" />
+			<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/tagwall-black.png'; ?>" />
 		</a>
 	</section>
 

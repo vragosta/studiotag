@@ -33,6 +33,20 @@
 	height: 2.46px;
 }
 
+/* Adjusted is-active hamburger squeeze */
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner{
+	background-color: #A2A4A7;
+}
+
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::before{
+	background-color: #A2A4A7;
+}
+
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::after{
+	background-color: #A2A4A7;
+}
+
+
 /*--- Only target first level button elements ---*/
 .header-navigation-front-page > button {
 	display: flex;
@@ -42,6 +56,11 @@
 /*--- Hover for first level button elements ---*/
 .header-navigation-front-page > button:hover {
 	opacity: 1;
+}
+
+/* Hide the black tagwall image*/
+.header-navigation-front-page #logo img:first-child{
+	display: none;
 }
 
 /*--- Overriding carousel arrows ---*/
