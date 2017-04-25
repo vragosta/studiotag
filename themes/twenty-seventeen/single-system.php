@@ -33,10 +33,27 @@
 				<div class="specs-container row">
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
-							<li><a href="<?php echo esc_url( $gallery ); ?>" target="_blank">View Gallery</a></li>
-							<?php if ( is_single( 'greenwall' ) ) : ?>
+							<?php if ( is_single( 'encore' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/encore">View Wall Gallery</a></li>
+								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+								<li><a href="#">View LookBook</a></li>
+							<?php elseif ( is_single( 'slimline' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/slimline">View Wall Gallery</a></li>
+								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+								<li><a href="#">View LookBook</a></li>
+							<?php elseif ( is_single( 'ion' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/ion">View Wall Gallery</a></li>
+								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+								<li><a href="#">View LookBook</a></li>
+							<?php elseif ( is_single( 'industrial-sash' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/industrial-sash">View Wall Gallery</a></li>
+								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
+								<li><a href="#">View LookBook</a></li>
+							<?php elseif ( is_single( 'greenwall' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/greenwalls">View Wall Gallery</a></li>
 								<li><a href="#">View LookBook</a></li>
 							<?php elseif ( is_single( 'prebuilt' ) ) : ?>
+								<li><a href="https://www.pinterest.com/tagwall/prebuilt">View Wall Gallery</a></li>
 								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
 								<li><a href="#">View LookBook</a></li>
 							<?php endif; ?>
