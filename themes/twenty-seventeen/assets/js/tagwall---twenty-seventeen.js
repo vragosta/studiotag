@@ -128,9 +128,9 @@
 		// Slick carousel controller
 		$( '.carousel' ).slick({
 			slidesToShow  : 1,
-			autoplay      : true,
-			autoplaySpeed : 3000,
-			speed         : 600,
+			// autoplay      : true,
+			// autoplaySpeed : 3000,
+			// speed         : 600,
 			prevArrow     : $( 'i.ion-ios-arrow-left' ),
 			nextArrow     : $( 'i.ion-ios-arrow-right' )
 		});

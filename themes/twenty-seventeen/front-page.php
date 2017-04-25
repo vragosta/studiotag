@@ -28,7 +28,11 @@
 	<section class="carousel">
 		<?php foreach( $carousel_images as $image_url ) : ?>
 			<?php if ( $image_url ) : ?>
-				<img src="<?php echo esc_attr( $image_url ); ?>" />
+				<div>
+					<figure class="settings">
+						<div style="background-image: url( '<?php echo esc_attr( $image_url ); ?>' );"></div>
+					</figure>
+				</div>
 			<?php endif; ?>
 		<?php endforeach; ?>
 	</section>
