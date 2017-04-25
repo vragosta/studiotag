@@ -18,7 +18,8 @@
 /*--- Control margins of textblock container ---*/
 .two-column-textblock {
 	margin: 0 auto 8rem;
-	max-width: 1500px;
+	/*max-width: 1500px;*/
+	max-width: 1400px;
 	padding: 0 2rem;
 }
 
@@ -86,7 +87,8 @@
 
 /*--- Styles to the paragraph tags ---*/
 .two-column-textblock .content-container .content  p {
-	font-size: 2rem;
+	/*font-size: 2rem;*/
+	font-size: 1.5rem;
 	font-family: HelveticaNeueLT Std;
 	word-break: break-word;
 	hyphens: auto;
@@ -234,7 +236,8 @@
 
 .single-column-list h1 {
 	font-weight: 600;
-	font-size: 5rem;
+	/*font-size: 5rem;*/
+	font-size: 4em;
 	margin: 0;
 }
 

@@ -12,7 +12,8 @@
 	align-items: center;
 	padding: 0 2rem;
 	margin: 0 auto 1.5rem;
-	max-width: 1500px;
+	/*max-width: 1500px;*/
+	max-width: 1400px;
 	flex-direction: row;
 	height: 5rem;
 }

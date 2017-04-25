@@ -142,7 +142,8 @@
 }
 
 .archive-container .title {
-	max-width: 1550px;
+	/*max-width: 1550px;*/
+	max-width: 1450px;
 	margin: 0 auto;
 	padding: 0 1em;
 }
@@ -267,7 +268,8 @@
 	text-align: center;
 	font-weight: 600;
 	width: 150px;
-	font-size: 1.6em;
+	/*font-size: 1.6em;*/
+	font-size: 1.3em;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -291,7 +293,8 @@
 }
 
 .archive-container .taxonomies > .row {
-	max-width: 1550px;
+	/*max-width: 1550px;*/
+	max-width: 1450px;
 	margin: 0 auto;
 	padding: 0 1em;
 }
@@ -416,7 +419,8 @@
 }
 
 .archive-container.film .row.indent p {
-	font-size: 1.5em;
+	/*font-size: 1.5em;*/
+	font-size: 1.3em;
 	font-weight: 300;
 }
 
@@ -431,7 +435,8 @@
 }
 
 .archive-container.film .content {
-	max-width: 1550px;
+	/*max-width: 1550px;*/
+	max-width: 1450px;
 	margin: 4em auto 10em;
 	display: flex;
 }
@@ -471,7 +476,8 @@
 .archive-container.film p {
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 1.5em;
 	font-weight: 600;
 	word-break: break-word;
 	hyphens: auto;
@@ -502,7 +508,8 @@
 	text-decoration: underline;
 	font-family: HelveticaNeueLT Std;
 	color: #A3A5A8;
-	font-size: 2em;
+	/*font-size: 2em;*/
+	font-size: 1.5em;
 	font-weight: 600;
 }
 
@@ -561,7 +568,8 @@
 }
 
 .archive-container.hardware .content {
-	max-width: 1550px;
+	/*max-width: 1550px;*/
+	max-width: 1450px;
 	margin: 0 auto;
 	padding: 2em 0;
 	display: flex;
