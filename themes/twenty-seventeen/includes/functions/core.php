@@ -62,7 +62,7 @@ function tagwall_setup() {
 	set_post_thumbnail_size( 672, 372, true );
 
 	// Add custom image sizes.
-	add_image_size( 'tagwall-carousel', 1000, 1000, true );
+	add_image_size( 'tagwall-carousel', 2500, 1500, true );
 
 	/**
 	 * Switch default core markup for search form, comment form, and comments
