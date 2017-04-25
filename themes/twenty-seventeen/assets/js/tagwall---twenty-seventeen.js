@@ -21,7 +21,11 @@
 			$( '.hamburger' )
 				.toggleClass( 'is-active' );
 
+
 			if ( $( this ).hasClass( 'is-active' ) ) {
+
+				// Hide black tagwall image and display gray one
+				setGrayTagwall();
 
 				$( '.menu-container' )
 					.removeClass( 'not-visible' )
@@ -29,6 +33,9 @@
 
 				$( 'body' ).css( 'overflow', 'hidden' );
 			} else {
+
+				// Hide gray tagwall image and display black one
+				setBlackTagwall();
 
 				// Remove the class 'visible' and add the class 'not-visible' class to the menu container.
 				$( '.menu-container' )
@@ -134,6 +141,26 @@
 			prevArrow     : $( 'i.ion-ios-arrow-left' ),
 			nextArrow     : $( 'i.ion-ios-arrow-right' )
 		});
+
+		/**
+		 * Sets black tagwall image
+		 */
+		function setBlackTagwall(){
+			$( '.header-navigation-front-page #logo img:first-child')
+				.css({ "display" : "none" });
+			$( '.header-navigation-front-page #logo img:last-child')
+				.css({ "display" : "block" });
+		}
+
+		/**
+		 * Sets gray tagwall image
+		 */
+		function setGrayTagwall(){
+			$( '.header-navigation-front-page #logo img:first-child')
+				.css({ "display" : "block" });
+			$( '.header-navigation-front-page #logo img:last-child')
+				.css({ "display" : "none" });
+		}
 
 	});
 } )( jQuery );
