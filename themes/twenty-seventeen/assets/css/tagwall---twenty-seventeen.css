@@ -473,7 +473,8 @@ i.toggle.ion-ios-arrow-right {
 
 header .menu-container {
 	position: fixed;
-	top: 7.2rem;
+	/*top: 7.2rem;*/
+	top: 6.5rem;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -494,7 +495,9 @@ header .menu-container.visible {
 	margin: 0 auto;
 	height: 100%;
 	display: flex;
-	align-items: center;
+	/*align-items: center;*/
+	align-items: flex-start;
+	padding: 8em 0 0 0;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -550,7 +553,7 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu {
-	border-right: 0.1rem solid #221E1f;
+	border-right: 0.1rem solid #A2A4A7;
 	padding: 0;
 }
 
