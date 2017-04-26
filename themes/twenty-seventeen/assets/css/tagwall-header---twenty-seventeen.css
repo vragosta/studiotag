@@ -29,8 +29,52 @@
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
 #logo img {
+	transition: 0.5s opacity ease-in-out, 0.5s visibility ease-in-out;
+}
+
+#logo img:first-child {
+	position: absolute;
+	width: 17.3rem
+}
+
+#logo img:last-child {
 	width: 17rem;
 }
+
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {*/
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	#logo img:first-child {
+		width: 16.5rem;
+	}
+
+	#logo img:last-child {
+		width: 16.3rem;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	#logo img:first-child {
+		width: 13rem;
+	}
+
+	#logo img:last-child {
+		width: 12.8rem;
+	}
+}
+
+/*--- Hide the black tagwall image ---*/
+#logo img.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- Hide the black tagwall image ---*/
+#logo img.visible {
+	opacity: 1;
+	visibility: visible;
+}
+
+
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
 #menu {

@@ -173,7 +173,8 @@
 .grid .row {
 	display: flex;
 	margin: 0 auto;
-	max-width: 1000px;
+	/*max-width: 1000px;*/
+	max-width: 1155px;
 }
 
 .grid .archive-item.users .row:last-child {
@@ -474,7 +475,8 @@ i.toggle.ion-ios-arrow-right {
 header .menu-container {
 	position: fixed;
 	/*top: 7.2rem;*/
-	top: 6.5rem;
+	/*top: 6.5rem;*/
+	top: 6.4rem;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -490,27 +492,55 @@ header .menu-container.visible {
 }
 
 .menu-container > div {
+	max-width: 1600px;
 	/*max-width: 1500px;*/
-	max-width: 1400px;
+	/*max-width: 1400px;*/
+	/*max-width: 1200px;*/
 	margin: 0 auto;
 	height: 100%;
 	display: flex;
 	/*align-items: center;*/
 	align-items: flex-start;
-	padding: 8em 0 0 0;
+	/*padding: 8em 0 0 0;*/
+	/*padding: 8em 1.4em 0;*/
+	/*padding: 8em 9.1em 0;*/
+	/*padding: 8em 10em;*/
+	padding: 8em 9em;
 }
+
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.menu-container > div {
+		padding: 8em 10.3em 0;
+	}
+}
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.menu-container > div {
+		padding: 8em 4.4em 0;
+	}
+}*/
+
+@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+	.menu-container > div {
+		padding: 4em 9em;
+	}
+}
+
+
 
 @media only screen and ( max-width: 767px ) {
 	header .menu-container > div {
 		align-items: flex-start;
-		padding-top: 12em;
+		/*padding-top: 12em;*/
+		padding: 2em;
 	}
 }
 
 .menu-container > div > .row {
 	width: 100%;
+	padding: 0;
 	/*padding: 0 2em;*/
-	padding: 0 4em;
+	/*padding: 0 4em;*/
 	max-width: 1300px;
 	margin: 0 auto;
 }
@@ -568,15 +598,16 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu ul li a {
-	/*font-size: 5em;*/
-	font-size: 4em;
+	font-size: 5em;
+	/*font-size: 4em;*/
+	/*font-size: 4.5em;*/
 	font-weight: 600;
 	cursor: pointer;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
 	.menu-container .static-menu ul li a {
-		font-size: 4em;
+		font-size: 4.5em;
 	}
 }
 
@@ -588,7 +619,8 @@ header .menu-container ul li a:hover {
 
 @media only screen and ( max-width: 767px ) {
 	header .menu-container .static-menu ul li a {
-		font-size: 3.5em;
+		/*font-size: 3.5em;*/
+		font-size: 3.6em;
 	}
 
 	.wall-details .menu-container .static-menu ul li a {
@@ -631,7 +663,8 @@ header .dynamic-menu {
 
 header .menu-container .dynamic-menu ul li a {
 	/*font-size: 2.5rem;*/
-	font-size: 1.8rem;
+	/*font-size: 1.8rem;*/
+	font-size: 2.2rem;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {

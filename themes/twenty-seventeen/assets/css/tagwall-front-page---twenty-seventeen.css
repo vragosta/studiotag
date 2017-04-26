@@ -8,15 +8,27 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 2rem;
-	/*max-width: 1500px;*/
+	/*padding: 0 2rem;*/
+	padding: 0 7em;
+	max-width: 1500px;
 	/*max-width: 1400px;*/
-	max-width: 1200px;
-	margin: 0 auto 1.5rem;
+	/*max-width: 1200px;*/
+	/*margin: 0 auto 1.5rem;*/
+	margin: 0 auto .5em;
 	height: 5rem;
 }
 
+@media only screen and ( max-width: 767px ) {
+	.header-navigation-front-page {
+		padding: 0 3.5em;
+	}
+}
+
 /*--- Overriding hamburger css ---*/
+.header-navigation-front-page .hamburger {
+	margin-right: -30px;
+}
+
 .header-navigation-front-page .hamburger-inner::before {
 	width: 24.6px;
 	height: 2.46px;
@@ -58,27 +70,6 @@
 /*--- Hover for first level button elements ---*/
 .header-navigation-front-page > button:hover {
 	opacity: 1;
-}
-
-.header-navigation-front-page #logo img {
-	transition: 0.5s opacity ease-in-out, 0.5s visibility ease-in-out;
-}
-
-.header-navigation-front-page #logo img:first-child {
-	position: absolute;
-	width: 17.3rem
-}
-
-/*--- Hide the black tagwall image ---*/
-.header-navigation-front-page #logo img.not-visible {
-	opacity: 0;
-	visibility: hidden;
-}
-
-/*--- Hide the black tagwall image ---*/
-.header-navigation-front-page #logo img.visible {
-	opacity: 1;
-	visibility: visible;
 }
 
 /*--- Overriding carousel arrows ---*/
