@@ -64,6 +64,11 @@
 				$( '.projects' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+
+				$( '.details' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
 			} else if ( id === 'projects' ) {
 				$( '.projects' )
 					.removeClass( 'not-visible' )
@@ -72,6 +77,24 @@
 				$( '.company' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+
+				$( '.details' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
+			} else if ( id === 'details' ) {
+				$( '.details' )
+					.removeClass( 'not-visible' )
+					.addClass( 'visible' );
+
+				$( '.company' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
+				$( '.projects' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
 			} else {
 				$( '.company' )
 					.removeClass( 'visible' )
@@ -135,9 +158,9 @@
 		// Slick carousel controller
 		$( '.carousel' ).slick({
 			slidesToShow  : 1,
-			// autoplay      : true,
-			// autoplaySpeed : 3000,
-			// speed         : 600,
+			autoplay      : true,
+			autoplaySpeed : 3000,
+			speed         : 600,
 			prevArrow     : $( 'i.ion-ios-arrow-left' ),
 			nextArrow     : $( 'i.ion-ios-arrow-right' )
 		});
@@ -145,37 +168,27 @@
 		/**
 		 * Sets black tagwall image
 		 */
-		function setBlackTagwall(){
+		function setBlackTagwall() {
 			$( '.header-navigation-front-page #logo img:first-child' )
 				.removeClass( 'visible' )
 				.addClass( 'not-visible' );
-				// .hide();
-				// .fadeOut();
-				// .css({ "display" : "none" });
+
 			$( '.header-navigation-front-page #logo img:last-child' )
 				.removeClass( 'not-visible' )
 				.addClass( 'visible' );
-				// .show();
-				// .fadeIn();
-				// .css({ "display" : "block" });
 		}
 
 		/**
 		 * Sets gray tagwall image
 		 */
-		function setGrayTagwall(){
+		function setGrayTagwall() {
 			$( '.header-navigation-front-page #logo img:last-child' )
 				.removeClass( 'visible' )
 				.addClass( 'not-visible' );
-				// .hide();
-				// .fadeOut();
-				// .css({ "display" : "none" });
 
 			$( '.header-navigation-front-page #logo img:first-child' )
 				.removeClass( 'not-visible' )
 				.addClass( 'visible' );
-				// .show();
-				// .css({ "display" : "block" });
 		}
 
 	});

@@ -714,21 +714,24 @@ header .menu-container .dynamic-menu ul {
 
 .wall-details .dynamic-menu > div,
 .menu-container .dynamic-menu .company,
-.menu-container .dynamic-menu .projects {
+.menu-container .dynamic-menu .projects,
+.menu-container .dynamic-menu .details {
 	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 	position: absolute;
 }
 
 .wall-details .dynamic-menu > div.visible,
 .menu-container .dynamic-menu .company.visible,
-.menu-container .dynamic-menu .projects.visible {
+.menu-container .dynamic-menu .projects.visible,
+.menu-container .dynamic-menu .details.visible {
 	opacity: 1;
 	visibility: visible;
 }
 
 .wall-details .dynamic-menu > div.not-visible,
 .menu-container .dynamic-menu .company.not-visible,
-.menu-container .dynamic-menu .projects.not-visible {
+.menu-container .dynamic-menu .projects.not-visible,
+.menu-container .dynamic-menu .details.not-visible {
 	opacity: 0;
 	visibility: hidden;
 }
