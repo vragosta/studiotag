@@ -45,13 +45,13 @@
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
 							<?php if (isset($left_name_1) && isset($left_link_1)) : ?>
-								<li><a href="<?php esc_attr($left_link_1); ?>"> <?php echo $left_name_1; ?> </a></li>
+								<li><a href="<?php echo esc_attr($left_link_1); ?>"> <?php echo $left_name_1; ?> </a></li>
 							<?php endif; ?>
 							<?php if (isset($left_name_2) && isset($left_link_2)) : ?>
-								<li><a href="<?php esc_attr($left_link_2); ?>"> <?php echo $left_name_2; ?> </a></li>
+								<li><a href="<?php echo esc_attr($left_link_2); ?>"> <?php echo $left_name_2; ?> </a></li>
 							<?php endif; ?>
 							<?php if (isset($left_name_3) && isset($left_link_3)) : ?>
-								<li><a href="<?php esc_attr($left_link_3); ?>"> <?php echo $left_name_3; ?> </a></li>
+								<li><a href="<?php echo esc_attr($left_link_3); ?>"> <?php echo $left_name_3; ?> </a></li>
 							<?php endif; ?>
 						</ul>
 					</div>
