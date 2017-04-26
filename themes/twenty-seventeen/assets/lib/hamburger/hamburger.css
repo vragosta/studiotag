@@ -35,7 +35,7 @@
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
     width: 40px;
     height: 4px;
-    background-color: #A2A4A7;
+    background-color: #000;  
     border-radius: 4px;
     position: absolute;
     transition-property: transform;
@@ -565,6 +565,7 @@
   .hamburger--squeeze.is-active .hamburger-inner::before {
     top: 0;
     opacity: 0;
+    transition: 0.5s background-color ease-in-out;
     transition: top 0.1s ease, opacity 0.1s 0.14s ease; }
   .hamburger--squeeze.is-active .hamburger-inner::after {
     bottom: 0;
