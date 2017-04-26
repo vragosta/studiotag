@@ -434,7 +434,8 @@ i.toggle {
 
 @media only screen and ( max-width: 767px ) {
 	i.toggle {
-		font-size: 3em;
+		font-size: 1.8em;
+		top: 42%;
 	}
 }
 
@@ -446,11 +447,8 @@ i.toggle.ion-ios-arrow-right {
 	right: 3%;
 }
 
-/*---Prevents FOUC ---*/
-.carousel img {
-	opacity: 0;
-	transition: opacity 0.5s ease-in-out;
-	max-height: 850px;
+.carousel .settings {
+	padding-bottom: 48%;
 }
 
 /*---Prevents FOUC ---*/
