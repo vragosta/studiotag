@@ -146,20 +146,36 @@
 		 * Sets black tagwall image
 		 */
 		function setBlackTagwall(){
-			$( '.header-navigation-front-page #logo img:first-child')
-				.css({ "display" : "none" });
-			$( '.header-navigation-front-page #logo img:last-child')
-				.css({ "display" : "block" });
+			$( '.header-navigation-front-page #logo img:first-child' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+				// .hide();
+				// .fadeOut();
+				// .css({ "display" : "none" });
+			$( '.header-navigation-front-page #logo img:last-child' )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+				// .show();
+				// .fadeIn();
+				// .css({ "display" : "block" });
 		}
 
 		/**
 		 * Sets gray tagwall image
 		 */
 		function setGrayTagwall(){
-			$( '.header-navigation-front-page #logo img:first-child')
-				.css({ "display" : "block" });
-			$( '.header-navigation-front-page #logo img:last-child')
-				.css({ "display" : "none" });
+			$( '.header-navigation-front-page #logo img:last-child' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+				// .hide();
+				// .fadeOut();
+				// .css({ "display" : "none" });
+
+			$( '.header-navigation-front-page #logo img:first-child' )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+				// .show();
+				// .css({ "display" : "block" });
 		}
 
 	});

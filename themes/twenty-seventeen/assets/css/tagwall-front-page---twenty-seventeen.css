@@ -10,7 +10,8 @@
 	align-items: center;
 	padding: 0 2rem;
 	/*max-width: 1500px;*/
-	max-width: 1400px;
+	/*max-width: 1400px;*/
+	max-width: 1200px;
 	margin: 0 auto 1.5rem;
 	height: 5rem;
 }
@@ -34,16 +35,16 @@
 	height: 2.46px;
 }
 
-/* Adjusted is-active hamburger squeeze */
-.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner{
+/*--- Adjusted is-active hamburger squeeze ---*/
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner {
 	background-color: #A2A4A7;
 }
 
-.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::before{
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::before {
 	background-color: #A2A4A7;
 }
 
-.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::after{
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::after {
 	background-color: #A2A4A7;
 }
 
@@ -59,9 +60,25 @@
 	opacity: 1;
 }
 
-/* Hide the black tagwall image*/
-.header-navigation-front-page #logo img:first-child{
-	display: none;
+.header-navigation-front-page #logo img {
+	transition: 0.5s opacity ease-in-out, 0.5s visibility ease-in-out;
+}
+
+.header-navigation-front-page #logo img:first-child {
+	position: absolute;
+	width: 17.3rem
+}
+
+/*--- Hide the black tagwall image ---*/
+.header-navigation-front-page #logo img.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- Hide the black tagwall image ---*/
+.header-navigation-front-page #logo img.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 /*--- Overriding carousel arrows ---*/
