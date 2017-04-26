@@ -130,8 +130,8 @@ function tagwall_system_left_1_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$left_name_1 = json_decode( get_post_meta( $post->ID, 'left_name_1', true ) );
-	$left_link_1 = json_decode( get_post_meta( $post->ID, 'left_link_1', true ) ); ?>
+	$left_name_1 = get_post_meta( $post->ID, 'left_name_1', true );
+	$left_link_1 = get_post_meta( $post->ID, 'left_link_1', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -182,8 +182,8 @@ function tagwall_system_left_1_save_data( $post_id ) {
 		return;
 
 	// Sanitize user input.
-	$left_name_1 = json_encode( $_POST['left_name_1'] );
-	$left_link_1 = json_encode( $_POST['left_link_1'] );
+	$left_name_1 = $_POST['left_name_1'];
+	$left_link_1 = $_POST['left_link_1'];
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'left_name_1', $left_name_1 );
@@ -206,8 +206,8 @@ function tagwall_system_left_2_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$left_name_2 = json_decode( get_post_meta( $post->ID, 'left_name_2', true ) );
-	$left_link_2 = json_decode( get_post_meta( $post->ID, 'left_link_2', true ) ); ?>
+	$left_name_2 = get_post_meta( $post->ID, 'left_name_2', true );
+	$left_link_2 = get_post_meta( $post->ID, 'left_link_2', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -258,8 +258,8 @@ function tagwall_system_left_2_save_data( $post_id ) {
 		return;
 
 	// Sanitize user input.
-	$left_name_2 = json_encode( $_POST['left_name_2'] );
-	$left_link_2 = json_encode( $_POST['left_link_2'] );
+	$left_name_2 = $_POST['left_name_2'];
+	$left_link_2 = $_POST['left_link_2'];
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'left_name_2', $left_name_2 );
@@ -282,8 +282,8 @@ function tagwall_system_left_3_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$left_name_3 = json_decode( get_post_meta( $post->ID, 'left_name_3', true ) );
-	$left_link_3 = json_decode( get_post_meta( $post->ID, 'left_link_3', true ) ); ?>
+	$left_name_3 = get_post_meta( $post->ID, 'left_name_3', true );
+	$left_link_3 = get_post_meta( $post->ID, 'left_link_3', true ); ?>
 
 	<table style="width: 100%;">
 		<tr>
@@ -334,8 +334,8 @@ function tagwall_system_left_3_save_data( $post_id ) {
 		return;
 
 	// Sanitize user input.
-	$left_name_3 = json_encode( $_POST['left_name_3'] );
-	$left_link_3 = json_encode( $_POST['left_link_3'] );
+	$left_name_3 = $_POST['left_name_3'];
+	$left_link_3 = $_POST['left_link_3'];
 
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'left_name_3', $left_name_3 );
