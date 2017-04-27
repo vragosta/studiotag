@@ -8,8 +8,16 @@
  */
 ?>
 
-		<footer id="footer">
-			<section>
+		<footer id="footer" class="row">
+			<div class="left-column col-xs-12 col-sm-3">
+
+			</div>
+			<div class="col-xs-12 col-sm-9">
+
+			</div>
+
+
+			<!-- <section>
 
 				<a href="<?php echo home_url(); ?>">
 					<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
@@ -45,7 +53,7 @@
 						<?php dynamic_sidebar( 'Footer Column Three' ); ?>
 					</div>
 				</div>
-			</section>
+			</section> -->
 		</footer>
 	</body>
 </html>

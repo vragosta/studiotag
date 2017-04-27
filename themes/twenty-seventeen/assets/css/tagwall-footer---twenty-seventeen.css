@@ -10,8 +10,11 @@
 	display: flex;
 	border-top: 0.1rem solid #221E1F;
 	border-bottom: 0.1rem solid #221E1F;
-	margin: 0 1rem;
+	/*margin: 0 1rem;*/
 	font-family: HelveticaNeueLT Std;
+	/*height: 30rem;*/
+	height: 25em;
+	margin: 0;
 }
 
 /*--- Media Query for footer container element ---*/
@@ -21,23 +24,26 @@
 	}
 }
 
-/*--- Control the height of the two section elements ---*/
-#footer > section {
+#footer .left-column {
+	border-right: 0.1rem solid #221E1F;
+	margin: 2em 0;
+}
+
+
+/*#footer > section {
 	height: 30rem;
 }
 
-/*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
+	font-size: 1.2rem;
 }
 
-/*--- Hover behavior for the all links in the footer ---*/
 #footer > section a:hover {
 	color: #A2A4A7;
 }
 
-/*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
 	width: 30%;
 	border-right: 0.1rem solid #221E1F;
@@ -54,7 +60,6 @@
 	}
 }
 
-/*--- Media Query for first section element in footer ---*/
 @media only screen and ( max-width: 767px ) {
 	#footer > section:first-child {
 		width: 100%;
@@ -62,18 +67,15 @@
 	}
 }
 
-/*--- Control the dimensions of the logo in the footer ---*/
 #footer img {
 	width: 12em;
 }
 
-/*--- Styles for <ul> elements in first section in footer ---*/
 #footer > section:first-child ul {
 	margin: 1em 0;
 	padding: 0;
 }
 
-/*--- Styles for <li> elements in first section in footer ---*/
 #footer > section:first-child ul li {
 	display: flex;
 	justify-content: center;
@@ -83,7 +85,6 @@
 	font-family: HelveticaNeueLT Std;
 }
 
-/*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
 	transition: color 0.3s ease-in-out;
@@ -210,4 +211,4 @@
 
 #footer .content .footer-menus a {
 	font-size: 1.2em;
-}
+}*/

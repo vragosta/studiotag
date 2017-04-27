@@ -24,7 +24,7 @@
 </nav>
 
 <section class="menu-container">
-	<div>
+	<!-- <div> -->
 		<div class="row">
 			<div class="static-menu col-xs-12 col-sm-6">
 				<ul>
@@ -57,5 +57,5 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	<!-- </div> -->
 </section>

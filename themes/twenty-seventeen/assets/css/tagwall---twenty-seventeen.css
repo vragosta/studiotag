@@ -17,17 +17,24 @@
 	display: flex;
 	align-items: center;
 	height: 15em;
-	margin: 12em auto 0;
+	/*margin: 12em auto 0;*/
+	margin: 12em 0 0;
 	/*max-width: 1500px;*/
-	max-width: 1400px;
-	padding-left: 2rem;
+	/*max-width: 1400px;
+	padding-left: 2rem;*/
+	/*padding: 0 7em;*/
+	padding: 0 5em;
+	/*padding: 0 1em;*/
 }
 
 @media only screen and ( max-width: 767px ) {
 	.wall-title {
-		margin: 4em 0;
+		/*margin: 4em 0;*/
+		margin: 0;
 		justify-content: center;
-		padding: 0;
+		/*padding: 0;*/
+		padding: 2em;
+		min-height: 275px;
 	}
 }
 
@@ -35,14 +42,15 @@
 	font-family: HelveticaNeueLT Std;
 	text-transform: uppercase;
 	font-size: 5em;
+	/*font-size: 4.5em;*/
 	font-weight: 600;
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.wall-title h1 {
 		font-size: 4em;
 	}
-}
+}*/
 
 @media only screen and ( max-width: 767px ) {
 	.wall-title h1 {
@@ -68,7 +76,8 @@
 @media only screen and ( max-width: 767px ) {
 	.slash {
 		margin: 0 1em;
-		height: 100%;
+		/*height: 100%;*/
+		height: 70%;
 	}
 }
 
@@ -77,8 +86,11 @@
 	top: 0;
 	right: -14%;
 	width: 30%;
+	/*right: -50px;
+	width: 8em;*/
 	background-color: #fff;
-	height: 100%;
+	/*height: 100%;*/
+	height: 101%;
 	margin: 0;
 }
 
@@ -148,6 +160,7 @@
 /*--- Grid CSS ---*/
 .grid {
 	margin: 0 0 20rem 0;
+	padding: 0 5em;
 	overflow: hidden;
 }
 
@@ -174,7 +187,10 @@
 	display: flex;
 	margin: 0 auto;
 	/*max-width: 1000px;*/
-	max-width: 1155px;
+	/*max-width: 1155px;*/
+	max-width: 1500px;
+	/*padding: 0 11.3em;*/
+	padding: 0 6.3em;
 }
 
 .grid .archive-item.users .row:last-child {
@@ -191,6 +207,7 @@
 @media only screen and ( max-width: 767px ) {
 	.grid .row {
 		flex-direction: column;
+		padding: 0;
 	}
 
 	/*--- Do not display image placeholder ---*/
@@ -232,7 +249,8 @@
 }
 
 /*--- If any system image has the 'not-visible' class on it, do not display the image ---*/
-.grid .featured-image.not-visible {
+/*.grid .featured-image.not-visible {*/
+.grid img.not-visible {
 	opacity: 0;
 	visibility: hidden;
 }
@@ -252,12 +270,14 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	/*justify-content: flex-start;*/
 }
 
 /*--- Media Query for 'info' containers that contain the 'no-padding' class ---*/
 @media only screen and ( max-width: 767px ) {
 	.grid .info {
 		padding: 2em;
+		min-height: 275px;
 	}
 
 	.archive-container.applied-detail .grid .info {
@@ -269,10 +289,10 @@
 	}
 }
 
-.grid .info a:first-child {
+/*.grid .info a:first-child {
 	position: absolute;
 	top: 0;
-}
+}*/
 
 @media only screen and ( max-width: 767px ) {
 	.grid .info a:first-child {
@@ -301,6 +321,17 @@
 	display: table;
 }
 
+.grid .info a:first-child {
+	position: absolute;
+	top: 0;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .info a:first-child {
+		position: relative;
+	}
+}
+
 /*--- Styles to h3 elements within 'info' container ---*/
 .grid .info h3 {
 	font-size: 1.8em;
@@ -319,7 +350,8 @@
 
 @media only screen and ( max-width: 767px ) {
 	.grid .info h3 {
-		margin: 0 0 .5em;
+		/*margin: 0 0 .5em;*/
+		margin: 0 0 1.2em;
 	}
 
 	.archive-container.applied-detail .grid .info h3 {
@@ -364,10 +396,20 @@
 	font-family: HelveticaNeueLT Std;
 	color: #221E1F;
 	font-size: 1em;
+	/*font-size: 1.2em;*/
 	font-weight: 300;
 	line-height: 1.3;
 	word-break: break-word;
 	hyphens: auto;
+	/*margin-top: 8%;*/
+	/*margin-top: 12%;*/
+	margin-top: 2em;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
+	.grid .info p {
+		font-size: .9em;
+	}
 }
 
 /*--- Media Query to control the font size of the paragraph elements within the 'info' container ---*/
@@ -376,6 +418,26 @@
 		/*font-size: 1em;*/
 		font-size: .8em;
 		margin-top: 1em;
+	}
+}
+
+@media only screen and ( max-width: 767px ) {
+	.grid .info p {
+		margin-top: 0;
+	}
+}
+
+.grid .info p.mobile {
+	display: none;
+}
+
+@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+	.grid .info p:not( .mobile ) {
+		display: none;
+	}
+
+	.grid .info p.mobile {
+		display: block;
 	}
 }
 
@@ -417,6 +479,12 @@
 	margin: 0 0 6rem 0;
 }
 
+@media only screen and ( max-width: 767px ) {
+	.carousel-container {
+		margin: 0;
+	}
+}
+
 i.toggle {
 	cursor: pointer;
 	color: #fff;
@@ -449,11 +517,25 @@ i.toggle.ion-ios-arrow-right {
 }
 
 .carousel .settings {
-	padding-bottom: 48%;
+	/*padding-bottom: 48%;*/
+	padding-bottom: 40%;
+	/*min-height: 400px;*/
+	min-height: 275px;
+}
+
+.slick-container img {
+	/*opacity: 0;
+	transition: opacity 0.5s ease-in-out;*/
 }
 
 /*---Prevents FOUC ---*/
-.slick-initialized img {
+.carousel-container figure div {
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+/*---Prevents FOUC ---*/
+.slick-initialized figure div {
 	opacity: 1;
 }
 
@@ -476,7 +558,8 @@ header .menu-container {
 	position: fixed;
 	/*top: 7.2rem;*/
 	/*top: 6.5rem;*/
-	top: 6.4rem;
+	/*top: 6.4rem;*/
+	top: 5.5rem;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -505,7 +588,8 @@ header .menu-container.visible {
 	/*padding: 8em 1.4em 0;*/
 	/*padding: 8em 9.1em 0;*/
 	/*padding: 8em 10em;*/
-	padding: 8em 9em;
+	/*padding: 8em 9em;*/
+	padding: 8em 7.4em;
 }
 
 /*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
@@ -520,19 +604,19 @@ header .menu-container.visible {
 	}
 }*/
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.menu-container > div {
 		padding: 4em 9em;
 	}
-}
-
-
+}*/
 
 @media only screen and ( max-width: 767px ) {
 	header .menu-container > div {
 		align-items: flex-start;
 		/*padding-top: 12em;*/
-		padding: 2em;
+		/*padding: 2em;*/
+		padding: 2em 3.8em;
+		flex-direction: column;
 	}
 }
 
@@ -598,7 +682,8 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu ul li a {
-	font-size: 5em;
+	font-size: 3.5em;
+	/*font-size: 5em;*/
 	/*font-size: 4em;*/
 	/*font-size: 4.5em;*/
 	font-weight: 600;
@@ -606,22 +691,22 @@ header .menu-container ul li a:hover {
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	.menu-container .static-menu ul li a {
+	/*.menu-container .static-menu ul li a {
 		font-size: 4.5em;
-	}
+	}*/
 }
 
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
 	.menu-container .static-menu ul li a {
 		font-size: 3em;
 	}
-}
+}*/
 
 @media only screen and ( max-width: 767px ) {
-	header .menu-container .static-menu ul li a {
-		/*font-size: 3.5em;*/
+	/*header .menu-container .static-menu ul li a {
+		font-size: 3.5em;
 		font-size: 3.6em;
-	}
+	}*/
 
 	.wall-details .menu-container .static-menu ul li a {
 		font-size: 3em;
@@ -664,7 +749,8 @@ header .dynamic-menu {
 header .menu-container .dynamic-menu ul li a {
 	/*font-size: 2.5rem;*/
 	/*font-size: 1.8rem;*/
-	font-size: 2.2rem;
+	/*font-size: 2.2rem;*/
+	font-size: 2rem;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {

@@ -49,11 +49,12 @@
 				<?php if ( $count == 0 && $image ) : ?>
 					<div class="row">
 						<div class="right no-padding col-xs-12 col-sm-offset-6 col-sm-6">
-							<figure class="featured-image">
+							<img src="<?php echo esc_attr( $image ); ?>" style="width: 100%;" />
+							<!-- <figure class="featured-image">
 								<a href="<?php the_permalink(); ?>">
 									<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 								</a>
-							</figure>
+							</figure> -->
 
 							<div class="slash">
 								<hr />
@@ -66,11 +67,12 @@
 					<div class="row">
 						<?php if ( $image ) : ?>
 							<div class="left no-padding col-xs-12 col-sm-6">
-								<figure class="featured-image">
+								<img src="<?php echo esc_attr( $image ); ?>" style="width: 100%;" />
+								<!-- <figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
-								</figure>
+								</figure> -->
 
 								<div class="slash">
 									<hr />
@@ -86,6 +88,7 @@
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
+								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
 							</div>
 						<?php endif; ?>
@@ -98,6 +101,7 @@
 									<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 								</a>
 								<p><?php echo esc_html( $excerpt ); ?></p>
+								<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 								<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
 
 							</div>
@@ -105,11 +109,12 @@
 
 						<?php if ( $image ) : ?>
 							<div class="right no-padding col-xs-12 col-sm-6">
-								<figure class="featured-image">
+								<img src="<?php echo esc_attr( $image ); ?>" style="width: 100%;" />
+								<!-- <figure class="featured-image">
 									<a href="<?php the_permalink(); ?>">
 										<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 									</a>
-								</figure>
+								</figure> -->
 
 								<div class="slash">
 									<hr />
@@ -126,8 +131,9 @@
 					 * Store the current post into a local variable for use in next iteration.
 					 * NOTE: This is the key statement!
 					 */
-					$temp_post = $post;
-					$excerpt   = wp_trim_words( $temp_post->post_excerpt, 45, '...' );
+					$temp_post      = $post;
+					$excerpt        = wp_trim_words( $temp_post->post_excerpt, 45, '...' );
+					$mobile_excerpt = wp_trim_words( $temp_post->post_excerpt, 20, '...' );
 					$count++;
 				?>
 
@@ -141,17 +147,19 @@
 							<h3><span>Tagwall</span> <?php echo esc_html( $temp_post->post_title ); ?></h3>
 						</a>
 						<p><?php echo esc_html( $excerpt ); ?></p>
+						<p class="mobile"><?php echo esc_html( $mobile_excerpt ); ?></p>
 						<a href="<?php echo get_the_permalink( $temp_post->ID ); ?>" class="more">See More</a>
 					</div>
 				<?php endif; ?>
 
 				<?php if ( $image ) : ?>
 					<div class="right no-padding col-xs-12 col-sm-6">
-						<figure class="featured-image not-visible">
+						<img src="<?php echo esc_attr( $image ); ?>" class="not-visible" style="width: 100%;" />
+						<!-- <figure class="featured-image not-visible">
 							<a href="<?php echo get_the_permalink( $post->ID ); ?>">
 								<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
 							</a>
-						</figure>
+						</figure> -->
 					</div>
 				<?php endif; ?>
 			</div>

@@ -34,15 +34,20 @@
 
 #logo img.gray {
 	position: absolute;
-	width: 17.3rem
+	width: 10.3em;
+	/*width: 17.3rem*/
+	/*width: 10.3rem;*/
+	/*top: 25px;*/
 }
 
 #logo img.black {
-	width: 17rem;
+	/*width: 17rem;*/
+	/*width: 10rem;*/
+	width: 10em;
 }
 
 /*@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {*/
-@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
+/*@media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
 	#logo img.gray {
 		width: 16.5rem;
 	}
@@ -50,9 +55,9 @@
 	#logo img.black {
 		width: 16.3rem;
 	}
-}
+}*/
 
-@media only screen and ( max-width: 767px ) {
+/*@media only screen and ( max-width: 767px ) {
 	#logo img.gray {
 		width: 13rem;
 	}
@@ -64,7 +69,7 @@
 	.header-navigation #logo img.black {
 		width: 16rem;
 	}
-}
+}*/
 
 /*--- Hide the black tagwall image ---*/
 #logo img.not-visible {
@@ -77,8 +82,6 @@
 	opacity: 1;
 	visibility: visible;
 }
-
-
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
 #menu {
