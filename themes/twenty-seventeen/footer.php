@@ -9,13 +9,20 @@
 ?>
 
 		<footer id="footer" class="row">
-			<div class="left-column col-xs-12 col-sm-3">
+			<!-- <div class="left-column col-xs-12 col-sm-3"> -->
+			<div style="width: 100%; display: flex; max-width: 1500px; padding: 0 5em; margin: 0 auto;">
+				<div class="left-column">
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo TAGWALL_TEMPLATE_URL . '/assets/images/studiotag.png'; ?>" />
+					</a>
 
+					<!-- <?php dynamic_sidebar( 'Footer Left Column' ); ?> -->
+				</div>
+				<!-- <div class="col-xs-12 col-sm-9"> -->
+				<div>
+
+				</div>
 			</div>
-			<div class="col-xs-12 col-sm-9">
-
-			</div>
-
 
 			<!-- <section>
 
