@@ -10,15 +10,8 @@
 	display: flex;
 	border-top: 0.1rem solid #221E1F;
 	border-bottom: 0.1rem solid #221E1F;
-	/*margin: 0 1rem;*/
+	margin: 0 2em;
 	font-family: HelveticaNeueLT Std;
-	height: 32em;
-	/*height: 30em;*/
-	/*height: 25em;*/
-	margin: 0;
-	/*margin: 0 auto;*/
-	/*max-width: 1500px;*/
-	/*padding: 0 7em;*/
 }
 
 /*--- Media Query for footer container element ---*/
@@ -28,69 +21,23 @@
 	}
 }
 
-#footer .left-column {
-	border-right: 0.1rem solid #221E1F;
-	margin: 2em 0;
-	/*padding: 0;*/
-	/*padding: 0 7em;*/
-	/*display: flex;
-	flex-direction: column;
-	align-items: center;*/
-	/*justify-content: center;*/
-	/*justify-content: flex-start;*/
-	/*width: 42%;*/
-	/*width: 40%;*/
-	width: 35.8%;
-}
-
-#footer .left-column img {
-	/*width: 12em;*/
-	width: 14em;
-	/*width: 15em;*/
-}
-
-#footer .left-column ul {
-	padding: 0;
-}
-
-#footer .left-column > div {
-	margin-top: 1em;
-}
-
-/*#footer .left-column .menu-tagwall-address-container {
-	margin-top: 2em;
-}*/
-
-/*#footer .left-column li {
-	text-align: center;
-}*/
-
-#footer .left-column ul li a {
-	font-size: 1.2em;
-}
-
-/*#footer .left-column .social {
-	margin-top: 1em;
-}*/
-
-#footer .left-column .social i {
-	font-size: 1.5em;
-	margin: 0 .2rem;
-}
-/*#footer > section {
+/*--- Control the height of the two section elements ---*/
+#footer > section {
 	height: 30rem;
 }
 
+/*--- Remove all underlines on hover for links ---*/
 #footer > section a {
 	text-decoration: none;
 	transition: color 0.3s ease-in-out;
-	font-size: 1.2rem;
 }
 
+/*--- Hover behavior for the all links in the footer ---*/
 #footer > section a:hover {
 	color: #A2A4A7;
 }
 
+/*--- Styles for first section element in footer ---*/
 #footer > section:first-child {
 	width: 30%;
 	border-right: 0.1rem solid #221E1F;
@@ -107,6 +54,7 @@
 	}
 }
 
+/*--- Media Query for first section element in footer ---*/
 @media only screen and ( max-width: 767px ) {
 	#footer > section:first-child {
 		width: 100%;
@@ -114,15 +62,18 @@
 	}
 }
 
+/*--- Control the dimensions of the logo in the footer ---*/
 #footer img {
 	width: 12em;
 }
 
+/*--- Styles for <ul> elements in first section in footer ---*/
 #footer > section:first-child ul {
 	margin: 1em 0;
 	padding: 0;
 }
 
+/*--- Styles for <li> elements in first section in footer ---*/
 #footer > section:first-child ul li {
 	display: flex;
 	justify-content: center;
@@ -132,6 +83,7 @@
 	font-family: HelveticaNeueLT Std;
 }
 
+/*--- Styles for links in the social segment ---*/
 #footer .social a {
 	margin: 0 .5rem;
 	transition: color 0.3s ease-in-out;
@@ -258,4 +210,4 @@
 
 #footer .content .footer-menus a {
 	font-size: 1.2em;
-}*/
+}
