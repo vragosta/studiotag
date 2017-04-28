@@ -22,10 +22,10 @@
 			<section class="content">
 				<div class="title-container row">
 					<div class="col-xs-12 col-sm-4">
-						<h2>Studio<span>Tag</span></h2>
+						<h2>Studio</h2>
 					</div>
 					<div class="col-xs-12 col-sm-4">
-						<h2><span>Tag</span>Wall</h2>
+						<h2>Wall</h2>
 					</div>
 					<div class="col-xs-12 col-sm-4">
 						<h2>WREN</h2>
