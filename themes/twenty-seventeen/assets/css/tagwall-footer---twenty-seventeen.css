@@ -8,7 +8,7 @@
 /*--- Footer container element ---*/
 #footer {
 	display: flex;
-	border-top: 0.1rem solid #221E1F;
+	border :0.1rem solid #221E1F;
 	border-bottom: 0.1rem solid #221E1F;
 	margin: 0 2em;
 	font-family: HelveticaNeueLT Std;
@@ -45,7 +45,7 @@
 	justify-content: space-around;
 	align-items: center;
 	flex-direction: column;
-	margin: 2.5rem 0;
+	/*margin: 2.5rem 0;*/
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
@@ -64,7 +64,7 @@
 
 /*--- Control the dimensions of the logo in the footer ---*/
 #footer img {
-	width: 12em;
+	width: 10em;
 }
 
 /*--- Styles for <ul> elements in first section in footer ---*/
@@ -114,7 +114,7 @@
 }
 
 #footer .content {
-	margin: 2.5rem 0;
+	/*margin: 2.5rem 0;*/
 	width: 70%;
 	display: flex;
 	flex-direction: column;
@@ -158,11 +158,7 @@
 	font-weight: 600;
 	margin: 0;
 	text-align: center;
-	font-size: 1.5em;
-}
-
-#footer .content .title-container h2 span {
-	font-family: Bodoni;
+	font-size: 1.2em;
 }
 
 #footer .content hr {
@@ -189,6 +185,8 @@
 	}
 }
 
+
+
 #footer .content .footer-menus > div {
 	display: flex;
 	align-items: center;
@@ -206,8 +204,9 @@
 #footer .content .footer-menus ul li {
 	line-height: 1.2;
 	max-width: 110px;
+	text-align: center;
 }
 
 #footer .content .footer-menus a {
-	font-size: 1.2em;
+	font-size: 1em;
 }
