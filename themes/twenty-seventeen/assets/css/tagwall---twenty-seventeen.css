@@ -450,6 +450,7 @@ i.toggle.ion-ios-arrow-right {
 	opacity: 0;
 	transition: opacity 0.5s ease-in-out;
 	max-height: 850px;
+	min-height: 275px;
 }
 
 /*---Prevents FOUC ---*/
