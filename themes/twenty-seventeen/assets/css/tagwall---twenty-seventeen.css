@@ -461,7 +461,6 @@ i.toggle.ion-ios-arrow-right {
 	background: #fff;
 }
 
-/*.news .menu-container,*/
 .wall-details .menu-container {
 	padding: 15em 0;
 }
@@ -474,7 +473,7 @@ i.toggle.ion-ios-arrow-right {
 
 header .menu-container {
 	position: fixed;
-	top: 7.2rem;
+	top: 5.5rem;
 	right: 0;
 	bottom: 0;
 	left: 0;
@@ -490,23 +489,27 @@ header .menu-container.visible {
 }
 
 .menu-container > div {
-	max-width: 1500px;
+	max-width: 1600px;
 	margin: 0 auto;
 	height: 100%;
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
+	padding: 8em 7.4em;
 }
 
 @media only screen and ( max-width: 767px ) {
 	header .menu-container > div {
 		align-items: flex-start;
-		padding-top: 12em;
+		padding: 2em 3.8em;
+		flex-direction: column;
 	}
 }
 
 .menu-container > div > .row {
 	width: 100%;
-	padding: 0 2em;
+	padding: 0;
+	max-width: 1300px;
+	margin: 0 auto;
 }
 
 @media only screen and ( max-width: 767px ) {
@@ -547,7 +550,7 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu {
-	border-right: 0.1rem solid #221E1f;
+	border-right: 0.1rem solid #A2A4A7;
 	padding: 0;
 }
 
@@ -562,28 +565,12 @@ header .menu-container ul li a:hover {
 }
 
 .menu-container .static-menu ul li a {
-	font-size: 5em;
+	font-size: 3.5em;
 	font-weight: 600;
 	cursor: pointer;
 }
 
-@media only screen and ( max-width: 1199px ) and ( min-width: 992px ) {
-	.menu-container .static-menu ul li a {
-		font-size: 4em;
-	}
-}
-
-@media only screen and ( max-width: 991px ) and ( min-width: 768px ) {
-	.menu-container .static-menu ul li a {
-		font-size: 3em;
-	}
-}
-
 @media only screen and ( max-width: 767px ) {
-	header .menu-container .static-menu ul li a {
-		font-size: 3.5em;
-	}
-
 	.wall-details .menu-container .static-menu ul li a {
 		font-size: 3em;
 	}
@@ -615,7 +602,7 @@ header .dynamic-menu {
 }
 
 .menu-container .dynamic-menu ul li a {
-	font-weight: 200;
+	font-weight: 300;
 }
 
 .wall-details .menu-container .dynamic-menu ul li a {
@@ -623,7 +610,10 @@ header .dynamic-menu {
 }
 
 header .menu-container .dynamic-menu ul li a {
-	font-size: 2.5rem;
+	/*font-size: 2.5rem;*/
+	/*font-size: 1.8rem;*/
+	/*font-size: 2.2rem;*/
+	font-size: 2rem;
 }
 
 @media only screen and ( max-width: 1199px ) and ( min-width: 768px ) {
@@ -673,21 +663,24 @@ header .menu-container .dynamic-menu ul {
 
 .wall-details .dynamic-menu > div,
 .menu-container .dynamic-menu .company,
-.menu-container .dynamic-menu .projects {
+.menu-container .dynamic-menu .projects,
+.menu-container .dynamic-menu .details {
 	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 	position: absolute;
 }
 
 .wall-details .dynamic-menu > div.visible,
 .menu-container .dynamic-menu .company.visible,
-.menu-container .dynamic-menu .projects.visible {
+.menu-container .dynamic-menu .projects.visible,
+.menu-container .dynamic-menu .details.visible {
 	opacity: 1;
 	visibility: visible;
 }
 
 .wall-details .dynamic-menu > div.not-visible,
 .menu-container .dynamic-menu .company.not-visible,
-.menu-container .dynamic-menu .projects.not-visible {
+.menu-container .dynamic-menu .projects.not-visible,
+.menu-container .dynamic-menu .details.not-visible {
 	opacity: 0;
 	visibility: hidden;
 }
