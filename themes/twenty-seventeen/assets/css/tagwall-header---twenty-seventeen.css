@@ -27,8 +27,24 @@
 }
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
-#logo img {
-	width: 17rem;
+#logo img.gray {
+	position: absolute;
+	width: 10.3em;
+}
+
+#logo img.black {
+	width: 10em;
+}
+
+#logo img.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- Hide the black tagwall image ---*/
+#logo img.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
