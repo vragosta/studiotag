@@ -20,6 +20,11 @@
 	}
 }
 
+/* Change the color of the hamburger menu on frontpage's border*/
+.menu-container .row .static-menu{
+	border-right: 0.1rem solid #A2A4A7;
+}
+
 /*--- Overriding hamburger css ---*/
 .header-navigation-front-page .hamburger {
 	margin-right: -35px;
