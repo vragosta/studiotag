@@ -86,9 +86,16 @@
 #menu > li a {
 	text-decoration: none;
 	text-transform: uppercase;
+	letter-spacing: 2px;
 	transition: color 0.3s ease-in-out;
 	font-size: 1.2rem;
 	font-weight: 600;
+}
+
+#menu .dropdown-menu li a{
+ 	font-weight: 300;
+ 	letter-spacing: normal;
+ 	text-transform: none;
 }
 
 /*--- Hover behavior for the links within the menu ---*/
@@ -134,6 +141,12 @@
 
 /*--- Media Query for expanded menu ---*/
 @media only screen and ( max-width: 767px ) {
+	#menu .expand li a{
+		font-weight: 300;
+		letter-spacing: normal;
+		text-transform: none;
+	}
+	
 	#menu .mobile:hover .expand {
 		display: flex;
 		opacity: 1;
