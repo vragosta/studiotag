@@ -8,30 +8,63 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0 2rem;
+	padding: 0 7em;
 	max-width: 1500px;
-	margin: 0 auto 1.5rem;
-	height: 5rem;
+	margin: 0 auto;
+	height: 5em;
+}
+
+@media only screen and ( max-width: 767px ) {
+	.header-navigation-front-page {
+		padding: 0 3.5em;
+	}
 }
 
 /*--- Overriding hamburger css ---*/
+.header-navigation-front-page .hamburger {
+	margin-right: -35px;
+}
+
+.header-navigation-front-page .hamburger-inner {
+	background-color: #000;
+	transition: 0.5s background-color ease-in-out;
+}
+
 .header-navigation-front-page .hamburger-inner::before {
-	width: 24.6px;
-	height: 2.46px;
-	top: -7px;
+	width: 1.8em;
+	height: 2px;
+	top: -6px;
+	background-color: #000;
+	transition: 0.5s background-color ease-in-out;
 }
 
 /*--- Adjust height and width of hamburger to change size of line, top and bottom to reduce space in between ---*/
 .header-navigation-front-page .hamburger-inner::after {
-	width: 24.6px;
-	height: 2.46px;
-	bottom: -7px;
+	width: 1.8em;
+	height: 2px;
+	bottom: -6px;
+	background-color: #000;
+	transition: 0.5s background-color ease-in-out;
 }
 
 .header-navigation-front-page .hamburger-inner {
-	width: 24.6px;
-	height: 2.46px;
+	width: 1.8em;
+	height: 2px;
 }
+
+/*--- Adjusted is-active hamburger squeeze ---*/
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner {
+	background-color: #A2A4A7;
+}
+
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::before {
+	background-color: #A2A4A7;
+}
+
+.header-navigation-front-page .hamburger--squeeze.is-active .hamburger-inner::after {
+	background-color: #A2A4A7;
+}
+
 
 /*--- Only target first level button elements ---*/
 .header-navigation-front-page > button {
@@ -42,6 +75,12 @@
 /*--- Hover for first level button elements ---*/
 .header-navigation-front-page > button:hover {
 	opacity: 1;
+}
+
+/*--- Overriding carousel arrows ---*/
+.carousel .slick-prev:before {
+	font-size: 50px;
+	color: #fff;
 }
 
 /*--- Overriding carousel arrows ---*/

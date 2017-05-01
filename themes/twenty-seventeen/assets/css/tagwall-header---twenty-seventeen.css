@@ -11,7 +11,7 @@
 	justify-content: space-between;
 	align-items: center;
 	padding: 0 2rem;
-	margin: 0 auto 1.5rem;
+	margin: 1rem auto;
 	max-width: 1500px;
 	flex-direction: row;
 	height: 5rem;
@@ -27,8 +27,24 @@
 }
 
 /*--- Since we are not using the image trick, lets temporarily control the width here ---*/
-#logo img {
-	width: 17rem;
+#logo img.gray {
+	position: absolute;
+	width: 10.3em;
+}
+
+#logo img.black {
+	width: 10em;
+}
+
+#logo img.not-visible {
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*--- Hide the black tagwall image ---*/
+#logo img.visible {
+	opacity: 1;
+	visibility: visible;
 }
 
 /*--- Default menu styles, using flex instead of bootstrap ---*/
@@ -70,13 +86,21 @@
 #menu > li a {
 	text-decoration: none;
 	text-transform: uppercase;
+	letter-spacing: 2px;
 	transition: color 0.3s ease-in-out;
 	font-size: 1.2rem;
 	font-weight: 600;
 }
 
+#menu .dropdown-menu li a {
+	letter-spacing: normal;
+	text-transform: none;
+	cursor: pointer;
+}
+
 /*--- Hover behavior for the links within the menu ---*/
-#menu > li a:hover {
+#menu > li a:hover,
+#menu > li a:focus {
 	color: #A2A4A7;
 	background-color: #fff;
 }
@@ -85,7 +109,8 @@
 	border-radius: 0;
 	border: 0;
 	clear: none;
-	margin: 29px 0;
+	margin: 24px 0;
+	box-shadow: none;
 }
 
 /*--- Hide the mobile button ---*/
@@ -118,6 +143,11 @@
 
 /*--- Media Query for expanded menu ---*/
 @media only screen and ( max-width: 767px ) {
+	#menu .expand li a{
+		letter-spacing: normal;
+		text-transform: none;
+	}
+
 	#menu .mobile:hover .expand {
 		display: flex;
 		opacity: 1;
@@ -146,4 +176,16 @@
 	#menu .dropdown {
 		display: none;
 	}
+}
+
+#menu .mobile:hover .expand.company {
+	height: 8.2rem;
+}
+
+#menu .mobile:hover .expand.details {
+	height: 12rem;
+}
+
+#menu .mobile:hover .expand.projects {
+	height: 4rem;
 }

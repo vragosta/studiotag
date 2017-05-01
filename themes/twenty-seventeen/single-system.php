@@ -16,6 +16,17 @@
 		<?php $gallery = get_post_meta( $post->ID, 'gallery', true ); ?>
 		<?php $metadata = Tag_Wall\Twenty_Seventeen\Helpers\tagwall_get_system_metadata( $post->ID ); ?>
 
+		<?php $left_name_1 = get_post_meta( $post->ID, 'left_name_1', true ); ?>
+		<?php $left_link_1 = get_post_meta( $post->ID, 'left_link_1', true ); ?>
+
+		<?php $left_name_2 = get_post_meta( $post->ID, 'left_name_2', true ); ?>
+		<?php $left_link_2 = get_post_meta( $post->ID, 'left_link_2', true ); ?>
+
+		<?php $left_name_3 = get_post_meta( $post->ID, 'left_name_3', true ); ?>
+		<?php $left_link_3 = get_post_meta( $post->ID, 'left_link_3', true ); ?>
+
+
+
 		<?php if ( $image ) : ?>
 			<figure class="featured-image">
 				<div style="background-image: url( '<?php echo esc_attr( $image ); ?>' );"></div>
@@ -33,12 +44,14 @@
 				<div class="specs-container row">
 					<div class="view-container col-xs-12 col-sm-5 col-md-3 col-lg-3">
 						<ul>
-							<li><a href="<?php echo esc_url( $gallery ); ?>" target="_blank">View Gallery</a></li>
-							<?php if ( is_single( 'greenwall' ) ) : ?>
-								<li><a href="#">View LookBook</a></li>
-							<?php elseif ( is_single( 'prebuilt' ) ) : ?>
-								<li><a href="<?php echo home_url( '/details/' ); ?>">View Wall Details</a></li>
-								<li><a href="#">View LookBook</a></li>
+							<?php if (isset($left_name_1) && isset($left_link_1)) : ?>
+								<li><a href="<?php echo esc_attr($left_link_1); ?>"> <?php echo $left_name_1; ?> </a></li>
+							<?php endif; ?>
+							<?php if (isset($left_name_2) && isset($left_link_2)) : ?>
+								<li><a href="<?php echo esc_attr($left_link_2); ?>"> <?php echo $left_name_2; ?> </a></li>
+							<?php endif; ?>
+							<?php if (isset($left_name_3) && isset($left_link_3)) : ?>
+								<li><a href="<?php echo esc_attr($left_link_3); ?>"> <?php echo $left_name_3; ?> </a></li>
 							<?php endif; ?>
 						</ul>
 					</div>

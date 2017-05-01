@@ -21,7 +21,11 @@
 			$( '.hamburger' )
 				.toggleClass( 'is-active' );
 
+
 			if ( $( this ).hasClass( 'is-active' ) ) {
+
+				// Hide black tagwall image and display gray one
+				setGrayTagwall();
 
 				$( '.menu-container' )
 					.removeClass( 'not-visible' )
@@ -29,6 +33,9 @@
 
 				$( 'body' ).css( 'overflow', 'hidden' );
 			} else {
+
+				// Hide gray tagwall image and display black one
+				setBlackTagwall();
 
 				// Remove the class 'visible' and add the class 'not-visible' class to the menu container.
 				$( '.menu-container' )
@@ -41,7 +48,7 @@
 		} );
 
 		/**
-		 * On hover display menu, display the various menu.
+		 * On click display menu, display the various menu.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()
@@ -57,6 +64,11 @@
 				$( '.projects' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+
+				$( '.details' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
 			} else if ( id === 'projects' ) {
 				$( '.projects' )
 					.removeClass( 'not-visible' )
@@ -65,6 +77,24 @@
 				$( '.company' )
 					.removeClass( 'visible' )
 					.addClass( 'not-visible' );
+
+				$( '.details' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
+			} else if ( id === 'details' ) {
+				$( '.details' )
+					.removeClass( 'not-visible' )
+					.addClass( 'visible' );
+
+				$( '.company' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
+				$( '.projects' )
+					.removeClass( 'visible' )
+					.addClass( 'not-visible' );
+
 			} else {
 				$( '.company' )
 					.removeClass( 'visible' )
@@ -134,6 +164,32 @@
 			prevArrow     : $( 'i.ion-ios-arrow-left' ),
 			nextArrow     : $( 'i.ion-ios-arrow-right' )
 		});
+
+		/**
+		 * Sets black tagwall image
+		 */
+		function setBlackTagwall() {
+			$( '.header-navigation-front-page #logo img:first-child' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+
+			$( '.header-navigation-front-page #logo img:last-child' )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+		}
+
+		/**
+		 * Sets gray tagwall image
+		 */
+		function setGrayTagwall() {
+			$( '.header-navigation-front-page #logo img:last-child' )
+				.removeClass( 'visible' )
+				.addClass( 'not-visible' );
+
+			$( '.header-navigation-front-page #logo img:first-child' )
+				.removeClass( 'not-visible' )
+				.addClass( 'visible' );
+		}
 
 	});
 } )( jQuery );
