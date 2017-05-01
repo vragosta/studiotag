@@ -28,7 +28,7 @@
 		<div class="static-menu col-xs-12 col-sm-6">
 			<ul>
 				<li><a href="#" data-id="company">Company</a></li>
-				<li><a href="#" data-id="details">Wall Details</a></li>
+				<li><a href="#" data-id="details">Wall Systems</a></li>
 				<li><a href="#" data-id="projects">Projects</a></li>
 				<li><a href="<?php echo home_url( '/news/' ); ?>">News</a></li>
 				<li><a href="<?php echo home_url( '/contact/' ); ?>">Contact Us</a></li>
