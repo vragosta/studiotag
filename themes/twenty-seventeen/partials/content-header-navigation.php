@@ -51,7 +51,7 @@
 			</li>
 
 			<li class="mobile">
-				<a href="#">Wall Details</a>
+				<a href="#">Wall Systems</a>
 				<ul class="expand details">
 					<li><a href="<?php echo home_url( '/technicals/' ); ?>">Technicals</a></li>
 					<li><a href="<?php echo home_url( '/applied-details/' ); ?>">Applied Details</a></li>
