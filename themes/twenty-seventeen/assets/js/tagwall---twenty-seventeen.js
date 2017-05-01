@@ -48,7 +48,7 @@
 		} );
 
 		/**
-		 * On hover display menu, display the various menu.
+		 * On click display menu, display the various menu.
 		 *
 		 * @since 0.1.0
 		 * @uses  toggleClass(), hasClass(), addClass(), removeClass()

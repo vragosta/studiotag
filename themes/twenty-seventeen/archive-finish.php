@@ -73,7 +73,7 @@
 					<?php if ( $taxonomy_query->post_count % 3 !== 0 ) : ?>
 						<hr />
 					<?php endif; ?>
-					
+
 				</div>
 			</section>
 		<?php endif; ?>
